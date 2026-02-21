@@ -1,4 +1,7 @@
 /** @type {import("@react-router/dev/config").Config} */
 export default {
-  ssr: false,
+  ssr: true,
+  future: {
+    v8_viteEnvironmentApi: true,
+  },
 };

@@ -1,6 +1,6 @@
 import { useState, useCallback, useMemo } from "react";
 import { useParams, Link } from "react-router";
-import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore/lite";
 import { db } from "~/lib/firebase";
 import { useAuth } from "~/context/AuthContext";
 import { getSubject, getModule, getAdjacentModules } from "~/data";

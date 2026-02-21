@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { Outlet, useOutletContext, useParams } from "react-router";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore/lite";
 import { db } from "~/lib/firebase";
 import { useAuth } from "~/context/AuthContext";
 import TopBar from "~/components/TopBar";
