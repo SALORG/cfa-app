@@ -1,0 +1,158 @@
+import { useState } from "react";
+import { useParams, Link } from "react-router";
+import { getSubject, getModule, getAdjacentModules } from "~/data";
+import { useDashboardContext } from "./dashboard";
+import CheatSheet from "~/components/CheatSheet";
+import MindMap from "~/components/MindMap";
+import FlashCards from "~/components/FlashCards";
+import Quiz from "~/components/Quiz";
+
+const TABS = [
+  { id: "cheatsheet", label: "Cheat Sheet", icon: "📋" },
+  { id: "mindmap", label: "Mind Map", icon: "🧠" },
+  { id: "flashcards", label: "Flash Cards", icon: "🃏" },
+  { id: "quiz", label: "Quiz", icon: "❓" },
+];
+
+export default function DashboardModule() {
+  const { subjectId, moduleId } = useParams();
+  const { progress, setProgress } = useDashboardContext();
+  const [activeTab, setActiveTab] = useState("cheatsheet");
+
+  const subject = getSubject(subjectId);
+  const mod = getModule(subjectId, moduleId);
+  const { prev, next } = getAdjacentModules(subjectId, moduleId);
+
+  if (!subject || !mod) {
+    return (
+      <div className="p-6">
+        <h1 className="text-2xl font-bold text-danger">Module not found</h1>
+        <Link to="/dashboard" className="text-accent mt-4 inline-block">
+          Back to Dashboard
+        </Link>
+      </div>
+    );
+  }
+
+  const progressKey = `${subjectId}__${moduleId}`;
+  const isCompleted = !!progress[progressKey];
+
+  const toggleComplete = () => {
+    setProgress((prev) => ({
+      ...prev,
+      [progressKey]: !prev[progressKey],
+    }));
+  };
+
+  return (
+    <div className="p-6 max-w-5xl mx-auto">
+      {/* Header */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 text-sm text-text-muted mb-2">
+          <Link to="/dashboard" className="hover:text-accent">
+            Dashboard
+          </Link>
+          <span>/</span>
+          <span style={{ color: subject.color }}>
+            {subject.icon} {subject.name}
+          </span>
+          <span>/</span>
+          <span>LM {mod.number}</span>
+        </div>
+
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-text-primary">
+              LM {mod.number}: {mod.title}
+            </h1>
+            <p className="text-sm text-text-muted mt-1">
+              {subject.name} &middot; {subject.weight}
+            </p>
+          </div>
+
+          <button
+            onClick={toggleComplete}
+            className={`shrink-0 px-4 py-2 rounded-lg font-medium text-sm transition-all ${
+              isCompleted
+                ? "bg-success/20 text-success border border-success/30"
+                : "bg-surface-tertiary text-text-secondary border border-border hover:border-accent/50"
+            }`}
+          >
+            {isCompleted ? "✓ Completed" : "Mark Complete"}
+          </button>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex gap-1 mb-6 bg-surface-secondary rounded-xl p-1 overflow-x-auto">
+        {TABS.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
+              activeTab === tab.id
+                ? "bg-accent text-white shadow-sm"
+                : "text-text-secondary hover:text-text-primary hover:bg-surface-tertiary"
+            }`}
+          >
+            <span>{tab.icon}</span>
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab Content */}
+      <div className="min-h-[400px]">
+        {activeTab === "cheatsheet" && mod.cheatSheet && (
+          <CheatSheet cheatSheet={mod.cheatSheet} />
+        )}
+        {activeTab === "mindmap" && mod.mindMap && (
+          <MindMap mindMap={mod.mindMap} />
+        )}
+        {activeTab === "flashcards" && <FlashCards module={mod} />}
+        {activeTab === "quiz" && mod.quiz?.questions && (
+          <Quiz questions={mod.quiz.questions} />
+        )}
+      </div>
+
+      {/* Navigation */}
+      <div className="flex items-center justify-between mt-8 pt-6 border-t border-border">
+        {prev ? (
+          <Link
+            to={`/dashboard/${prev.subjectId}/${prev.id}`}
+            className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
+            onClick={() => setActiveTab("cheatsheet")}
+          >
+            <span>←</span>
+            <div>
+              <p className="text-xs text-text-muted">Previous</p>
+              <p className="font-medium">
+                LM {prev.number}: {prev.title}
+              </p>
+            </div>
+          </Link>
+        ) : (
+          <div />
+        )}
+
+        {next ? (
+          <Link
+            to={`/dashboard/${next.subjectId}/${next.id}`}
+            className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors text-right"
+            onClick={() => setActiveTab("cheatsheet")}
+          >
+            <div>
+              <p className="text-xs text-text-muted">Next</p>
+              <p className="font-medium">
+                LM {next.number}: {next.title}
+              </p>
+            </div>
+            <span>→</span>
+          </Link>
+        ) : (
+          <div />
+        )}
+      </div>
+    </div>
+  );
+}

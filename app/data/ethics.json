@@ -1,0 +1,748 @@
+{
+  "id": "ethics",
+  "name": "Ethical & Professional Standards",
+  "icon": "⚖️",
+  "color": "#16a085",
+  "weight": "15-20%",
+  "modules": [
+    {
+      "id": "ethics-lm1",
+      "number": 1,
+      "title": "Ethics and Trust in the Investment Profession",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Ethics Defined",
+            "desc": "Ethics: set of shared beliefs about what is good or acceptable behavior. Goes beyond legal requirements. A code of ethics communicates an organization's values."
+          },
+          {
+            "title": "Trust in Investment Management",
+            "desc": "Clients entrust assets to professionals, creating an asymmetric relationship. Trust is the foundation of the investment profession."
+          },
+          {
+            "title": "Professionalism",
+            "desc": "Professions are distinguished by: specialized knowledge, standards of practice, a code of ethics, accountability to a governing body, and service to society."
+          },
+          {
+            "title": "Ethical vs Legal Standards",
+            "desc": "Ethical standards are often MORE stringent than legal standards. Legal ≠ ethical. Some actions are legal but unethical; some laws may be unjust."
+          },
+          {
+            "title": "Ethical Decision-Making Framework",
+            "desc": "Identify → Consider → Act → Reflect. Consider: who is affected? What are the relevant facts? What ethical principles apply? What are the alternatives?"
+          },
+          {
+            "title": "Challenges to Ethical Conduct",
+            "desc": "Overconfidence, situational influences (loyalty, conformity, incrementalism), rationalization. Being aware of biases helps guard against ethical lapses."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "How to resolve an ethical dilemma?",
+            "use": [
+              "Apply the ethical decision-making framework systematically",
+              "Consider all stakeholders affected",
+              "Choose the action most consistent with the Code of Ethics and professional duty"
+            ],
+            "avoid": [
+              "Rationalizing by saying \"everyone does it\"",
+              "Choosing the legal minimum when a higher ethical standard applies"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Legal compliance is NECESSARY but NOT SUFFICIENT for ethical behavior",
+          "Situational influences (peer pressure, authority) can erode ethical judgment",
+          "Incrementalism: small ethical compromises can lead to major violations over time",
+          "Overconfidence in one's own ethical judgment without systematic reflection"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Ethics & Trust",
+        "branches": [
+          {
+            "label": "Ethics",
+            "leaves": [
+              "Shared beliefs",
+              "Beyond legal",
+              "Code of ethics",
+              "Values & principles"
+            ]
+          },
+          {
+            "label": "Professionalism",
+            "leaves": [
+              "Specialized knowledge",
+              "Standards of practice",
+              "Accountability",
+              "Service to society"
+            ]
+          },
+          {
+            "label": "Challenges",
+            "leaves": [
+              "Overconfidence",
+              "Situational influences",
+              "Rationalization",
+              "Incrementalism"
+            ]
+          },
+          {
+            "label": "Framework",
+            "leaves": [
+              "Identify dilemma",
+              "Consider stakeholders",
+              "Act on principles",
+              "Reflect on outcome"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Ethical conduct in the investment profession requires:",
+            "options": [
+              "Compliance with all applicable laws",
+              "Compliance with laws and adherence to ethical principles that may exceed legal requirements",
+              "Following industry norms regardless of law",
+              "Maximizing client returns at all costs"
+            ],
+            "correct": 1,
+            "explanation": "Ethics goes beyond mere legal compliance. CFA standards often require behavior that exceeds what the law mandates."
+          },
+          {
+            "type": "mcq",
+            "question": "Which of the following is a challenge to ethical conduct?",
+            "options": [
+              "Having a formal code of ethics",
+              "Systematic ethical decision-making",
+              "Situational influences such as loyalty to an employer",
+              "Ongoing professional education"
+            ],
+            "correct": 2,
+            "explanation": "Situational influences (loyalty, conformity, authority) can pressure individuals to compromise ethical standards."
+          },
+          {
+            "type": "mcq",
+            "question": "The ethical decision-making framework begins with:",
+            "options": [
+              "Taking action",
+              "Reflecting on outcomes",
+              "Identifying the ethical issue and relevant facts",
+              "Consulting legal counsel"
+            ],
+            "correct": 2,
+            "explanation": "The framework starts with identifying the ethical dilemma, gathering relevant facts, and considering who is affected before proceeding to action."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ethics-lm2",
+      "number": 2,
+      "title": "Code of Ethics and Standards of Professional Conduct",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Code of Ethics (6 Components)",
+            "desc": "1) Act with integrity, competence, diligence, respect. 2) Place client interests above own. 3) Use reasonable care, independent judgment. 4) Practice and encourage ethical behavior. 5) Promote integrity of capital markets. 6) Maintain and improve professional competence."
+          },
+          {
+            "title": "Standard I: Professionalism",
+            "desc": "I(A) Knowledge of the Law, I(B) Independence & Objectivity, I(C) Misrepresentation, I(D) Misconduct, I(E) Competence."
+          },
+          {
+            "title": "Standard II: Integrity of Capital Markets",
+            "desc": "II(A) Material Nonpublic Information (MNPI), II(B) Market Manipulation. Protect market fairness."
+          },
+          {
+            "title": "Standard III: Duties to Clients",
+            "desc": "III(A) Loyalty, Prudence, Care. III(B) Fair Dealing. III(C) Suitability. III(D) Performance Presentation. III(E) Preservation of Confidentiality."
+          },
+          {
+            "title": "Standard IV: Duties to Employers",
+            "desc": "IV(A) Loyalty. IV(B) Additional Compensation Arrangements. IV(C) Responsibilities of Supervisors."
+          },
+          {
+            "title": "Standards V-VII",
+            "desc": "V: Investment Analysis (diligence, communication, record retention). VI: Conflicts of Interest (disclosure, priority of transactions, referral fees). VII: Responsibilities as CFA Member (conduct, reference to CFA Institute)."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "When laws conflict with the Code and Standards?",
+            "use": [
+              "Follow the STRICTER of the law or the Code and Standards",
+              "If local law is stricter, follow local law",
+              "If the Code is stricter, follow the Code"
+            ],
+            "avoid": [
+              "Assuming local law always takes precedence",
+              "Ignoring the Code just because local law permits an action"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Always follow the STRICTER requirement — whether it's the law or the CFA Standards",
+          "Independence & Objectivity: gifts, travel, and compensation can compromise independence",
+          "Fair dealing means all clients treated FAIRLY (not necessarily identically or simultaneously)",
+          "Members must know the law but are NOT required to be legal experts"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Code & Standards",
+        "branches": [
+          {
+            "label": "Code of Ethics",
+            "leaves": [
+              "Integrity & competence",
+              "Client interests first",
+              "Independent judgment",
+              "Promote market integrity"
+            ]
+          },
+          {
+            "label": "Std I: Professionalism",
+            "leaves": [
+              "Knowledge of Law",
+              "Independence & Objectivity",
+              "Misrepresentation",
+              "Misconduct",
+              "Competence"
+            ]
+          },
+          {
+            "label": "Std II: Capital Markets",
+            "leaves": [
+              "Material Nonpublic Info",
+              "Market Manipulation"
+            ]
+          },
+          {
+            "label": "Std III-VII",
+            "leaves": [
+              "Duties to Clients",
+              "Duties to Employers",
+              "Investment Analysis",
+              "Conflicts of Interest",
+              "CFA Member Conduct"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "When local law and the CFA Code and Standards conflict, a member should:",
+            "options": [
+              "Follow local law in all cases",
+              "Follow the CFA Standards in all cases",
+              "Follow the stricter of the two requirements",
+              "Resign from CFA Institute"
+            ],
+            "correct": 2,
+            "explanation": "Members must follow the stricter of local law or the Code and Standards. This ensures the highest ethical standard is met."
+          },
+          {
+            "type": "mcq",
+            "question": "Standard III(B) Fair Dealing requires that members:",
+            "options": [
+              "Give all clients identical investment recommendations simultaneously",
+              "Treat all clients fairly when disseminating information and recommendations",
+              "Only serve institutional clients",
+              "Provide the same level of service to all clients"
+            ],
+            "correct": 1,
+            "explanation": "Fair dealing means treating all clients fairly, not necessarily identically. Different service levels are acceptable if disclosed and not discriminatory."
+          },
+          {
+            "type": "mcq",
+            "question": "Which standard addresses the use of material nonpublic information?",
+            "options": [
+              "Standard I(A)",
+              "Standard II(A)",
+              "Standard III(C)",
+              "Standard V(A)"
+            ],
+            "correct": 1,
+            "explanation": "Standard II(A) Material Nonpublic Information prohibits trading or causing others to trade on MNPI."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ethics-lm3",
+      "number": 3,
+      "title": "Guidance for Standards I–VII",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "I(A) Knowledge of the Law",
+            "desc": "Must understand and comply with applicable laws and regulations. Follow the stricter of law or CFA Standards. Must dissociate from violations."
+          },
+          {
+            "title": "I(B) Independence & Objectivity",
+            "desc": "Must not offer/accept gifts that could compromise independence. Research must be free from issuer influence. Disclose conflicts."
+          },
+          {
+            "title": "I(C) Misrepresentation",
+            "desc": "Must not misstate facts about investment analysis, recommendations, actions, or professional qualifications. Includes plagiarism."
+          },
+          {
+            "title": "II(A) Material Nonpublic Information",
+            "desc": "Cannot trade or cause others to trade on MNPI. Mosaic theory: combining public and non-material nonpublic info IS allowed."
+          },
+          {
+            "title": "III(A) Loyalty, Prudence, Care",
+            "desc": "Fiduciary duty: act in client's best interest. Determine who the client is. Exercise prudence and care in investment decisions."
+          },
+          {
+            "title": "III(C) Suitability",
+            "desc": "Must gather client information (IPS) and ensure recommendations are suitable for the client's situation, risk tolerance, and objectives."
+          },
+          {
+            "title": "IV(A) Loyalty to Employer",
+            "desc": "Must act in employer's interest, not take proprietary information when leaving. Can prepare to leave but not solicit clients before departure."
+          },
+          {
+            "title": "VI(A-C) Conflicts of Interest",
+            "desc": "Disclose all conflicts (compensation, ownership, board seats). Priority of transactions: clients > employer > personal. Disclose referral fees."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "Mosaic Theory: When can you trade on nonpublic info?",
+            "use": [
+              "Mosaic theory: combine public info + non-material nonpublic info to form a conclusion",
+              "Conclusions from public analysis, industry research, expert network (public channels)"
+            ],
+            "avoid": [
+              "Trading on a single piece of MATERIAL nonpublic information",
+              "Pressuring insiders for material information"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Mosaic theory is ALLOWED — combining non-material nonpublic info with public info",
+          "Dissociation from violations: report up the chain, refuse to participate, ultimately resign if necessary",
+          "Gifts to clients are different from gifts from clients — both can create conflicts",
+          "Personal trading: transaction priority is Clients > Employer > Employee",
+          "Record retention: maintain records to support investment analysis and actions (typically 7 years)",
+          "Referral fees must be disclosed to clients BEFORE entering the relationship"
+        ],
+        "examples": [
+          {
+            "title": "Mosaic Theory Application",
+            "problem": "An analyst combines data from public filings, channel checks at retail stores (public), and a conversation with a supplier who says \"orders are steady\" (non-material nonpublic). Can she trade?",
+            "solution": "Yes. No single piece of information is material and nonpublic. The analyst is using the mosaic theory — combining various public and non-material nonpublic information to reach her own investment conclusion."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Standards I–VII",
+        "branches": [
+          {
+            "label": "I: Professionalism",
+            "leaves": [
+              "Know the law (stricter rule)",
+              "Independence & objectivity",
+              "No misrepresentation",
+              "No misconduct",
+              "Maintain competence"
+            ]
+          },
+          {
+            "label": "II: Market Integrity",
+            "leaves": [
+              "No trading on MNPI",
+              "Mosaic theory allowed",
+              "No market manipulation"
+            ]
+          },
+          {
+            "label": "III: Clients",
+            "leaves": [
+              "Fiduciary duty",
+              "Fair dealing",
+              "Suitability (IPS)",
+              "Accurate performance",
+              "Confidentiality"
+            ]
+          },
+          {
+            "label": "IV-VII",
+            "leaves": [
+              "Employer loyalty",
+              "Supervisor duties",
+              "Diligent analysis",
+              "Disclose conflicts",
+              "Priority of transactions"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Under the mosaic theory, an analyst may:",
+            "options": [
+              "Trade on material nonpublic information if combined with public info",
+              "Combine non-material nonpublic info with public info to form an investment conclusion",
+              "Share material nonpublic information with select clients",
+              "Ignore confidentiality obligations"
+            ],
+            "correct": 1,
+            "explanation": "Mosaic theory allows analysts to combine various pieces of public and NON-MATERIAL nonpublic information to reach investment conclusions."
+          },
+          {
+            "type": "mcq",
+            "question": "An analyst discovers her firm is violating securities law. Her first action should be:",
+            "options": [
+              "Immediately resign",
+              "Contact the media",
+              "Report the violation to her supervisor or compliance department",
+              "Begin trading on the information"
+            ],
+            "correct": 2,
+            "explanation": "Standard I(A): First report up the chain (supervisor, compliance). Dissociate from the activity. Resignation is a last resort if the firm fails to act."
+          },
+          {
+            "type": "mcq",
+            "question": "Priority of transactions under Standard VI(B) is:",
+            "options": [
+              "Employee > Employer > Client",
+              "Client > Employee > Employer",
+              "Client > Employer > Employee",
+              "Employer > Client > Employee"
+            ],
+            "correct": 2,
+            "explanation": "Client interests come first, then employer, then personal. This prevents front-running and ensures fiduciary duty is met."
+          },
+          {
+            "type": "mcq",
+            "question": "A portfolio manager is leaving her firm. She may:",
+            "options": [
+              "Take client lists and solicit clients before resigning",
+              "Prepare to leave but not solicit clients until after departure",
+              "Copy proprietary models to use at her new firm",
+              "Contact clients secretly to redirect their assets"
+            ],
+            "correct": 1,
+            "explanation": "Standard IV(A): Members can prepare to leave but must not solicit employer's clients or take proprietary information before departure."
+          },
+          {
+            "type": "mcq",
+            "question": "Which of the following is required under Standard III(C) Suitability?",
+            "options": [
+              "Recommending the highest-returning investment to all clients",
+              "Gathering information about each client's financial situation and objectives before making recommendations",
+              "Ensuring all clients hold the same portfolio",
+              "Maximizing portfolio turnover"
+            ],
+            "correct": 1,
+            "explanation": "Suitability requires knowing the client — their financial situation, risk tolerance, objectives, constraints — before making any recommendation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ethics-lm4",
+      "number": 4,
+      "title": "Introduction to GIPS",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "GIPS Overview",
+            "desc": "Global Investment Performance Standards: voluntary, ethical standards for calculating and presenting investment performance. Goal: fair, comparable reporting."
+          },
+          {
+            "title": "Why GIPS Exists",
+            "desc": "Without GIPS, firms could cherry-pick best-performing accounts. GIPS creates a level playing field for performance comparison across firms and countries."
+          },
+          {
+            "title": "Composites",
+            "desc": "A composite groups all portfolios managed under a similar strategy. Firms MUST include all fee-paying, discretionary portfolios in appropriate composites."
+          },
+          {
+            "title": "GIPS Key Requirements",
+            "desc": "Firm-wide compliance (cannot claim partial compliance). Must present at least 5 years of GIPS-compliant data (or since inception if < 5 years). Build to 10 years."
+          },
+          {
+            "title": "Verification",
+            "desc": "Voluntary third-party review of GIPS compliance. Applies to the entire firm, not individual composites. Adds credibility but is not required."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "When must a firm claim GIPS compliance?",
+            "use": [
+              "Compliance is voluntary but once claimed, must apply firm-wide",
+              "Must include all actual, fee-paying, discretionary portfolios in composites",
+              "Must present performance net of trading costs at a minimum"
+            ],
+            "avoid": [
+              "Claiming GIPS compliance for only selected composites",
+              "Excluding underperforming portfolios from composites"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "GIPS compliance is ALL or NOTHING — no partial compliance allowed",
+          "All fee-paying discretionary portfolios MUST be included in at least one composite",
+          "Cannot link non-GIPS-compliant performance history to GIPS-compliant records",
+          "Verification is recommended but NOT required for GIPS compliance",
+          "Terminated portfolios must remain in the composite for the periods they were managed"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "GIPS Standards",
+        "branches": [
+          {
+            "label": "Purpose",
+            "leaves": [
+              "Fair comparison",
+              "Global standard",
+              "Prevent cherry-picking",
+              "Investor confidence"
+            ]
+          },
+          {
+            "label": "Key Rules",
+            "leaves": [
+              "Firm-wide compliance",
+              "All discretionary portfolios",
+              "Composites by strategy",
+              "Min 5 years history"
+            ]
+          },
+          {
+            "label": "Composites",
+            "leaves": [
+              "Similar strategy grouping",
+              "Must include all eligible",
+              "Terminated stay in history",
+              "No cherry-picking"
+            ]
+          },
+          {
+            "label": "Verification",
+            "leaves": [
+              "Voluntary",
+              "Third-party review",
+              "Applies firm-wide",
+              "Adds credibility"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Under GIPS, a composite must include:",
+            "options": [
+              "Only the best-performing portfolios",
+              "All actual, discretionary, fee-paying portfolios managed under the same strategy",
+              "Only portfolios above a minimum size",
+              "Only currently active portfolios"
+            ],
+            "correct": 1,
+            "explanation": "Composites must include ALL actual, discretionary, fee-paying portfolios managed under a similar strategy. This prevents cherry-picking of results."
+          },
+          {
+            "type": "mcq",
+            "question": "GIPS verification is:",
+            "options": [
+              "Required for all compliant firms",
+              "Required for composites with more than 10 portfolios",
+              "Voluntary and applies to the entire firm",
+              "Required only for hedge funds"
+            ],
+            "correct": 2,
+            "explanation": "Verification is voluntary but recommended. If undertaken, it applies to the entire firm, not to individual composites."
+          },
+          {
+            "type": "mcq",
+            "question": "A firm claiming GIPS compliance must initially present at least:",
+            "options": [
+              "1 year of performance",
+              "3 years of performance",
+              "5 years of performance (or since inception)",
+              "10 years of performance"
+            ],
+            "correct": 2,
+            "explanation": "Firms must initially present at least 5 years of GIPS-compliant data, or since inception if the firm has been in existence less than 5 years, then build up to 10 years."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ethics-lm5",
+      "number": 5,
+      "title": "Ethics Application",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Applying the Code & Standards",
+            "desc": "Real-world scenarios require judgment. Multiple standards may apply simultaneously. Focus on identifying which standards are relevant and what action is required."
+          },
+          {
+            "title": "Common Violation Patterns",
+            "desc": "Front-running (trading ahead of clients), churning (excessive trading for commissions), misrepresentation of credentials, selective disclosure, conflicts of interest."
+          },
+          {
+            "title": "Whistleblowing",
+            "desc": "Report violations internally first (supervisor/compliance). If no action, escalate. External reporting may be required by law. Protect yourself legally."
+          },
+          {
+            "title": "Soft Dollar Standards",
+            "desc": "Commissions used for research must benefit clients. Cannot use soft dollars for non-research expenses. Must disclose soft dollar arrangements."
+          },
+          {
+            "title": "Social Media & Communications",
+            "desc": "Same standards apply to social media as traditional communications. Must be factual, not misleading, and include proper disclosures."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "How to handle suspected ethics violations?",
+            "use": [
+              "Identify which standard(s) are at issue",
+              "Report to supervisor or compliance officer",
+              "Dissociate from the activity",
+              "Document everything"
+            ],
+            "avoid": [
+              "Ignoring the situation (\"not my problem\")",
+              "Participating even reluctantly",
+              "Immediately going public without internal reporting first"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Front-running: trading personal account BEFORE executing client orders violates multiple standards",
+          "Churning: excessive trading to generate commissions violates loyalty, prudence, and care",
+          "Cannot use \"I was told to do it\" as a defense — personal responsibility remains",
+          "Social media posts are held to the same standards as formal research reports",
+          "Failing to disclose referral fees or compensation arrangements violates Standard VI"
+        ],
+        "examples": [
+          {
+            "title": "Front-Running Scenario",
+            "problem": "A PM learns her firm will issue a buy recommendation on Stock X tomorrow. She buys shares in her personal account today. Which standards are violated?",
+            "solution": "Standard II(A) MNPI — the upcoming recommendation is material nonpublic info. Standard VI(B) Priority of Transactions — client trades must come first. Standard III(A) Loyalty, Prudence & Care — she must act in clients' best interest, not her own."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Ethics Application",
+        "branches": [
+          {
+            "label": "Common Violations",
+            "leaves": [
+              "Front-running",
+              "Churning",
+              "Misrepresentation",
+              "Selective disclosure",
+              "Undisclosed conflicts"
+            ]
+          },
+          {
+            "label": "Response Protocol",
+            "leaves": [
+              "Identify standards at issue",
+              "Report internally",
+              "Dissociate from violation",
+              "Document actions",
+              "Escalate if needed"
+            ]
+          },
+          {
+            "label": "Key Scenarios",
+            "leaves": [
+              "MNPI situations",
+              "Gift acceptance",
+              "Client suitability",
+              "Performance reporting",
+              "Leaving an employer"
+            ]
+          },
+          {
+            "label": "Modern Issues",
+            "leaves": [
+              "Social media rules",
+              "Soft dollars",
+              "Expert networks",
+              "AI and algorithms",
+              "Digital communications"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "An analyst buys shares in her personal account before her firm publishes a buy recommendation. This violates:",
+            "options": [
+              "Only Standard VI(B) Priority of Transactions",
+              "Standards II(A), III(A), and VI(B)",
+              "Only Standard III(A) Loyalty",
+              "No standards if she believed the stock was undervalued"
+            ],
+            "correct": 1,
+            "explanation": "This is front-running, violating: II(A) MNPI (upcoming recommendation is material nonpublic), III(A) Loyalty to clients, and VI(B) Priority of transactions (clients first)."
+          },
+          {
+            "type": "mcq",
+            "question": "A portfolio manager repeatedly buys and sells securities to generate commissions for his broker. This is known as:",
+            "options": [
+              "Active management",
+              "Churning",
+              "Market making",
+              "Tactical allocation"
+            ],
+            "correct": 1,
+            "explanation": "Churning is excessive trading designed to generate commissions rather than benefit the client. It violates Standard III(A) Loyalty, Prudence, and Care."
+          },
+          {
+            "type": "mcq",
+            "question": "Regarding soft dollar arrangements, members must ensure:",
+            "options": [
+              "All commissions benefit the broker",
+              "Research purchased benefits the clients whose commissions paid for it",
+              "Soft dollars are used for office expenses",
+              "Clients are not informed of the arrangement"
+            ],
+            "correct": 1,
+            "explanation": "Soft dollar research must benefit the clients whose trading commissions pay for it. Arrangements must be disclosed to clients."
+          },
+          {
+            "type": "mcq",
+            "question": "A CFA charterholder posts an investment recommendation on social media without disclosing her firm or conflicts. This violates:",
+            "options": [
+              "No standard — social media is personal",
+              "Standard V(B) Communication with Clients and Standard VI(A) Disclosure of Conflicts",
+              "Only GIPS standards",
+              "Only if the recommendation is wrong"
+            ],
+            "correct": 1,
+            "explanation": "Social media posts are held to the same standards as formal communications. Must disclose identity, firm, and conflicts of interest."
+          }
+        ]
+      }
+    }
+  ]
+}

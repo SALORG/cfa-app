@@ -1,0 +1,322 @@
+{
+  "id": "deriv",
+  "name": "Derivatives",
+  "icon": "🔄",
+  "color": "#f39c12",
+  "weight": "5-7%",
+  "modules": [
+    {
+      "id": "deriv-lm1",
+      "number": 1,
+      "title": "Derivative Instruments and Markets",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Forward Contract",
+            "desc": "OTC agreement to buy/sell asset at predetermined price on future date. Customizable. Counterparty risk. No upfront cost."
+          },
+          {
+            "title": "Futures Contract",
+            "desc": "Exchange-traded standardized forward. Daily settlement (mark-to-market). Clearinghouse eliminates counterparty risk."
+          },
+          {
+            "title": "Swap",
+            "desc": "Series of forward contracts. Exchange cash flows based on different rates/prices. Most common: interest rate swap (fixed for floating)."
+          },
+          {
+            "title": "Options",
+            "desc": "Right, not obligation. Call: right to buy. Put: right to sell. Premium paid upfront. European: exercise at expiry only. American: anytime."
+          },
+          {
+            "title": "OTC vs Exchange-Traded",
+            "desc": "OTC: customized, counterparty risk, less regulation. ETD: standardized, clearinghouse, margin requirements, transparent."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Forward Payoff (Long)",
+            "formula": "Payoff = S<sub>T</sub> - F<sub>0</sub>",
+            "where": "S<sub>T</sub> = spot price at expiry, F<sub>0</sub> = forward price"
+          },
+          {
+            "name": "Call Option Payoff",
+            "formula": "Payoff = max(0, S<sub>T</sub> - X)",
+            "where": "X = strike price"
+          },
+          {
+            "name": "Put Option Payoff",
+            "formula": "Payoff = max(0, X - S<sub>T</sub>)",
+            "where": "X = strike price"
+          },
+          {
+            "name": "Call Profit",
+            "formula": "Profit = max(0, S<sub>T</sub> - X) - Premium",
+            "where": "Premium is the cost of the option"
+          },
+          {
+            "name": "Put Profit",
+            "formula": "Profit = max(0, X - S<sub>T</sub>) - Premium",
+            "where": "Max loss = premium paid"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Forwards vs Futures?",
+            "use": [
+              "Forwards: customized hedging, specific amount/date, OTC",
+              "Futures: liquid, standardized, no counterparty risk"
+            ],
+            "avoid": [
+              "Forwards when counterparty credit is weak without collateral",
+              "Futures when hedging needs are very specific"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Forwards: zero cost to enter but unlimited potential loss",
+          "Options: maximum loss for buyer = premium paid; unlimited loss for call WRITER",
+          "Futures mark-to-market means daily cash flows (margin calls possible)",
+          "Swaps are NOT options — both parties have obligations"
+        ],
+        "examples": [
+          {
+            "title": "Call Option Payoff",
+            "problem": "Buy call, strike=$50, premium=$3. Stock at expiry=$58.",
+            "solution": "Payoff = max(0, 58-50) = $8. Profit = $8 - $3 = $5. Breakeven = $50 + $3 = $53."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Derivative Instruments",
+        "branches": [
+          {
+            "label": "Forward Commitments",
+            "leaves": [
+              "Forwards (OTC, custom)",
+              "Futures (exchange, standardized)",
+              "Swaps (series of forwards)"
+            ]
+          },
+          {
+            "label": "Contingent Claims",
+            "leaves": [
+              "Call options",
+              "Put options",
+              "European vs American",
+              "Premium = cost"
+            ]
+          },
+          {
+            "label": "Markets",
+            "leaves": [
+              "OTC: custom, counterparty risk",
+              "Exchange: standard, clearinghouse",
+              "Central clearing"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "The maximum loss for a buyer of a call option is:",
+            "options": [
+              "Unlimited",
+              "The strike price",
+              "The premium paid",
+              "The stock price"
+            ],
+            "correct": 2,
+            "explanation": "Option buyer's maximum loss is always the premium paid. If the option expires worthless, the buyer loses only the premium."
+          },
+          {
+            "type": "mcq",
+            "question": "Futures contracts differ from forwards in that futures:",
+            "options": [
+              "Are customized contracts",
+              "Have daily mark-to-market settlement",
+              "Are traded over the counter",
+              "Have no margin requirements"
+            ],
+            "correct": 1,
+            "explanation": "Futures are exchange-traded with daily mark-to-market settlement and clearinghouse guarantee, unlike OTC forwards."
+          },
+          {
+            "type": "calc",
+            "question": "A put option with strike $40, premium $2. If stock expires at $35, profit is:",
+            "options": [
+              "$3",
+              "$5",
+              "$7",
+              "$2"
+            ],
+            "correct": 0,
+            "explanation": "Payoff = max(0, 40-35) = $5. Profit = $5 - $2 = $3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "deriv-lm2",
+      "number": 2,
+      "title": "Derivative Pricing and Valuation",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "No-Arbitrage Pricing",
+            "desc": "Derivatives priced so no riskless profit is possible. If mispriced, arbitrageurs act to restore equilibrium."
+          },
+          {
+            "title": "Replication",
+            "desc": "A derivative can be replicated by a portfolio of the underlying and risk-free asset. Replication cost = derivative price."
+          },
+          {
+            "title": "Cost of Carry",
+            "desc": "Forward price = Spot × (1+r)<sup>T</sup> + Storage - Convenience yield. For financial assets: F = S(1+r)<sup>T</sup>."
+          },
+          {
+            "title": "Put-Call Parity",
+            "desc": "c + PV(X) = p + S. Links call, put, bond, and stock prices. Violation = arbitrage opportunity."
+          },
+          {
+            "title": "Binomial Option Pricing",
+            "desc": "Model stock as up/down moves. Calculate option values at nodes. Discount back using risk-neutral probabilities."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Forward Price (no income)",
+            "formula": "F<sub>0</sub> = S<sub>0</sub> × (1 + r)<sup>T</sup>",
+            "where": "S = spot, r = risk-free rate, T = time"
+          },
+          {
+            "name": "Forward with Continuous Dividends",
+            "formula": "F<sub>0</sub> = S<sub>0</sub> × e<sup>(r-q)T</sup>",
+            "where": "q = continuous dividend yield"
+          },
+          {
+            "name": "Put-Call Parity",
+            "formula": "c + PV(X) = p + S",
+            "where": "c = call, p = put, X = strike, S = stock"
+          },
+          {
+            "name": "Risk-Neutral Probability",
+            "formula": "π<sub>u</sub> = (1 + r - d) / (u - d)",
+            "where": "u = up factor, d = down factor"
+          },
+          {
+            "name": "Binomial Option Value",
+            "formula": "C = [π<sub>u</sub>C<sub>u</sub> + (1-π<sub>u</sub>)C<sub>d</sub>] / (1+r)",
+            "where": "Discount expected payoff at risk-free rate"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "When is put-call parity violated?",
+            "use": [
+              "If c + PV(X) ≠ p + S, arbitrage exists",
+              "Buy the cheap side, sell the expensive side"
+            ],
+            "avoid": [
+              "Assuming put-call parity holds for American options (it holds exactly only for European)"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Put-call parity holds exactly only for EUROPEAN options on the same underlying",
+          "Forward price is NOT a forecast of future spot price",
+          "Risk-neutral pricing: use risk-neutral probabilities, NOT actual probabilities",
+          "Convenience yield reduces forward price (benefit of holding physical commodity)"
+        ],
+        "examples": [
+          {
+            "title": "Forward Price",
+            "problem": "Stock at $100, risk-free rate 5%, 1-year forward. No dividends.",
+            "solution": "F = 100 × (1.05) = $105. If forward trades at $107, arbitrage: buy stock, sell forward, profit $2."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Derivative Pricing",
+        "branches": [
+          {
+            "label": "Principles",
+            "leaves": [
+              "No-arbitrage",
+              "Replication",
+              "Risk-neutral pricing",
+              "Law of one price"
+            ]
+          },
+          {
+            "label": "Forward Pricing",
+            "leaves": [
+              "F = S(1+r)^T",
+              "Cost of carry",
+              "Convenience yield",
+              "Storage costs"
+            ]
+          },
+          {
+            "label": "Put-Call Parity",
+            "leaves": [
+              "c + PV(X) = p + S",
+              "European only",
+              "Arbitrage if violated"
+            ]
+          },
+          {
+            "label": "Binomial Model",
+            "leaves": [
+              "Up/down factors",
+              "Risk-neutral prob",
+              "Backward induction",
+              "Option value at nodes"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "Spot price = $50, risk-free rate = 4%, 6-month forward price is:",
+            "options": [
+              "$50.00",
+              "$51.00",
+              "$52.00",
+              "$50.99"
+            ],
+            "correct": 1,
+            "explanation": "F = 50 × (1.04)^0.5 = 50 × 1.0198 = $50.99. Closest to $51.00."
+          },
+          {
+            "type": "mcq",
+            "question": "According to put-call parity, a protective put (stock + put) is equivalent to:",
+            "options": [
+              "A covered call",
+              "A fiduciary call (call + risk-free bond)",
+              "A short forward",
+              "A long straddle"
+            ],
+            "correct": 1,
+            "explanation": "Put-call parity: S + p = c + PV(X). Protective put = fiduciary call."
+          },
+          {
+            "type": "mcq",
+            "question": "In the binomial model, the risk-neutral probability is used because:",
+            "options": [
+              "It reflects actual market expectations",
+              "It allows discounting at the risk-free rate",
+              "It simplifies the math",
+              "Options are risk-free investments"
+            ],
+            "correct": 1,
+            "explanation": "Under risk-neutral valuation, expected payoffs are calculated using risk-neutral probabilities and discounted at the risk-free rate. This gives the correct no-arbitrage price."
+          }
+        ]
+      }
+    }
+  ]
+}

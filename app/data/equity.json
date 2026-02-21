@@ -1,0 +1,798 @@
+{
+  "id": "equity",
+  "name": "Equity Investments",
+  "icon": "📈",
+  "color": "#1abc9c",
+  "weight": "11-14%",
+  "modules": [
+    {
+      "id": "eq-lm1",
+      "number": 1,
+      "title": "Market Organization and Structure",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Financial System Functions",
+            "desc": "Achieve purposes: save, borrow, raise equity, manage risk, exchange assets, trade on information."
+          },
+          {
+            "title": "Asset Classifications",
+            "desc": "Securities (stocks, bonds), Currencies, Commodities, Real assets, Contracts (forwards, futures, options, swaps)."
+          },
+          {
+            "title": "Financial Intermediaries",
+            "desc": "Brokers (match buyers/sellers), Dealers (trade from inventory), Exchanges (organized markets), ATS (dark pools)."
+          },
+          {
+            "title": "Short Selling",
+            "desc": "Borrow and sell security, buy back later. Profit if price falls. Unlimited loss potential. Margin requirements apply."
+          },
+          {
+            "title": "Leverage",
+            "desc": "Margin buying: borrow to buy securities. Amplifies both gains and losses. Margin call if equity falls below maintenance."
+          },
+          {
+            "title": "Order Types",
+            "desc": "Market (execute immediately at best price), Limit (specify max buy/min sell price), Stop (triggered at price level)."
+          },
+          {
+            "title": "Market Efficiency",
+            "desc": "Prices reflect all available information. Weak (past prices), Semi-strong (public info), Strong (all info including private)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Leverage Ratio",
+            "formula": "Leverage = Asset Value / Equity Value",
+            "where": "Higher leverage = more risk and potential return"
+          },
+          {
+            "name": "Margin Call Price",
+            "formula": "P<sub>call</sub> = P<sub>0</sub> × (1 - Initial Margin) / (1 - Maintenance Margin)",
+            "where": "For long positions"
+          },
+          {
+            "name": "Return on Leveraged Position",
+            "formula": "R = (R<sub>asset</sub> × Leverage) - (R<sub>borrow</sub> × (Leverage - 1))",
+            "where": "Leveraged return"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Market order vs Limit order?",
+            "use": [
+              "Market: when speed of execution matters more than price",
+              "Limit: when price certainty matters more than speed"
+            ],
+            "avoid": [
+              "Market orders in illiquid securities (wide bid-ask can hurt)",
+              "Limit orders that are too far from market (may never execute)"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Short selling has UNLIMITED loss potential (stock can rise infinitely)",
+          "Margin call: equity must stay above maintenance margin; forced liquidation otherwise",
+          "Market orders guarantee execution but NOT price; limit orders guarantee price but NOT execution"
+        ],
+        "examples": [
+          {
+            "title": "Margin Call",
+            "problem": "Buy $10,000 stock with 50% initial margin, 25% maintenance. At what price is margin call triggered?",
+            "solution": "P<sub>call</sub> = $10,000 × (1-0.50)/(1-0.25) = $5,000/0.75 = $6,667. If stock falls to $6,667, margin call is triggered."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Market Organization",
+        "branches": [
+          {
+            "label": "Asset Types",
+            "leaves": [
+              "Securities",
+              "Currencies",
+              "Commodities",
+              "Real assets",
+              "Contracts"
+            ]
+          },
+          {
+            "label": "Intermediaries",
+            "leaves": [
+              "Brokers",
+              "Dealers",
+              "Exchanges",
+              "ATS/Dark pools",
+              "Clearinghouses"
+            ]
+          },
+          {
+            "label": "Positions",
+            "leaves": [
+              "Long: own the asset",
+              "Short: sell borrowed asset",
+              "Margin/leverage",
+              "Margin calls"
+            ]
+          },
+          {
+            "label": "Order Types",
+            "leaves": [
+              "Market",
+              "Limit",
+              "Stop",
+              "Stop-limit"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A limit buy order at $50 means the order will execute at:",
+            "options": [
+              "Exactly $50",
+              "$50 or higher",
+              "$50 or lower",
+              "The best available price"
+            ],
+            "correct": 2,
+            "explanation": "A limit buy specifies the maximum price. The order executes at $50 or lower — never above the limit."
+          },
+          {
+            "type": "mcq",
+            "question": "The maximum loss on a short sale is:",
+            "options": [
+              "Limited to the initial investment",
+              "Limited to the margin deposit",
+              "Theoretically unlimited",
+              "The bid-ask spread"
+            ],
+            "correct": 2,
+            "explanation": "A short seller loses when the stock rises, and there is no upper limit on stock prices. Loss potential is theoretically unlimited."
+          },
+          {
+            "type": "mcq",
+            "question": "A dealer differs from a broker in that a dealer:",
+            "options": [
+              "Matches buyers and sellers",
+              "Trades from their own inventory",
+              "Only works on exchanges",
+              "Charges no fees"
+            ],
+            "correct": 1,
+            "explanation": "Dealers buy and sell from their own inventory, earning the bid-ask spread. Brokers only match buyers with sellers for a commission."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eq-lm2",
+      "number": 2,
+      "title": "Security Market Indexes",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Price-Weighted Index",
+            "desc": "Weight by share price (e.g., DJIA). Higher-priced stocks have more influence. Affected by stock splits."
+          },
+          {
+            "title": "Market-Cap Weighted",
+            "desc": "Weight by market value (e.g., S&P 500). Larger companies dominate. Free-float adjusted: exclude closely held shares."
+          },
+          {
+            "title": "Equal-Weighted Index",
+            "desc": "Equal weight to each stock. Must rebalance periodically. Small-cap tilt vs cap-weighted."
+          },
+          {
+            "title": "Rebalancing & Reconstitution",
+            "desc": "Rebalancing: adjusting weights. Reconstitution: changing index membership. Both affect tracking portfolios."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Price-Weighted Index",
+            "formula": "Index = Σ Prices / Divisor",
+            "where": "Divisor adjusted for splits and changes"
+          },
+          {
+            "name": "Market-Cap Weighted Return",
+            "formula": "R = Σ (w<sub>i</sub> × R<sub>i</sub>)",
+            "where": "w<sub>i</sub> = market cap<sub>i</sub> / total market cap"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Which weighting method to prefer?",
+            "use": [
+              "Cap-weighted: most common, investable, represents market portfolio",
+              "Equal-weighted: more diversified, no concentration risk",
+              "Price-weighted: simple, historical (DJIA)"
+            ],
+            "avoid": [
+              "Cap-weighted for active strategies (overweights overvalued stocks)"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Price-weighted indexes are biased toward high-price stocks regardless of company size",
+          "Cap-weighted indexes can be dominated by a few mega-cap stocks",
+          "Equal-weighted indexes require frequent rebalancing (costly)",
+          "Stock splits affect price-weighted but NOT cap-weighted indexes"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Market Indexes",
+        "branches": [
+          {
+            "label": "Weighting Methods",
+            "leaves": [
+              "Price-weighted (DJIA)",
+              "Cap-weighted (S&P 500)",
+              "Equal-weighted",
+              "Factor-weighted"
+            ]
+          },
+          {
+            "label": "Uses",
+            "leaves": [
+              "Market sentiment gauge",
+              "Benchmark for active managers",
+              "Asset allocation proxy",
+              "Index fund basis"
+            ]
+          },
+          {
+            "label": "Index Types",
+            "leaves": [
+              "Broad market",
+              "Sector",
+              "Style (growth/value)",
+              "Fixed income",
+              "Alternative"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "In a price-weighted index, a stock split will:",
+            "options": [
+              "Increase the stock's weight",
+              "Decrease the stock's weight",
+              "Require an adjustment to the divisor",
+              "Both B and C"
+            ],
+            "correct": 3,
+            "explanation": "A split reduces the stock's price (reducing its weight) and requires a divisor adjustment to keep the index level unchanged."
+          },
+          {
+            "type": "mcq",
+            "question": "Market-capitalization weighted indexes are biased toward:",
+            "options": [
+              "Small-cap stocks",
+              "Stocks with high share prices",
+              "Overvalued large-cap stocks",
+              "Recently listed stocks"
+            ],
+            "correct": 2,
+            "explanation": "Cap-weighted indexes give more weight to stocks with higher market caps, which may include overvalued stocks (momentum bias)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eq-lm3",
+      "number": 3,
+      "title": "Market Efficiency",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Efficient Market Hypothesis (EMH)",
+            "desc": "Security prices fully reflect all available information. Prices adjust rapidly to new information."
+          },
+          {
+            "title": "Weak Form",
+            "desc": "Prices reflect all past market data. Technical analysis cannot earn excess returns."
+          },
+          {
+            "title": "Semi-Strong Form",
+            "desc": "Prices reflect all publicly available info. Neither technical nor fundamental analysis earns excess returns."
+          },
+          {
+            "title": "Strong Form",
+            "desc": "Prices reflect ALL info including private/insider info. Even insiders cannot earn excess returns (not supported empirically)."
+          },
+          {
+            "title": "Market Anomalies",
+            "desc": "January effect, size effect, value effect, momentum, post-earnings announcement drift. May be real or data-mining artifacts."
+          },
+          {
+            "title": "Behavioral Finance",
+            "desc": "Loss aversion, overconfidence, herding, information cascades. Investor psychology can create mispricings."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "Implications for investment strategy?",
+            "use": [
+              "Weak efficient: fundamental analysis can work, but not technical",
+              "Semi-strong: only insider info gives edge; use passive strategies",
+              "Strong efficient: no analysis adds value; index everything"
+            ],
+            "avoid": [
+              "Assuming perfect efficiency — real markets have frictions"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Most evidence supports weak and semi-strong efficiency, NOT strong form",
+          "Anomalies may disappear once published (arbitraged away)",
+          "Behavioral biases can cause temporary mispricings but may not be easily exploitable"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Market Efficiency",
+        "branches": [
+          {
+            "label": "EMH Forms",
+            "leaves": [
+              "Weak: past prices",
+              "Semi-strong: public info",
+              "Strong: all info (including private)"
+            ]
+          },
+          {
+            "label": "Anomalies",
+            "leaves": [
+              "Size effect",
+              "Value effect",
+              "Momentum",
+              "January effect",
+              "Post-earnings drift"
+            ]
+          },
+          {
+            "label": "Behavioral Finance",
+            "leaves": [
+              "Loss aversion",
+              "Overconfidence",
+              "Herding",
+              "Anchoring",
+              "Information cascades"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Under the semi-strong form of EMH:",
+            "options": [
+              "Technical analysis can generate excess returns",
+              "Fundamental analysis can generate excess returns",
+              "Only insider information can generate excess returns",
+              "No information can generate excess returns"
+            ],
+            "correct": 2,
+            "explanation": "Semi-strong: all public info is priced in. Only private/insider info could provide an edge (but trading on it is illegal)."
+          },
+          {
+            "type": "mcq",
+            "question": "The post-earnings announcement drift anomaly suggests that:",
+            "options": [
+              "Markets are strong-form efficient",
+              "Stock prices adjust slowly to earnings surprises",
+              "Technical analysis is profitable",
+              "Insider trading is common"
+            ],
+            "correct": 1,
+            "explanation": "PEAD shows that stocks continue to drift in the direction of earnings surprises for weeks/months, contradicting semi-strong efficiency."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eq-lm4",
+      "number": 4,
+      "title": "Overview of Equity Securities",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Common Shares",
+            "desc": "Residual claim, voting rights, dividends not guaranteed. Represents ownership. Risk: last in liquidation."
+          },
+          {
+            "title": "Preference Shares",
+            "desc": "Fixed dividend, priority over common. Cumulative: missed dividends accumulate. Participating: share in excess earnings."
+          },
+          {
+            "title": "Depository Receipts (DRs)",
+            "desc": "ADRs: US-listed foreign stocks. GDRs: listed outside the company's home country. Sponsored vs unsponsored."
+          },
+          {
+            "title": "Private Equity",
+            "desc": "Venture capital (early-stage), Leveraged buyouts, Growth equity. Less liquid, longer time horizon."
+          },
+          {
+            "title": "Return Components",
+            "desc": "Capital gain (price appreciation) + Dividend yield. Total return = (P<sub>1</sub> - P<sub>0</sub> + D) / P<sub>0</sub>."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Book Value per Share",
+            "formula": "BVPS = (Total Equity - Preferred Equity) / Common Shares Outstanding",
+            "where": "Accounting value of equity per share"
+          },
+          {
+            "name": "ROE",
+            "formula": "ROE = Net Income / Average Shareholders' Equity",
+            "where": "Return generated on shareholders' investment"
+          },
+          {
+            "name": "Cost of Equity (DDM)",
+            "formula": "r<sub>e</sub> = (D<sub>1</sub>/P<sub>0</sub>) + g",
+            "where": "Dividend yield + expected growth rate"
+          }
+        ],
+        "decisions": [],
+        "pitfalls": [
+          "Preference shares are EQUITY but behave like debt (fixed income, priority)",
+          "ADRs have currency risk — returns depend on both stock performance and exchange rates",
+          "Book value per share can differ greatly from market value"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Equity Securities",
+        "branches": [
+          {
+            "label": "Common Stock",
+            "leaves": [
+              "Voting rights",
+              "Residual claim",
+              "Dividends discretionary",
+              "Capital appreciation"
+            ]
+          },
+          {
+            "label": "Preferred Stock",
+            "leaves": [
+              "Fixed dividend",
+              "Priority over common",
+              "Cumulative/participating",
+              "Less voting rights"
+            ]
+          },
+          {
+            "label": "International",
+            "leaves": [
+              "ADRs/GDRs",
+              "Sponsored vs unsponsored",
+              "Currency risk",
+              "Dual listing"
+            ]
+          },
+          {
+            "label": "Returns",
+            "leaves": [
+              "Capital gain",
+              "Dividend yield",
+              "Total return",
+              "ROE"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Cumulative preferred shares ensure that:",
+            "options": [
+              "Dividends are paid every period",
+              "Missed dividends must be paid before common dividends",
+              "Shareholders have voting rights",
+              "The dividend rate increases over time"
+            ],
+            "correct": 1,
+            "explanation": "Cumulative preferred: any unpaid dividends accumulate and must be paid before common shareholders receive any dividends."
+          },
+          {
+            "type": "mcq",
+            "question": "ADRs expose investors to:",
+            "options": [
+              "Only domestic equity risk",
+              "Foreign equity risk and currency risk",
+              "Only currency risk",
+              "No additional risks beyond domestic stocks"
+            ],
+            "correct": 1,
+            "explanation": "ADRs represent foreign stocks, so investors face both the equity risk of the foreign company and the risk of exchange rate fluctuations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eq-lm5",
+      "number": 5,
+      "title": "Company Analysis: Past and Present",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Business Model Analysis",
+            "desc": "Revenue drivers, pricing power, cost structure (fixed vs variable), competitive position."
+          },
+          {
+            "title": "Revenue Analysis",
+            "desc": "Top-down (economy → industry → company) or bottom-up (product-level). Identify volume vs price drivers."
+          },
+          {
+            "title": "Operating Profitability",
+            "desc": "Gross margin, EBITDA margin, operating margin. Trend analysis and peer comparison."
+          },
+          {
+            "title": "Working Capital Efficiency",
+            "desc": "Cash conversion cycle, receivable/inventory/payable days. Links to FSA."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "DuPont Analysis (3-part)",
+            "formula": "ROE = Net Margin × Asset Turnover × Equity Multiplier",
+            "where": "Profitability × Efficiency × Leverage"
+          },
+          {
+            "name": "DuPont Analysis (5-part)",
+            "formula": "ROE = Tax Burden × Interest Burden × EBIT Margin × Asset Turnover × Leverage",
+            "where": "Decomposes ROE into 5 components"
+          }
+        ],
+        "decisions": [],
+        "pitfalls": [
+          "High ROE from leverage is riskier than high ROE from profitability",
+          "Compare DuPont components across time and peers to identify drivers of change"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Company Analysis",
+        "branches": [
+          {
+            "label": "Revenue",
+            "leaves": [
+              "Volume vs price",
+              "Top-down analysis",
+              "Market share trends"
+            ]
+          },
+          {
+            "label": "Profitability",
+            "leaves": [
+              "Gross margin",
+              "EBITDA margin",
+              "Net margin",
+              "DuPont decomposition"
+            ]
+          },
+          {
+            "label": "Efficiency",
+            "leaves": [
+              "Asset turnover",
+              "Working capital cycle",
+              "Capital intensity"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "In 3-factor DuPont analysis, ROE equals:",
+            "options": [
+              "Net Margin × Asset Turnover × Financial Leverage",
+              "Gross Margin × Operating Leverage × Tax Rate",
+              "EBIT/Sales × Sales/Assets × Assets/Equity",
+              "Both A and C"
+            ],
+            "correct": 3,
+            "explanation": "ROE = (NI/Sales) × (Sales/Assets) × (Assets/Equity) = Net Margin × Turnover × Leverage. A and C express the same thing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eq-lm6",
+      "number": 6,
+      "title": "Equity Valuation: Concepts and Basic Tools",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Intrinsic Value",
+            "desc": "True worth based on fundamentals. Compare to market price: undervalued if V > P."
+          },
+          {
+            "title": "Dividend Discount Model (DDM)",
+            "desc": "V = Σ D<sub>t</sub>/(1+r)<sup>t</sup>. Value of stock = PV of all expected future dividends."
+          },
+          {
+            "title": "Gordon Growth Model",
+            "desc": "V = D<sub>1</sub>/(r - g). Assumes constant growth forever. Only works if r > g."
+          },
+          {
+            "title": "Price Multiples",
+            "desc": "P/E, P/B, P/S, P/CF. Quick relative valuation. Compare to peers and history."
+          },
+          {
+            "title": "Justified P/E",
+            "desc": "From Gordon model: Justified P/E = (1-b)/(r-g) where b = retention ratio, g = b × ROE."
+          },
+          {
+            "title": "Enterprise Value Multiples",
+            "desc": "EV/EBITDA: useful for comparing firms with different capital structures. EV = Market Cap + Debt - Cash."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Gordon Growth Model",
+            "formula": "V<sub>0</sub> = D<sub>1</sub> / (r - g)",
+            "where": "D<sub>1</sub> = next year dividend, r = required return, g = constant growth"
+          },
+          {
+            "name": "Multi-Stage DDM",
+            "formula": "V = Σ D<sub>t</sub>/(1+r)<sup>t</sup> + V<sub>n</sub>/(1+r)<sup>n</sup>",
+            "where": "V<sub>n</sub> = terminal value using Gordon model"
+          },
+          {
+            "name": "Sustainable Growth Rate",
+            "formula": "g = b × ROE",
+            "where": "b = retention ratio = 1 - payout ratio"
+          },
+          {
+            "name": "Trailing P/E",
+            "formula": "P/E = Market Price / EPS (last 12 months)",
+            "where": "Based on past earnings"
+          },
+          {
+            "name": "Forward P/E",
+            "formula": "P/E = Market Price / Expected EPS",
+            "where": "Based on forecasted earnings"
+          },
+          {
+            "name": "Enterprise Value",
+            "formula": "EV = Market Cap + Total Debt - Cash",
+            "where": "Value of entire firm (equity + debt)"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "When to use DDM vs Multiples?",
+            "use": [
+              "DDM: mature dividend-paying companies, when dividends are predictable",
+              "Multiples: quick comparison, when detailed forecasting is impractical",
+              "EV/EBITDA: comparing firms with different leverage"
+            ],
+            "avoid": [
+              "DDM for non-dividend-paying companies",
+              "P/E when earnings are negative or highly volatile"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Gordon model requires g < r (otherwise value is infinite/undefined)",
+          "Forward P/E is generally preferred over trailing (more relevant to future)",
+          "P/E is meaningless when earnings are negative — use P/S or EV/EBITDA instead",
+          "High P/E can mean overvalued OR high growth expectations"
+        ],
+        "examples": [
+          {
+            "title": "Gordon Growth Valuation",
+            "problem": "D<sub>0</sub> = $2.00, g = 5%, r = 11%. What is the stock worth?",
+            "solution": "D<sub>1</sub> = $2.00 × 1.05 = $2.10. V = $2.10 / (0.11 - 0.05) = $2.10 / 0.06 = $35.00"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Equity Valuation",
+        "branches": [
+          {
+            "label": "Discounted CF",
+            "leaves": [
+              "DDM: PV of dividends",
+              "Gordon: D1/(r-g)",
+              "Multi-stage DDM",
+              "FCFE/FCFF models"
+            ]
+          },
+          {
+            "label": "Price Multiples",
+            "leaves": [
+              "P/E (trailing/forward)",
+              "P/B",
+              "P/S",
+              "P/CF"
+            ]
+          },
+          {
+            "label": "EV Multiples",
+            "leaves": [
+              "EV/EBITDA",
+              "EV/Sales",
+              "EV = MCap + Debt - Cash"
+            ]
+          },
+          {
+            "label": "Key Inputs",
+            "leaves": [
+              "Required return (CAPM)",
+              "Growth rate (b×ROE)",
+              "Dividend payout",
+              "Comparable firms"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "D<sub>1</sub> = $3.00, r = 12%, g = 4%. Stock value per Gordon Growth Model:",
+            "options": [
+              "$25.00",
+              "$37.50",
+              "$75.00",
+              "$33.33"
+            ],
+            "correct": 1,
+            "explanation": "V = D1/(r-g) = 3.00/(0.12-0.04) = 3.00/0.08 = $37.50"
+          },
+          {
+            "type": "mcq",
+            "question": "The sustainable growth rate equals:",
+            "options": [
+              "ROE × Payout ratio",
+              "ROE × Retention ratio",
+              "ROA × Retention ratio",
+              "Dividend yield + Capital gains yield"
+            ],
+            "correct": 1,
+            "explanation": "g = b × ROE, where b = retention ratio (1 - payout ratio). This represents the rate at which earnings can grow using only internally generated funds."
+          },
+          {
+            "type": "mcq",
+            "question": "Enterprise Value (EV) is best described as:",
+            "options": [
+              "Market cap only",
+              "Market cap plus total debt minus cash",
+              "Total assets minus total liabilities",
+              "Book value of equity plus book value of debt"
+            ],
+            "correct": 1,
+            "explanation": "EV = Market Cap + Debt - Cash. It represents the total value of the firm to all capital providers."
+          },
+          {
+            "type": "mcq",
+            "question": "A stock has a P/E of 25 and an expected EPS growth of 20%. The PEG ratio is:",
+            "options": [
+              "0.80",
+              "1.25",
+              "5.00",
+              "0.50"
+            ],
+            "correct": 1,
+            "explanation": "PEG = P/E / Growth rate = 25/20 = 1.25. PEG < 1 suggests undervalued relative to growth; PEG > 1 suggests potentially overvalued."
+          }
+        ]
+      }
+    }
+  ]
+}

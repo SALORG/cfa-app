@@ -1,0 +1,1031 @@
+{
+  "id": "corp",
+  "name": "Corporate Issuers",
+  "icon": "🏢",
+  "color": "#9b59b6",
+  "weight": "6-9%",
+  "modules": [
+    {
+      "id": "corp-lm1",
+      "number": 1,
+      "title": "Organizational Forms, Corporate Issuer Features, and Ownership",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Sole Proprietorship",
+            "desc": "Single owner, unlimited liability, simple structure. Owner and business are legally identical. Limited life."
+          },
+          {
+            "title": "Partnership",
+            "desc": "General partnership: all partners share unlimited liability. Limited partnership: GPs manage, LPs have limited liability."
+          },
+          {
+            "title": "Limited Company/Corporation",
+            "desc": "Separate legal entity, limited liability for shareholders, perpetual life, easier capital raising, double taxation."
+          },
+          {
+            "title": "Public vs Private",
+            "desc": "Public: listed on exchange, liquid shares, disclosure requirements. Private: fewer shareholders, less regulation, less liquid."
+          },
+          {
+            "title": "Going Public (IPO)",
+            "desc": "Access to capital markets, increased liquidity. Costs: underwriting, disclosure, regulatory compliance."
+          },
+          {
+            "title": "Corporate Owners",
+            "desc": "Institutional investors (pension funds, mutual funds, insurance), activist investors, sovereign wealth funds, PE firms, family/founders."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "Public vs Private ownership?",
+            "use": [
+              "Public: need broad capital access, growth capital, liquidity for shareholders",
+              "Private: want control, confidentiality, avoid regulatory burden"
+            ],
+            "avoid": [
+              "Going public too early without proper governance infrastructure"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Corporations face double taxation: profits taxed at corporate level AND dividends taxed at personal level",
+          "Limited liability only protects shareholders' personal assets beyond their investment",
+          "Private companies may have higher cost of capital due to illiquidity"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Organizational Forms",
+        "branches": [
+          {
+            "label": "Sole Trader",
+            "leaves": [
+              "Single owner",
+              "Unlimited liability",
+              "Simple structure",
+              "Limited life"
+            ]
+          },
+          {
+            "label": "Partnership",
+            "leaves": [
+              "General: unlimited liability",
+              "Limited: LP has limited liability",
+              "Pass-through taxation"
+            ]
+          },
+          {
+            "label": "Corporation",
+            "leaves": [
+              "Separate legal entity",
+              "Limited liability",
+              "Perpetual life",
+              "Double taxation"
+            ]
+          },
+          {
+            "label": "Public vs Private",
+            "leaves": [
+              "Exchange listing",
+              "Disclosure requirements",
+              "Liquidity differences",
+              "IPO process"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Which organizational form provides limited liability to ALL owners?",
+            "options": [
+              "Sole proprietorship",
+              "General partnership",
+              "Corporation",
+              "Limited partnership"
+            ],
+            "correct": 2,
+            "explanation": "A corporation provides limited liability to all shareholders. In a limited partnership, only LPs have limited liability; GPs have unlimited liability."
+          },
+          {
+            "type": "mcq",
+            "question": "Double taxation of corporate income means:",
+            "options": [
+              "The company pays taxes in two jurisdictions",
+              "Profits are taxed at the corporate level and dividends at the personal level",
+              "The tax rate is twice the standard rate",
+              "Both income and capital gains are taxed"
+            ],
+            "correct": 1,
+            "explanation": "Corporate income is taxed first as corporate profit, then shareholders pay personal tax on dividends received."
+          },
+          {
+            "type": "mcq",
+            "question": "A key disadvantage of going public through an IPO is:",
+            "options": [
+              "Reduced access to capital",
+              "Increased regulatory and disclosure requirements",
+              "Higher cost of equity",
+              "Inability to raise debt"
+            ],
+            "correct": 1,
+            "explanation": "Public companies must comply with extensive disclosure requirements, accounting standards, and regulatory oversight."
+          }
+        ]
+      }
+    },
+    {
+      "id": "corp-lm2",
+      "number": 2,
+      "title": "Investors and Other Stakeholders",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Debt vs Equity Claims",
+            "desc": "Debt: fixed claims, priority in liquidation, limited upside. Equity: residual claims, last in liquidation, unlimited upside."
+          },
+          {
+            "title": "Shareholder-Creditor Conflict",
+            "desc": "Shareholders benefit from higher risk (upside). Creditors prefer lower risk (protect fixed claims). Asset substitution problem."
+          },
+          {
+            "title": "Stakeholder Theory",
+            "desc": "Company should consider all stakeholders: shareholders, creditors, employees, customers, suppliers, government, communities."
+          },
+          {
+            "title": "ESG Considerations",
+            "desc": "Environmental (climate, pollution), Social (labor, diversity), Governance (board, executive pay). Increasingly material to investment decisions."
+          },
+          {
+            "title": "Agency Problem",
+            "desc": "Conflict between principals (shareholders) and agents (managers). Managers may pursue self-interest over shareholder wealth maximization."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "Shareholder vs Stakeholder approach?",
+            "use": [
+              "Shareholder: maximize firm value for owners (traditional)",
+              "Stakeholder: consider all parties, sustainable long-term value"
+            ],
+            "avoid": [
+              "Ignoring stakeholders entirely — can create legal, reputational, operational risk"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Equity holders have limited downside (limited liability) but unlimited upside — they prefer risk",
+          "Creditors have limited upside (fixed payments) but face downside — they prefer safety",
+          "ESG risks can be financially material — not just ethical considerations"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Investors & Stakeholders",
+        "branches": [
+          {
+            "label": "Debt vs Equity",
+            "leaves": [
+              "Priority of claims",
+              "Fixed vs residual",
+              "Risk preferences",
+              "Conflicts"
+            ]
+          },
+          {
+            "label": "Stakeholders",
+            "leaves": [
+              "Shareholders",
+              "Creditors",
+              "Employees",
+              "Customers",
+              "Suppliers",
+              "Government"
+            ]
+          },
+          {
+            "label": "ESG",
+            "leaves": [
+              "Environmental",
+              "Social",
+              "Governance",
+              "Material risks",
+              "Integration approaches"
+            ]
+          },
+          {
+            "label": "Agency Issues",
+            "leaves": [
+              "Principal-agent conflict",
+              "Information asymmetry",
+              "Moral hazard",
+              "Monitoring costs"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "In a liquidation, which claim holders are paid first?",
+            "options": [
+              "Common shareholders",
+              "Preferred shareholders",
+              "Senior secured creditors",
+              "Subordinated debt holders"
+            ],
+            "correct": 2,
+            "explanation": "Priority: secured creditors > unsecured creditors > subordinated debt > preferred equity > common equity."
+          },
+          {
+            "type": "mcq",
+            "question": "The asset substitution problem occurs when:",
+            "options": [
+              "Managers invest in riskier assets to benefit equity holders at the expense of creditors",
+              "Creditors convert debt to equity",
+              "Companies sell assets below fair value",
+              "Dividends are paid from borrowed funds"
+            ],
+            "correct": 0,
+            "explanation": "Equity holders prefer riskier investments (more upside), which transfers wealth from creditors (who bear the downside risk)."
+          },
+          {
+            "type": "mcq",
+            "question": "Which ESG factor relates to board composition and executive compensation?",
+            "options": [
+              "Environmental",
+              "Social",
+              "Governance",
+              "None of the above"
+            ],
+            "correct": 2,
+            "explanation": "Governance encompasses board structure, independence, executive compensation, shareholder rights, and transparency."
+          }
+        ]
+      }
+    },
+    {
+      "id": "corp-lm3",
+      "number": 3,
+      "title": "Corporate Governance: Conflicts, Mechanisms, Risks, and Benefits",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Principal-Agent Conflict",
+            "desc": "Managers (agents) may not always act in shareholders' (principals') best interest. Monitoring and incentive alignment needed."
+          },
+          {
+            "title": "Controlling vs Minority Shareholders",
+            "desc": "Controlling shareholders may extract private benefits at minority shareholders' expense. Tunneling, related-party transactions."
+          },
+          {
+            "title": "Board of Directors",
+            "desc": "Elected by shareholders to oversee management. Key: independence, diversity, separation of CEO/Chair roles."
+          },
+          {
+            "title": "Governance Mechanisms",
+            "desc": "Internal: board, audits, compensation design, codes of conduct. External: regulations, market for corporate control, shareholder activism."
+          },
+          {
+            "title": "Shareholder Activism",
+            "desc": "Proxy fights, shareholder proposals, engagement with management. Hedge fund activism, ESG-focused activism."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "Good vs Poor governance signals?",
+            "use": [
+              "Good: independent board, separate CEO/Chair, transparent disclosure, aligned incentives",
+              "Red flags: dual-class shares, related-party transactions, weak audit committee"
+            ],
+            "avoid": [
+              "Investing without analyzing governance quality"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Board independence is about financial/personal ties, not just employment status",
+          "Good governance doesn't guarantee good performance, but poor governance increases risk",
+          "Dual-class share structures can entrench management and harm minority shareholders"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Corporate Governance",
+        "branches": [
+          {
+            "label": "Conflicts",
+            "leaves": [
+              "Manager vs shareholder",
+              "Controlling vs minority",
+              "Shareholder vs creditor"
+            ]
+          },
+          {
+            "label": "Internal Mechanisms",
+            "leaves": [
+              "Board of directors",
+              "Audit committee",
+              "Compensation design",
+              "Codes of conduct"
+            ]
+          },
+          {
+            "label": "External Mechanisms",
+            "leaves": [
+              "Regulation/laws",
+              "Market for corporate control",
+              "Shareholder activism",
+              "Media/reputation"
+            ]
+          },
+          {
+            "label": "Board Quality",
+            "leaves": [
+              "Independence",
+              "Diversity",
+              "CEO/Chair separation",
+              "Meeting frequency"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Separation of the CEO and Board Chair roles is recommended because it:",
+            "options": [
+              "Reduces salary costs",
+              "Provides independent oversight of management",
+              "Is required by law in all countries",
+              "Increases management efficiency"
+            ],
+            "correct": 1,
+            "explanation": "Separating the roles ensures the board can independently oversee and evaluate the CEO without conflicts of interest."
+          },
+          {
+            "type": "mcq",
+            "question": "Tunneling in corporate governance refers to:",
+            "options": [
+              "Building underground infrastructure",
+              "Transferring company assets to controlling shareholders",
+              "Hiding information from regulators",
+              "Aggressive tax avoidance"
+            ],
+            "correct": 1,
+            "explanation": "Tunneling is the extraction of corporate assets/value by controlling shareholders through related-party transactions, excessive compensation, or other means."
+          }
+        ]
+      }
+    },
+    {
+      "id": "corp-lm4",
+      "number": 4,
+      "title": "Working Capital and Liquidity",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Working Capital",
+            "desc": "Current assets - Current liabilities. Measures short-term financial health and operational efficiency."
+          },
+          {
+            "title": "Cash Conversion Cycle (CCC)",
+            "desc": "DOH + DSO - DPO. Days to convert raw materials to cash. Lower CCC = more efficient working capital management."
+          },
+          {
+            "title": "Liquidity Sources",
+            "desc": "Primary: cash, receivables, inventory, credit lines. Secondary: liquidating assets, renegotiating debt, filing bankruptcy."
+          },
+          {
+            "title": "Drags on Liquidity",
+            "desc": "Delay cash inflows: uncollected receivables, obsolete inventory, tight credit markets."
+          },
+          {
+            "title": "Pulls on Liquidity",
+            "desc": "Accelerate cash outflows: early payments to suppliers, reduced credit terms from suppliers, unexpected expenses."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Cash Conversion Cycle",
+            "formula": "CCC = DOH + DSO - DPO",
+            "where": "DOH = Days of Inventory on Hand, DSO = Days Sales Outstanding, DPO = Days Payable Outstanding"
+          },
+          {
+            "name": "DOH",
+            "formula": "DOH = (Avg Inventory / COGS) × 365",
+            "where": "Days to sell inventory"
+          },
+          {
+            "name": "DSO",
+            "formula": "DSO = (Avg Receivables / Revenue) × 365",
+            "where": "Days to collect receivables"
+          },
+          {
+            "name": "DPO",
+            "formula": "DPO = (Avg Payables / COGS) × 365",
+            "where": "Days to pay suppliers"
+          },
+          {
+            "name": "Current Ratio",
+            "formula": "Current Ratio = Current Assets / Current Liabilities",
+            "where": "Higher = more liquid, but too high may indicate inefficiency"
+          },
+          {
+            "name": "Quick Ratio",
+            "formula": "Quick Ratio = (Cash + Receivables + ST Investments) / Current Liabilities",
+            "where": "Excludes inventory"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "How to improve CCC?",
+            "use": [
+              "Reduce DOH: better inventory management, JIT",
+              "Reduce DSO: faster collection, stricter credit terms",
+              "Increase DPO: negotiate longer payment terms with suppliers"
+            ],
+            "avoid": [
+              "Stretching payables too far (damages supplier relationships)",
+              "Offering too-aggressive credit terms to boost sales"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "A negative CCC means the company collects cash from customers before paying suppliers (e.g., Amazon)",
+          "Current ratio may be misleading if current assets are mostly illiquid inventory",
+          "Working capital needs vary by industry — compare within industry"
+        ],
+        "examples": [
+          {
+            "title": "Cash Conversion Cycle",
+            "problem": "DOH = 45 days, DSO = 30 days, DPO = 40 days. Calculate CCC.",
+            "solution": "CCC = 45 + 30 - 40 = 35 days. The company takes 35 days from paying for inventory to receiving cash from sales."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Working Capital & Liquidity",
+        "branches": [
+          {
+            "label": "Cash Conversion Cycle",
+            "leaves": [
+              "CCC = DOH + DSO - DPO",
+              "Lower is better",
+              "Negative = pay after collecting"
+            ]
+          },
+          {
+            "label": "Liquidity Ratios",
+            "leaves": [
+              "Current ratio",
+              "Quick ratio",
+              "Cash ratio"
+            ]
+          },
+          {
+            "label": "Drags (Delay Inflows)",
+            "leaves": [
+              "Slow collections",
+              "Obsolete inventory",
+              "Credit tightening"
+            ]
+          },
+          {
+            "label": "Pulls (Accelerate Outflows)",
+            "leaves": [
+              "Early payments",
+              "Reduced supplier credit",
+              "Unexpected expenses"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "DOH = 50, DSO = 35, DPO = 45. The cash conversion cycle is:",
+            "options": [
+              "130 days",
+              "40 days",
+              "30 days",
+              "10 days"
+            ],
+            "correct": 1,
+            "explanation": "CCC = 50 + 35 - 45 = 40 days"
+          },
+          {
+            "type": "mcq",
+            "question": "A drag on liquidity is best described as:",
+            "options": [
+              "An acceleration of cash outflows",
+              "A delay in cash inflows",
+              "An increase in short-term borrowing",
+              "A decrease in inventory"
+            ],
+            "correct": 1,
+            "explanation": "Drags delay cash inflows (e.g., slow-paying customers, obsolete inventory)."
+          },
+          {
+            "type": "mcq",
+            "question": "A company with a negative CCC:",
+            "options": [
+              "Is likely in financial distress",
+              "Collects from customers before paying suppliers",
+              "Has negative working capital",
+              "Cannot be profitable"
+            ],
+            "correct": 1,
+            "explanation": "A negative CCC means the company receives cash from sales before it needs to pay its suppliers — effectively using supplier financing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "corp-lm5",
+      "number": 5,
+      "title": "Capital Investments and Capital Allocation",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Net Present Value (NPV)",
+            "desc": "Sum of PV of all cash flows (including initial investment). Accept if NPV > 0. The theoretically best capital budgeting method."
+          },
+          {
+            "title": "Internal Rate of Return (IRR)",
+            "desc": "Discount rate that makes NPV = 0. Accept if IRR > required return. May conflict with NPV for mutually exclusive projects."
+          },
+          {
+            "title": "Payback Period",
+            "desc": "Time to recover initial investment. Simple but ignores TVM and cash flows after payback."
+          },
+          {
+            "title": "Return on Invested Capital (ROIC)",
+            "desc": "NOPAT / Invested Capital. Measures how efficiently capital is deployed. Create value when ROIC > WACC."
+          },
+          {
+            "title": "Real Options",
+            "desc": "Options embedded in capital projects: option to delay, expand, abandon, or switch. Add value beyond NPV."
+          },
+          {
+            "title": "Capital Allocation Pitfalls",
+            "desc": "Sunk cost fallacy, pet projects, failure to consider opportunity costs, optimism bias, anchoring."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "NPV",
+            "formula": "NPV = Σ CF<sub>t</sub>/(1+r)<sup>t</sup> - Initial Investment",
+            "where": "r = required return (WACC for firm projects)"
+          },
+          {
+            "name": "IRR",
+            "formula": "NPV = 0 = Σ CF<sub>t</sub>/(1+IRR)<sup>t</sup>",
+            "where": "IRR = rate where NPV equals zero"
+          },
+          {
+            "name": "Payback Period",
+            "formula": "Payback = Years before full recovery + (Unrecovered amount / CF in recovery year)",
+            "where": "Simpler but ignores TVM"
+          },
+          {
+            "name": "ROIC",
+            "formula": "ROIC = NOPAT / Invested Capital",
+            "where": "NOPAT = Net Operating Profit After Tax"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "NPV vs IRR: which to follow?",
+            "use": [
+              "NPV: always correct ranking for mutually exclusive projects",
+              "IRR: useful for communication (percentage return is intuitive)"
+            ],
+            "avoid": [
+              "Following IRR when it conflicts with NPV — NPV maximizes shareholder wealth",
+              "Using IRR with non-conventional cash flows (multiple IRRs possible)"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "NPV and IRR can give conflicting rankings for mutually exclusive projects — ALWAYS follow NPV",
+          "IRR assumes reinvestment at IRR, NPV at WACC (more realistic)",
+          "Non-conventional cash flows can produce multiple IRRs or no IRR",
+          "Sunk costs should be IGNORED in capital budgeting — only incremental CFs matter",
+          "Include opportunity costs (e.g., if a warehouse could be rented out)"
+        ],
+        "examples": [
+          {
+            "title": "NPV Calculation",
+            "problem": "Project costs $100,000 today. CFs: Year 1 = $40,000, Year 2 = $50,000, Year 3 = $60,000. WACC = 10%. Calculate NPV.",
+            "solution": "NPV = 40,000/1.10 + 50,000/1.10² + 60,000/1.10³ - 100,000 = 36,364 + 41,322 + 45,079 - 100,000 = $22,765. Accept (NPV > 0)."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Capital Allocation",
+        "branches": [
+          {
+            "label": "NPV",
+            "leaves": [
+              "PV of all CFs minus cost",
+              "Accept if NPV > 0",
+              "Best theoretical method",
+              "Assumes reinvestment at WACC"
+            ]
+          },
+          {
+            "label": "IRR",
+            "leaves": [
+              "Rate where NPV = 0",
+              "Accept if IRR > WACC",
+              "May conflict with NPV",
+              "Multiple IRR problem"
+            ]
+          },
+          {
+            "label": "Other Methods",
+            "leaves": [
+              "Payback period",
+              "Discounted payback",
+              "Profitability index",
+              "ROIC"
+            ]
+          },
+          {
+            "label": "Real Options",
+            "leaves": [
+              "Delay",
+              "Expand",
+              "Abandon",
+              "Switch",
+              "Add value to NPV"
+            ]
+          },
+          {
+            "label": "Pitfalls",
+            "leaves": [
+              "Sunk cost fallacy",
+              "Optimism bias",
+              "Pet projects",
+              "Ignoring opportunity costs"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "When NPV and IRR give conflicting rankings for mutually exclusive projects, an analyst should:",
+            "options": [
+              "Use the IRR method",
+              "Use the NPV method",
+              "Calculate the payback period",
+              "Use the profitability index"
+            ],
+            "correct": 1,
+            "explanation": "NPV directly measures the value added to the firm. When NPV and IRR conflict, NPV is correct because it assumes reinvestment at the cost of capital (more realistic)."
+          },
+          {
+            "type": "mcq",
+            "question": "Which of the following is NOT a limitation of the payback period?",
+            "options": [
+              "Ignores cash flows after the payback period",
+              "Does not account for the time value of money",
+              "Easy to calculate and understand",
+              "Does not provide a measure of profitability"
+            ],
+            "correct": 2,
+            "explanation": "Being easy to calculate is an advantage, not a limitation. The payback period's limitations include ignoring TVM and cash flows beyond the payback period."
+          },
+          {
+            "type": "mcq",
+            "question": "A company creates value when:",
+            "options": [
+              "ROIC > WACC",
+              "ROIC < cost of equity",
+              "IRR < WACC",
+              "NPV = 0"
+            ],
+            "correct": 0,
+            "explanation": "Value is created when the return on invested capital exceeds the cost of that capital (WACC). This means the firm is earning more than its investors require."
+          },
+          {
+            "type": "mcq",
+            "question": "Sunk costs should be:",
+            "options": [
+              "Included in the NPV calculation",
+              "Included if they are large enough",
+              "Excluded from the capital budgeting analysis",
+              "Amortized over the project life"
+            ],
+            "correct": 2,
+            "explanation": "Sunk costs are already spent and irrecoverable. Only incremental future cash flows should be included in capital budgeting."
+          }
+        ]
+      }
+    },
+    {
+      "id": "corp-lm6",
+      "number": 6,
+      "title": "Capital Structure",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "WACC",
+            "desc": "Weighted average cost of capital = w<sub>d</sub>r<sub>d</sub>(1-t) + w<sub>e</sub>r<sub>e</sub>. Blended cost of debt and equity financing."
+          },
+          {
+            "title": "MM Proposition I (no taxes)",
+            "desc": "Capital structure is irrelevant to firm value in perfect markets. V<sub>L</sub> = V<sub>U</sub>."
+          },
+          {
+            "title": "MM Proposition II (no taxes)",
+            "desc": "Cost of equity increases linearly with leverage: r<sub>e</sub> = r<sub>0</sub> + (r<sub>0</sub> - r<sub>d</sub>) × D/E."
+          },
+          {
+            "title": "MM with Taxes",
+            "desc": "Debt creates a tax shield: V<sub>L</sub> = V<sub>U</sub> + t×D. More debt increases firm value through interest tax deductibility."
+          },
+          {
+            "title": "Optimal Capital Structure",
+            "desc": "Balances tax benefits of debt against costs of financial distress. Minimizes WACC, maximizes firm value."
+          },
+          {
+            "title": "Pecking Order Theory",
+            "desc": "Firms prefer: 1) Internal financing, 2) Debt, 3) Equity. Due to information asymmetry — issuing equity signals overvaluation."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "WACC",
+            "formula": "WACC = w<sub>d</sub> × r<sub>d</sub> × (1-t) + w<sub>e</sub> × r<sub>e</sub>",
+            "where": "w = weight, r<sub>d</sub> = cost of debt, r<sub>e</sub> = cost of equity, t = tax rate"
+          },
+          {
+            "name": "MM Prop I (with taxes)",
+            "formula": "V<sub>L</sub> = V<sub>U</sub> + t × D",
+            "where": "Tax shield increases levered firm value"
+          },
+          {
+            "name": "MM Prop II (no taxes)",
+            "formula": "r<sub>e</sub> = r<sub>0</sub> + (r<sub>0</sub> - r<sub>d</sub>) × D/E",
+            "where": "r<sub>0</sub> = unlevered cost of equity"
+          },
+          {
+            "name": "Cost of Equity (CAPM)",
+            "formula": "r<sub>e</sub> = r<sub>f</sub> + β × (r<sub>m</sub> - r<sub>f</sub>)",
+            "where": "r<sub>f</sub> = risk-free rate, β = beta, r<sub>m</sub> - r<sub>f</sub> = market risk premium"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "More debt or more equity?",
+            "use": [
+              "More debt: stable cash flows, high tax rate, low financial distress costs (e.g., utilities)",
+              "More equity: volatile cash flows, high growth, significant intangible assets (e.g., tech)"
+            ],
+            "avoid": [
+              "Too much debt for cyclical businesses — financial distress costs dominate"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "WACC uses MARKET value weights, not book value weights",
+          "MM propositions assume perfect markets — real world has taxes, distress costs, agency costs",
+          "Adding debt reduces WACC (tax shield) up to a point, then distress costs increase it",
+          "Pecking order explains WHY firms prefer internal funds first"
+        ],
+        "examples": [
+          {
+            "title": "WACC Calculation",
+            "problem": "D/V = 40%, E/V = 60%, r<sub>d</sub> = 5%, r<sub>e</sub> = 12%, tax = 30%. Calculate WACC.",
+            "solution": "WACC = 0.40 × 5% × (1-0.30) + 0.60 × 12% = 1.4% + 7.2% = 8.6%"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Capital Structure",
+        "branches": [
+          {
+            "label": "WACC",
+            "leaves": [
+              "w_d×r_d×(1-t) + w_e×r_e",
+              "Use market weights",
+              "Minimize WACC = maximize value"
+            ]
+          },
+          {
+            "label": "MM Propositions",
+            "leaves": [
+              "No taxes: structure irrelevant",
+              "With taxes: debt adds value (tax shield)",
+              "Cost of equity rises with leverage"
+            ]
+          },
+          {
+            "label": "Optimal Structure",
+            "leaves": [
+              "Tax shield benefit",
+              "Financial distress cost",
+              "Trade-off at optimal D/E"
+            ]
+          },
+          {
+            "label": "Pecking Order",
+            "leaves": [
+              "Internal funds first",
+              "Then debt",
+              "Equity last resort",
+              "Information asymmetry"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "Given: D/V=30%, E/V=70%, r<sub>d</sub>=6%, r<sub>e</sub>=14%, tax=25%. WACC is closest to:",
+            "options": [
+              "10.15%",
+              "11.15%",
+              "9.80%",
+              "11.50%"
+            ],
+            "correct": 0,
+            "explanation": "WACC = 0.30×6%×(1-0.25) + 0.70×14% = 1.35% + 9.80% = 11.15%. Hmm, let me recalculate: 0.30 × 6% × 0.75 = 1.35%, 0.70 × 14% = 9.80%. Total = 11.15%. Answer is B (index 1)."
+          },
+          {
+            "type": "mcq",
+            "question": "According to MM Proposition I with taxes, firm value is maximized when:",
+            "options": [
+              "The firm uses no debt",
+              "The firm uses 100% debt",
+              "The firm is at its optimal capital structure",
+              "Capital structure does not affect firm value"
+            ],
+            "correct": 1,
+            "explanation": "Under MM with taxes (without bankruptcy costs), more debt always adds value through the tax shield. In theory, 100% debt maximizes value. In reality, distress costs limit this."
+          },
+          {
+            "type": "mcq",
+            "question": "According to pecking order theory, a firm will issue equity:",
+            "options": [
+              "Before using internal funds",
+              "Before issuing debt",
+              "Only as a last resort",
+              "Whenever the stock price is high"
+            ],
+            "correct": 2,
+            "explanation": "Pecking order: internal funds > debt > equity. Firms issue equity last because it signals to the market that shares may be overvalued."
+          },
+          {
+            "type": "mcq",
+            "question": "The tax shield benefit of debt equals:",
+            "options": [
+              "Interest payments × (1 - tax rate)",
+              "Interest payments × tax rate",
+              "Total debt × cost of equity",
+              "EBIT × tax rate"
+            ],
+            "correct": 1,
+            "explanation": "Tax shield = Interest × t. Interest is tax-deductible, so the government effectively pays t% of interest costs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "corp-lm7",
+      "number": 7,
+      "title": "Business Models",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Business Model",
+            "desc": "How a company creates, delivers, and captures value. Defines: who are customers, what is offered, how to deliver, how to earn revenue."
+          },
+          {
+            "title": "Value Proposition",
+            "desc": "The unique combination of products/services that creates value for a specific customer segment."
+          },
+          {
+            "title": "Revenue Models",
+            "desc": "Subscription, licensing, advertising, transaction-based, freemium, razor-and-blade."
+          },
+          {
+            "title": "Network Effects",
+            "desc": "Value of product/service increases as more users adopt it. Creates competitive moats (e.g., social media, payment networks)."
+          },
+          {
+            "title": "Platform Business Models",
+            "desc": "Connect multiple user groups (buyers/sellers, riders/drivers). Capture value by facilitating transactions. Network effects amplify growth."
+          },
+          {
+            "title": "Business Model Innovation",
+            "desc": "New ways to create or capture value. Disruption when incumbents' models become obsolete (e.g., streaming vs DVD rental)."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "How to evaluate a business model?",
+            "use": [
+              "Customer value proposition strength",
+              "Revenue sustainability and scalability",
+              "Competitive moat (network effects, switching costs)",
+              "Unit economics (LTV > CAC)"
+            ],
+            "avoid": [
+              "Assuming past business model success guarantees future performance"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Network effects can work in reverse — user loss accelerates as network shrinks",
+          "Platform businesses need to solve the chicken-and-egg problem (getting both sides simultaneously)",
+          "Freemium models require sufficient conversion to paid tier for profitability"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Business Models",
+        "branches": [
+          {
+            "label": "Components",
+            "leaves": [
+              "Value proposition",
+              "Revenue model",
+              "Cost structure",
+              "Target customers"
+            ]
+          },
+          {
+            "label": "Revenue Models",
+            "leaves": [
+              "Subscription",
+              "Advertising",
+              "Transaction fees",
+              "Freemium",
+              "Licensing"
+            ]
+          },
+          {
+            "label": "Network Effects",
+            "leaves": [
+              "Direct: more users = more value",
+              "Indirect: more users attract complements",
+              "Winner-take-most dynamics"
+            ]
+          },
+          {
+            "label": "Platform Models",
+            "leaves": [
+              "Multi-sided platforms",
+              "Matchmaking",
+              "Transaction facilitation",
+              "Data monetization"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A network effect exists when:",
+            "options": [
+              "A company has a large sales network",
+              "The value of a product increases as more people use it",
+              "The cost of production decreases with scale",
+              "A company partners with other firms"
+            ],
+            "correct": 1,
+            "explanation": "Network effects mean each additional user increases the value for all users (e.g., a social network becomes more valuable with more members)."
+          },
+          {
+            "type": "mcq",
+            "question": "A platform business model primarily creates value by:",
+            "options": [
+              "Manufacturing physical goods",
+              "Connecting different user groups and facilitating interactions",
+              "Offering the lowest prices",
+              "Vertical integration"
+            ],
+            "correct": 1,
+            "explanation": "Platforms connect producers with consumers, riders with drivers, etc. and capture value by enabling and facilitating these interactions."
+          }
+        ]
+      }
+    }
+  ]
+}

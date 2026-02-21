@@ -1,0 +1,712 @@
+{
+  "id": "fi",
+  "name": "Fixed Income",
+  "icon": "💵",
+  "color": "#e74c3c",
+  "weight": "11-14%",
+  "modules": [
+    {
+      "id": "fi-lm1",
+      "number": 1,
+      "title": "Fixed-Income Instrument Features",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Bond Features",
+            "desc": "Issuer, maturity, par value, coupon rate, coupon frequency, currency, seniority."
+          },
+          {
+            "title": "Yield Measures",
+            "desc": "Current yield = Annual coupon/Price. YTM = IRR of all cash flows. YTC = yield if called at first call date."
+          },
+          {
+            "title": "Bond Covenants",
+            "desc": "Affirmative: maintain ratios, pay taxes, insure assets. Negative: limit debt, restrict dividends, limit asset sales."
+          },
+          {
+            "title": "Contingency Provisions",
+            "desc": "Callable: issuer can redeem early (benefits issuer). Putable: holder can sell back early (benefits holder). Convertible: exchange for equity."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Current Yield",
+            "formula": "CY = Annual Coupon / Current Price",
+            "where": "Simple yield measure, ignores capital gains/losses"
+          },
+          {
+            "name": "Bond Price",
+            "formula": "P = Σ C/(1+r)<sup>t</sup> + FV/(1+r)<sup>n</sup>",
+            "where": "C = coupon, r = yield per period, n = periods"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Callable vs Putable bonds?",
+            "use": [
+              "Callable: higher coupon to compensate investor for call risk",
+              "Putable: lower coupon because put option benefits investor"
+            ],
+            "avoid": [
+              "Ignoring embedded options when comparing bond yields"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Callable bonds have negative convexity at low yields (price gain is limited)",
+          "YTM assumes coupons reinvested at YTM rate (unrealistic)",
+          "Covenants restrict the issuer to protect bondholders"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "FI Instrument Features",
+        "branches": [
+          {
+            "label": "Basic Features",
+            "leaves": [
+              "Par/face value",
+              "Coupon rate & frequency",
+              "Maturity date",
+              "Seniority"
+            ]
+          },
+          {
+            "label": "Yield Measures",
+            "leaves": [
+              "Current yield",
+              "YTM",
+              "YTC/YTP/YTW"
+            ]
+          },
+          {
+            "label": "Covenants",
+            "leaves": [
+              "Affirmative (must do)",
+              "Negative (must not do)",
+              "Protect bondholders"
+            ]
+          },
+          {
+            "label": "Embedded Options",
+            "leaves": [
+              "Call (issuer benefit)",
+              "Put (holder benefit)",
+              "Convertible",
+              "Exchangeable"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A callable bond will most likely be called when:",
+            "options": [
+              "Interest rates rise",
+              "Interest rates fall",
+              "The issuer's credit deteriorates",
+              "The bond's price is below par"
+            ],
+            "correct": 1,
+            "explanation": "When rates fall, the issuer can refinance at lower rates by calling existing higher-coupon bonds."
+          },
+          {
+            "type": "mcq",
+            "question": "Negative covenants in a bond indenture:",
+            "options": [
+              "Require the issuer to take certain actions",
+              "Restrict the issuer from certain actions",
+              "Benefit the issuer",
+              "Are optional"
+            ],
+            "correct": 1,
+            "explanation": "Negative covenants restrict issuer actions (limit additional debt, restrict asset sales, limit dividends) to protect bondholders."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fi-lm2",
+      "number": 2,
+      "title": "Fixed-Income Cash Flows and Types",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Amortizing vs Bullet",
+            "desc": "Bullet: principal paid at maturity. Amortizing: principal paid gradually (e.g., mortgages). Partially amortizing: balloon payment."
+          },
+          {
+            "title": "Floating Rate Notes",
+            "desc": "Coupon = Reference rate + Spread. Resets periodically. Price stays near par at reset dates."
+          },
+          {
+            "title": "Zero-Coupon Bonds",
+            "desc": "No periodic coupons. Sold at deep discount to par. Return = capital appreciation. Higher duration than coupon bonds."
+          },
+          {
+            "title": "Convertible Bonds",
+            "desc": "Conversion ratio = par/conversion price. Conversion value = ratio × stock price. Floor value = max(straight bond, conversion value)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "FRN Coupon",
+            "formula": "Coupon = Reference Rate + Spread",
+            "where": "Resets at reference rate intervals"
+          },
+          {
+            "name": "Conversion Value",
+            "formula": "CV = Conversion Ratio × Stock Price",
+            "where": "Value if converted to equity"
+          },
+          {
+            "name": "Conversion Premium",
+            "formula": "Premium = (Bond Price - Conversion Value) / Conversion Value",
+            "where": "How much extra you pay for conversion option"
+          }
+        ],
+        "decisions": [],
+        "pitfalls": [
+          "FRNs have low duration (price risk) but still have credit risk",
+          "Zero-coupon bonds have maximum duration and greatest price sensitivity to rate changes",
+          "Convertible bonds behave more like equity when stock price is well above conversion price"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "FI Cash Flows & Types",
+        "branches": [
+          {
+            "label": "Structure",
+            "leaves": [
+              "Bullet",
+              "Amortizing",
+              "Sinking fund",
+              "Balloon"
+            ]
+          },
+          {
+            "label": "Rate Type",
+            "leaves": [
+              "Fixed coupon",
+              "Floating rate",
+              "Zero coupon",
+              "Step-up"
+            ]
+          },
+          {
+            "label": "Contingency",
+            "leaves": [
+              "Callable",
+              "Putable",
+              "Convertible"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A floating-rate note has the least price sensitivity to interest rate changes because:",
+            "options": [
+              "It has a longer maturity",
+              "Its coupon resets periodically to market rates",
+              "It has higher credit risk",
+              "It is always callable"
+            ],
+            "correct": 1,
+            "explanation": "FRN coupons reset to reflect current rates, so the price stays close to par at each reset date, giving low duration/price sensitivity."
+          },
+          {
+            "type": "mcq",
+            "question": "Zero-coupon bonds have:",
+            "options": [
+              "Lower duration than coupon bonds",
+              "Duration equal to maturity",
+              "No interest rate risk",
+              "Duration greater than maturity"
+            ],
+            "correct": 1,
+            "explanation": "Zero-coupon bonds have Macaulay duration exactly equal to maturity because there are no interim cash flows."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fi-lm3",
+      "number": 3,
+      "title": "Fixed-Income Bond Valuation",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Bond Pricing",
+            "desc": "PV of future cash flows discounted at YTM. Premium: coupon > YTM. Discount: coupon < YTM. Par: coupon = YTM."
+          },
+          {
+            "title": "Spot Rates",
+            "desc": "Yields on zero-coupon bonds. Used to discount each cash flow at the appropriate maturity rate."
+          },
+          {
+            "title": "Forward Rates",
+            "desc": "Future short-term rates implied by spot rates. No-arbitrage condition links spot and forward rates."
+          },
+          {
+            "title": "Flat vs Full Price",
+            "desc": "Full (dirty) price = Flat (clean) price + Accrued interest. Quoted price is usually clean."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Bond Price (YTM)",
+            "formula": "P = Σ C/(1+y)<sup>t</sup> + FV/(1+y)<sup>n</sup>",
+            "where": "y = YTM per period"
+          },
+          {
+            "name": "Bond Price (Spot Rates)",
+            "formula": "P = C/(1+S<sub>1</sub>) + C/(1+S<sub>2</sub>)² + ... + (C+FV)/(1+S<sub>n</sub>)<sup>n</sup>",
+            "where": "S<sub>t</sub> = spot rate for maturity t"
+          },
+          {
+            "name": "Accrued Interest",
+            "formula": "AI = Coupon × (Days since last coupon / Days in coupon period)",
+            "where": "Linear interpolation between coupon dates"
+          },
+          {
+            "name": "Full Price",
+            "formula": "Full Price = Clean Price + Accrued Interest",
+            "where": "What the buyer actually pays"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "When does a bond trade at premium/discount?",
+            "use": [
+              "Premium: coupon rate > market yield (investors pay extra for higher coupons)",
+              "Discount: coupon rate < market yield",
+              "Par: coupon rate = market yield"
+            ],
+            "avoid": [
+              "Confusing clean and dirty prices when calculating returns"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "YTM is a SINGLE rate that equates price to PV of CFs; spot rates are more precise",
+          "Accrued interest: actual/actual or 30/360 day count convention matters",
+          "As a premium bond approaches maturity, its price \"pulls to par\" (decreases)",
+          "As a discount bond approaches maturity, its price \"pulls to par\" (increases)"
+        ],
+        "examples": [
+          {
+            "title": "Bond Pricing",
+            "problem": "2-year bond, 6% annual coupon, par=$1000, YTM=5%. Calculate price.",
+            "solution": "P = 60/1.05 + 1060/(1.05)² = 57.14 + 961.45 = $1,018.59. Premium bond (coupon > YTM)."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Bond Valuation",
+        "branches": [
+          {
+            "label": "Pricing",
+            "leaves": [
+              "PV of cash flows",
+              "YTM discount",
+              "Spot rate discount",
+              "Premium/Par/Discount"
+            ]
+          },
+          {
+            "label": "Yield Curve",
+            "leaves": [
+              "Spot rates",
+              "Forward rates",
+              "Par rates",
+              "Yield spreads"
+            ]
+          },
+          {
+            "label": "Price Concepts",
+            "leaves": [
+              "Clean (flat) price",
+              "Dirty (full) price",
+              "Accrued interest",
+              "Day count conventions"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A bond trading at a premium has:",
+            "options": [
+              "Coupon rate less than YTM",
+              "Coupon rate equal to YTM",
+              "Coupon rate greater than YTM",
+              "No coupon payments"
+            ],
+            "correct": 2,
+            "explanation": "Premium: investors pay more than par because the coupon rate exceeds the current market yield."
+          },
+          {
+            "type": "mcq",
+            "question": "Accrued interest on a bond is added to the clean price to get:",
+            "options": [
+              "The par value",
+              "The full (dirty) price",
+              "The flat price",
+              "The yield to maturity"
+            ],
+            "correct": 1,
+            "explanation": "Full/dirty price = clean price + accrued interest. This is what the buyer actually pays."
+          },
+          {
+            "type": "mcq",
+            "question": "As a discount bond approaches maturity, its price will:",
+            "options": [
+              "Decrease toward par",
+              "Increase toward par",
+              "Remain constant",
+              "Fluctuate randomly"
+            ],
+            "correct": 1,
+            "explanation": "Discount bonds trade below par and pull toward par as maturity approaches (since they will be redeemed at par)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fi-lm4",
+      "number": 4,
+      "title": "Interest Rate Risk and Duration",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Duration",
+            "desc": "Measure of bond price sensitivity to yield changes. Higher duration = more price volatility. Approximate % price change for 1% yield change."
+          },
+          {
+            "title": "Macaulay Duration",
+            "desc": "Weighted average time to receive cash flows. In years. Duration of zero-coupon = maturity."
+          },
+          {
+            "title": "Modified Duration",
+            "desc": "ModDur = MacDur / (1 + y/m). ΔP/P ≈ -ModDur × Δy. Direct measure of price sensitivity."
+          },
+          {
+            "title": "Convexity",
+            "desc": "Curvature of price-yield relationship. Duration is linear approximation; convexity corrects for non-linearity. Positive convexity: good for investor."
+          },
+          {
+            "title": "Duration Properties",
+            "desc": "Higher for: longer maturity, lower coupon, lower yield. Portfolio duration = weighted average of bond durations."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Modified Duration",
+            "formula": "ModDur = MacDur / (1 + y/m)",
+            "where": "y = YTM, m = compounding periods per year"
+          },
+          {
+            "name": "Price Change (Duration)",
+            "formula": "ΔP/P ≈ -ModDur × Δy",
+            "where": "First-order approximation"
+          },
+          {
+            "name": "Price Change (Duration + Convexity)",
+            "formula": "ΔP/P ≈ -ModDur × Δy + ½ × Convexity × (Δy)²",
+            "where": "More accurate with convexity adjustment"
+          },
+          {
+            "name": "Effective Duration",
+            "formula": "EffDur = (P<sub>-</sub> - P<sub>+</sub>) / (2 × P<sub>0</sub> × Δy)",
+            "where": "Used for bonds with embedded options"
+          },
+          {
+            "name": "Effective Convexity",
+            "formula": "EffConv = (P<sub>-</sub> + P<sub>+</sub> - 2P<sub>0</sub>) / (P<sub>0</sub> × Δy²)",
+            "where": "Curvature correction"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "How to manage interest rate risk?",
+            "use": [
+              "Match duration of assets and liabilities (immunization)",
+              "Extend duration if expecting rates to fall",
+              "Shorten duration if expecting rates to rise"
+            ],
+            "avoid": [
+              "Using Macaulay duration for callable bonds (use effective duration)",
+              "Ignoring convexity for large yield changes"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Duration UNDERSTATES price increase and OVERSTATES price decrease (convexity effect)",
+          "Callable bonds: duration shortens as rates fall (price ceiling limits upside)",
+          "Effective duration must be used for bonds with embedded options",
+          "Modified duration assumes parallel shift in yield curve",
+          "Money duration = ModDur × Market Value (dollar sensitivity)"
+        ],
+        "examples": [
+          {
+            "title": "Duration Price Change",
+            "problem": "Bond: ModDur=5.2, Convexity=28, current price=$1,000. If yield increases by 50 bps, estimate new price.",
+            "solution": "ΔP/P = -(5.2)(0.005) + 0.5(28)(0.005)² = -0.0260 + 0.00035 = -2.565%. New price = $1,000 × (1-0.02565) = $974.35"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Duration & Convexity",
+        "branches": [
+          {
+            "label": "Duration Types",
+            "leaves": [
+              "Macaulay (in years)",
+              "Modified (price sensitivity)",
+              "Effective (with options)",
+              "Key rate duration"
+            ]
+          },
+          {
+            "label": "Duration Drivers",
+            "leaves": [
+              "Maturity (+)",
+              "Coupon (-)",
+              "Yield (-)"
+            ]
+          },
+          {
+            "label": "Convexity",
+            "leaves": [
+              "Curvature correction",
+              "Positive: all else equal, good",
+              "Negative: callable bonds",
+              "½×Conv×(Δy)²"
+            ]
+          },
+          {
+            "label": "Applications",
+            "leaves": [
+              "Immunization",
+              "Portfolio construction",
+              "Rate expectations",
+              "Risk management"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "If a bond has a modified duration of 6 and yields increase by 100 basis points, the approximate price change is:",
+            "options": [
+              "+6%",
+              "-6%",
+              "+3%",
+              "-3%"
+            ],
+            "correct": 1,
+            "explanation": "ΔP/P ≈ -ModDur × Δy = -6 × 0.01 = -6%. Prices move inversely to yields."
+          },
+          {
+            "type": "mcq",
+            "question": "Duration will be highest for a bond with:",
+            "options": [
+              "High coupon, short maturity",
+              "Low coupon, long maturity",
+              "High coupon, long maturity",
+              "Zero coupon, short maturity"
+            ],
+            "correct": 1,
+            "explanation": "Low coupon means more cash flow weighted toward maturity; long maturity means longer wait for principal. Both increase duration."
+          },
+          {
+            "type": "mcq",
+            "question": "Convexity is important because duration alone:",
+            "options": [
+              "Overestimates the price increase when yields fall",
+              "Underestimates the price decrease when yields rise",
+              "Provides only a linear approximation of a curved relationship",
+              "Ignores credit risk"
+            ],
+            "correct": 2,
+            "explanation": "Duration is a first-order (linear) approximation of a non-linear (curved) relationship. Convexity is the second-order correction."
+          },
+          {
+            "type": "mcq",
+            "question": "Effective duration should be used instead of modified duration for:",
+            "options": [
+              "Zero-coupon bonds",
+              "Treasury bonds",
+              "Bonds with embedded options",
+              "Floating-rate notes"
+            ],
+            "correct": 2,
+            "explanation": "Embedded options cause cash flow uncertainty, so modified duration (which assumes fixed cash flows) is inappropriate. Effective duration accounts for option-adjusted price behavior."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fi-lm5",
+      "number": 5,
+      "title": "Credit Risk and Credit Analysis",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Credit Risk Components",
+            "desc": "Default risk (probability of default), Loss severity (loss given default), Recovery rate (1 - loss severity). Expected loss = PD × LGD."
+          },
+          {
+            "title": "Credit Spread",
+            "desc": "Yield premium over risk-free rate for credit risk. Wider spread = higher perceived risk. Spreads widen in economic downturns."
+          },
+          {
+            "title": "Credit Ratings",
+            "desc": "Investment grade: AAA to BBB-. High yield (junk): BB+ and below. Ratings assess default probability, not loss severity."
+          },
+          {
+            "title": "Credit Migration",
+            "desc": "Rating upgrade: spread tightens, price rises. Rating downgrade: spread widens, price falls. \"Fallen angel\": IG to HY."
+          },
+          {
+            "title": "4 Cs of Credit Analysis",
+            "desc": "Capacity (ability to pay), Collateral (asset backing), Covenants (legal protections), Character (management quality)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Expected Loss",
+            "formula": "EL = PD × LGD × EAD",
+            "where": "PD = probability of default, LGD = loss given default, EAD = exposure at default"
+          },
+          {
+            "name": "Loss Given Default",
+            "formula": "LGD = 1 - Recovery Rate",
+            "where": "Percentage of exposure lost"
+          },
+          {
+            "name": "Credit Spread",
+            "formula": "Credit Spread = YTM<sub>corporate</sub> - YTM<sub>risk-free</sub>",
+            "where": "Compensation for credit risk"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Investment grade vs High yield?",
+            "use": [
+              "IG: lower default risk, lower yield, suitable for conservative portfolios",
+              "HY: higher yield for accepting more default risk, less sensitive to rate changes, more to credit cycle"
+            ],
+            "avoid": [
+              "Assuming credit ratings capture all relevant risk information"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Credit ratings are opinions, not guarantees — they can lag actual credit deterioration",
+          "Higher seniority = higher recovery rate in default",
+          "Credit spreads are cyclical: tighten in expansions, widen in recessions",
+          "Duration of high-yield bonds is lower (higher coupon effect) but spread duration matters more"
+        ],
+        "examples": [
+          {
+            "title": "Expected Loss",
+            "problem": "PD = 2%, LGD = 60%, Exposure = $10M. Expected loss?",
+            "solution": "EL = 0.02 × 0.60 × $10M = $120,000 per year."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Credit Risk",
+        "branches": [
+          {
+            "label": "Risk Components",
+            "leaves": [
+              "Default probability",
+              "Loss given default",
+              "Recovery rate",
+              "Expected loss"
+            ]
+          },
+          {
+            "label": "Credit Spread",
+            "leaves": [
+              "Yield over risk-free",
+              "Widens in recession",
+              "Tightens in expansion",
+              "Spread duration"
+            ]
+          },
+          {
+            "label": "Ratings",
+            "leaves": [
+              "AAA to BBB- = IG",
+              "BB+ and below = HY",
+              "Rating agencies",
+              "Migration risk"
+            ]
+          },
+          {
+            "label": "4 Cs",
+            "leaves": [
+              "Capacity",
+              "Collateral",
+              "Covenants",
+              "Character"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "PD = 3%, Recovery rate = 40%. Expected loss per $100 of exposure:",
+            "options": [
+              "$0.72",
+              "$1.20",
+              "$1.80",
+              "$3.00"
+            ],
+            "correct": 2,
+            "explanation": "LGD = 1 - 0.40 = 0.60. EL = 0.03 × 0.60 × $100 = $1.80"
+          },
+          {
+            "type": "mcq",
+            "question": "Credit spreads most likely widen during:",
+            "options": [
+              "Economic expansions",
+              "Economic recessions",
+              "Periods of low volatility",
+              "Periods of rising equity markets"
+            ],
+            "correct": 1,
+            "explanation": "Recessions increase default risk and risk aversion, causing credit spreads to widen significantly."
+          },
+          {
+            "type": "mcq",
+            "question": "A \"fallen angel\" is a bond that:",
+            "options": [
+              "Was upgraded from high yield to investment grade",
+              "Was downgraded from investment grade to high yield",
+              "Has defaulted",
+              "Was recently issued at a deep discount"
+            ],
+            "correct": 1,
+            "explanation": "A fallen angel is a bond originally issued as investment grade that has been downgraded to high yield (junk) status."
+          }
+        ]
+      }
+    }
+  ]
+}

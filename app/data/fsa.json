@@ -1,0 +1,1373 @@
+{
+  "id": "fsa",
+  "name": "Financial Statement Analysis",
+  "icon": "📊",
+  "color": "#e67e22",
+  "weight": "11-14%",
+  "modules": [
+    {
+      "id": "fsa-lm1",
+      "number": 1,
+      "title": "Introduction to Financial Statement Analysis",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "FSA Framework",
+            "desc": "1) State purpose/context, 2) Collect data, 3) Process data, 4) Analyze/interpret, 5) Develop conclusions, 6) Follow-up."
+          },
+          {
+            "title": "Three Main Statements",
+            "desc": "Income statement (performance), Balance sheet (position), Cash flow statement (cash generation). Plus: Statement of changes in equity."
+          },
+          {
+            "title": "IFRS vs US GAAP",
+            "desc": "IFRS: principles-based, used globally in 140+ countries. US GAAP: rules-based, used in US. Convergence ongoing but differences remain."
+          },
+          {
+            "title": "Auditor's Report",
+            "desc": "Unqualified (clean), Qualified (except for), Adverse (material misstatements), Disclaimer (insufficient evidence)."
+          },
+          {
+            "title": "Management Discussion & Analysis",
+            "desc": "MD&A provides management's perspective on financial results, trends, risks, and forward-looking information."
+          },
+          {
+            "title": "Notes to Financial Statements",
+            "desc": "Accounting policies, detail behind line items, contingent liabilities, segment reporting. Critical for analysis."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "IFRS vs US GAAP key differences to watch?",
+            "use": [
+              "Inventory: IFRS prohibits LIFO; US GAAP allows LIFO",
+              "Development costs: IFRS can capitalize; US GAAP expenses",
+              "Impairment: IFRS allows reversal for most assets; US GAAP does not"
+            ],
+            "avoid": [
+              "Assuming IFRS and GAAP are identical — material differences exist"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "An unqualified opinion does NOT mean the company is healthy — it means statements fairly present per standards",
+          "Off-balance-sheet items can be significant — read the notes carefully",
+          "Going concern qualification in audit report is a major red flag"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Intro to FSA",
+        "branches": [
+          {
+            "label": "Framework",
+            "leaves": [
+              "Purpose & context",
+              "Collect data",
+              "Process",
+              "Analyze",
+              "Conclude",
+              "Follow-up"
+            ]
+          },
+          {
+            "label": "Financial Statements",
+            "leaves": [
+              "Income Statement",
+              "Balance Sheet",
+              "Cash Flow Statement",
+              "Changes in Equity"
+            ]
+          },
+          {
+            "label": "IFRS vs GAAP",
+            "leaves": [
+              "Principles vs rules-based",
+              "LIFO allowed (GAAP only)",
+              "Development costs",
+              "Impairment reversal"
+            ]
+          },
+          {
+            "label": "Audit Opinions",
+            "leaves": [
+              "Unqualified (clean)",
+              "Qualified",
+              "Adverse",
+              "Disclaimer"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Under IFRS, which inventory method is NOT permitted?",
+            "options": [
+              "FIFO",
+              "Weighted average cost",
+              "LIFO",
+              "Specific identification"
+            ],
+            "correct": 2,
+            "explanation": "IFRS prohibits LIFO (Last In, First Out). US GAAP allows LIFO, FIFO, and weighted average."
+          },
+          {
+            "type": "mcq",
+            "question": "A qualified audit opinion means:",
+            "options": [
+              "The financial statements are materially misstated throughout",
+              "The statements are fair except for a specific issue",
+              "The auditor could not obtain sufficient evidence",
+              "The statements are presented fairly in all respects"
+            ],
+            "correct": 1,
+            "explanation": "Qualified = \"except for\" — fair presentation overall but with a specific deviation or limitation."
+          },
+          {
+            "type": "mcq",
+            "question": "The first step in the financial statement analysis framework is to:",
+            "options": [
+              "Collect data",
+              "State the purpose and context of the analysis",
+              "Calculate financial ratios",
+              "Read the audit report"
+            ],
+            "correct": 1,
+            "explanation": "Always start by clarifying why you're doing the analysis and what questions you need to answer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm2",
+      "number": 2,
+      "title": "Analyzing Income Statements",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Revenue Recognition",
+            "desc": "IFRS 15 / ASC 606: 5-step model. Recognize when performance obligation satisfied and control transfers to customer."
+          },
+          {
+            "title": "Expense Recognition (Matching)",
+            "desc": "Expenses matched to the revenues they help generate. Period costs expensed immediately; product costs match to sales."
+          },
+          {
+            "title": "Capitalization vs Expensing",
+            "desc": "Capitalizing: asset on BS, depreciated over time (higher initial income). Expensing: immediate IS charge (lower initial income)."
+          },
+          {
+            "title": "Basic EPS",
+            "desc": "Net income attributable to common / Weighted average common shares outstanding. Measures profit per share for common shareholders."
+          },
+          {
+            "title": "Diluted EPS",
+            "desc": "Assumes all dilutive securities (options, convertibles) are converted. Always ≤ Basic EPS. Treasury stock method for options."
+          },
+          {
+            "title": "Common-Size Income Statement",
+            "desc": "Express each line as % of revenue. Enables comparison across companies of different sizes and over time."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Basic EPS",
+            "formula": "Basic EPS = (Net Income - Preferred Dividends) / Weighted Avg Common Shares",
+            "where": "Only common shareholders' income"
+          },
+          {
+            "name": "Diluted EPS (Convertible Bonds)",
+            "formula": "Diluted EPS = (NI - PD + Interest×(1-t)) / (WACS + New shares from conversion)",
+            "where": "If-converted method: add back interest, add converted shares"
+          },
+          {
+            "name": "Diluted EPS (Options)",
+            "formula": "Treasury Stock Method: New shares = Options exercised - Shares repurchased with proceeds",
+            "where": "Net new shares = N - (N×Exercise Price / Market Price)"
+          },
+          {
+            "name": "Gross Profit Margin",
+            "formula": "GPM = (Revenue - COGS) / Revenue",
+            "where": "Measures production efficiency"
+          },
+          {
+            "name": "Operating Margin",
+            "formula": "Op Margin = Operating Income / Revenue",
+            "where": "Includes SG&A and other operating expenses"
+          },
+          {
+            "name": "Net Profit Margin",
+            "formula": "Net Margin = Net Income / Revenue",
+            "where": "Bottom-line profitability"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Capitalize or Expense?",
+            "use": [
+              "Capitalize: future economic benefit expected (>1 year), cost reliably measurable",
+              "Expense: no future benefit, or benefit is uncertain"
+            ],
+            "avoid": [
+              "Aggressive capitalization to inflate current profits — a red flag for earnings quality"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Capitalizing costs inflates current income but reduces future income (depreciation/amortization)",
+          "Diluted EPS: only include securities that are DILUTIVE (reduce EPS). Anti-dilutive items are excluded.",
+          "Revenue recognition timing differs between point-in-time and over-time — affects comparability",
+          "Restructuring charges are often recurring despite being labeled \"non-recurring\""
+        ],
+        "examples": [
+          {
+            "title": "Basic EPS",
+            "problem": "Net income = $500,000. Preferred dividends = $50,000. Weighted avg shares = 100,000.",
+            "solution": "Basic EPS = ($500,000 - $50,000) / 100,000 = $4.50 per share"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Income Statement Analysis",
+        "branches": [
+          {
+            "label": "Revenue Recognition",
+            "leaves": [
+              "5-step model",
+              "Performance obligations",
+              "Control transfer",
+              "Point-in-time vs over-time"
+            ]
+          },
+          {
+            "label": "Expense Recognition",
+            "leaves": [
+              "Matching principle",
+              "Capitalize vs expense",
+              "Depreciation/amortization",
+              "Interest capitalization"
+            ]
+          },
+          {
+            "label": "EPS",
+            "leaves": [
+              "Basic EPS",
+              "Diluted EPS",
+              "If-converted method",
+              "Treasury stock method"
+            ]
+          },
+          {
+            "label": "Profitability",
+            "leaves": [
+              "Gross margin",
+              "Operating margin",
+              "Net margin",
+              "Common-size analysis"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Capitalizing an expenditure rather than expensing it will initially:",
+            "options": [
+              "Decrease net income",
+              "Increase total assets and net income",
+              "Have no effect on the balance sheet",
+              "Decrease total assets"
+            ],
+            "correct": 1,
+            "explanation": "Capitalizing puts the cost on the balance sheet as an asset (higher assets) instead of the income statement (higher income in year 1)."
+          },
+          {
+            "type": "mcq",
+            "question": "Under the treasury stock method for diluted EPS, the number of incremental shares equals:",
+            "options": [
+              "Total options outstanding",
+              "Options exercised minus shares repurchased at market price",
+              "Shares repurchased at exercise price",
+              "Zero if the stock price exceeds the exercise price"
+            ],
+            "correct": 1,
+            "explanation": "Incremental shares = Options exercised - (Options × Exercise Price / Market Price). Only the NET new shares are dilutive."
+          },
+          {
+            "type": "calc",
+            "question": "Revenue = $1M, COGS = $600K, SG&A = $200K. Operating margin is:",
+            "options": [
+              "40%",
+              "20%",
+              "60%",
+              "80%"
+            ],
+            "correct": 1,
+            "explanation": "Operating Income = 1M - 600K - 200K = $200K. Operating Margin = 200K/1M = 20%."
+          },
+          {
+            "type": "mcq",
+            "question": "An analyst should most likely classify a company's recurring restructuring charges as:",
+            "options": [
+              "Non-operating items",
+              "Operating expenses",
+              "Financing activities",
+              "Extraordinary items"
+            ],
+            "correct": 1,
+            "explanation": "If restructuring charges recur frequently, they should be treated as operating expenses for analysis, despite management labeling them as one-time."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm3",
+      "number": 3,
+      "title": "Analyzing Balance Sheets",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Intangible Assets",
+            "desc": "Identifiable (patents, trademarks) can be recognized. Goodwill arises only from acquisitions. Internally generated goodwill NOT recognized."
+          },
+          {
+            "title": "Goodwill",
+            "desc": "Purchase price - Fair value of net identifiable assets. Not amortized but tested annually for impairment. Only written DOWN (GAAP); IFRS similar."
+          },
+          {
+            "title": "Financial Instruments",
+            "desc": "Amortized cost, Fair value through OCI (FVOCI), Fair value through P&L (FVPL). Classification affects income volatility."
+          },
+          {
+            "title": "Deferred Tax Liabilities/Assets",
+            "desc": "DTL: taxable temporary differences (tax owed later). DTA: deductible temporary differences (tax benefit later)."
+          },
+          {
+            "title": "Common-Size Balance Sheet",
+            "desc": "Express each item as % of total assets. Shows capital structure and asset composition."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Goodwill",
+            "formula": "Goodwill = Purchase Price - FV of Net Identifiable Assets",
+            "where": "Only from business combinations"
+          },
+          {
+            "name": "Current Ratio",
+            "formula": "Current Ratio = Current Assets / Current Liabilities",
+            "where": ">1 indicates short-term solvency"
+          },
+          {
+            "name": "Debt-to-Equity",
+            "formula": "D/E = Total Debt / Total Equity",
+            "where": "Higher = more leveraged"
+          },
+          {
+            "name": "Debt-to-Assets",
+            "formula": "D/A = Total Debt / Total Assets",
+            "where": "Proportion of assets financed by debt"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "FVPL vs FVOCI vs Amortized Cost?",
+            "use": [
+              "FVPL: trading securities, most volatile income",
+              "FVOCI: available for sale, unrealized G/L in OCI (not income)",
+              "Amortized cost: held-to-maturity debt, most stable income"
+            ],
+            "avoid": [
+              "Assuming all fair value changes hit net income — FVOCI goes through equity"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Goodwill is NEVER amortized, only tested for impairment annually",
+          "IFRS allows reversal of impairment on most assets; US GAAP does NOT (except held-for-sale)",
+          "Deferred tax assets may need a valuation allowance if realization is uncertain",
+          "Off-balance-sheet liabilities (operating leases pre-IFRS 16) can hide leverage"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Balance Sheet Analysis",
+        "branches": [
+          {
+            "label": "Intangibles & Goodwill",
+            "leaves": [
+              "Identifiable: recognized",
+              "Goodwill: acquisition only",
+              "Annual impairment test",
+              "No amortization"
+            ]
+          },
+          {
+            "label": "Financial Instruments",
+            "leaves": [
+              "FVPL: G/L in income",
+              "FVOCI: G/L in OCI",
+              "Amortized cost: stable",
+              "IFRS 9 classification"
+            ]
+          },
+          {
+            "label": "Deferred Tax",
+            "leaves": [
+              "DTL: future tax owed",
+              "DTA: future tax benefit",
+              "Temporary differences",
+              "Valuation allowance"
+            ]
+          },
+          {
+            "label": "Ratios",
+            "leaves": [
+              "Current ratio",
+              "Quick ratio",
+              "D/E",
+              "D/A",
+              "Common-size"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Goodwill recognized on the balance sheet:",
+            "options": [
+              "Is amortized over its useful life",
+              "Is tested annually for impairment",
+              "Can be internally generated",
+              "Is always written up when value increases"
+            ],
+            "correct": 1,
+            "explanation": "Goodwill is not amortized but is tested at least annually for impairment. It can only be written down, never up."
+          },
+          {
+            "type": "mcq",
+            "question": "Unrealized gains on FVOCI securities are reported in:",
+            "options": [
+              "Net income",
+              "Other comprehensive income",
+              "Retained earnings",
+              "Cash flow from investing"
+            ],
+            "correct": 1,
+            "explanation": "FVOCI fair value changes bypass the income statement and go directly to OCI (part of shareholders' equity)."
+          },
+          {
+            "type": "mcq",
+            "question": "A deferred tax liability arises when:",
+            "options": [
+              "Tax expense exceeds taxes payable",
+              "Taxes payable exceed tax expense",
+              "The company has tax loss carryforwards",
+              "The effective tax rate is below the statutory rate"
+            ],
+            "correct": 0,
+            "explanation": "DTL = taxes will be paid in the future. This happens when accounting income > taxable income (e.g., accelerated depreciation for tax)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm4",
+      "number": 4,
+      "title": "Analyzing Statements of Cash Flows I",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Operating Activities (CFO)",
+            "desc": "Cash from core business operations. Start from net income (indirect) or cash receipts (direct). THE most important section."
+          },
+          {
+            "title": "Investing Activities (CFI)",
+            "desc": "Purchases/sales of long-term assets, investments. Negative CFI often signals growth investment."
+          },
+          {
+            "title": "Financing Activities (CFF)",
+            "desc": "Debt issuance/repayment, equity issuance/buyback, dividends. Shows how the company funds itself."
+          },
+          {
+            "title": "Direct vs Indirect Method",
+            "desc": "Direct: shows actual cash receipts/payments. Indirect: starts with NI, adjusts for non-cash items and WC changes. Same CFO result."
+          },
+          {
+            "title": "Non-Cash Adjustments (Indirect)",
+            "desc": "Add back: depreciation, amortization, losses. Subtract: gains. Adjust for WC changes (increase in assets = subtract, increase in liabilities = add)."
+          },
+          {
+            "title": "IFRS vs GAAP Classification",
+            "desc": "Interest paid: CFO (GAAP) or CFO/CFF (IFRS). Interest received: CFO (GAAP) or CFO/CFI (IFRS). Dividends paid: CFF (GAAP) or CFO/CFF (IFRS)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "CFO (Indirect Method)",
+            "formula": "CFO = NI + Non-cash charges + ΔWC",
+            "where": "Add depreciation, subtract gains, adjust for changes in current assets/liabilities"
+          },
+          {
+            "name": "WC Adjustment Rule",
+            "formula": "ΔCurrent Asset ↑ = Subtract from NI; ΔCurrent Liability ↑ = Add to NI",
+            "where": "Increase in AR means cash not yet collected; increase in AP means cash not yet paid"
+          },
+          {
+            "name": "Total Cash Change",
+            "formula": "ΔCash = CFO + CFI + CFF",
+            "where": "Must reconcile to change in cash balance"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Direct vs Indirect method?",
+            "use": [
+              "Direct: better for understanding actual cash flows (preferred by IASB)",
+              "Indirect: more commonly used, easier to prepare, shows link to NI"
+            ],
+            "avoid": [
+              "Ignoring the cash flow statement — it reveals what the income statement hides"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Depreciation is added back NOT because it's a source of cash, but because it reduced NI without using cash",
+          "An increase in accounts receivable means revenue was recognized but cash wasn't collected — subtract from NI",
+          "Interest paid is ALWAYS CFO under US GAAP but can be CFO or CFF under IFRS",
+          "Companies can manipulate CFO by stretching payables or accelerating collections"
+        ],
+        "examples": [
+          {
+            "title": "Indirect Method Adjustment",
+            "problem": "NI = $100. Depreciation = $20. AR increased by $15. AP increased by $10. Calculate CFO.",
+            "solution": "CFO = 100 + 20 (add back dep) - 15 (AR increase = cash not collected) + 10 (AP increase = cash not paid) = $115"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Cash Flow Statement",
+        "branches": [
+          {
+            "label": "CFO",
+            "leaves": [
+              "Core operations",
+              "Direct: actual cash flows",
+              "Indirect: start from NI",
+              "WC adjustments"
+            ]
+          },
+          {
+            "label": "CFI",
+            "leaves": [
+              "Buy/sell PP&E",
+              "Buy/sell investments",
+              "Negative = growth spending"
+            ]
+          },
+          {
+            "label": "CFF",
+            "leaves": [
+              "Debt issuance/repayment",
+              "Equity issuance/buyback",
+              "Dividends paid"
+            ]
+          },
+          {
+            "label": "IFRS vs GAAP",
+            "leaves": [
+              "Interest: CFO vs choice",
+              "Dividends paid: CFF vs choice",
+              "Tax: CFO vs allocated"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Under the indirect method, depreciation expense is added to net income because it:",
+            "options": [
+              "Represents a source of cash",
+              "Was deducted in computing NI but did not use cash",
+              "Increases the value of assets",
+              "Represents a tax benefit"
+            ],
+            "correct": 1,
+            "explanation": "Depreciation reduced net income but no cash was spent. Adding it back adjusts NI to reflect actual cash from operations."
+          },
+          {
+            "type": "mcq",
+            "question": "An increase in accounts receivable is treated as a:",
+            "options": [
+              "Addition to net income in the indirect method",
+              "Subtraction from net income in the indirect method",
+              "Cash inflow from investing",
+              "Cash inflow from financing"
+            ],
+            "correct": 1,
+            "explanation": "Higher AR means revenue was booked but cash not collected. Subtract from NI to get actual cash received."
+          },
+          {
+            "type": "mcq",
+            "question": "Under US GAAP, interest paid is classified as:",
+            "options": [
+              "Operating activity",
+              "Investing activity",
+              "Financing activity",
+              "Either operating or financing"
+            ],
+            "correct": 0,
+            "explanation": "Under US GAAP, interest paid is always CFO. Under IFRS, the company can choose CFO or CFF."
+          },
+          {
+            "type": "mcq",
+            "question": "A healthy, growing company would most likely have:",
+            "options": [
+              "Positive CFO, negative CFI, negative CFF",
+              "Positive CFO, negative CFI, positive CFF",
+              "Negative CFO, positive CFI, positive CFF",
+              "Positive CFO, positive CFI, negative CFF"
+            ],
+            "correct": 0,
+            "explanation": "Mature growing companies generate positive operating cash (CFO+), invest in growth (CFI-), and may return cash to shareholders (CFF-)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm5",
+      "number": 5,
+      "title": "Analyzing Statements of Cash Flows II",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Free Cash Flow to Firm (FCFF)",
+            "desc": "Cash available to ALL capital providers (debt + equity). FCFF = CFO + Int(1-t) - FCInv."
+          },
+          {
+            "title": "Free Cash Flow to Equity (FCFE)",
+            "desc": "Cash available to equity holders. FCFE = CFO - FCInv + Net borrowing."
+          },
+          {
+            "title": "Cash Flow Ratios",
+            "desc": "Cash flow adequacy, reinvestment, debt coverage, interest coverage from cash flows."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "FCFF from CFO",
+            "formula": "FCFF = CFO + Int×(1-t) - FCInv",
+            "where": "FCInv = capital expenditures (net)"
+          },
+          {
+            "name": "FCFF from NI",
+            "formula": "FCFF = NI + Dep + Int(1-t) - FCInv - WCInv",
+            "where": "WCInv = increase in working capital"
+          },
+          {
+            "name": "FCFE",
+            "formula": "FCFE = CFO - FCInv + Net Borrowing",
+            "where": "Cash available to equity after investment and debt"
+          },
+          {
+            "name": "Cash Flow to Revenue",
+            "formula": "CF/Revenue = CFO / Net Revenue",
+            "where": "Cash-generating ability per dollar of revenue"
+          },
+          {
+            "name": "Debt Coverage Ratio",
+            "formula": "Debt Coverage = CFO / Total Debt",
+            "where": "Ability to repay debt from operations"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "FCFF vs FCFE?",
+            "use": [
+              "FCFF: for firm valuation (WACC-based DCF)",
+              "FCFE: for equity valuation (cost of equity-based DCF)"
+            ],
+            "avoid": [
+              "Using FCFE when capital structure is changing significantly — use FCFF"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "FCFF adds back after-tax interest because it's available to debt holders too",
+          "FCFE is AFTER debt payments — can be negative if firm is borrowing heavily to invest",
+          "High net income with low CFO is a red flag for earnings quality"
+        ],
+        "examples": [
+          {
+            "title": "FCFF Calculation",
+            "problem": "CFO = $200M, Interest expense = $30M, Tax rate = 25%, CapEx = $80M. Calculate FCFF.",
+            "solution": "FCFF = 200 + 30×(1-0.25) - 80 = 200 + 22.5 - 80 = $142.5M"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Cash Flow Analysis II",
+        "branches": [
+          {
+            "label": "FCFF",
+            "leaves": [
+              "CFO + Int(1-t) - FCInv",
+              "For firm valuation",
+              "Available to all providers"
+            ]
+          },
+          {
+            "label": "FCFE",
+            "leaves": [
+              "CFO - FCInv + Net borrowing",
+              "For equity valuation",
+              "Available to equity holders"
+            ]
+          },
+          {
+            "label": "Cash Flow Ratios",
+            "leaves": [
+              "CF to revenue",
+              "Debt coverage",
+              "Reinvestment ratio",
+              "Interest coverage"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "CFO = $150M, Interest = $20M, Tax = 30%, CapEx = $60M. FCFF is closest to:",
+            "options": [
+              "$104M",
+              "$90M",
+              "$76M",
+              "$124M"
+            ],
+            "correct": 0,
+            "explanation": "FCFF = 150 + 20(1-0.30) - 60 = 150 + 14 - 60 = $104M"
+          },
+          {
+            "type": "mcq",
+            "question": "FCFE differs from FCFF in that FCFE:",
+            "options": [
+              "Adds back after-tax interest",
+              "Subtracts net borrowing",
+              "Is available only to equity holders",
+              "Uses cost of debt as discount rate"
+            ],
+            "correct": 2,
+            "explanation": "FCFE represents cash available to equity holders after debt obligations. FCFF is available to both debt and equity holders."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm6",
+      "number": 6,
+      "title": "Analysis of Inventories",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "FIFO",
+            "desc": "First In, First Out. Ending inventory reflects recent costs (closer to replacement cost). In rising prices: higher income, higher inventory."
+          },
+          {
+            "title": "LIFO",
+            "desc": "Last In, First Out (US GAAP only). COGS reflects recent costs. In rising prices: lower income (tax savings), lower inventory, better cash flow."
+          },
+          {
+            "title": "Weighted Average",
+            "desc": "Average cost of all units available. Results fall between FIFO and LIFO."
+          },
+          {
+            "title": "LIFO Reserve",
+            "desc": "Difference between LIFO and FIFO inventory values. Disclosed by LIFO companies. Used to convert LIFO to FIFO for comparison."
+          },
+          {
+            "title": "Inventory Write-Down",
+            "desc": "IFRS: lower of cost or NRV (reversals allowed). US GAAP: lower of cost or market (no reversals)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "FIFO Inventory from LIFO",
+            "formula": "FIFO Inventory = LIFO Inventory + LIFO Reserve",
+            "where": "To make LIFO companies comparable to FIFO"
+          },
+          {
+            "name": "FIFO COGS from LIFO",
+            "formula": "FIFO COGS = LIFO COGS - ΔLIFO Reserve",
+            "where": "Δ = change in LIFO reserve during period"
+          },
+          {
+            "name": "Inventory Turnover",
+            "formula": "Inv Turnover = COGS / Average Inventory",
+            "where": "Higher = faster inventory movement"
+          },
+          {
+            "name": "Days of Inventory",
+            "formula": "DOH = 365 / Inventory Turnover",
+            "where": "Days to sell inventory"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "FIFO vs LIFO in rising prices?",
+            "use": [
+              "FIFO: higher income, higher BS inventory, higher taxes",
+              "LIFO: lower income, lower taxes (cash flow benefit), lower BS inventory"
+            ],
+            "avoid": [
+              "Comparing a LIFO company to a FIFO company without adjusting"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "LIFO is PROHIBITED under IFRS — only US GAAP allows it",
+          "In rising prices: FIFO income > LIFO income, but LIFO saves taxes (better cash flow)",
+          "LIFO liquidation: if old cheap inventory is sold, income spikes artificially",
+          "IFRS allows inventory write-down reversal; US GAAP does NOT"
+        ],
+        "examples": [
+          {
+            "title": "LIFO to FIFO Conversion",
+            "problem": "LIFO inventory = $800K, LIFO reserve = $200K. What is FIFO inventory?",
+            "solution": "FIFO Inventory = $800K + $200K = $1,000K. The LIFO reserve represents the cumulative difference due to LIFO accounting."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Inventory Analysis",
+        "branches": [
+          {
+            "label": "Methods",
+            "leaves": [
+              "FIFO",
+              "LIFO (GAAP only)",
+              "Weighted Average",
+              "Specific Identification"
+            ]
+          },
+          {
+            "label": "Rising Prices Impact",
+            "leaves": [
+              "FIFO: higher income, higher inventory",
+              "LIFO: lower income, tax savings",
+              "WA: between FIFO and LIFO"
+            ]
+          },
+          {
+            "label": "LIFO Reserve",
+            "leaves": [
+              "FIFO Inv = LIFO + Reserve",
+              "FIFO COGS = LIFO - ΔReserve",
+              "Conversion for comparability"
+            ]
+          },
+          {
+            "label": "Write-Downs",
+            "leaves": [
+              "IFRS: NRV, reversals OK",
+              "GAAP: market, no reversals"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "In a period of rising prices, compared to FIFO, LIFO will report:",
+            "options": [
+              "Higher net income and higher inventory",
+              "Lower net income and lower inventory",
+              "Higher net income and lower inventory",
+              "Lower net income and higher inventory"
+            ],
+            "correct": 1,
+            "explanation": "LIFO assigns recent (higher) costs to COGS → lower income. Ending inventory reflects older (lower) costs → lower inventory."
+          },
+          {
+            "type": "mcq",
+            "question": "LIFO is prohibited under:",
+            "options": [
+              "US GAAP",
+              "IFRS",
+              "Both IFRS and US GAAP",
+              "Neither"
+            ],
+            "correct": 1,
+            "explanation": "IFRS (IAS 2) does not allow LIFO. Only US GAAP permits LIFO."
+          },
+          {
+            "type": "calc",
+            "question": "LIFO inventory = $500K, LIFO reserve = $80K. FIFO inventory would be:",
+            "options": [
+              "$420K",
+              "$500K",
+              "$580K",
+              "$400K"
+            ],
+            "correct": 2,
+            "explanation": "FIFO Inventory = LIFO Inventory + LIFO Reserve = $500K + $80K = $580K"
+          },
+          {
+            "type": "mcq",
+            "question": "LIFO liquidation occurs when:",
+            "options": [
+              "A company switches from LIFO to FIFO",
+              "Inventory quantities decline, causing old (low-cost) layers to be sold",
+              "The LIFO reserve decreases",
+              "Prices are falling"
+            ],
+            "correct": 1,
+            "explanation": "LIFO liquidation: when quantities sold exceed purchases, older cheaper inventory hits COGS, artificially inflating income."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm7",
+      "number": 7,
+      "title": "Analysis of Long-Term Assets",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Depreciation Methods",
+            "desc": "Straight-line: equal annual charge. Accelerated (DDB): higher early charges. Units-of-production: based on usage."
+          },
+          {
+            "title": "Impairment",
+            "desc": "When carrying value exceeds recoverable amount. Write down to fair value. IFRS: reversal allowed (except goodwill). US GAAP: no reversal."
+          },
+          {
+            "title": "Capitalized Interest",
+            "desc": "Interest on funds borrowed to construct qualifying assets can be capitalized. Increases asset value, reduces current interest expense."
+          },
+          {
+            "title": "R&D Costs",
+            "desc": "Research: always expensed. Development: IFRS — capitalize if criteria met. US GAAP — generally expense (except software development costs)."
+          },
+          {
+            "title": "Revaluation Model",
+            "desc": "IFRS allows assets to be carried at fair value (upward revaluations to OCI). US GAAP: cost model only (historical cost less depreciation)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Straight-Line Depreciation",
+            "formula": "Annual Dep = (Cost - Residual Value) / Useful Life",
+            "where": "Equal annual charges"
+          },
+          {
+            "name": "DDB Depreciation",
+            "formula": "Dep = (2 / Useful Life) × Beginning Book Value",
+            "where": "Double declining balance — ignore residual until final years"
+          },
+          {
+            "name": "Average Age of Assets",
+            "formula": "Avg Age = Accumulated Dep / Annual Dep Expense",
+            "where": "Estimates how old assets are"
+          },
+          {
+            "name": "Remaining Useful Life",
+            "formula": "Remaining Life = Net PP&E / Annual Dep Expense",
+            "where": "Estimates years of use remaining"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Straight-line vs Accelerated depreciation?",
+            "use": [
+              "SL: when asset provides uniform benefit over life",
+              "Accelerated: when asset loses value faster in early years (vehicles, tech)"
+            ],
+            "avoid": [
+              "Using SL to inflate early-year profits — may not reflect economic reality"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Capitalizing vs expensing R&D has a BIG impact on income and assets",
+          "Impairment is a one-time charge but the loss of value was likely gradual",
+          "Average age and remaining life estimates are crude — use for trends, not precise values"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Long-Term Assets",
+        "branches": [
+          {
+            "label": "Depreciation",
+            "leaves": [
+              "Straight-line",
+              "DDB",
+              "Units of production",
+              "Component depreciation"
+            ]
+          },
+          {
+            "label": "Impairment",
+            "leaves": [
+              "Carrying > recoverable amount",
+              "Write down to FV",
+              "IFRS: reversal OK (not goodwill)",
+              "GAAP: no reversal"
+            ]
+          },
+          {
+            "label": "R&D / Intangibles",
+            "leaves": [
+              "Research: always expense",
+              "Development: IFRS capitalize",
+              "GAAP: generally expense",
+              "Amortize finite-life"
+            ]
+          },
+          {
+            "label": "Revaluation",
+            "leaves": [
+              "IFRS: FV model allowed",
+              "GAAP: cost model only",
+              "Upward reval → OCI"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Under IFRS, development costs are:",
+            "options": [
+              "Always expensed",
+              "Always capitalized",
+              "Capitalized if certain criteria are met",
+              "Capitalized only for software"
+            ],
+            "correct": 2,
+            "explanation": "IFRS requires capitalization of development costs when technical feasibility, intent to complete, ability to use/sell, and other criteria are met."
+          },
+          {
+            "type": "mcq",
+            "question": "Under US GAAP, once an asset is impaired:",
+            "options": [
+              "The impairment can be reversed if conditions improve",
+              "The new lower carrying amount becomes the basis and cannot be written up",
+              "The asset must be disposed of",
+              "Depreciation ceases"
+            ],
+            "correct": 1,
+            "explanation": "US GAAP prohibits reversal of impairment losses (except for assets held for sale). The written-down value becomes the new cost basis."
+          },
+          {
+            "type": "calc",
+            "question": "Asset cost = $100K, residual = $10K, useful life = 5 years. Annual SL depreciation is:",
+            "options": [
+              "$18,000",
+              "$20,000",
+              "$22,000",
+              "$25,000"
+            ],
+            "correct": 0,
+            "explanation": "SL Dep = (100,000 - 10,000) / 5 = $18,000 per year."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm8",
+      "number": 8,
+      "title": "Topics in Long-Term Liabilities and Equity",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Finance Lease (Lessee)",
+            "desc": "Recognize right-of-use asset and lease liability on BS. Depreciate asset, record interest on liability. Front-loaded expense."
+          },
+          {
+            "title": "Operating Lease (US GAAP)",
+            "desc": "US GAAP: right-of-use asset and liability on BS, but single straight-line lease expense. IFRS: treats nearly all leases as finance."
+          },
+          {
+            "title": "Defined Benefit Pension",
+            "desc": "Employer promises specific retirement benefit. Pension obligation and plan assets on BS. Net funded status = Plan assets - PBO."
+          },
+          {
+            "title": "Share-Based Compensation",
+            "desc": "Stock options: fair value at grant date expensed over vesting period. Dilutes EPS. Stock grants vest based on time/performance."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Net Pension Liability",
+            "formula": "Net Pension = PBO - Fair Value of Plan Assets",
+            "where": "Positive = underfunded, Negative = overfunded"
+          },
+          {
+            "name": "Pension Expense",
+            "formula": "Pension Exp = Service Cost + Interest Cost - Expected Return on Plan Assets + Amortization of prior items",
+            "where": "Per income statement"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Finance vs Operating lease impact?",
+            "use": [
+              "Finance: higher assets/liabilities, higher early expense (front-loaded), EBITDA appears higher",
+              "Operating (GAAP): same BS treatment but straight-line expense, lower EBITDA"
+            ],
+            "avoid": [
+              "Ignoring operating leases in leverage analysis — they are real obligations"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Under IFRS 16, nearly ALL leases are treated as finance leases for lessees",
+          "Finance leases: total expense over lease life = operating lease, but timing differs (front-loaded)",
+          "Defined benefit pension assumptions (discount rate, expected return) significantly affect reported results",
+          "Higher discount rate → lower PBO → lower pension expense (management discretion)"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "LT Liabilities & Equity",
+        "branches": [
+          {
+            "label": "Leases",
+            "leaves": [
+              "Finance: asset + liability on BS",
+              "Operating (GAAP): same BS, SL expense",
+              "IFRS 16: all finance for lessee",
+              "Depreciation + interest vs rent"
+            ]
+          },
+          {
+            "label": "Pensions",
+            "leaves": [
+              "Defined benefit: employer risk",
+              "PBO vs plan assets",
+              "Net funded status",
+              "Assumptions matter"
+            ]
+          },
+          {
+            "label": "Share-Based Comp",
+            "leaves": [
+              "Stock options",
+              "Restricted stock",
+              "Fair value at grant",
+              "Expense over vesting"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Under IFRS 16, a lessee classifies most leases as:",
+            "options": [
+              "Operating leases",
+              "Finance leases",
+              "Either, at the lessee's choice",
+              "Off-balance-sheet"
+            ],
+            "correct": 1,
+            "explanation": "IFRS 16 requires lessees to recognize nearly all leases as finance leases (right-of-use asset and lease liability on the balance sheet)."
+          },
+          {
+            "type": "mcq",
+            "question": "Increasing the discount rate used to calculate pension obligations will:",
+            "options": [
+              "Increase the PBO",
+              "Decrease the PBO",
+              "Have no effect",
+              "Increase pension expense"
+            ],
+            "correct": 1,
+            "explanation": "A higher discount rate reduces the present value of future pension obligations (PBO). This is a common area of management discretion."
+          },
+          {
+            "type": "mcq",
+            "question": "Stock option compensation expense is recognized:",
+            "options": [
+              "When options are exercised",
+              "At the grant date",
+              "Over the vesting period at fair value as of grant date",
+              "Only if options expire worthless"
+            ],
+            "correct": 2,
+            "explanation": "Fair value is measured at grant date and recognized as expense over the vesting period."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fsa-lm9",
+      "number": 9,
+      "title": "Analysis of Income Taxes",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Taxable vs Accounting Income",
+            "desc": "Accounting income follows GAAP/IFRS; taxable income follows tax law. Differences can be temporary or permanent."
+          },
+          {
+            "title": "Temporary Differences",
+            "desc": "Reverse over time. Taxable temporary diff → DTL. Deductible temporary diff → DTA. Example: accelerated tax depreciation."
+          },
+          {
+            "title": "Permanent Differences",
+            "desc": "Never reverse. Example: tax-exempt income, non-deductible expenses. Cause effective tax rate ≠ statutory rate."
+          },
+          {
+            "title": "Deferred Tax Asset (DTA)",
+            "desc": "Future tax benefit. Arises from deductible temporary differences or tax loss carryforwards. May need valuation allowance."
+          },
+          {
+            "title": "Deferred Tax Liability (DTL)",
+            "desc": "Future tax obligation. Arises from taxable temporary differences. May not reverse if company keeps growing."
+          },
+          {
+            "title": "Effective Tax Rate",
+            "desc": "Tax expense / Pre-tax income. Differs from statutory rate due to permanent differences, tax credits, etc."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Tax Expense",
+            "formula": "Tax Expense = Taxes Payable + ΔDTL - ΔDTA",
+            "where": "Income statement tax charge"
+          },
+          {
+            "name": "Effective Tax Rate",
+            "formula": "ETR = Tax Expense / Pre-tax Income",
+            "where": "Actual rate after all adjustments"
+          },
+          {
+            "name": "DTA/DTL",
+            "formula": "DT = Temporary Difference × Tax Rate",
+            "where": "Apply expected future tax rate"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Will a DTL actually reverse?",
+            "use": [
+              "If company is shrinking: DTL will reverse (tax payment due)",
+              "If growing: DTL may never reverse (new DTLs replace old ones)"
+            ],
+            "avoid": [
+              "Treating all DTLs as true liabilities — some effectively behave as equity"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Permanent differences do NOT create deferred taxes — they affect the effective tax rate",
+          "DTA valuation allowance: if realization is doubtful, DTA must be reduced",
+          "A change in tax rate requires revaluation of all existing DTAs and DTLs",
+          "For analysis, consider whether DTLs will truly reverse or are quasi-permanent"
+        ],
+        "examples": [
+          {
+            "title": "Deferred Tax from Depreciation",
+            "problem": "Book depreciation = $10K, Tax depreciation = $15K, Tax rate = 25%. What deferred tax item is created?",
+            "solution": "Taxable temporary diff = $15K - $10K = $5K. DTL = $5K × 25% = $1,250. The company paid less tax now but will pay more later."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Income Tax Analysis",
+        "branches": [
+          {
+            "label": "Differences",
+            "leaves": [
+              "Temporary: create DTA/DTL",
+              "Permanent: affect ETR only",
+              "Taxable temp → DTL",
+              "Deductible temp → DTA"
+            ]
+          },
+          {
+            "label": "DTA",
+            "leaves": [
+              "Future tax benefit",
+              "Tax loss carryforwards",
+              "Valuation allowance needed?",
+              "Warranty provisions"
+            ]
+          },
+          {
+            "label": "DTL",
+            "leaves": [
+              "Future tax obligation",
+              "Accelerated depreciation",
+              "May not reverse if growing"
+            ]
+          },
+          {
+            "label": "Tax Rate",
+            "leaves": [
+              "Statutory rate",
+              "Effective tax rate",
+              "Permanent diffs cause divergence",
+              "Rate change impact on DT"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A deferred tax asset is most likely created by:",
+            "options": [
+              "Revenue recognized for tax before accounting",
+              "Tax depreciation exceeding book depreciation",
+              "A tax loss carryforward",
+              "Tax-exempt interest income"
+            ],
+            "correct": 2,
+            "explanation": "Tax loss carryforwards create DTAs because they represent future tax savings when the losses are used to offset future taxable income."
+          },
+          {
+            "type": "mcq",
+            "question": "Permanent differences between taxable and accounting income:",
+            "options": [
+              "Create deferred tax assets",
+              "Create deferred tax liabilities",
+              "Cause the effective tax rate to differ from the statutory rate",
+              "Always reverse in future periods"
+            ],
+            "correct": 2,
+            "explanation": "Permanent differences never reverse and do not create deferred taxes. They cause the ETR to differ from the statutory rate."
+          },
+          {
+            "type": "mcq",
+            "question": "If the tax rate increases, existing deferred tax liabilities will:",
+            "options": [
+              "Decrease",
+              "Increase",
+              "Remain unchanged",
+              "Be eliminated"
+            ],
+            "correct": 1,
+            "explanation": "DTL = temporary difference × tax rate. A higher rate means larger future tax payments, so DTLs increase."
+          }
+        ]
+      }
+    }
+  ]
+}

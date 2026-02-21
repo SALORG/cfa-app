@@ -1,0 +1,2905 @@
+{
+  "masterFormulas": {
+    "sections": [
+      {
+        "subject": "Quantitative Methods",
+        "formulas": [
+          {
+            "name": "Future Value",
+            "formula": "FV = PV × (1 + r)<sup>n</sup>",
+            "note": "Single lump sum compounding"
+          },
+          {
+            "name": "Present Value",
+            "formula": "PV = FV / (1 + r)<sup>n</sup>",
+            "note": "Discounting future cash flows"
+          },
+          {
+            "name": "Annuity PV",
+            "formula": "PV = PMT × [1 - (1+r)<sup>-n</sup>] / r",
+            "note": "Equal periodic payments"
+          },
+          {
+            "name": "Effective Annual Rate",
+            "formula": "EAR = (1 + r/m)<sup>m</sup> - 1",
+            "note": "m = compounding periods per year"
+          },
+          {
+            "name": "Holding Period Return",
+            "formula": "HPR = (P₁ - P₀ + D) / P₀",
+            "note": "Total return including income"
+          },
+          {
+            "name": "Population Variance",
+            "formula": "σ² = Σ(Xᵢ - μ)² / N",
+            "note": "Divide by N for population"
+          },
+          {
+            "name": "Sample Variance",
+            "formula": "s² = Σ(Xᵢ - X̄)² / (n-1)",
+            "note": "Divide by n-1 for sample (Bessel's correction)"
+          },
+          {
+            "name": "Coefficient of Variation",
+            "formula": "CV = σ / μ",
+            "note": "Risk per unit of return"
+          },
+          {
+            "name": "Sharpe Ratio",
+            "formula": "Sharpe = (R̄ₚ - Rᶠ) / σₚ",
+            "note": "Excess return per unit of total risk"
+          },
+          {
+            "name": "Bayes' Formula",
+            "formula": "P(A|B) = P(B|A) × P(A) / P(B)",
+            "note": "Updating probabilities with new info"
+          },
+          {
+            "name": "Correlation",
+            "formula": "ρ = Cov(X,Y) / (σₓ × σᵧ)",
+            "note": "Standardized covariance, -1 to +1"
+          },
+          {
+            "name": "Linear Regression",
+            "formula": "Y = b₀ + b₁X + ε",
+            "note": "b₁ = Cov(X,Y)/Var(X)"
+          },
+          {
+            "name": "Confidence Interval",
+            "formula": "X̄ ± z(α/2) × (σ/√n)",
+            "note": "z = 1.96 for 95% CI"
+          },
+          {
+            "name": "Test Statistic",
+            "formula": "t = (X̄ - μ₀) / (s/√n)",
+            "note": "Compare to critical value"
+          }
+        ]
+      },
+      {
+        "subject": "Economics",
+        "formulas": [
+          {
+            "name": "GDP (Expenditure)",
+            "formula": "GDP = C + I + G + (X - M)",
+            "note": "Consumption + Investment + Government + Net Exports"
+          },
+          {
+            "name": "Fiscal Multiplier",
+            "formula": "Multiplier = 1 / (1 - MPC)",
+            "note": "MPC = marginal propensity to consume"
+          },
+          {
+            "name": "Quantity Theory of Money",
+            "formula": "M × V = P × Y",
+            "note": "Money supply × Velocity = Price level × Real output"
+          },
+          {
+            "name": "Fisher Equation",
+            "formula": "Nominal rate ≈ Real rate + Inflation",
+            "note": "Exact: (1+nom) = (1+real)(1+inf)"
+          },
+          {
+            "name": "Elasticity of Demand",
+            "formula": "E = %ΔQ / %ΔP",
+            "note": "|E| > 1: elastic, |E| < 1: inelastic"
+          },
+          {
+            "name": "No-Arbitrage Forward Rate",
+            "formula": "F = S × (1 + rₐ)/(1 + r_b)",
+            "note": "Interest rate parity"
+          },
+          {
+            "name": "Real Exchange Rate",
+            "formula": "Real FX = Nominal FX × (P_foreign / P_domestic)",
+            "note": "Adjusting for price levels"
+          }
+        ]
+      },
+      {
+        "subject": "Financial Statement Analysis",
+        "formulas": [
+          {
+            "name": "Basic EPS",
+            "formula": "EPS = (NI - Pref Div) / Wtd Avg Shares",
+            "note": "Earnings per common share"
+          },
+          {
+            "name": "Diluted EPS",
+            "formula": "Diluted EPS = (NI - Pref Div + Convertible Interest) / (Shares + Dilutive Securities)",
+            "note": "Treasury stock method for options"
+          },
+          {
+            "name": "Current Ratio",
+            "formula": "Current Ratio = Current Assets / Current Liabilities",
+            "note": ">1 indicates short-term solvency"
+          },
+          {
+            "name": "Quick Ratio",
+            "formula": "Quick = (Cash + Receivables + ST Investments) / Current Liabilities",
+            "note": "Excludes inventory"
+          },
+          {
+            "name": "ROE",
+            "formula": "ROE = Net Income / Average Equity",
+            "note": "Return to shareholders"
+          },
+          {
+            "name": "DuPont (3-way)",
+            "formula": "ROE = (NI/Rev) × (Rev/Assets) × (Assets/Equity)",
+            "note": "Profit margin × Turnover × Leverage"
+          },
+          {
+            "name": "DuPont (5-way)",
+            "formula": "ROE = Tax Burden × Interest Burden × EBIT Margin × Turnover × Leverage",
+            "note": "Extended decomposition"
+          },
+          {
+            "name": "Inventory Turnover",
+            "formula": "Inv Turnover = COGS / Avg Inventory",
+            "note": "Days = 365 / Turnover"
+          },
+          {
+            "name": "DSO",
+            "formula": "DSO = 365 / Receivables Turnover",
+            "note": "Receivables Turnover = Revenue / Avg AR"
+          },
+          {
+            "name": "Debt-to-Equity",
+            "formula": "D/E = Total Debt / Total Equity",
+            "note": "Financial leverage measure"
+          },
+          {
+            "name": "Interest Coverage",
+            "formula": "Interest Coverage = EBIT / Interest Expense",
+            "note": "Ability to service debt"
+          },
+          {
+            "name": "CFO (Indirect)",
+            "formula": "CFO = NI + Non-cash charges ± WC changes",
+            "note": "Start from net income, adjust"
+          },
+          {
+            "name": "Free Cash Flow to Firm",
+            "formula": "FCFF = NI + NCC + Int(1-t) - FCInv - WCInv",
+            "note": "Cash available to all capital providers"
+          },
+          {
+            "name": "Free Cash Flow to Equity",
+            "formula": "FCFE = FCFF - Int(1-t) + Net Borrowing",
+            "note": "Cash available to equity holders"
+          }
+        ]
+      },
+      {
+        "subject": "Corporate Issuers",
+        "formulas": [
+          {
+            "name": "NPV",
+            "formula": "NPV = Σ[CFₜ / (1+r)ᵗ] - Initial Investment",
+            "note": "Accept if NPV > 0"
+          },
+          {
+            "name": "IRR",
+            "formula": "Rate where NPV = 0",
+            "note": "Accept if IRR > required return"
+          },
+          {
+            "name": "Payback Period",
+            "formula": "Time to recover initial investment",
+            "note": "Ignores TVM and post-payback CFs"
+          },
+          {
+            "name": "WACC",
+            "formula": "WACC = w_d × r_d(1-t) + w_e × r_e",
+            "note": "After-tax weighted average cost"
+          },
+          {
+            "name": "Cost of Equity (CAPM)",
+            "formula": "r_e = Rᶠ + β(R_m - Rᶠ)",
+            "note": "Risk-free + equity risk premium"
+          },
+          {
+            "name": "DOL",
+            "formula": "DOL = %ΔOI / %ΔREV = (Rev - VC) / (Rev - VC - FC)",
+            "note": "Operating leverage sensitivity"
+          },
+          {
+            "name": "DFL",
+            "formula": "DFL = %ΔEPS / %ΔOI = OI / (OI - Interest)",
+            "note": "Financial leverage sensitivity"
+          },
+          {
+            "name": "DTL",
+            "formula": "DTL = DOL × DFL",
+            "note": "Total leverage effect"
+          },
+          {
+            "name": "Breakeven",
+            "formula": "Q = FC / (P - VC)",
+            "note": "Units to cover fixed costs"
+          }
+        ]
+      },
+      {
+        "subject": "Equity Investments",
+        "formulas": [
+          {
+            "name": "DDM (Gordon Growth)",
+            "formula": "V₀ = D₁ / (r - g)",
+            "note": "Constant growth dividend model"
+          },
+          {
+            "name": "Required Return (DDM)",
+            "formula": "r = (D₁/P₀) + g",
+            "note": "Dividend yield + growth rate"
+          },
+          {
+            "name": "Price-to-Earnings",
+            "formula": "P/E = Price / EPS",
+            "note": "Leading P/E uses forecasted EPS"
+          },
+          {
+            "name": "Justified P/E (Leading)",
+            "formula": "P/E = (1-b) / (r-g)",
+            "note": "b = retention ratio, g = b × ROE"
+          },
+          {
+            "name": "Sustainable Growth",
+            "formula": "g = ROE × b",
+            "note": "b = retention ratio = 1 - payout"
+          },
+          {
+            "name": "PEG Ratio",
+            "formula": "PEG = (P/E) / g",
+            "note": "P/E relative to growth rate"
+          },
+          {
+            "name": "Price-to-Book",
+            "formula": "P/B = Price / Book Value per Share",
+            "note": "P/B < 1 may signal undervaluation"
+          },
+          {
+            "name": "Enterprise Value",
+            "formula": "EV = Market Cap + Debt - Cash",
+            "note": "Total value of the firm"
+          },
+          {
+            "name": "EV/EBITDA",
+            "formula": "EV / EBITDA",
+            "note": "Cross-capital structure comparison"
+          }
+        ]
+      },
+      {
+        "subject": "Fixed Income",
+        "formulas": [
+          {
+            "name": "Bond Price",
+            "formula": "P = Σ[C/(1+r)ᵗ] + FV/(1+r)ⁿ",
+            "note": "PV of coupons + PV of par"
+          },
+          {
+            "name": "Current Yield",
+            "formula": "CY = Annual Coupon / Price",
+            "note": "Income return only"
+          },
+          {
+            "name": "YTM",
+            "formula": "Rate that equates PV of all CFs to price",
+            "note": "Total return if held to maturity"
+          },
+          {
+            "name": "Macaulay Duration",
+            "formula": "MacD = Σ[t × PV(CFₜ)] / Price",
+            "note": "Weighted average time to receive CFs"
+          },
+          {
+            "name": "Modified Duration",
+            "formula": "ModD = MacD / (1 + YTM/m)",
+            "note": "Price sensitivity to yield change"
+          },
+          {
+            "name": "Price Change (Duration)",
+            "formula": "ΔP/P ≈ -ModD × Δy",
+            "note": "First-order approximation"
+          },
+          {
+            "name": "Price Change (with Convexity)",
+            "formula": "ΔP/P ≈ -ModD × Δy + ½ × Convexity × (Δy)²",
+            "note": "More accurate for large yield changes"
+          },
+          {
+            "name": "Effective Duration",
+            "formula": "EffD = (P₋ - P₊) / (2 × P₀ × Δy)",
+            "note": "For bonds with embedded options"
+          },
+          {
+            "name": "Credit Spread",
+            "formula": "Spread = YTM_corporate - YTM_benchmark",
+            "note": "Compensation for credit risk"
+          },
+          {
+            "name": "Expected Loss",
+            "formula": "EL = PD × LGD × EAD",
+            "note": "PD=prob default, LGD=loss given default"
+          }
+        ]
+      },
+      {
+        "subject": "Derivatives",
+        "formulas": [
+          {
+            "name": "Forward Price",
+            "formula": "F₀ = S₀ × (1 + r)<sup>T</sup>",
+            "note": "No-arbitrage forward (no income)"
+          },
+          {
+            "name": "Forward Payoff (Long)",
+            "formula": "Payoff = S_T - F₀",
+            "note": "Gain if spot > forward"
+          },
+          {
+            "name": "Call Payoff",
+            "formula": "max(0, S_T - X)",
+            "note": "Right to buy at strike X"
+          },
+          {
+            "name": "Put Payoff",
+            "formula": "max(0, X - S_T)",
+            "note": "Right to sell at strike X"
+          },
+          {
+            "name": "Put-Call Parity",
+            "formula": "c + PV(X) = p + S",
+            "note": "European options only"
+          },
+          {
+            "name": "Risk-Neutral Probability",
+            "formula": "πᵤ = (1 + r - d) / (u - d)",
+            "note": "Binomial model probability"
+          },
+          {
+            "name": "Binomial Option Value",
+            "formula": "C = [πᵤCᵤ + (1-πᵤ)C_d] / (1+r)",
+            "note": "Discounted expected payoff"
+          }
+        ]
+      },
+      {
+        "subject": "Alternative Investments",
+        "formulas": [
+          {
+            "name": "Cap Rate",
+            "formula": "Cap Rate = NOI / Property Value",
+            "note": "Real estate income yield"
+          },
+          {
+            "name": "Property Value",
+            "formula": "Value = NOI / Cap Rate",
+            "note": "Income approach to RE valuation"
+          },
+          {
+            "name": "Management Fee",
+            "formula": "Fee = Rate × AUM (or Committed Capital)",
+            "note": "Typically 1-2% annually"
+          },
+          {
+            "name": "Performance Fee",
+            "formula": "Incentive Rate × max(0, Return - Hurdle)",
+            "note": "Typically 20% above hurdle"
+          },
+          {
+            "name": "Net Return to LP",
+            "formula": "Net = Gross - Mgmt Fee - Perf Fee",
+            "note": "What investor actually earns"
+          }
+        ]
+      },
+      {
+        "subject": "Portfolio Management",
+        "formulas": [
+          {
+            "name": "Utility Function",
+            "formula": "U = E(R) - ½ × A × σ²",
+            "note": "A = risk aversion (A>0: risk-averse)"
+          },
+          {
+            "name": "CAL Equation",
+            "formula": "E(Rᶜ) = Rᶠ + [E(Rₚ)-Rᶠ]/σₚ × σᶜ",
+            "note": "Slope = Sharpe ratio"
+          },
+          {
+            "name": "Portfolio Variance (2 assets)",
+            "formula": "σ²ₚ = w²ₐσ²ₐ + w²_bσ²_b + 2wₐw_bρσₐσ_b",
+            "note": "Diversification when ρ < 1"
+          },
+          {
+            "name": "CAPM",
+            "formula": "E(Rᵢ) = Rᶠ + βᵢ[E(R_m) - Rᶠ]",
+            "note": "Only systematic risk rewarded"
+          },
+          {
+            "name": "Beta",
+            "formula": "β = Cov(Rᵢ, R_m) / σ²_m",
+            "note": "Systematic risk measure"
+          },
+          {
+            "name": "Treynor Ratio",
+            "formula": "Treynor = (Rₚ - Rᶠ) / βₚ",
+            "note": "Return per unit of beta risk"
+          },
+          {
+            "name": "Jensen's Alpha",
+            "formula": "α = Rₚ - [Rᶠ + β(R_m - Rᶠ)]",
+            "note": "Excess return above CAPM"
+          },
+          {
+            "name": "M-squared",
+            "formula": "M² = (Sharpeₚ - Sharpe_m) × σ_m",
+            "note": "Risk-adjusted in return units"
+          }
+        ]
+      }
+    ]
+  },
+  "interSubjectConnections": {
+    "connections": [
+      {
+        "title": "TVM Connects Everything",
+        "subjects": [
+          "Quantitative Methods",
+          "Fixed Income",
+          "Equity",
+          "Corporate Issuers"
+        ],
+        "desc": "Time value of money from Quants is used in bond pricing (FI), stock valuation (Equity), and NPV/IRR analysis (Corporate). Master PV/FV first."
+      },
+      {
+        "title": "Risk and Return Framework",
+        "subjects": [
+          "Portfolio Management",
+          "Equity",
+          "Fixed Income"
+        ],
+        "desc": "CAPM from Portfolio Management drives equity required return, which feeds into DDM valuations. Duration/convexity is the fixed income analog of beta."
+      },
+      {
+        "title": "Financial Statements → Valuation",
+        "subjects": [
+          "FSA",
+          "Equity",
+          "Corporate Issuers"
+        ],
+        "desc": "FSA provides the inputs (earnings, cash flows, book value) for equity valuation models and corporate capital budgeting decisions."
+      },
+      {
+        "title": "Cost of Capital Chain",
+        "subjects": [
+          "Portfolio Management",
+          "Corporate Issuers",
+          "Equity"
+        ],
+        "desc": "CAPM (Portfolio) → Cost of equity (Corporate) → Discount rate for valuation (Equity). WACC connects debt and equity costs."
+      },
+      {
+        "title": "Derivatives & Risk Management",
+        "subjects": [
+          "Derivatives",
+          "Portfolio Management",
+          "Fixed Income"
+        ],
+        "desc": "Derivatives are used to hedge portfolio risk (PM) and manage interest rate exposure (FI). Options pricing uses risk-free rate concepts."
+      },
+      {
+        "title": "Statistics Everywhere",
+        "subjects": [
+          "Quantitative Methods",
+          "Portfolio Management",
+          "Economics"
+        ],
+        "desc": "Probability, hypothesis testing, and regression from Quants are used in portfolio optimization, factor models, and economic forecasting."
+      },
+      {
+        "title": "Ethics Overlays All",
+        "subjects": [
+          "Ethics",
+          "All Subjects"
+        ],
+        "desc": "Ethical standards apply to every area: FSA (reporting integrity), Equity (fair recommendations), PM (fiduciary duty), Derivatives (disclosure)."
+      },
+      {
+        "title": "Interest Rates Connect Markets",
+        "subjects": [
+          "Economics",
+          "Fixed Income",
+          "Derivatives"
+        ],
+        "desc": "Central bank policy (Econ) drives interest rates → bond prices (FI) → forward/swap pricing (Derivatives). Fisher equation links inflation and rates."
+      },
+      {
+        "title": "Alternative Investments & Portfolio",
+        "subjects": [
+          "Alternative Investments",
+          "Portfolio Management"
+        ],
+        "desc": "Alternatives provide diversification benefits (low correlation) studied in PM. IPS constraints affect allocation to illiquid alternatives."
+      },
+      {
+        "title": "DuPont Analysis Bridge",
+        "subjects": [
+          "FSA",
+          "Equity",
+          "Corporate Issuers"
+        ],
+        "desc": "DuPont decomposes ROE (FSA) into profit margin, turnover, leverage. ROE drives sustainable growth rate (Equity) and measures capital efficiency (Corporate)."
+      }
+    ]
+  },
+  "practiceExam": {
+    "title": "CFA Level I — 180-Question Practice Exam",
+    "instructions": "This exam covers all 10 subjects weighted approximately by CFA Institute exam weights. 180 questions. Target: 70%+ to pass.",
+    "questions": [
+      {
+        "id": 1,
+        "subject": "Ethics",
+        "question": "A CFA charterholder discovers her firm is systematically overcharging clients. She should FIRST:",
+        "options": [
+          "Resign immediately",
+          "Report to the SEC",
+          "Report to her supervisor or compliance department",
+          "Contact the media"
+        ],
+        "correct": 2,
+        "explanation": "Standard I(A): First report internally to supervisor/compliance. Dissociate from the activity. External reporting or resignation are later steps."
+      },
+      {
+        "id": 2,
+        "subject": "Ethics",
+        "question": "Under the CFA Standards, \"fair dealing\" means:",
+        "options": [
+          "All clients receive identical recommendations at the same time",
+          "Clients are treated fairly, though not necessarily identically",
+          "Only institutional clients receive recommendations first",
+          "Fair dealing applies only to buy recommendations"
+        ],
+        "correct": 1,
+        "explanation": "Fair dealing requires equitable treatment of all clients. Different service levels are acceptable if disclosed, but no client should be systematically disadvantaged."
+      },
+      {
+        "id": 3,
+        "subject": "Ethics",
+        "question": "An analyst's friend who works at a tech company mentions at dinner that \"next quarter looks really good.\" The analyst should:",
+        "options": [
+          "Buy shares immediately",
+          "Not trade based on this potentially material nonpublic information",
+          "Share the information with her portfolio manager",
+          "Wait 24 hours then trade"
+        ],
+        "correct": 1,
+        "explanation": "Standard II(A): If the information could be material (would affect stock price), it is MNPI and cannot be traded upon until it becomes public."
+      },
+      {
+        "id": 4,
+        "subject": "Ethics",
+        "question": "The mosaic theory permits analysts to:",
+        "options": [
+          "Trade on material nonpublic information",
+          "Combine non-material nonpublic information with public information to form conclusions",
+          "Share insider information within their firm",
+          "Ignore confidentiality obligations"
+        ],
+        "correct": 1,
+        "explanation": "Mosaic theory allows combining public information with non-material nonpublic information to develop unique investment insights."
+      },
+      {
+        "id": 5,
+        "subject": "Ethics",
+        "question": "GIPS compliance requires that composites include:",
+        "options": [
+          "Only top-performing portfolios",
+          "All actual, discretionary, fee-paying portfolios managed under a similar strategy",
+          "Only portfolios with positive returns",
+          "A minimum of 10 portfolios"
+        ],
+        "correct": 1,
+        "explanation": "GIPS prevents cherry-picking by requiring ALL actual, discretionary, fee-paying portfolios to be included in composites."
+      },
+      {
+        "id": 6,
+        "subject": "Ethics",
+        "question": "A portfolio manager accepts an expensive bottle of wine from a broker. Under the Standards, she must:",
+        "options": [
+          "Return the gift immediately",
+          "Disclose the gift to her employer and assess whether it compromises independence",
+          "Accept it since it is common practice",
+          "Report the broker to regulators"
+        ],
+        "correct": 1,
+        "explanation": "Standard I(B): Gifts may compromise independence and objectivity. Must disclose to employer and evaluate whether acceptance is appropriate."
+      },
+      {
+        "id": 7,
+        "subject": "Ethics",
+        "question": "Standard IV(A) Loyalty to Employer allows a member to:",
+        "options": [
+          "Take client lists when leaving a firm",
+          "Copy proprietary models before resigning",
+          "Prepare to leave while still employed but not solicit clients until after departure",
+          "Compete with the employer while still employed"
+        ],
+        "correct": 2,
+        "explanation": "Members may plan their departure but must not misappropriate trade secrets, client lists, or solicit clients before leaving."
+      },
+      {
+        "id": 8,
+        "subject": "Ethics",
+        "question": "Under GIPS, verification is:",
+        "options": [
+          "Required for all firms",
+          "Voluntary and applies to the entire firm",
+          "Required only for composites above $100M",
+          "Applied to individual composites"
+        ],
+        "correct": 1,
+        "explanation": "GIPS verification is voluntary but recommended. If performed, it applies to the entire firm, not individual composites."
+      },
+      {
+        "id": 9,
+        "subject": "Ethics",
+        "question": "Priority of transactions under the Standards is:",
+        "options": [
+          "Employer > Client > Personal",
+          "Personal > Client > Employer",
+          "Client > Employer > Personal",
+          "All transactions have equal priority"
+        ],
+        "correct": 2,
+        "explanation": "Standard VI(B): Client interests come first, then employer, then personal accounts. This prevents front-running."
+      },
+      {
+        "id": 10,
+        "subject": "Ethics",
+        "question": "A CFA candidate claims to be a \"CFA Level II candidate\" on her resume. This is:",
+        "options": [
+          "Acceptable if she passed Level I",
+          "A violation — correct usage is \"Level II candidate in the CFA Program\"",
+          "Acceptable under all circumstances",
+          "Only acceptable if she is currently enrolled"
+        ],
+        "correct": 1,
+        "explanation": "Standard VII(B): Cannot imply partial designation. Must reference candidacy, not levels passed."
+      },
+      {
+        "id": 11,
+        "subject": "Ethics",
+        "question": "An investment manager publishes performance results that exclude terminated accounts with poor returns. This violates:",
+        "options": [
+          "Only GIPS",
+          "Standard III(D) Performance Presentation and GIPS principles",
+          "No standards if the accounts were closed",
+          "Only Standard I(C)"
+        ],
+        "correct": 1,
+        "explanation": "Excluding poor-performing terminated accounts creates survivorship bias and misrepresents performance, violating Standard III(D)."
+      },
+      {
+        "id": 12,
+        "subject": "Ethics",
+        "question": "When local laws conflict with the Code and Standards, a member must:",
+        "options": [
+          "Always follow local law",
+          "Always follow the Code and Standards",
+          "Follow the stricter requirement",
+          "Consult with CFA Institute"
+        ],
+        "correct": 2,
+        "explanation": "Follow whichever is stricter — local law or the Code and Standards. This ensures the highest ethical standard prevails."
+      },
+      {
+        "id": 13,
+        "subject": "Ethics",
+        "question": "An analyst copies a chart from a third-party research report into her own report without attribution. This violates:",
+        "options": [
+          "Standard I(C) Misrepresentation (plagiarism)",
+          "No standard since charts are public",
+          "Only if the data is wrong",
+          "Standard V(A) only"
+        ],
+        "correct": 0,
+        "explanation": "Standard I(C): Using another's work without proper attribution constitutes plagiarism, even for charts and graphs."
+      },
+      {
+        "id": 14,
+        "subject": "Ethics",
+        "question": "Soft dollars should be used for:",
+        "options": [
+          "Office rent and utilities",
+          "Research services that benefit clients",
+          "Employee bonuses",
+          "Marketing expenses"
+        ],
+        "correct": 1,
+        "explanation": "Soft dollar commissions should only be used for research and services that directly benefit the clients whose commissions generated them."
+      },
+      {
+        "id": 15,
+        "subject": "Ethics",
+        "question": "An investment advisor fails to update a client's IPS after the client retires. This most likely violates:",
+        "options": [
+          "Standard III(C) Suitability",
+          "Standard I(A) Knowledge of the Law",
+          "Standard IV(A) Loyalty to Employer",
+          "Standard V(B) Communication"
+        ],
+        "correct": 0,
+        "explanation": "Standard III(C): Suitability requires regularly updating the IPS to reflect changes in client circumstances, risk tolerance, and objectives."
+      },
+      {
+        "id": 16,
+        "subject": "Ethics",
+        "question": "Record retention requirements under the Standards suggest maintaining records for at least:",
+        "options": [
+          "3 years",
+          "5 years",
+          "7 years",
+          "10 years"
+        ],
+        "correct": 2,
+        "explanation": "Standard V(C): Records should be maintained for at least 7 years to support investment analysis and recommendations."
+      },
+      {
+        "id": 17,
+        "subject": "Ethics",
+        "question": "A supervisor is MOST likely in violation of Standard IV(C) if she:",
+        "options": [
+          "Delegates tasks to subordinates",
+          "Fails to establish reasonable compliance procedures",
+          "Reviews employee work quarterly",
+          "Assigns mentors to junior staff"
+        ],
+        "correct": 1,
+        "explanation": "Supervisors must establish and enforce compliance procedures. Failure to do so violates Standard IV(C) even if they did not directly participate in violations."
+      },
+      {
+        "id": 18,
+        "subject": "Ethics",
+        "question": "Referral fees must be disclosed:",
+        "options": [
+          "Only if they exceed $1,000",
+          "To the employer but not the client",
+          "To clients and prospective clients before entering the relationship",
+          "Only upon client request"
+        ],
+        "correct": 2,
+        "explanation": "Standard VI(C): Referral fees must be disclosed to clients and prospective clients so they can evaluate potential bias."
+      },
+      {
+        "id": 19,
+        "subject": "Ethics",
+        "question": "GIPS requires a minimum of how many years of compliant performance initially?",
+        "options": [
+          "1 year",
+          "3 years",
+          "5 years (or since inception)",
+          "10 years"
+        ],
+        "correct": 2,
+        "explanation": "Initially present at least 5 years of GIPS-compliant data (or since inception if less than 5 years), then build forward to 10 years."
+      },
+      {
+        "id": 20,
+        "subject": "Ethics",
+        "question": "Which is NOT a component of the CFA Institute Code of Ethics?",
+        "options": [
+          "Act with integrity and competence",
+          "Place client interests above your own",
+          "Guarantee investment returns",
+          "Promote the integrity of capital markets"
+        ],
+        "correct": 2,
+        "explanation": "The Code of Ethics never guarantees returns. It focuses on integrity, competence, client interests, and market integrity."
+      },
+      {
+        "id": 21,
+        "subject": "Ethics",
+        "question": "An analyst uses a complex valuation model she does not fully understand. This most likely violates:",
+        "options": [
+          "Standard I(E) Competence",
+          "Standard II(B) Market Manipulation",
+          "Standard IV(A) Loyalty",
+          "No standard"
+        ],
+        "correct": 0,
+        "explanation": "Standard I(E): Members must maintain competence and should not use tools or models they do not understand."
+      },
+      {
+        "id": 22,
+        "subject": "Ethics",
+        "question": "Market manipulation under Standard II(B) includes:",
+        "options": [
+          "Legitimate arbitrage trading",
+          "Spreading false information to inflate a stock price",
+          "Publishing research with a sell recommendation",
+          "Rebalancing a portfolio"
+        ],
+        "correct": 1,
+        "explanation": "Market manipulation includes spreading false rumors, wash trading, and other actions designed to artificially affect prices."
+      },
+      {
+        "id": 23,
+        "subject": "Ethics",
+        "question": "Standard III(E) Preservation of Confidentiality requires:",
+        "options": [
+          "Keeping all client information confidential indefinitely",
+          "Maintaining confidentiality unless disclosure is required by law or the client permits it",
+          "Sharing client information only with senior management",
+          "Confidentiality only for institutional clients"
+        ],
+        "correct": 1,
+        "explanation": "Client information must be kept confidential unless required by law, needed for an investigation, or the client permits disclosure."
+      },
+      {
+        "id": 24,
+        "subject": "Ethics",
+        "question": "Churning — excessive trading to generate commissions — violates:",
+        "options": [
+          "Standard III(A) Loyalty, Prudence, and Care",
+          "Standard I(D) Misconduct only",
+          "Standard V(A) only",
+          "No specific standard"
+        ],
+        "correct": 0,
+        "explanation": "Churning directly violates the duty of loyalty, prudence, and care owed to clients. It may also violate other standards."
+      },
+      {
+        "id": 25,
+        "subject": "Ethics",
+        "question": "A CFA member can claim GIPS compliance for her firm if:",
+        "options": [
+          "At least 80% of composites comply",
+          "The firm applies GIPS standards to all composites firm-wide",
+          "The firm's largest composite complies",
+          "The firm plans to comply within 2 years"
+        ],
+        "correct": 1,
+        "explanation": "GIPS compliance is all or nothing. A firm must apply GIPS standards across the entire firm, not selectively."
+      },
+      {
+        "id": 26,
+        "subject": "Ethics",
+        "question": "An analyst writes in a report: \"This stock WILL return 20% this year.\" This violates:",
+        "options": [
+          "Standard I(C) Misrepresentation",
+          "Standard II(A) MNPI",
+          "No standard",
+          "Standard III(B) Fair Dealing"
+        ],
+        "correct": 0,
+        "explanation": "Guaranteeing future returns is a misrepresentation. Analysts should distinguish between facts, opinions, and projections."
+      },
+      {
+        "id": 27,
+        "subject": "Ethics",
+        "question": "Independence and objectivity are MOST threatened by:",
+        "options": [
+          "Using public databases for research",
+          "Accepting issuer-paid travel to visit a company",
+          "Reading sell-side research reports",
+          "Attending public investor conferences"
+        ],
+        "correct": 1,
+        "explanation": "Standard I(B): Issuer-paid travel creates pressure to write favorable research. Best practice: firm pays for analyst travel."
+      },
+      {
+        "id": 28,
+        "subject": "Ethics",
+        "question": "A firm wants to present non-GIPS-compliant historical performance alongside GIPS-compliant data. This is:",
+        "options": [
+          "Allowed if clearly labeled as non-compliant",
+          "Allowed without any disclosure",
+          "Never permitted under GIPS",
+          "Only allowed for the first year"
+        ],
+        "correct": 0,
+        "explanation": "Non-compliant data may be shown if clearly labeled, but it cannot be linked to or presented as GIPS-compliant performance."
+      },
+      {
+        "id": 29,
+        "subject": "Ethics",
+        "question": "The primary purpose of an IPS (Investment Policy Statement) is to:",
+        "options": [
+          "Guarantee a minimum return",
+          "Document the client's objectives, constraints, and the investment strategy",
+          "Satisfy regulatory requirements only",
+          "Limit the advisor's liability"
+        ],
+        "correct": 1,
+        "explanation": "The IPS establishes the framework for managing the client's portfolio, including return objectives, risk tolerance, and constraints."
+      },
+      {
+        "id": 30,
+        "subject": "Ethics",
+        "question": "Under the ethical decision-making framework, \"reflect\" means:",
+        "options": [
+          "Consult with a lawyer",
+          "Evaluate the outcome and what could be improved for future decisions",
+          "Write a formal report",
+          "Report to CFA Institute"
+        ],
+        "correct": 1,
+        "explanation": "The reflection step involves evaluating the decision outcome, considering what worked well and what could be improved for future ethical dilemmas."
+      },
+      {
+        "id": 31,
+        "subject": "Quantitative Methods",
+        "question": "An investment of $10,000 at 8% compounded quarterly for 2 years grows to approximately:",
+        "options": [
+          "$11,717",
+          "$11,600",
+          "$11,699",
+          "$11,664"
+        ],
+        "correct": 0,
+        "explanation": "FV = 10,000 × (1 + 0.08/4)^(4×2) = 10,000 × (1.02)^8 = 10,000 × 1.17166 = $11,717."
+      },
+      {
+        "id": 32,
+        "subject": "Quantitative Methods",
+        "question": "The EAR for a stated annual rate of 12% compounded monthly is closest to:",
+        "options": [
+          "12.00%",
+          "12.68%",
+          "12.36%",
+          "12.55%"
+        ],
+        "correct": 1,
+        "explanation": "EAR = (1 + 0.12/12)^12 - 1 = (1.01)^12 - 1 = 1.12683 - 1 = 12.68%."
+      },
+      {
+        "id": 33,
+        "subject": "Quantitative Methods",
+        "question": "A dataset has mean 50 and standard deviation 10. The coefficient of variation is:",
+        "options": [
+          "0.2 or 20%",
+          "0.5 or 50%",
+          "5.0",
+          "500%"
+        ],
+        "correct": 0,
+        "explanation": "CV = σ/μ = 10/50 = 0.20 or 20%. Measures relative dispersion."
+      },
+      {
+        "id": 34,
+        "subject": "Quantitative Methods",
+        "question": "For a 95% confidence interval with a large sample, the z-value is approximately:",
+        "options": [
+          "1.28",
+          "1.65",
+          "1.96",
+          "2.58"
+        ],
+        "correct": 2,
+        "explanation": "95% CI uses z = 1.96. 90% uses 1.65, 99% uses 2.58."
+      },
+      {
+        "id": 35,
+        "subject": "Quantitative Methods",
+        "question": "In hypothesis testing, a Type I error occurs when:",
+        "options": [
+          "Failing to reject a false null hypothesis",
+          "Rejecting a true null hypothesis",
+          "The test statistic equals the critical value",
+          "The p-value exceeds the significance level"
+        ],
+        "correct": 1,
+        "explanation": "Type I error (α): rejecting H₀ when it is actually true. Type II error (β): failing to reject H₀ when it is false."
+      },
+      {
+        "id": 36,
+        "subject": "Quantitative Methods",
+        "question": "The present value of an ordinary annuity of $1,000 for 5 years at 6% is closest to:",
+        "options": [
+          "$4,212",
+          "$4,917",
+          "$5,000",
+          "$5,637"
+        ],
+        "correct": 0,
+        "explanation": "PV = 1000 × [1 - (1.06)^-5] / 0.06 = 1000 × 4.2124 = $4,212."
+      },
+      {
+        "id": 37,
+        "subject": "Quantitative Methods",
+        "question": "A positively skewed distribution has:",
+        "options": [
+          "Mean < Median < Mode",
+          "Mean = Median = Mode",
+          "Mode < Median < Mean",
+          "Mean = Mode > Median"
+        ],
+        "correct": 2,
+        "explanation": "Positive skew: tail to the right. Mode < Median < Mean. The mean is pulled toward the tail."
+      },
+      {
+        "id": 38,
+        "subject": "Quantitative Methods",
+        "question": "Bayes' formula is used to:",
+        "options": [
+          "Calculate variance",
+          "Update probabilities with new information",
+          "Determine the median",
+          "Test for normality"
+        ],
+        "correct": 1,
+        "explanation": "Bayes' formula updates prior probabilities using new information to calculate posterior probabilities: P(A|B) = P(B|A)P(A)/P(B)."
+      },
+      {
+        "id": 39,
+        "subject": "Quantitative Methods",
+        "question": "The correlation coefficient ranges from:",
+        "options": [
+          "0 to 1",
+          "-1 to 0",
+          "-1 to +1",
+          "0 to infinity"
+        ],
+        "correct": 2,
+        "explanation": "Correlation (ρ) is standardized covariance ranging from -1 (perfect negative) to +1 (perfect positive). 0 = no linear relationship."
+      },
+      {
+        "id": 40,
+        "subject": "Quantitative Methods",
+        "question": "In a simple linear regression, R² = 0.81 means:",
+        "options": [
+          "81% of the variation in Y is explained by X",
+          "The correlation is 0.81",
+          "81% of observations fall on the line",
+          "The slope is 0.81"
+        ],
+        "correct": 0,
+        "explanation": "R² (coefficient of determination) = proportion of variation in the dependent variable explained by the independent variable."
+      },
+      {
+        "id": 41,
+        "subject": "Quantitative Methods",
+        "question": "The geometric mean return is MOST appropriate for:",
+        "options": [
+          "Calculating average single-period returns",
+          "Measuring compound growth over multiple periods",
+          "Estimating future expected returns",
+          "Comparing portfolios of different sizes"
+        ],
+        "correct": 1,
+        "explanation": "The geometric mean accurately reflects compound growth over time. It is always ≤ the arithmetic mean."
+      },
+      {
+        "id": 42,
+        "subject": "Quantitative Methods",
+        "question": "A 99% confidence interval is _____ a 95% confidence interval.",
+        "options": [
+          "Narrower than",
+          "The same width as",
+          "Wider than",
+          "Unrelated to"
+        ],
+        "correct": 2,
+        "explanation": "Higher confidence requires a wider interval. 99% CI uses z=2.58 vs 1.96 for 95%, resulting in a wider range."
+      },
+      {
+        "id": 43,
+        "subject": "Quantitative Methods",
+        "question": "Kurtosis measures:",
+        "options": [
+          "Symmetry of a distribution",
+          "The degree of peakedness and tail weight",
+          "Central tendency",
+          "Linear association"
+        ],
+        "correct": 1,
+        "explanation": "Kurtosis measures tail weight and peakedness. Leptokurtic (>3): fat tails. Platykurtic (<3): thin tails. Mesokurtic (=3): normal."
+      },
+      {
+        "id": 44,
+        "subject": "Quantitative Methods",
+        "question": "A Monte Carlo simulation is used to:",
+        "options": [
+          "Calculate exact analytical solutions",
+          "Generate random scenarios to model uncertainty and estimate outcomes",
+          "Replace fundamental analysis",
+          "Guarantee portfolio returns"
+        ],
+        "correct": 1,
+        "explanation": "Monte Carlo simulation uses random sampling to model uncertainty, generating thousands of scenarios to estimate probability distributions of outcomes."
+      },
+      {
+        "id": 45,
+        "subject": "Economics",
+        "question": "In a perfectly competitive market, firms in long-run equilibrium earn:",
+        "options": [
+          "Economic profits",
+          "Normal profits (zero economic profit)",
+          "Accounting losses",
+          "Monopoly profits"
+        ],
+        "correct": 1,
+        "explanation": "Free entry/exit drives economic profit to zero in the long run. Firms earn only normal (accounting) profits."
+      },
+      {
+        "id": 46,
+        "subject": "Economics",
+        "question": "If MPC = 0.8, the fiscal multiplier is:",
+        "options": [
+          "0.8",
+          "1.25",
+          "4.0",
+          "5.0"
+        ],
+        "correct": 3,
+        "explanation": "Multiplier = 1/(1-MPC) = 1/(1-0.8) = 1/0.2 = 5.0."
+      },
+      {
+        "id": 47,
+        "subject": "Economics",
+        "question": "A recession is characterized by:",
+        "options": [
+          "Rising GDP and falling unemployment",
+          "Declining real GDP, rising unemployment, falling consumer spending",
+          "Hyperinflation and rising GDP",
+          "Stable prices and full employment"
+        ],
+        "correct": 1,
+        "explanation": "Recessions feature declining output, rising unemployment, reduced consumer spending, and often falling inflation."
+      },
+      {
+        "id": 48,
+        "subject": "Economics",
+        "question": "Expansionary monetary policy by a central bank involves:",
+        "options": [
+          "Raising interest rates",
+          "Selling government securities",
+          "Lowering interest rates and/or buying securities",
+          "Increasing tax rates"
+        ],
+        "correct": 2,
+        "explanation": "Expansionary monetary policy: lower interest rates, buy securities (increase money supply), lower reserve requirements."
+      },
+      {
+        "id": 49,
+        "subject": "Economics",
+        "question": "According to the quantity theory of money (MV = PY), if M increases and V and Y are constant:",
+        "options": [
+          "P decreases",
+          "P increases proportionally",
+          "Y increases",
+          "V increases"
+        ],
+        "correct": 1,
+        "explanation": "If V and Y are constant, an increase in M leads to a proportional increase in P (price level) — inflation."
+      },
+      {
+        "id": 50,
+        "subject": "Economics",
+        "question": "A country has a comparative advantage in producing a good if:",
+        "options": [
+          "It can produce more of the good than another country",
+          "It can produce the good at a lower opportunity cost",
+          "It has more workers",
+          "It has lower wages"
+        ],
+        "correct": 1,
+        "explanation": "Comparative advantage is based on lower OPPORTUNITY COST, not absolute productivity. Both countries benefit from trade."
+      },
+      {
+        "id": 51,
+        "subject": "Economics",
+        "question": "If the nominal interest rate is 8% and inflation is 3%, the real interest rate is approximately:",
+        "options": [
+          "5%",
+          "11%",
+          "2.67%",
+          "24%"
+        ],
+        "correct": 0,
+        "explanation": "Fisher: Real ≈ Nominal - Inflation = 8% - 3% = 5%. Exact: (1.08/1.03) - 1 = 4.85%."
+      },
+      {
+        "id": 52,
+        "subject": "Economics",
+        "question": "A monopolist maximizes profit where:",
+        "options": [
+          "P = MC",
+          "MR = MC",
+          "P = ATC",
+          "MR = ATC"
+        ],
+        "correct": 1,
+        "explanation": "All firms maximize profit where MR = MC. For monopolists, P > MR because they face a downward-sloping demand curve."
+      },
+      {
+        "id": 53,
+        "subject": "Economics",
+        "question": "An increase in a country's current account deficit must be offset by:",
+        "options": [
+          "A decrease in the financial account",
+          "An increase in the capital/financial account surplus",
+          "An increase in exports",
+          "A decrease in imports"
+        ],
+        "correct": 1,
+        "explanation": "Balance of payments: Current Account + Capital/Financial Account = 0. A current account deficit requires a financial account surplus (capital inflows)."
+      },
+      {
+        "id": 54,
+        "subject": "Economics",
+        "question": "Demand is elastic when:",
+        "options": [
+          "|E| < 1 — quantity changes less than price",
+          "|E| > 1 — quantity changes more than price",
+          "|E| = 1",
+          "|E| = 0"
+        ],
+        "correct": 1,
+        "explanation": "Elastic demand: |E| > 1. A 1% price change causes more than 1% quantity change. Total revenue falls when price rises."
+      },
+      {
+        "id": 55,
+        "subject": "Economics",
+        "question": "The natural rate of unemployment includes:",
+        "options": [
+          "Only cyclical unemployment",
+          "Frictional and structural unemployment",
+          "All types including cyclical",
+          "Only structural unemployment"
+        ],
+        "correct": 1,
+        "explanation": "Natural rate = frictional + structural unemployment. It excludes cyclical unemployment and represents the economy at full employment."
+      },
+      {
+        "id": 56,
+        "subject": "Economics",
+        "question": "A depreciating domestic currency makes:",
+        "options": [
+          "Imports cheaper and exports more expensive",
+          "Imports more expensive and exports cheaper (more competitive)",
+          "No change in trade",
+          "Both imports and exports more expensive"
+        ],
+        "correct": 1,
+        "explanation": "A weaker domestic currency makes imports more expensive and exports cheaper for foreign buyers, improving competitiveness."
+      },
+      {
+        "id": 57,
+        "subject": "Economics",
+        "question": "Under interest rate parity, if domestic rates are higher than foreign rates, the forward exchange rate will show the domestic currency at a:",
+        "options": [
+          "Premium",
+          "Discount",
+          "Parity",
+          "Cannot determine"
+        ],
+        "correct": 1,
+        "explanation": "Higher domestic rates → domestic currency trades at a forward DISCOUNT. The forward rate offsets the interest rate differential."
+      },
+      {
+        "id": 58,
+        "subject": "Economics",
+        "question": "An oligopoly is characterized by:",
+        "options": [
+          "Many small firms",
+          "A single firm",
+          "A few large firms with interdependent pricing",
+          "Free entry and exit"
+        ],
+        "correct": 2,
+        "explanation": "Oligopoly: few large firms, barriers to entry, interdependent decision-making. Examples: airlines, telecom."
+      },
+      {
+        "id": 59,
+        "subject": "FSA",
+        "question": "Under IFRS, the conceptual framework's fundamental qualitative characteristics are:",
+        "options": [
+          "Relevance and faithful representation",
+          "Comparability and timeliness",
+          "Understandability and verifiability",
+          "Cost constraint and materiality"
+        ],
+        "correct": 0,
+        "explanation": "Fundamental: Relevance and Faithful Representation. Enhancing: Comparability, Verifiability, Timeliness, Understandability."
+      },
+      {
+        "id": 60,
+        "subject": "FSA",
+        "question": "Revenue is recognized when:",
+        "options": [
+          "Cash is received",
+          "A contract is signed",
+          "Performance obligations are satisfied",
+          "An invoice is sent"
+        ],
+        "correct": 2,
+        "explanation": "ASC 606/IFRS 15: Revenue recognized when performance obligations are satisfied (goods/services transferred to customer)."
+      },
+      {
+        "id": 61,
+        "subject": "FSA",
+        "question": "In periods of rising prices, FIFO compared to LIFO results in:",
+        "options": [
+          "Higher COGS and higher net income",
+          "Lower COGS and higher net income",
+          "Higher COGS and lower inventory",
+          "Lower COGS and lower net income"
+        ],
+        "correct": 1,
+        "explanation": "Rising prices + FIFO: older, cheaper costs in COGS → lower COGS, higher gross profit, higher ending inventory, higher net income."
+      },
+      {
+        "id": 62,
+        "subject": "FSA",
+        "question": "DuPont ROE (3-way) decomposes into:",
+        "options": [
+          "Profit margin × Asset turnover × Financial leverage",
+          "EPS × P/E ratio × Dividend payout",
+          "ROIC × Debt/Equity × Tax rate",
+          "Revenue growth × Margin expansion × Share buybacks"
+        ],
+        "correct": 0,
+        "explanation": "ROE = (NI/Revenue) × (Revenue/Assets) × (Assets/Equity) = Profit Margin × Asset Turnover × Financial Leverage."
+      },
+      {
+        "id": 63,
+        "subject": "FSA",
+        "question": "Operating cash flow using the indirect method starts with:",
+        "options": [
+          "Revenue",
+          "Cash from customers",
+          "Net income",
+          "EBITDA"
+        ],
+        "correct": 2,
+        "explanation": "Indirect method: Start with net income, add back non-cash charges (depreciation), adjust for working capital changes."
+      },
+      {
+        "id": 64,
+        "subject": "FSA",
+        "question": "Capitalizing vs. expensing a cost: capitalizing results in:",
+        "options": [
+          "Lower current assets",
+          "Higher current period expense and lower assets",
+          "Higher total assets and higher current period net income",
+          "No effect on financial statements"
+        ],
+        "correct": 2,
+        "explanation": "Capitalizing: asset recorded on balance sheet (higher assets), expense spread over time (higher current net income, lower future NI)."
+      },
+      {
+        "id": 65,
+        "subject": "FSA",
+        "question": "A deferred tax liability arises when:",
+        "options": [
+          "Tax expense exceeds taxes payable",
+          "Taxes payable exceed tax expense",
+          "Tax expense equals taxes payable",
+          "The firm has tax-loss carryforwards"
+        ],
+        "correct": 0,
+        "explanation": "DTL: taxable income < accounting income now (tax expense > taxes payable). The firm will pay MORE tax in the future."
+      },
+      {
+        "id": 66,
+        "subject": "FSA",
+        "question": "The quick ratio excludes _____ from current assets:",
+        "options": [
+          "Cash",
+          "Accounts receivable",
+          "Inventory and prepaid expenses",
+          "Short-term investments"
+        ],
+        "correct": 2,
+        "explanation": "Quick ratio = (Cash + ST Investments + Receivables) / Current Liabilities. Excludes inventory (less liquid) and prepaids."
+      },
+      {
+        "id": 67,
+        "subject": "FSA",
+        "question": "Depreciation method that produces highest expense in early years:",
+        "options": [
+          "Straight-line",
+          "Double-declining balance",
+          "Units of production",
+          "Sum-of-years digits and double-declining balance"
+        ],
+        "correct": 3,
+        "explanation": "Accelerated methods (DDB, SYD) front-load depreciation expense. DDB is most common accelerated method."
+      },
+      {
+        "id": 68,
+        "subject": "FSA",
+        "question": "Under IFRS, investment property can be reported at:",
+        "options": [
+          "Cost model only",
+          "Fair value model only",
+          "Either cost model or fair value model",
+          "Replacement cost"
+        ],
+        "correct": 2,
+        "explanation": "IFRS allows either cost or fair value model for investment property. US GAAP requires cost model only."
+      },
+      {
+        "id": 69,
+        "subject": "FSA",
+        "question": "Free cash flow to the firm (FCFF) equals:",
+        "options": [
+          "NI + NCC + Int(1-t) - FCInv - WCInv",
+          "CFO - Capital expenditures",
+          "NI - Dividends",
+          "Revenue - Total expenses"
+        ],
+        "correct": 0,
+        "explanation": "FCFF = NI + Non-cash charges + Interest(1-t) - Fixed capital investment - Working capital investment."
+      },
+      {
+        "id": 70,
+        "subject": "FSA",
+        "question": "An operating lease vs. finance lease: the operating lease results in:",
+        "options": [
+          "Higher total assets",
+          "Lower total liabilities (pre-IFRS 16/ASC 842)",
+          "Higher interest expense",
+          "Higher depreciation expense"
+        ],
+        "correct": 1,
+        "explanation": "Historically, operating leases were off-balance-sheet, resulting in lower reported assets and liabilities. Post-ASC 842/IFRS 16, most leases are capitalized."
+      },
+      {
+        "id": 71,
+        "subject": "FSA",
+        "question": "Goodwill on the balance sheet arises from:",
+        "options": [
+          "Internal R&D spending",
+          "Acquisition price exceeding fair value of net identifiable assets acquired",
+          "Brand development costs",
+          "Patent registrations"
+        ],
+        "correct": 1,
+        "explanation": "Goodwill = Purchase price - Fair value of net identifiable assets acquired. Only from business combinations, never internally generated."
+      },
+      {
+        "id": 72,
+        "subject": "FSA",
+        "question": "Diluted EPS will be _____ basic EPS:",
+        "options": [
+          "Greater than or equal to",
+          "Less than or equal to",
+          "Always equal to",
+          "Unrelated to"
+        ],
+        "correct": 1,
+        "explanation": "Diluted EPS ≤ Basic EPS because it includes the effect of all dilutive securities (options, convertibles) in the denominator."
+      },
+      {
+        "id": 73,
+        "subject": "FSA",
+        "question": "The cash conversion cycle equals:",
+        "options": [
+          "DSO + DIO - DPO",
+          "DSO - DIO + DPO",
+          "DIO + DPO - DSO",
+          "DSO + DIO + DPO"
+        ],
+        "correct": 0,
+        "explanation": "CCC = Days Inventory Outstanding + Days Sales Outstanding - Days Payable Outstanding. Lower CCC = more efficient."
+      },
+      {
+        "id": 74,
+        "subject": "FSA",
+        "question": "Under LIFO liquidation in rising prices, a company that draws down old inventory will report:",
+        "options": [
+          "Higher COGS and lower profits",
+          "Lower COGS and higher profits than normal",
+          "No change in profits",
+          "Higher inventory values"
+        ],
+        "correct": 1,
+        "explanation": "LIFO liquidation: old, lower-cost inventory enters COGS → lower COGS → higher gross profit. This is a one-time distortion."
+      },
+      {
+        "id": 75,
+        "subject": "FSA",
+        "question": "An impairment loss on a long-lived asset is recognized when:",
+        "options": [
+          "Market value exceeds carrying value",
+          "Carrying value exceeds recoverable amount",
+          "The asset is fully depreciated",
+          "The asset is sold"
+        ],
+        "correct": 1,
+        "explanation": "Impairment: carrying value > recoverable amount (higher of fair value less costs to sell and value in use under IFRS)."
+      },
+      {
+        "id": 76,
+        "subject": "FSA",
+        "question": "Interest paid is classified as _____ under IFRS and _____ under US GAAP:",
+        "options": [
+          "CFO or CFF under IFRS; CFO under US GAAP",
+          "Always CFF under both",
+          "Always CFO under both",
+          "CFI under IFRS; CFF under US GAAP"
+        ],
+        "correct": 0,
+        "explanation": "IFRS: Interest paid can be CFO or CFF (choice). US GAAP: Interest paid must be classified as CFO."
+      },
+      {
+        "id": 77,
+        "subject": "FSA",
+        "question": "The interest coverage ratio is calculated as:",
+        "options": [
+          "Net income / Interest expense",
+          "EBIT / Interest expense",
+          "EBITDA / Total debt",
+          "CFO / Interest expense"
+        ],
+        "correct": 1,
+        "explanation": "Interest coverage = EBIT / Interest expense. Measures ability to cover interest payments from operating earnings."
+      },
+      {
+        "id": 78,
+        "subject": "FSA",
+        "question": "A company with inventory turnover of 12 has average days in inventory of:",
+        "options": [
+          "12 days",
+          "30 days",
+          "30.4 days",
+          "36 days"
+        ],
+        "correct": 2,
+        "explanation": "Days in inventory = 365 / Inventory Turnover = 365 / 12 = 30.4 days."
+      },
+      {
+        "id": 79,
+        "subject": "FSA",
+        "question": "Comprehensive income includes:",
+        "options": [
+          "Only net income",
+          "Net income plus other comprehensive income (OCI)",
+          "Only OCI items",
+          "Revenue minus expenses"
+        ],
+        "correct": 1,
+        "explanation": "Comprehensive income = Net income + OCI. OCI includes unrealized gains/losses on AFS securities, foreign currency translation, pension adjustments."
+      },
+      {
+        "id": 80,
+        "subject": "FSA",
+        "question": "Accounts receivable turnover of 8 implies an average collection period of:",
+        "options": [
+          "8 days",
+          "45.6 days",
+          "52 days",
+          "36.5 days"
+        ],
+        "correct": 1,
+        "explanation": "Average collection period = 365 / AR Turnover = 365 / 8 = 45.6 days."
+      },
+      {
+        "id": 81,
+        "subject": "Corporate Issuers",
+        "question": "A project with NPV = +$500,000 should be:",
+        "options": [
+          "Rejected because it has risk",
+          "Accepted because positive NPV adds shareholder value",
+          "Deferred until NPV is higher",
+          "Accepted only if IRR exceeds WACC by 5%"
+        ],
+        "correct": 1,
+        "explanation": "Positive NPV projects add value to the firm. Accept all projects with NPV > 0 (at the appropriate discount rate)."
+      },
+      {
+        "id": 82,
+        "subject": "Corporate Issuers",
+        "question": "WACC is calculated as:",
+        "options": [
+          "Cost of debt + Cost of equity",
+          "w_d × r_d(1-t) + w_e × r_e",
+          "Total interest / Total capital",
+          "r_d × r_e"
+        ],
+        "correct": 1,
+        "explanation": "WACC = weight of debt × after-tax cost of debt + weight of equity × cost of equity. Uses market value weights."
+      },
+      {
+        "id": 83,
+        "subject": "Corporate Issuers",
+        "question": "The pecking order theory suggests firms prefer financing in this order:",
+        "options": [
+          "Equity, then debt, then internal funds",
+          "Internal funds, then debt, then equity",
+          "Debt, then equity, then internal funds",
+          "Equal preference for all sources"
+        ],
+        "correct": 1,
+        "explanation": "Pecking order: 1) Internal funds (retained earnings), 2) Debt, 3) Equity issuance. Based on information asymmetry."
+      },
+      {
+        "id": 84,
+        "subject": "Corporate Issuers",
+        "question": "Operating leverage is HIGH when a firm has:",
+        "options": [
+          "High variable costs relative to fixed costs",
+          "High fixed costs relative to variable costs",
+          "Low total costs",
+          "High debt levels"
+        ],
+        "correct": 1,
+        "explanation": "High operating leverage = high fixed costs relative to variable costs. Small revenue changes cause large swings in operating income."
+      },
+      {
+        "id": 85,
+        "subject": "Corporate Issuers",
+        "question": "The IRR is the discount rate at which:",
+        "options": [
+          "NPV is maximized",
+          "NPV equals zero",
+          "Payback period is minimized",
+          "Profitability index equals zero"
+        ],
+        "correct": 1,
+        "explanation": "IRR is the rate that makes NPV = 0. Accept if IRR > required rate of return (cost of capital)."
+      },
+      {
+        "id": 86,
+        "subject": "Corporate Issuers",
+        "question": "A weakness of the payback period method is:",
+        "options": [
+          "It considers the time value of money",
+          "It ignores cash flows after the payback period",
+          "It is too complex to calculate",
+          "It always gives the same result as NPV"
+        ],
+        "correct": 1,
+        "explanation": "Payback ignores: TVM, cash flows after payback, and risk. It only measures liquidity/time to recover investment."
+      },
+      {
+        "id": 87,
+        "subject": "Corporate Issuers",
+        "question": "Modigliani-Miller (no taxes) states that capital structure:",
+        "options": [
+          "Always matters for firm value",
+          "Is irrelevant to firm value",
+          "Should be 100% equity",
+          "Should be 100% debt"
+        ],
+        "correct": 1,
+        "explanation": "MM Proposition I (no taxes): Firm value is independent of capital structure. With taxes, debt adds value through tax shields."
+      },
+      {
+        "id": 88,
+        "subject": "Corporate Issuers",
+        "question": "A company's breakeven quantity is 1,000 units. If fixed costs are $50,000 and variable cost per unit is $30, the price per unit is:",
+        "options": [
+          "$80",
+          "$50",
+          "$30",
+          "$100"
+        ],
+        "correct": 0,
+        "explanation": "Q = FC/(P-VC). 1000 = 50,000/(P-30). P-30 = 50. P = $80."
+      },
+      {
+        "id": 89,
+        "subject": "Corporate Issuers",
+        "question": "Agency costs arise from conflicts between:",
+        "options": [
+          "Customers and suppliers",
+          "Shareholders and managers, or shareholders and bondholders",
+          "The firm and regulators",
+          "Domestic and foreign investors"
+        ],
+        "correct": 1,
+        "explanation": "Agency problems: managers may not act in shareholders' best interest; shareholders may take risks that harm bondholders."
+      },
+      {
+        "id": 90,
+        "subject": "Corporate Issuers",
+        "question": "The cost of equity using CAPM with Rf=3%, β=1.2, market premium=7% is:",
+        "options": [
+          "11.4%",
+          "10.2%",
+          "8.4%",
+          "12.6%"
+        ],
+        "correct": 0,
+        "explanation": "r_e = 3% + 1.2 × 7% = 3% + 8.4% = 11.4%."
+      },
+      {
+        "id": 91,
+        "subject": "Corporate Issuers",
+        "question": "Working capital management focuses on:",
+        "options": [
+          "Long-term debt management",
+          "Managing current assets and current liabilities efficiently",
+          "Equity issuance decisions",
+          "Dividend policy"
+        ],
+        "correct": 1,
+        "explanation": "Working capital management optimizes current assets (cash, receivables, inventory) and current liabilities (payables) for liquidity and efficiency."
+      },
+      {
+        "id": 92,
+        "subject": "Corporate Issuers",
+        "question": "A company with DOL=3 and DFL=2 has DTL of:",
+        "options": [
+          "5",
+          "6",
+          "1.5",
+          "1"
+        ],
+        "correct": 1,
+        "explanation": "DTL = DOL × DFL = 3 × 2 = 6. A 1% change in revenue leads to a 6% change in EPS."
+      },
+      {
+        "id": 93,
+        "subject": "Corporate Issuers",
+        "question": "Stakeholder theory vs shareholder theory: stakeholder theory considers:",
+        "options": [
+          "Only shareholder wealth maximization",
+          "The interests of all stakeholders: employees, customers, suppliers, community",
+          "Only bondholder interests",
+          "Government interests only"
+        ],
+        "correct": 1,
+        "explanation": "Stakeholder theory considers all parties affected by corporate decisions, not just shareholders."
+      },
+      {
+        "id": 94,
+        "subject": "Corporate Issuers",
+        "question": "The profitability index (PI) is calculated as:",
+        "options": [
+          "NPV / Initial Investment",
+          "PV of future CFs / Initial Investment",
+          "IRR / WACC",
+          "Initial Investment / NPV"
+        ],
+        "correct": 1,
+        "explanation": "PI = PV of future cash flows / Initial Investment. Accept if PI > 1.0. Useful for capital rationing."
+      },
+      {
+        "id": 95,
+        "subject": "Equity",
+        "question": "Using the Gordon Growth Model: D₁=$2, r=10%, g=4%. Stock value is:",
+        "options": [
+          "$33.33",
+          "$50.00",
+          "$20.00",
+          "$28.57"
+        ],
+        "correct": 0,
+        "explanation": "V = D₁/(r-g) = $2/(0.10-0.04) = $2/0.06 = $33.33."
+      },
+      {
+        "id": 96,
+        "subject": "Equity",
+        "question": "The semi-strong form of market efficiency implies:",
+        "options": [
+          "No analysis can generate excess returns",
+          "Fundamental analysis cannot generate excess returns because all public information is reflected in prices",
+          "Technical analysis works",
+          "Only insider information is reflected in prices"
+        ],
+        "correct": 1,
+        "explanation": "Semi-strong: all public information reflected in prices. Fundamental analysis (using public info) cannot generate abnormal returns."
+      },
+      {
+        "id": 97,
+        "subject": "Equity",
+        "question": "A price-weighted index is most affected by:",
+        "options": [
+          "The largest market cap stock",
+          "The highest-priced stock",
+          "The most actively traded stock",
+          "All stocks equally"
+        ],
+        "correct": 1,
+        "explanation": "Price-weighted index (e.g., DJIA): highest-priced stock has the most influence, regardless of company size."
+      },
+      {
+        "id": 98,
+        "subject": "Equity",
+        "question": "A stock with P/E of 15 and expected earnings growth of 10% has a PEG ratio of:",
+        "options": [
+          "1.0",
+          "1.5",
+          "0.67",
+          "150"
+        ],
+        "correct": 1,
+        "explanation": "PEG = P/E / Growth rate = 15/10 = 1.5. PEG > 1 may suggest overvaluation relative to growth."
+      },
+      {
+        "id": 99,
+        "subject": "Equity",
+        "question": "The sustainable growth rate equals:",
+        "options": [
+          "ROE × Payout ratio",
+          "ROE × Retention ratio",
+          "EPS × P/E",
+          "Dividend yield × P/E"
+        ],
+        "correct": 1,
+        "explanation": "g = ROE × b, where b = retention ratio = 1 - dividend payout ratio."
+      },
+      {
+        "id": 100,
+        "subject": "Equity",
+        "question": "Enterprise value (EV) equals:",
+        "options": [
+          "Market cap only",
+          "Market cap + Total debt - Cash",
+          "Total assets - Total liabilities",
+          "Market cap - Total debt + Cash"
+        ],
+        "correct": 1,
+        "explanation": "EV = Market cap + Total debt - Cash. Represents the total value of the business to all capital providers."
+      },
+      {
+        "id": 101,
+        "subject": "Equity",
+        "question": "A value-weighted index gives the most weight to:",
+        "options": [
+          "The highest-priced stock",
+          "The company with the largest market capitalization",
+          "Equal weight to all stocks",
+          "The stock with highest volume"
+        ],
+        "correct": 1,
+        "explanation": "Market-cap weighted indexes (e.g., S&P 500) give more weight to larger companies by market capitalization."
+      },
+      {
+        "id": 102,
+        "subject": "Equity",
+        "question": "If a stock's intrinsic value > market price, the stock is:",
+        "options": [
+          "Overvalued",
+          "Undervalued",
+          "Fairly valued",
+          "Cannot determine"
+        ],
+        "correct": 1,
+        "explanation": "If intrinsic value exceeds market price, the stock is trading below its estimated worth — undervalued. Consider buying."
+      },
+      {
+        "id": 103,
+        "subject": "Equity",
+        "question": "Preferred stock is similar to debt because:",
+        "options": [
+          "It has voting rights",
+          "It pays fixed dividends and has priority over common stock in liquidation",
+          "It has a maturity date",
+          "It is always convertible"
+        ],
+        "correct": 1,
+        "explanation": "Preferred stock has fixed dividends (like coupon), priority in liquidation, but typically no voting rights. It is a hybrid security."
+      },
+      {
+        "id": 104,
+        "subject": "Equity",
+        "question": "The weak form of market efficiency suggests that:",
+        "options": [
+          "Technical analysis cannot generate abnormal returns",
+          "Fundamental analysis cannot generate abnormal returns",
+          "No analysis works",
+          "Markets are always correctly priced"
+        ],
+        "correct": 0,
+        "explanation": "Weak form: historical price/volume data fully reflected in prices. Technical analysis (using past prices) cannot generate abnormal returns."
+      },
+      {
+        "id": 105,
+        "subject": "Equity",
+        "question": "A stock has ROE=15%, payout ratio=40%. Sustainable growth rate is:",
+        "options": [
+          "6%",
+          "9%",
+          "15%",
+          "40%"
+        ],
+        "correct": 1,
+        "explanation": "g = ROE × retention ratio = 15% × (1-0.40) = 15% × 0.60 = 9%."
+      },
+      {
+        "id": 106,
+        "subject": "Equity",
+        "question": "Price-to-book ratio is LEAST useful for valuing:",
+        "options": [
+          "Banks and financial institutions",
+          "Capital-intensive manufacturing companies",
+          "Technology companies with mostly intangible assets",
+          "Real estate companies"
+        ],
+        "correct": 2,
+        "explanation": "P/B is less useful for companies with significant intangible assets (tech, pharma) since book value understates their true asset base."
+      },
+      {
+        "id": 107,
+        "subject": "Equity",
+        "question": "In a limit order to buy at $50:",
+        "options": [
+          "The order executes at $50 or higher",
+          "The order executes at $50 or lower",
+          "The order executes immediately at market price",
+          "The order executes at exactly $50"
+        ],
+        "correct": 1,
+        "explanation": "Buy limit order: maximum price you're willing to pay. Executes at $50 or below."
+      },
+      {
+        "id": 108,
+        "subject": "Equity",
+        "question": "The dividend discount model assumes stock value equals:",
+        "options": [
+          "Total of all past dividends paid",
+          "Present value of all expected future dividends",
+          "Next year's dividend divided by the stock price",
+          "Earnings minus retained earnings"
+        ],
+        "correct": 1,
+        "explanation": "DDM: stock value = PV of all expected future dividends. The Gordon Growth Model is a special case with constant growth."
+      },
+      {
+        "id": 109,
+        "subject": "Equity",
+        "question": "A stock index rebalancing creates:",
+        "options": [
+          "Permanent price changes",
+          "Temporary price pressure from index fund trades",
+          "No market impact",
+          "Only affects options markets"
+        ],
+        "correct": 1,
+        "explanation": "Index rebalancing forces index funds to buy additions and sell deletions, creating temporary demand/supply imbalances and price pressure."
+      },
+      {
+        "id": 110,
+        "subject": "Equity",
+        "question": "EV/EBITDA is preferred over P/E when comparing firms because:",
+        "options": [
+          "It is simpler to calculate",
+          "It is unaffected by differences in capital structure, depreciation, and tax rates",
+          "It only uses market data",
+          "It ignores operating performance"
+        ],
+        "correct": 1,
+        "explanation": "EV/EBITDA neutralizes differences in leverage, depreciation methods, and tax jurisdictions, enabling better cross-company comparison."
+      },
+      {
+        "id": 111,
+        "subject": "Fixed Income",
+        "question": "A bond is trading at a premium when:",
+        "options": [
+          "Coupon rate < YTM",
+          "Coupon rate > YTM",
+          "Coupon rate = YTM",
+          "Price = par value"
+        ],
+        "correct": 1,
+        "explanation": "Premium: coupon rate > YTM → price > par. Discount: coupon rate < YTM → price < par."
+      },
+      {
+        "id": 112,
+        "subject": "Fixed Income",
+        "question": "Macaulay duration for a zero-coupon bond equals:",
+        "options": [
+          "Zero",
+          "Its yield to maturity",
+          "Its time to maturity",
+          "Half its time to maturity"
+        ],
+        "correct": 2,
+        "explanation": "Zero-coupon bond: only one cash flow at maturity. Macaulay duration = time to maturity exactly."
+      },
+      {
+        "id": 113,
+        "subject": "Fixed Income",
+        "question": "Convexity is beneficial to bondholders because:",
+        "options": [
+          "It increases the bond's coupon",
+          "Price rises more when yields fall than it drops when yields rise by the same amount",
+          "It reduces credit risk",
+          "It shortens the maturity"
+        ],
+        "correct": 1,
+        "explanation": "Positive convexity: price-yield relationship is curved. Bond gains more from yield decreases than it loses from equal yield increases."
+      },
+      {
+        "id": 114,
+        "subject": "Fixed Income",
+        "question": "A callable bond's yield is typically _____ a comparable non-callable bond:",
+        "options": [
+          "Lower than",
+          "Equal to",
+          "Higher than",
+          "Unrelated to"
+        ],
+        "correct": 2,
+        "explanation": "Callable bonds offer higher yields to compensate investors for call risk (issuer may redeem early when rates fall)."
+      },
+      {
+        "id": 115,
+        "subject": "Fixed Income",
+        "question": "Credit spread is the difference between:",
+        "options": [
+          "Short-term and long-term rates",
+          "A corporate bond yield and a comparable government bond yield",
+          "Nominal and real rates",
+          "Coupon rate and current yield"
+        ],
+        "correct": 1,
+        "explanation": "Credit spread = Corporate bond YTM - Risk-free benchmark YTM. Compensation for default risk."
+      },
+      {
+        "id": 116,
+        "subject": "Fixed Income",
+        "question": "If interest rates rise by 1%, a bond with modified duration of 6 will change in price by approximately:",
+        "options": [
+          "+6%",
+          "-6%",
+          "+3%",
+          "-3%"
+        ],
+        "correct": 1,
+        "explanation": "ΔP/P ≈ -ModDur × Δy = -6 × 0.01 = -6%. Duration gives the approximate percentage price change."
+      },
+      {
+        "id": 117,
+        "subject": "Fixed Income",
+        "question": "A putable bond gives the _____ the right to:",
+        "options": [
+          "Issuer; redeem early",
+          "Bondholder; sell the bond back to the issuer at a specified price",
+          "Bondholder; convert to equity",
+          "Issuer; extend the maturity"
+        ],
+        "correct": 1,
+        "explanation": "Putable bond: bondholder can sell (put) the bond back to the issuer at par on specified dates. Protects against rising rates."
+      },
+      {
+        "id": 118,
+        "subject": "Fixed Income",
+        "question": "The spot rate curve is also known as the:",
+        "options": [
+          "Forward rate curve",
+          "Zero-coupon yield curve",
+          "Par curve",
+          "Swap curve"
+        ],
+        "correct": 1,
+        "explanation": "The spot rate curve = zero-coupon yield curve. Each rate applies to a single payment at a specific maturity."
+      },
+      {
+        "id": 119,
+        "subject": "Fixed Income",
+        "question": "A bond's price and yield have a _____ relationship:",
+        "options": [
+          "Positive",
+          "Negative (inverse)",
+          "No relationship",
+          "Random"
+        ],
+        "correct": 1,
+        "explanation": "Bond prices and yields move inversely. When yields rise, present value of future cash flows falls, so bond price drops."
+      },
+      {
+        "id": 120,
+        "subject": "Fixed Income",
+        "question": "Expected loss from credit risk equals:",
+        "options": [
+          "PD + LGD",
+          "PD × LGD × EAD",
+          "PD / LGD",
+          "LGD - Recovery rate"
+        ],
+        "correct": 1,
+        "explanation": "Expected Loss = Probability of Default × Loss Given Default × Exposure at Default."
+      },
+      {
+        "id": 121,
+        "subject": "Fixed Income",
+        "question": "An amortizing bond pays:",
+        "options": [
+          "Interest only with principal at maturity",
+          "Both principal and interest over the bond's life",
+          "No coupon payments",
+          "Variable interest only"
+        ],
+        "correct": 1,
+        "explanation": "Amortizing bonds repay principal gradually over the life of the bond along with interest, unlike bullet bonds."
+      },
+      {
+        "id": 122,
+        "subject": "Fixed Income",
+        "question": "If the yield curve is upward-sloping, the forward rate for a future period is:",
+        "options": [
+          "Equal to the spot rate",
+          "Lower than the spot rate for that maturity",
+          "Higher than the spot rate for that maturity",
+          "Cannot be determined"
+        ],
+        "correct": 2,
+        "explanation": "Upward-sloping yield curve implies forward rates are higher than current spot rates for corresponding periods."
+      },
+      {
+        "id": 123,
+        "subject": "Fixed Income",
+        "question": "A floating-rate note (FRN) has minimal _____ risk:",
+        "options": [
+          "Credit",
+          "Liquidity",
+          "Interest rate",
+          "Inflation"
+        ],
+        "correct": 2,
+        "explanation": "FRNs reset coupon periodically to market rates, so price stays near par. Minimal interest rate (duration) risk, but credit risk remains."
+      },
+      {
+        "id": 124,
+        "subject": "Fixed Income",
+        "question": "Investment-grade bonds are rated at least:",
+        "options": [
+          "AAA",
+          "A",
+          "BBB-/Baa3",
+          "BB+"
+        ],
+        "correct": 2,
+        "explanation": "Investment grade: BBB- (S&P/Fitch) or Baa3 (Moody's) and above. Below = high yield/speculative/junk."
+      },
+      {
+        "id": 125,
+        "subject": "Fixed Income",
+        "question": "A sinking fund provision requires the issuer to:",
+        "options": [
+          "Buy back bonds at a premium",
+          "Retire a portion of the bond issue before maturity",
+          "Increase the coupon rate",
+          "Convert bonds to equity"
+        ],
+        "correct": 1,
+        "explanation": "Sinking fund: issuer must retire a specified portion of bonds periodically, reducing credit risk but creating reinvestment risk for holders."
+      },
+      {
+        "id": 126,
+        "subject": "Fixed Income",
+        "question": "Effective duration is most appropriate for:",
+        "options": [
+          "Option-free bonds",
+          "Bonds with embedded options",
+          "Zero-coupon bonds only",
+          "Floating rate notes only"
+        ],
+        "correct": 1,
+        "explanation": "Effective duration accounts for how embedded options (calls, puts) affect cash flows when yields change. Modified duration assumes fixed cash flows."
+      },
+      {
+        "id": 127,
+        "subject": "Fixed Income",
+        "question": "If recovery rate is 40%, loss given default (LGD) is:",
+        "options": [
+          "40%",
+          "60%",
+          "100%",
+          "140%"
+        ],
+        "correct": 1,
+        "explanation": "LGD = 1 - Recovery Rate = 1 - 0.40 = 60%. If a bond defaults, the investor loses 60% of exposure."
+      },
+      {
+        "id": 128,
+        "subject": "Fixed Income",
+        "question": "The price of a bond with a 5% coupon, $1,000 par, 3 years to maturity, and YTM of 5% is:",
+        "options": [
+          "$985",
+          "$1,000",
+          "$1,015",
+          "$950"
+        ],
+        "correct": 1,
+        "explanation": "When coupon rate = YTM, the bond trades at par ($1,000). Premium: coupon > YTM. Discount: coupon < YTM."
+      },
+      {
+        "id": 129,
+        "subject": "Fixed Income",
+        "question": "Duration is measured in units of:",
+        "options": [
+          "Dollars",
+          "Percentage",
+          "Years",
+          "Basis points"
+        ],
+        "correct": 2,
+        "explanation": "Duration is measured in years — it represents the weighted average time to receive cash flows (Macaulay) or price sensitivity (Modified)."
+      },
+      {
+        "id": 130,
+        "subject": "Fixed Income",
+        "question": "A bond covenent is:",
+        "options": [
+          "A government regulation on bond trading",
+          "A contractual provision protecting bondholder interests",
+          "A credit rating requirement",
+          "A type of bond insurance"
+        ],
+        "correct": 1,
+        "explanation": "Covenants are contractual restrictions. Affirmative: things issuer must do. Negative: things issuer cannot do (e.g., limit additional debt)."
+      },
+      {
+        "id": 131,
+        "subject": "Fixed Income",
+        "question": "The reinvestment risk for a bond is highest when:",
+        "options": [
+          "Interest rates are rising",
+          "Interest rates are falling",
+          "The bond is a zero-coupon",
+          "The bond has a short maturity"
+        ],
+        "correct": 1,
+        "explanation": "Reinvestment risk: coupon payments reinvested at lower rates when rates fall. Zero-coupon bonds have NO reinvestment risk."
+      },
+      {
+        "id": 132,
+        "subject": "Fixed Income",
+        "question": "An inverted yield curve suggests:",
+        "options": [
+          "Strong economic growth ahead",
+          "Potential economic recession",
+          "Rising inflation",
+          "Central bank easing"
+        ],
+        "correct": 1,
+        "explanation": "An inverted yield curve (short rates > long rates) has historically been a leading indicator of economic recession."
+      },
+      {
+        "id": 133,
+        "subject": "Derivatives",
+        "question": "A forward contract differs from a futures contract because forwards are:",
+        "options": [
+          "Exchange-traded and standardized",
+          "OTC, customized, and carry counterparty risk",
+          "Settled daily",
+          "Guaranteed by a clearinghouse"
+        ],
+        "correct": 1,
+        "explanation": "Forwards: OTC, customizable, counterparty risk. Futures: exchange-traded, standardized, daily mark-to-market, clearinghouse guaranteed."
+      },
+      {
+        "id": 134,
+        "subject": "Derivatives",
+        "question": "The maximum loss for a buyer of a put option is:",
+        "options": [
+          "Unlimited",
+          "The strike price minus the premium",
+          "The premium paid",
+          "The stock price"
+        ],
+        "correct": 2,
+        "explanation": "Option buyer's max loss = premium paid. If the put expires worthless (stock price > strike), the buyer loses only the premium."
+      },
+      {
+        "id": 135,
+        "subject": "Derivatives",
+        "question": "Put-call parity states that:",
+        "options": [
+          "c + S = p + PV(X)",
+          "c + PV(X) = p + S",
+          "c - p = S + PV(X)",
+          "c × p = S × PV(X)"
+        ],
+        "correct": 1,
+        "explanation": "Put-call parity: c + PV(X) = p + S. Fiduciary call = Protective put. Holds for European options on same underlying."
+      },
+      {
+        "id": 136,
+        "subject": "Derivatives",
+        "question": "A swap is best described as:",
+        "options": [
+          "An exchange of assets",
+          "A series of forward contracts",
+          "A single option",
+          "A spot transaction"
+        ],
+        "correct": 1,
+        "explanation": "A swap is equivalent to a series of forward contracts, exchanging cash flows at predetermined intervals."
+      },
+      {
+        "id": 137,
+        "subject": "Derivatives",
+        "question": "The no-arbitrage forward price for a stock at $100 with risk-free rate 6% for 1 year is:",
+        "options": [
+          "$100",
+          "$106",
+          "$94.34",
+          "$112"
+        ],
+        "correct": 1,
+        "explanation": "F = S × (1+r)^T = $100 × 1.06 = $106. If no dividends, the forward price reflects the cost of carry."
+      },
+      {
+        "id": 138,
+        "subject": "Derivatives",
+        "question": "An option is \"in the money\" when:",
+        "options": [
+          "The option has positive intrinsic value",
+          "The option has only time value",
+          "The option is at the strike price",
+          "The option premium equals zero"
+        ],
+        "correct": 0,
+        "explanation": "In-the-money: positive intrinsic value. Call: S > X. Put: X > S. Out-of-money: zero intrinsic value."
+      },
+      {
+        "id": 139,
+        "subject": "Derivatives",
+        "question": "In the binomial option pricing model, risk-neutral probabilities are used to:",
+        "options": [
+          "Reflect actual market expectations",
+          "Allow discounting at the risk-free rate to find the no-arbitrage price",
+          "Predict actual stock movements",
+          "Calculate dividends"
+        ],
+        "correct": 1,
+        "explanation": "Risk-neutral pricing: use risk-neutral probabilities (not actual) and discount at risk-free rate to get the correct no-arbitrage option price."
+      },
+      {
+        "id": 140,
+        "subject": "Derivatives",
+        "question": "A covered call strategy involves:",
+        "options": [
+          "Buying a call and buying stock",
+          "Owning the underlying stock and selling a call option",
+          "Buying a put and selling a call",
+          "Selling stock and selling a call"
+        ],
+        "correct": 1,
+        "explanation": "Covered call: long stock + short call. Generates premium income but caps upside. Used when moderately bullish."
+      },
+      {
+        "id": 141,
+        "subject": "Derivatives",
+        "question": "Convenience yield applies to:",
+        "options": [
+          "Financial assets like stocks",
+          "Physical commodities that provide benefits from holding",
+          "Currency forwards",
+          "Interest rate swaps"
+        ],
+        "correct": 1,
+        "explanation": "Convenience yield: benefit of holding a physical commodity (e.g., oil for a refinery). Reduces the forward price."
+      },
+      {
+        "id": 142,
+        "subject": "Derivatives",
+        "question": "A protective put involves:",
+        "options": [
+          "Buying a stock and buying a put option on it",
+          "Selling a stock and buying a call",
+          "Buying a put only",
+          "Writing a covered call"
+        ],
+        "correct": 0,
+        "explanation": "Protective put: long stock + long put. Limits downside to (strike - stock purchase price - premium) while keeping upside."
+      },
+      {
+        "id": 143,
+        "subject": "Derivatives",
+        "question": "The writer of a call option has:",
+        "options": [
+          "Limited potential loss equal to the premium",
+          "Unlimited potential loss",
+          "No obligations",
+          "The right but not the obligation to sell"
+        ],
+        "correct": 1,
+        "explanation": "Call writer (seller) has theoretically unlimited loss because the stock price can rise indefinitely. Premium received is the maximum gain."
+      },
+      {
+        "id": 144,
+        "subject": "Alternative Investments",
+        "question": "The J-curve in private equity refers to:",
+        "options": [
+          "Consistently positive returns",
+          "Negative returns in early years followed by positive returns later",
+          "A declining return pattern",
+          "The shape of the normal distribution"
+        ],
+        "correct": 1,
+        "explanation": "J-curve: early years show negative returns (fees, investments, write-downs) before investments mature and generate positive returns."
+      },
+      {
+        "id": 145,
+        "subject": "Alternative Investments",
+        "question": "Property value using the income approach: NOI=$300,000, Cap rate=6%. Value is:",
+        "options": [
+          "$1,800,000",
+          "$3,000,000",
+          "$5,000,000",
+          "$18,000"
+        ],
+        "correct": 2,
+        "explanation": "Value = NOI / Cap Rate = $300,000 / 0.06 = $5,000,000."
+      },
+      {
+        "id": 146,
+        "subject": "Alternative Investments",
+        "question": "A high-water mark provision ensures that:",
+        "options": [
+          "Investors receive a minimum return",
+          "GPs earn performance fees only on profits above the highest previous NAV",
+          "Management fees decrease over time",
+          "LPs can withdraw at any time"
+        ],
+        "correct": 1,
+        "explanation": "High-water mark: GP earns incentive fees only on NEW profits above the previous peak NAV, preventing double-dipping."
+      },
+      {
+        "id": 147,
+        "subject": "Alternative Investments",
+        "question": "REITs must distribute at least _____ of income to maintain tax-exempt status:",
+        "options": [
+          "50%",
+          "75%",
+          "90%",
+          "100%"
+        ],
+        "correct": 2,
+        "explanation": "REITs must distribute 90%+ of taxable income as dividends. This provides liquid, income-focused real estate exposure."
+      },
+      {
+        "id": 148,
+        "subject": "Alternative Investments",
+        "question": "Survivorship bias in hedge fund databases causes:",
+        "options": [
+          "Understatement of average returns",
+          "Overstatement of average returns",
+          "No effect",
+          "Higher reported volatility"
+        ],
+        "correct": 1,
+        "explanation": "Failed/closed funds drop from databases, leaving only survivors. Average reported returns are inflated upward."
+      },
+      {
+        "id": 149,
+        "subject": "Alternative Investments",
+        "question": "An LBO target ideally has:",
+        "options": [
+          "Highly volatile cash flows",
+          "Stable cash flows and undervalued assets",
+          "Maximum existing leverage",
+          "No tangible assets"
+        ],
+        "correct": 1,
+        "explanation": "LBOs use heavy debt, so stable cash flows to service debt are critical. Undervalued assets provide potential upside."
+      },
+      {
+        "id": 150,
+        "subject": "Alternative Investments",
+        "question": "Infrastructure investments typically offer:",
+        "options": [
+          "High volatility and high short-term returns",
+          "Stable, long-duration cash flows with inflation protection",
+          "No income, only capital appreciation",
+          "High liquidity"
+        ],
+        "correct": 1,
+        "explanation": "Infrastructure: essential services (utilities, transport), regulated returns, long-lived assets, often with inflation-linked revenue."
+      },
+      {
+        "id": 151,
+        "subject": "Alternative Investments",
+        "question": "In a fund-of-funds structure, an additional layer of fees results in:",
+        "options": [
+          "Higher net returns to investors",
+          "Lower net returns due to double fee layers",
+          "No impact on returns",
+          "Tax-free returns"
+        ],
+        "correct": 1,
+        "explanation": "Fund-of-funds charge fees on top of underlying fund fees (fees on fees), reducing net returns to investors."
+      },
+      {
+        "id": 152,
+        "subject": "Alternative Investments",
+        "question": "Mezzanine financing is:",
+        "options": [
+          "Senior secured debt",
+          "Subordinated debt that ranks between senior debt and equity",
+          "Common equity",
+          "Government bonds"
+        ],
+        "correct": 1,
+        "explanation": "Mezzanine: subordinated debt, higher risk than senior debt but lower risk than equity. Often includes equity warrants/conversion features."
+      },
+      {
+        "id": 153,
+        "subject": "Alternative Investments",
+        "question": "Hedge fund lock-up periods:",
+        "options": [
+          "Allow investors to withdraw at any time",
+          "Prevent investor withdrawals for a specified period",
+          "Guarantee minimum returns",
+          "Are required by regulators"
+        ],
+        "correct": 1,
+        "explanation": "Lock-up periods (typically 1-2 years) restrict investor redemptions, giving managers time to implement less liquid strategies."
+      },
+      {
+        "id": 154,
+        "subject": "Alternative Investments",
+        "question": "A lower cap rate implies:",
+        "options": [
+          "Lower property value",
+          "Higher property value and/or lower risk",
+          "Higher NOI",
+          "More risk"
+        ],
+        "correct": 1,
+        "explanation": "Value = NOI/Cap Rate. Lower cap rate → higher value. Lower cap rates reflect lower risk or higher growth expectations."
+      },
+      {
+        "id": 155,
+        "subject": "Portfolio Management",
+        "question": "According to CAPM, the expected return of a stock with β=1.5, Rf=3%, market premium=6% is:",
+        "options": [
+          "12%",
+          "9%",
+          "15%",
+          "6%"
+        ],
+        "correct": 0,
+        "explanation": "E(R) = 3% + 1.5 × 6% = 3% + 9% = 12%."
+      },
+      {
+        "id": 156,
+        "subject": "Portfolio Management",
+        "question": "The Sharpe ratio measures:",
+        "options": [
+          "Return per unit of systematic risk",
+          "Return per unit of total risk (standard deviation)",
+          "Total portfolio return",
+          "Beta of the portfolio"
+        ],
+        "correct": 1,
+        "explanation": "Sharpe = (Rp - Rf) / σp. It measures excess return per unit of TOTAL risk (standard deviation), not just systematic."
+      },
+      {
+        "id": 157,
+        "subject": "Portfolio Management",
+        "question": "Diversification reduces _____ risk but not _____ risk:",
+        "options": [
+          "Systematic; unsystematic",
+          "Unsystematic; systematic",
+          "Total; all",
+          "Market; credit"
+        ],
+        "correct": 1,
+        "explanation": "Diversification eliminates unsystematic (firm-specific) risk. Systematic (market) risk cannot be diversified away."
+      },
+      {
+        "id": 158,
+        "subject": "Portfolio Management",
+        "question": "A risk-averse investor has risk aversion coefficient A that is:",
+        "options": [
+          "Negative",
+          "Zero",
+          "Positive",
+          "Undefined"
+        ],
+        "correct": 2,
+        "explanation": "In U = E(R) - ½Aσ², A > 0 for risk-averse (requires compensation for risk), A = 0 for risk-neutral, A < 0 for risk-seeking."
+      },
+      {
+        "id": 159,
+        "subject": "Portfolio Management",
+        "question": "The minimum variance portfolio:",
+        "options": [
+          "Has the highest expected return on the efficient frontier",
+          "Has the lowest possible risk among all portfolios of risky assets",
+          "Always has β = 1",
+          "Is the market portfolio"
+        ],
+        "correct": 1,
+        "explanation": "The minimum variance portfolio has the lowest standard deviation of all possible portfolios. It's the left-most point on the efficient frontier."
+      },
+      {
+        "id": 160,
+        "subject": "Portfolio Management",
+        "question": "Jensen's alpha = +2% means:",
+        "options": [
+          "The portfolio returned 2% less than CAPM predicted",
+          "The portfolio returned 2% more than CAPM predicted",
+          "The portfolio beta is 2",
+          "The risk-free rate is 2%"
+        ],
+        "correct": 1,
+        "explanation": "α = actual return - CAPM expected return. Positive alpha = outperformance after adjusting for systematic risk."
+      },
+      {
+        "id": 161,
+        "subject": "Portfolio Management",
+        "question": "The CML differs from the SML in that the CML:",
+        "options": [
+          "Uses beta on the x-axis",
+          "Uses total risk (σ) on the x-axis and only applies to efficient portfolios",
+          "Applies to all assets and portfolios",
+          "Has a steeper slope"
+        ],
+        "correct": 1,
+        "explanation": "CML: total risk (σ) on x-axis, only efficient portfolios. SML: beta on x-axis, applies to ALL assets and portfolios."
+      },
+      {
+        "id": 162,
+        "subject": "Portfolio Management",
+        "question": "Two-fund separation theorem states:",
+        "options": [
+          "Investors need two stockbrokers",
+          "All investors hold the same optimal risky portfolio, differing only in allocation to the risk-free asset",
+          "Two assets are sufficient for diversification",
+          "Investors should hold two mutual funds"
+        ],
+        "correct": 1,
+        "explanation": "Two-fund separation: all investors hold the same tangent (optimal risky) portfolio and adjust risk by mixing with the risk-free asset."
+      },
+      {
+        "id": 163,
+        "subject": "Portfolio Management",
+        "question": "Strategic asset allocation determines approximately _____ of portfolio return variation:",
+        "options": [
+          "10%",
+          "50%",
+          "90%",
+          "100%"
+        ],
+        "correct": 2,
+        "explanation": "Research shows strategic asset allocation explains approximately 90% of portfolio return variation over time. Security selection plays a minor role."
+      },
+      {
+        "id": 164,
+        "subject": "Portfolio Management",
+        "question": "The Treynor ratio is most appropriate for evaluating:",
+        "options": [
+          "An investor's only portfolio",
+          "A well-diversified portfolio that is part of a larger diversified portfolio",
+          "An individual stock",
+          "A risk-free asset"
+        ],
+        "correct": 1,
+        "explanation": "Treynor uses beta (systematic risk only). Appropriate when the portfolio is part of a larger diversified portfolio where unsystematic risk is eliminated."
+      },
+      {
+        "id": 165,
+        "subject": "Portfolio Management",
+        "question": "An IPS constraint \"LTTLU\" stands for:",
+        "options": [
+          "Leverage, Trading, Tax, Liquidity, Uncertainty",
+          "Liquidity, Time horizon, Tax, Legal, Unique circumstances",
+          "Long-term, Tax, Turnover, Leverage, Utilities",
+          "Liability, Timing, Trust, Legal, Universal"
+        ],
+        "correct": 1,
+        "explanation": "IPS constraints: Liquidity needs, Time horizon, Tax considerations, Legal/regulatory, Unique circumstances."
+      },
+      {
+        "id": 166,
+        "subject": "Portfolio Management",
+        "question": "A stock above the SML is:",
+        "options": [
+          "Overvalued (expected return < required return)",
+          "Undervalued (expected return > required return)",
+          "Fairly priced",
+          "Risk-free"
+        ],
+        "correct": 1,
+        "explanation": "Above SML: expected return > required return for its beta. The stock offers MORE return than needed, so it's undervalued."
+      },
+      {
+        "id": 167,
+        "subject": "Portfolio Management",
+        "question": "Utility: E(R)=10%, σ=15%, A=4. U =:",
+        "options": [
+          "5.5%",
+          "4.0%",
+          "10.0%",
+          "5.0%"
+        ],
+        "correct": 0,
+        "explanation": "U = 0.10 - 0.5(4)(0.15²) = 0.10 - 0.5(4)(0.0225) = 0.10 - 0.045 = 0.055 = 5.5%."
+      },
+      {
+        "id": 168,
+        "subject": "Portfolio Management",
+        "question": "Beta of the market portfolio is:",
+        "options": [
+          "0",
+          "0.5",
+          "1.0",
+          "Variable"
+        ],
+        "correct": 2,
+        "explanation": "By definition, the market portfolio has β = 1. β > 1: more volatile than market (aggressive). β < 1: less volatile (defensive)."
+      },
+      {
+        "id": 169,
+        "subject": "Portfolio Management",
+        "question": "Loss aversion means investors:",
+        "options": [
+          "Avoid all risky assets",
+          "Feel the pain of losses more intensely than the pleasure of equivalent gains",
+          "Always sell at a loss",
+          "Never invest in stocks"
+        ],
+        "correct": 1,
+        "explanation": "Loss aversion (Kahneman & Tversky): the disutility of a loss ≈ 2× the utility of an equivalent gain. Leads to holding losers, selling winners."
+      },
+      {
+        "id": 170,
+        "subject": "Portfolio Management",
+        "question": "If correlation between two assets is -1, a portfolio of the two can achieve:",
+        "options": [
+          "Maximum risk",
+          "Average risk",
+          "Zero risk (risk-free)",
+          "Negative returns"
+        ],
+        "correct": 2,
+        "explanation": "Perfect negative correlation (ρ = -1) allows constructing a zero-risk (risk-free) portfolio through appropriate weighting."
+      },
+      {
+        "id": 171,
+        "subject": "Portfolio Management",
+        "question": "The slope of the Capital Allocation Line (CAL) equals:",
+        "options": [
+          "The risk-free rate",
+          "The Sharpe ratio of the optimal risky portfolio",
+          "Beta of the portfolio",
+          "The market risk premium"
+        ],
+        "correct": 1,
+        "explanation": "CAL slope = [E(Rp) - Rf] / σp = Sharpe ratio of the risky portfolio. Steeper CAL = better risk-return tradeoff."
+      },
+      {
+        "id": 172,
+        "subject": "Portfolio Management",
+        "question": "M-squared (M²) adjusts for risk by:",
+        "options": [
+          "Using beta as the risk measure",
+          "Leveraging/deleveraging the portfolio to match market risk, then comparing returns",
+          "Ignoring risk entirely",
+          "Using only downside risk"
+        ],
+        "correct": 1,
+        "explanation": "M² adjusts portfolio to match market σ, then compares return. M² = (Sharpe_p - Sharpe_m) × σ_m. Positive M² = outperformance."
+      },
+      {
+        "id": 173,
+        "subject": "Quantitative Methods",
+        "question": "The power of a test equals:",
+        "options": [
+          "α",
+          "1 - α",
+          "1 - β",
+          "β"
+        ],
+        "correct": 2,
+        "explanation": "Power = 1 - β = probability of correctly rejecting a false null hypothesis. Higher power is better."
+      },
+      {
+        "id": 174,
+        "subject": "Economics",
+        "question": "Stagflation is characterized by:",
+        "options": [
+          "Low inflation and high growth",
+          "High inflation and economic stagnation/recession",
+          "Deflation and high growth",
+          "Low unemployment and low inflation"
+        ],
+        "correct": 1,
+        "explanation": "Stagflation: high inflation + low/negative economic growth + high unemployment. Very difficult for policymakers."
+      },
+      {
+        "id": 175,
+        "subject": "FSA",
+        "question": "Under the weighted average cost method for inventory:",
+        "options": [
+          "Most recent costs are in COGS",
+          "Oldest costs are in COGS",
+          "Average cost of all inventory is used for COGS and ending inventory",
+          "Specific identification is used"
+        ],
+        "correct": 2,
+        "explanation": "Weighted average: total cost / total units = average cost per unit. Applied to both COGS and ending inventory."
+      },
+      {
+        "id": 176,
+        "subject": "Corporate Issuers",
+        "question": "The trade-off theory of capital structure balances:",
+        "options": [
+          "Revenue and expenses",
+          "Tax benefits of debt against costs of financial distress",
+          "Short-term and long-term debt",
+          "Equity issuance and repurchase"
+        ],
+        "correct": 1,
+        "explanation": "Trade-off theory: optimal capital structure balances tax shield benefits of debt against bankruptcy/financial distress costs."
+      },
+      {
+        "id": 177,
+        "subject": "Fixed Income",
+        "question": "A bond with higher duration has:",
+        "options": [
+          "Less price sensitivity to yield changes",
+          "Greater price sensitivity to yield changes",
+          "Higher coupon rate",
+          "Shorter maturity"
+        ],
+        "correct": 1,
+        "explanation": "Higher duration = greater price sensitivity to interest rate changes. Duration is the primary measure of interest rate risk."
+      },
+      {
+        "id": 178,
+        "subject": "Equity",
+        "question": "The strong form of market efficiency states that:",
+        "options": [
+          "Only public information is reflected in prices",
+          "All information, including private insider information, is reflected in prices",
+          "Only historical prices are reflected",
+          "Markets are always inefficient"
+        ],
+        "correct": 1,
+        "explanation": "Strong form: ALL information (public + private/insider) is reflected in prices. Even insider trading cannot generate abnormal returns."
+      },
+      {
+        "id": 179,
+        "subject": "Derivatives",
+        "question": "The maximum gain for a seller (writer) of a put option is:",
+        "options": [
+          "Unlimited",
+          "The strike price",
+          "The premium received",
+          "The stock price"
+        ],
+        "correct": 2,
+        "explanation": "Put writer's maximum gain = premium received (if put expires worthless). Maximum loss = strike price - premium (if stock goes to zero)."
+      },
+      {
+        "id": 180,
+        "subject": "Portfolio Management",
+        "question": "An investor's risk tolerance is typically _____ related to time horizon:",
+        "options": [
+          "Negatively",
+          "Positively",
+          "Not",
+          "Inversely"
+        ],
+        "correct": 1,
+        "explanation": "Longer time horizon → higher risk tolerance. More time to recover from losses, benefit from equity risk premium."
+      }
+    ]
+  }
+}

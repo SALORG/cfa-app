@@ -6,11 +6,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
-import type { Route } from "./+types/root";
+import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import "./app.css";
 
-export const links: Route.LinksFunction = () => [
+export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -23,16 +22,18 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+function InnerLayout({ children }) {
+  const { isDark } = useTheme();
   return (
-    <html lang="en">
+    <html lang="en" className={isDark ? "dark" : ""}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CFA Level I Study Dashboard</title>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-surface text-text-primary min-h-screen">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -41,14 +42,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+export function Layout({ children }) {
+  return (
+    <ThemeProvider>
+      <InnerLayout>{children}</InnerLayout>
+    </ThemeProvider>
+  );
+}
+
 export default function App() {
   return <Outlet />;
 }
 
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+export function ErrorBoundary({ error }) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
-  let stack: string | undefined;
+  let stack;
 
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? "404" : "Error";
@@ -63,11 +72,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   return (
     <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
+      <h1 className="text-2xl font-bold text-danger">{message}</h1>
+      <p className="mt-2 text-text-secondary">{details}</p>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
+        <pre className="w-full p-4 overflow-x-auto mt-4 bg-surface-secondary rounded-lg">
+          <code className="text-sm">{stack}</code>
         </pre>
       )}
     </main>

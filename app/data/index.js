@@ -1,0 +1,85 @@
+import quants from "./quants.json";
+import economics from "./economics.json";
+import fsa from "./fsa.json";
+import corporate from "./corporate.json";
+import equity from "./equity.json";
+import fixedIncome from "./fixed-income.json";
+import derivatives from "./derivatives.json";
+import alternatives from "./alternatives.json";
+import portfolio from "./portfolio.json";
+import ethics from "./ethics.json";
+import consolidated from "./consolidated.json";
+
+export const subjects = [
+  quants,
+  economics,
+  fsa,
+  corporate,
+  equity,
+  fixedIncome,
+  derivatives,
+  alternatives,
+  portfolio,
+  ethics,
+];
+
+export { consolidated };
+
+export const allModules = subjects.flatMap((s) =>
+  s.modules.map((m) => ({
+    ...m,
+    subjectId: s.id,
+    subjectName: s.name,
+    subjectColor: s.color,
+    subjectIcon: s.icon,
+  }))
+);
+
+export function getSubject(subjectId) {
+  return subjects.find((s) => s.id === subjectId);
+}
+
+export function getModule(subjectId, moduleId) {
+  const subject = getSubject(subjectId);
+  if (!subject) return null;
+  return subject.modules.find((m) => m.id === moduleId);
+}
+
+export function getAdjacentModules(subjectId, moduleId) {
+  const idx = allModules.findIndex(
+    (m) => m.subjectId === subjectId && m.id === moduleId
+  );
+  return {
+    prev: idx > 0 ? allModules[idx - 1] : null,
+    next: idx < allModules.length - 1 ? allModules[idx + 1] : null,
+  };
+}
+
+export function searchModules(query) {
+  if (!query || query.length < 2) return [];
+  const q = query.toLowerCase();
+  const results = [];
+
+  for (const mod of allModules) {
+    let score = 0;
+    if (mod.title.toLowerCase().includes(q)) score += 10;
+
+    const cs = mod.cheatSheet;
+    if (cs) {
+      for (const c of cs.concepts || []) {
+        if (c.title.toLowerCase().includes(q)) score += 5;
+        if (c.desc.toLowerCase().includes(q)) score += 2;
+      }
+      for (const f of cs.formulas || []) {
+        if (f.name.toLowerCase().includes(q)) score += 5;
+        if (f.formula.toLowerCase().includes(q)) score += 3;
+      }
+    }
+
+    if (score > 0) {
+      results.push({ ...mod, score });
+    }
+  }
+
+  return results.sort((a, b) => b.score - a.score).slice(0, 10);
+}

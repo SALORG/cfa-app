@@ -1,0 +1,375 @@
+{
+  "id": "alts",
+  "name": "Alternative Investments",
+  "icon": "🏠",
+  "color": "#8e44ad",
+  "weight": "5-8%",
+  "modules": [
+    {
+      "id": "alts-lm1",
+      "number": 1,
+      "title": "Alternative Investment Features, Methods, and Structures",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Alt Investment Categories",
+            "desc": "Private capital (PE, VC), Real assets (real estate, infrastructure, natural resources), Hedge funds, Digital assets."
+          },
+          {
+            "title": "Investment Methods",
+            "desc": "Fund investment (LP in fund), Co-investment (alongside GP), Direct investment (own the asset directly)."
+          },
+          {
+            "title": "Limited Partnership Structure",
+            "desc": "GP: manages fund, has unlimited liability. LPs: passive investors, limited liability. Management fee + performance fee."
+          },
+          {
+            "title": "Compensation: 2 and 20",
+            "desc": "Typical: 2% management fee (on committed/invested capital) + 20% performance fee (carried interest) above hurdle rate."
+          },
+          {
+            "title": "Key Features",
+            "desc": "Illiquidity, long time horizons, complex strategies, less regulation, higher fees, potentially higher returns."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Management Fee",
+            "formula": "Mgmt Fee = Fee Rate × AUM (or committed capital)",
+            "where": "Typically 1-2% annually"
+          },
+          {
+            "name": "Performance Fee",
+            "formula": "Perf Fee = Incentive Rate × max(0, Return - Hurdle Rate)",
+            "where": "Typically 20% above hurdle"
+          },
+          {
+            "name": "Net Return to LP",
+            "formula": "Net Return = Gross Return - Mgmt Fee - Performance Fee",
+            "where": "What the investor actually earns"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Fund vs Co-investment vs Direct?",
+            "use": [
+              "Fund: diversification, professional management, access to deals",
+              "Co-investment: lower fees, more control, specific deal selection",
+              "Direct: full control, no GP fees, requires significant expertise"
+            ],
+            "avoid": [
+              "Direct investment without sufficient expertise and resources"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Committed capital: you owe the full amount even if not yet called",
+          "High-water mark: performance fee only on NEW profits (protects investors from paying fees twice)",
+          "Hurdle rate: minimum return before GP earns carried interest",
+          "Survivorship bias: failed funds drop from databases, inflating reported returns"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Alt Investments",
+        "branches": [
+          {
+            "label": "Categories",
+            "leaves": [
+              "Private equity/VC",
+              "Real estate",
+              "Infrastructure",
+              "Natural resources",
+              "Hedge funds",
+              "Digital assets"
+            ]
+          },
+          {
+            "label": "Methods",
+            "leaves": [
+              "Fund investment",
+              "Co-investment",
+              "Direct investment"
+            ]
+          },
+          {
+            "label": "Structure",
+            "leaves": [
+              "LP/GP structure",
+              "Committed capital",
+              "Capital calls",
+              "Distributions"
+            ]
+          },
+          {
+            "label": "Fees",
+            "leaves": [
+              "Management fee (2%)",
+              "Performance fee (20%)",
+              "Hurdle rate",
+              "High-water mark"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A high-water mark provision protects investors by:",
+            "options": [
+              "Guaranteeing a minimum return",
+              "Ensuring the GP only earns performance fees on new profits above previous peaks",
+              "Limiting management fees",
+              "Preventing capital calls"
+            ],
+            "correct": 1,
+            "explanation": "The high-water mark ensures the GP earns carried interest only on profits that exceed the highest previous NAV, preventing double-dipping on the same gains."
+          },
+          {
+            "type": "mcq",
+            "question": "In a typical PE fund structure, the general partner:",
+            "options": [
+              "Has limited liability",
+              "Is a passive investor",
+              "Manages the fund and has unlimited liability",
+              "Only earns management fees"
+            ],
+            "correct": 2,
+            "explanation": "The GP actively manages investments, makes decisions, and bears unlimited liability. LPs are passive with limited liability."
+          },
+          {
+            "type": "mcq",
+            "question": "Survivorship bias in hedge fund databases causes:",
+            "options": [
+              "Understatement of average returns",
+              "Overstatement of average returns",
+              "No effect on reported returns",
+              "Higher reported volatility"
+            ],
+            "correct": 1,
+            "explanation": "Failed/closed funds drop out of databases, leaving only survivors. This inflates average reported returns upward."
+          }
+        ]
+      }
+    },
+    {
+      "id": "alts-lm2",
+      "number": 2,
+      "title": "Private Capital: Equity and Debt",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Venture Capital",
+            "desc": "Early-stage funding: seed, Series A/B/C. High risk, high return. J-curve: negative returns early, positive later."
+          },
+          {
+            "title": "Leveraged Buyouts (LBOs)",
+            "desc": "Acquire company using significant debt. Improve operations, sell for profit. Target: stable cash flows, undervalued assets."
+          },
+          {
+            "title": "Private Debt",
+            "desc": "Direct lending, mezzanine financing, distressed debt. Higher yields than public bonds. Less liquid."
+          },
+          {
+            "title": "Exit Strategies",
+            "desc": "IPO, sale to strategic buyer, secondary sale, recapitalization. Time horizon typically 5-10 years."
+          }
+        ],
+        "formulas": [],
+        "decisions": [],
+        "pitfalls": [
+          "J-curve: PE funds show negative returns in early years (fees and investments made before returns)",
+          "Valuation challenges: no market prices for private assets",
+          "Vintage year effects: fund performance depends heavily on market conditions at entry/exit"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Private Capital",
+        "branches": [
+          {
+            "label": "Private Equity",
+            "leaves": [
+              "Venture capital",
+              "Growth equity",
+              "Leveraged buyouts",
+              "Exit strategies"
+            ]
+          },
+          {
+            "label": "Private Debt",
+            "leaves": [
+              "Direct lending",
+              "Mezzanine",
+              "Distressed debt",
+              "Higher yield, less liquid"
+            ]
+          },
+          {
+            "label": "J-Curve",
+            "leaves": [
+              "Negative early returns",
+              "Fees and investments",
+              "Returns in later years",
+              "Vintage year matters"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "The J-curve in private equity refers to:",
+            "options": [
+              "Consistently positive returns",
+              "Initial negative returns followed by positive returns over time",
+              "Declining returns over the fund's life",
+              "The shape of the yield curve"
+            ],
+            "correct": 1,
+            "explanation": "The J-curve shows negative returns in early years (management fees and write-downs) before investments mature and generate positive returns."
+          },
+          {
+            "type": "mcq",
+            "question": "An LBO target company ideally has:",
+            "options": [
+              "High growth and negative cash flows",
+              "Stable cash flows and undervalued assets",
+              "No tangible assets",
+              "Very high existing debt levels"
+            ],
+            "correct": 1,
+            "explanation": "LBOs use significant leverage, so target companies need stable cash flows to service debt, and undervalued assets provide upside potential."
+          }
+        ]
+      }
+    },
+    {
+      "id": "alts-lm3",
+      "number": 3,
+      "title": "Real Estate, Infrastructure, and Hedge Funds",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Real Estate Investment",
+            "desc": "Direct: own property. Indirect: REITs, funds. Income + appreciation. Cap rate = NOI/Property value."
+          },
+          {
+            "title": "REITs",
+            "desc": "Real Estate Investment Trusts: traded like stocks. Must distribute 90%+ of income. Liquid exposure to real estate."
+          },
+          {
+            "title": "Infrastructure",
+            "desc": "Essential services: utilities, transport, telecom. Long-lived assets, regulated returns, inflation protection."
+          },
+          {
+            "title": "Hedge Fund Strategies",
+            "desc": "Equity L/S, Event-driven, Relative value, Global macro. Absolute return objective. Use leverage and short-selling."
+          },
+          {
+            "title": "Hedge Fund Features",
+            "desc": "Lock-up periods, redemption notice, gates, side pockets. Less liquid than mutual funds. Limited regulation."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Cap Rate",
+            "formula": "Cap Rate = NOI / Property Value",
+            "where": "NOI = Net Operating Income"
+          },
+          {
+            "name": "Value from Cap Rate",
+            "formula": "Property Value = NOI / Cap Rate",
+            "where": "Lower cap rate = higher value (lower risk)"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Direct vs REIT real estate investment?",
+            "use": [
+              "Direct: full control, tax benefits, higher returns potential",
+              "REITs: liquidity, diversification, professional management, lower minimum"
+            ],
+            "avoid": [
+              "Direct investment without property management expertise"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Cap rate is a single-year measure — doesn't capture growth or financing",
+          "REITs are correlated with equities in short term but with real estate in long term",
+          "Hedge fund returns are affected by survivorship, backfill, and self-reporting biases"
+        ],
+        "examples": [
+          {
+            "title": "Cap Rate Valuation",
+            "problem": "NOI = $500,000, Cap rate = 8%. What is the property value?",
+            "solution": "Value = $500,000 / 0.08 = $6,250,000"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "RE, Infra, HF",
+        "branches": [
+          {
+            "label": "Real Estate",
+            "leaves": [
+              "Direct ownership",
+              "REITs",
+              "Cap rate valuation",
+              "Income + appreciation"
+            ]
+          },
+          {
+            "label": "Infrastructure",
+            "leaves": [
+              "Brownfield vs Greenfield",
+              "Regulated utilities",
+              "Inflation hedge",
+              "Long duration"
+            ]
+          },
+          {
+            "label": "Hedge Funds",
+            "leaves": [
+              "Long/Short equity",
+              "Event-driven",
+              "Global macro",
+              "Relative value"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "NOI = $200,000, Cap rate = 5%. Property value is:",
+            "options": [
+              "$1,000,000",
+              "$2,000,000",
+              "$4,000,000",
+              "$10,000,000"
+            ],
+            "correct": 2,
+            "explanation": "Value = NOI / Cap Rate = $200,000 / 0.05 = $4,000,000."
+          },
+          {
+            "type": "mcq",
+            "question": "A lock-up period for a hedge fund:",
+            "options": [
+              "Prevents the GP from investing",
+              "Prevents investors from withdrawing capital for a specified period",
+              "Limits leverage",
+              "Requires minimum investment returns"
+            ],
+            "correct": 1,
+            "explanation": "Lock-up periods restrict investor redemptions for a set time (often 1-2 years), giving the manager time to implement strategies."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "id": "port",
+  "name": "Portfolio Management",
+  "icon": "💼",
+  "color": "#2980b9",
+  "weight": "8-12%",
+  "modules": [
+    {
+      "id": "port-lm1",
+      "number": 1,
+      "title": "Portfolio Risk and Return: Part I",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Risk-Return Tradeoff",
+            "desc": "Higher expected return requires accepting higher risk. Historical data: stocks > bonds > T-bills in return and risk."
+          },
+          {
+            "title": "Utility Theory",
+            "desc": "U = E(R) - ½Aσ². Risk-averse investors (A>0) require compensation for bearing risk. Indifference curves slope upward."
+          },
+          {
+            "title": "Efficient Frontier",
+            "desc": "Set of portfolios offering maximum return for each level of risk. Rational investors choose portfolios ON the frontier."
+          },
+          {
+            "title": "Minimum Variance Portfolio",
+            "desc": "Portfolio with lowest possible risk. Starting point of the efficient frontier."
+          },
+          {
+            "title": "Capital Allocation Line (CAL)",
+            "desc": "Line from risk-free rate tangent to efficient frontier. Slope = Sharpe ratio. Optimal risky portfolio at tangent point."
+          },
+          {
+            "title": "Two-Fund Separation",
+            "desc": "All investors hold the same optimal risky portfolio; they differ only in allocation between it and the risk-free asset."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Utility Function",
+            "formula": "U = E(R) - ½ × A × σ²",
+            "where": "A = risk aversion coefficient (A>0 for risk-averse)"
+          },
+          {
+            "name": "CAL Equation",
+            "formula": "E(R<sub>C</sub>) = R<sub>f</sub> + [(E(R<sub>P</sub>) - R<sub>f</sub>)/σ<sub>P</sub>] × σ<sub>C</sub>",
+            "where": "Slope = Sharpe ratio of optimal portfolio"
+          },
+          {
+            "name": "Sharpe Ratio",
+            "formula": "Sharpe = [E(R<sub>P</sub>) - R<sub>f</sub>] / σ<sub>P</sub>",
+            "where": "Excess return per unit of total risk"
+          },
+          {
+            "name": "Portfolio Risk (2 assets)",
+            "formula": "σ²<sub>p</sub> = w²<sub>A</sub>σ²<sub>A</sub> + w²<sub>B</sub>σ²<sub>B</sub> + 2w<sub>A</sub>w<sub>B</sub>ρσ<sub>A</sub>σ<sub>B</sub>",
+            "where": "Diversification benefit when ρ < 1"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "How does risk aversion affect portfolio choice?",
+            "use": [
+              "More risk-averse (higher A): more allocation to risk-free asset, less to risky portfolio",
+              "Less risk-averse (lower A): more in risky portfolio, may use leverage"
+            ],
+            "avoid": [
+              "Assuming all investors want the same portfolio — risk preferences differ"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "The efficient frontier is curved — adding the risk-free asset creates a straight line (CAL)",
+          "Diversification reduces risk but cannot eliminate systematic/market risk",
+          "Sharpe ratio uses TOTAL risk (σ), not just systematic risk (β)"
+        ],
+        "examples": [
+          {
+            "title": "Utility Calculation",
+            "problem": "E(R)=12%, σ=20%, A=3. Calculate utility.",
+            "solution": "U = 0.12 - 0.5(3)(0.20)² = 0.12 - 0.06 = 0.06 or 6%"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Portfolio Risk & Return I",
+        "branches": [
+          {
+            "label": "Risk Concepts",
+            "leaves": [
+              "Risk-return tradeoff",
+              "Risk aversion",
+              "Utility function",
+              "Indifference curves"
+            ]
+          },
+          {
+            "label": "Portfolio Theory",
+            "leaves": [
+              "Efficient frontier",
+              "Minimum variance portfolio",
+              "Diversification effect",
+              "Correlation matters"
+            ]
+          },
+          {
+            "label": "CAL & Optimal",
+            "leaves": [
+              "Risk-free + risky",
+              "Sharpe ratio = slope",
+              "Two-fund separation",
+              "Tangent portfolio"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "The Sharpe ratio measures:",
+            "options": [
+              "Return per unit of systematic risk",
+              "Return per unit of total risk",
+              "Total return of the portfolio",
+              "Beta of the portfolio"
+            ],
+            "correct": 1,
+            "explanation": "Sharpe = (Rp - Rf)/σp. It measures excess return per unit of total risk (standard deviation)."
+          },
+          {
+            "type": "mcq",
+            "question": "According to two-fund separation, all investors:",
+            "options": [
+              "Hold the same portfolio of risky assets",
+              "Hold different risky asset portfolios",
+              "Do not invest in the risk-free asset",
+              "Have the same risk aversion"
+            ],
+            "correct": 0,
+            "explanation": "Two-fund separation: all investors hold the same optimal risky portfolio (tangent portfolio) and differ only in how much they allocate to it vs. the risk-free asset."
+          },
+          {
+            "type": "mcq",
+            "question": "A risk-averse investor has a risk aversion coefficient (A) that is:",
+            "options": [
+              "Negative",
+              "Zero",
+              "Positive",
+              "Infinite"
+            ],
+            "correct": 2,
+            "explanation": "Risk-averse: A > 0 (requires higher return for more risk). Risk-neutral: A = 0. Risk-seeking: A < 0."
+          }
+        ]
+      }
+    },
+    {
+      "id": "port-lm2",
+      "number": 2,
+      "title": "Portfolio Risk and Return: Part II",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Capital Market Line (CML)",
+            "desc": "CAL using the MARKET portfolio as the optimal risky portfolio. E(R) = R<sub>f</sub> + [(R<sub>m</sub>-R<sub>f</sub>)/σ<sub>m</sub>]σ<sub>p</sub>."
+          },
+          {
+            "title": "Systematic vs Unsystematic Risk",
+            "desc": "Systematic (market/non-diversifiable): β measures sensitivity. Unsystematic (company-specific): eliminated by diversification."
+          },
+          {
+            "title": "CAPM",
+            "desc": "E(R<sub>i</sub>) = R<sub>f</sub> + β<sub>i</sub>(E(R<sub>m</sub>) - R<sub>f</sub>). Only systematic risk (β) is rewarded. Security Market Line (SML) plots this."
+          },
+          {
+            "title": "Beta",
+            "desc": "β = Cov(R<sub>i</sub>, R<sub>m</sub>) / Var(R<sub>m</sub>). Market β=1. β>1: more volatile than market. β<1: less volatile."
+          },
+          {
+            "title": "Performance Measures",
+            "desc": "Sharpe (total risk), Treynor (systematic risk), Jensen's Alpha (excess return above CAPM), M² (risk-adjusted RAP)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "CAPM / SML",
+            "formula": "E(R<sub>i</sub>) = R<sub>f</sub> + β<sub>i</sub>[E(R<sub>m</sub>) - R<sub>f</sub>]",
+            "where": "R<sub>f</sub> = risk-free, β = beta, E(R<sub>m</sub>)-R<sub>f</sub> = market risk premium"
+          },
+          {
+            "name": "Beta",
+            "formula": "β<sub>i</sub> = Cov(R<sub>i</sub>, R<sub>m</sub>) / σ²<sub>m</sub>",
+            "where": "σ²<sub>m</sub> = variance of market returns"
+          },
+          {
+            "name": "Treynor Ratio",
+            "formula": "Treynor = (R<sub>p</sub> - R<sub>f</sub>) / β<sub>p</sub>",
+            "where": "Excess return per unit of systematic risk"
+          },
+          {
+            "name": "Jensen's Alpha",
+            "formula": "α = R<sub>p</sub> - [R<sub>f</sub> + β(R<sub>m</sub> - R<sub>f</sub>)]",
+            "where": "Positive α = outperformance vs CAPM"
+          },
+          {
+            "name": "M-squared",
+            "formula": "M² = (Sharpe<sub>p</sub> - Sharpe<sub>m</sub>) × σ<sub>m</sub>",
+            "where": "Risk-adjusted performance in return units"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Which performance measure to use?",
+            "use": [
+              "Sharpe: for well-diversified portfolios (total risk matters)",
+              "Treynor: for portfolios that are part of a larger diversified portfolio (β matters)",
+              "Jensen’s Alpha: for measuring active manager skill"
+            ],
+            "avoid": [
+              "Sharpe for poorly diversified portfolios (total risk includes diversifiable risk)",
+              "Treynor when portfolio is the investor’s entire holdings"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "CML uses total risk (σ); SML uses systematic risk (β). Different concepts!",
+          "CAPM assumes: no taxes, no transaction costs, homogeneous expectations, all assets are divisible",
+          "Above the SML = undervalued (expected return > required). Below = overvalued.",
+          "Alpha depends on the benchmark chosen — wrong benchmark gives wrong alpha"
+        ],
+        "examples": [
+          {
+            "title": "CAPM Expected Return",
+            "problem": "R<sub>f</sub> = 3%, β = 1.5, E(R<sub>m</sub>) = 10%. What is the expected return?",
+            "solution": "E(R) = 3% + 1.5(10% - 3%) = 3% + 10.5% = 13.5%"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Portfolio Risk & Return II",
+        "branches": [
+          {
+            "label": "Capital Market Theory",
+            "leaves": [
+              "CML: R<sub>f</sub> to Market",
+              "Only efficient portfolios on CML",
+              "Slope = market Sharpe"
+            ]
+          },
+          {
+            "label": "CAPM & SML",
+            "leaves": [
+              "E(R) = Rf + β(Rm-Rf)",
+              "β measures systematic risk",
+              "All assets on SML in equilibrium",
+              "Above SML = undervalued"
+            ]
+          },
+          {
+            "label": "Beta",
+            "leaves": [
+              "β = Cov(i,m)/Var(m)",
+              "β>1: aggressive",
+              "β<1: defensive",
+              "β=1: market"
+            ]
+          },
+          {
+            "label": "Performance",
+            "leaves": [
+              "Sharpe (total risk)",
+              "Treynor (β risk)",
+              "Jensen's Alpha",
+              "M²"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "R<sub>f</sub>=2%, β=1.2, Market return=9%. CAPM expected return:",
+            "options": [
+              "10.4%",
+              "8.4%",
+              "12.8%",
+              "11.2%"
+            ],
+            "correct": 0,
+            "explanation": "E(R) = 2% + 1.2(9%-2%) = 2% + 8.4% = 10.4%"
+          },
+          {
+            "type": "mcq",
+            "question": "A stock plots above the Security Market Line (SML). This means the stock is:",
+            "options": [
+              "Overvalued",
+              "Undervalued",
+              "Fairly valued",
+              "Risk-free"
+            ],
+            "correct": 1,
+            "explanation": "Above the SML means expected return > required return (per CAPM). The stock offers more return than needed for its risk, so it's undervalued."
+          },
+          {
+            "type": "mcq",
+            "question": "Jensen's alpha is positive when:",
+            "options": [
+              "The portfolio return exceeds the risk-free rate",
+              "The portfolio return exceeds the CAPM-predicted return",
+              "The portfolio beta exceeds 1",
+              "The Sharpe ratio is positive"
+            ],
+            "correct": 1,
+            "explanation": "α = actual return - CAPM expected return. Positive alpha means the manager generated excess risk-adjusted returns."
+          },
+          {
+            "type": "mcq",
+            "question": "The Treynor ratio is most appropriate for evaluating:",
+            "options": [
+              "A portfolio that represents the investor's entire wealth",
+              "A well-diversified portfolio that is part of a larger portfolio",
+              "An individual stock",
+              "A risk-free asset"
+            ],
+            "correct": 1,
+            "explanation": "Treynor uses beta (systematic risk only), which is appropriate when the portfolio is part of a larger diversified portfolio where unsystematic risk is eliminated."
+          }
+        ]
+      }
+    },
+    {
+      "id": "port-lm3",
+      "number": 3,
+      "title": "Portfolio Management Overview and Planning",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "IPS (Investment Policy Statement)",
+            "desc": "Document governing the investment process. Includes: return objectives, risk tolerance, constraints (LTTLU)."
+          },
+          {
+            "title": "IPS Constraints (LTTLU)",
+            "desc": "Liquidity needs, Time horizon, Tax considerations, Legal/regulatory, Unique circumstances."
+          },
+          {
+            "title": "Types of Investors",
+            "desc": "Individual (life-cycle), Pension funds (DB: long-term, defined liability; DC: participant-directed), Endowments, Insurance."
+          },
+          {
+            "title": "Strategic Asset Allocation",
+            "desc": "Long-term target weights based on IPS. Rebalanced periodically. Determines majority of portfolio return."
+          },
+          {
+            "title": "Behavioral Biases",
+            "desc": "Loss aversion: pain of loss > pleasure of gain. Overconfidence: excessive trading. Herding: following the crowd."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "How to set return objectives?",
+            "use": [
+              "Required return: minimum needed to meet obligations",
+              "Desired return: what the investor wants (may exceed required)",
+              "Both must consider inflation, taxes, fees"
+            ],
+            "avoid": [
+              "Setting unrealistic return targets that require excessive risk"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Asset allocation is the most important determinant of portfolio returns (not security selection)",
+          "Longer time horizon generally allows for MORE risk (not less)",
+          "Tax-deferred accounts: prefer high-return assets (tax-inefficient assets like bonds)",
+          "Behavioral biases can cause systematic decision errors even for professional investors"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Portfolio Management",
+        "branches": [
+          {
+            "label": "IPS Components",
+            "leaves": [
+              "Return objectives",
+              "Risk tolerance",
+              "Constraints: LTTLU"
+            ]
+          },
+          {
+            "label": "Investor Types",
+            "leaves": [
+              "Individual",
+              "DB pension",
+              "DC pension",
+              "Endowment",
+              "Insurance"
+            ]
+          },
+          {
+            "label": "Asset Allocation",
+            "leaves": [
+              "Strategic (long-term)",
+              "Tactical (short-term)",
+              "Determines most of returns"
+            ]
+          },
+          {
+            "label": "Behavioral Biases",
+            "leaves": [
+              "Loss aversion",
+              "Overconfidence",
+              "Herding",
+              "Mental accounting",
+              "Anchoring"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "The IPS constraint \"LTTLU\" does NOT include:",
+            "options": [
+              "Liquidity",
+              "Tax",
+              "Leverage",
+              "Unique circumstances"
+            ],
+            "correct": 2,
+            "explanation": "LTTLU = Liquidity, Time horizon, Tax, Legal/regulatory, Unique circumstances. Leverage is not one of the five constraints."
+          },
+          {
+            "type": "mcq",
+            "question": "The most important determinant of long-term portfolio returns is:",
+            "options": [
+              "Security selection",
+              "Market timing",
+              "Strategic asset allocation",
+              "Fee negotiation"
+            ],
+            "correct": 2,
+            "explanation": "Studies show that strategic asset allocation explains approximately 90% of the variation in portfolio returns over time."
+          },
+          {
+            "type": "mcq",
+            "question": "Loss aversion refers to the tendency for investors to:",
+            "options": [
+              "Sell winning positions too quickly",
+              "Feel the pain of losses more than the pleasure of equivalent gains",
+              "Follow the crowd",
+              "Overestimate their abilities"
+            ],
+            "correct": 1,
+            "explanation": "Loss aversion (Kahneman & Tversky): the disutility of a loss is about twice the utility of an equivalent gain. This can lead to holding losers too long and selling winners too soon."
+          }
+        ]
+      }
+    }
+  ]
+}

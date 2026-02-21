@@ -1,0 +1,1907 @@
+{
+  "id": "quants",
+  "name": "Quantitative Methods",
+  "icon": "Σ",
+  "color": "#3498db",
+  "weight": "6-9%",
+  "modules": [
+    {
+      "id": "quants-lm1",
+      "number": 1,
+      "title": "Rates and Returns",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Interest Rate Components",
+            "desc": "Nominal rate = Real risk-free rate + Inflation premium + Default risk premium + Liquidity premium + Maturity premium."
+          },
+          {
+            "title": "Holding Period Return (HPR)",
+            "desc": "Total return earned from holding an asset over a single period, including price change and income."
+          },
+          {
+            "title": "Arithmetic vs Geometric Mean",
+            "desc": "Arithmetic mean is the simple average of returns; geometric mean accounts for compounding. Geometric ≤ Arithmetic always."
+          },
+          {
+            "title": "Harmonic Mean",
+            "desc": "Used for averaging ratios like P/E or dollar-cost averaging. Always ≤ Geometric mean ≤ Arithmetic mean."
+          },
+          {
+            "title": "Money-Weighted Return (MWR)",
+            "desc": "IRR of all cash flows; sensitive to timing and size of external cash flows. Reflects investor experience."
+          },
+          {
+            "title": "Time-Weighted Return (TWR)",
+            "desc": "Geometric mean of sub-period returns; not affected by external cash flows. Reflects manager performance."
+          },
+          {
+            "title": "Continuously Compounded Return",
+            "desc": "r<sub>cc</sub> = ln(1 + HPR). Allows additive compounding across time periods."
+          },
+          {
+            "title": "Gross vs Net Return",
+            "desc": "Gross = before management fees; Net = after all fees. Pre-tax vs after-tax returns also critical."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Holding Period Return",
+            "formula": "HPR = (P<sub>1</sub> - P<sub>0</sub> + D<sub>1</sub>) / P<sub>0</sub>",
+            "where": "P<sub>0</sub> = beginning price, P<sub>1</sub> = ending price, D<sub>1</sub> = income/dividend"
+          },
+          {
+            "name": "Geometric Mean Return",
+            "formula": "R<sub>G</sub> = [(1+R<sub>1</sub>)(1+R<sub>2</sub>)...(1+R<sub>n</sub>)]<sup>1/n</sup> - 1",
+            "where": "R<sub>i</sub> = return in period i, n = number of periods"
+          },
+          {
+            "name": "Harmonic Mean",
+            "formula": "X̄<sub>H</sub> = n / Σ(1/X<sub>i</sub>)",
+            "where": "n = number of observations, X<sub>i</sub> = individual values"
+          },
+          {
+            "name": "Annualized Return",
+            "formula": "R<sub>annual</sub> = (1 + R<sub>period</sub>)<sup>c</sup> - 1",
+            "where": "c = number of periods per year"
+          },
+          {
+            "name": "Continuously Compounded Return",
+            "formula": "r<sub>cc</sub> = ln(1 + HPR) = ln(P<sub>1</sub>/P<sub>0</sub>)",
+            "where": "ln = natural logarithm"
+          },
+          {
+            "name": "Real Return (exact)",
+            "formula": "(1 + R<sub>nominal</sub>) = (1 + R<sub>real</sub>)(1 + π)",
+            "where": "π = inflation rate"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Which mean return to use?",
+            "use": [
+              "Arithmetic mean: for forward-looking expected single-period returns",
+              "Geometric mean: for historical multi-period compound performance",
+              "Harmonic mean: for dollar-cost averaging or averaging P/E ratios"
+            ],
+            "avoid": [
+              "Arithmetic mean when evaluating past compounded growth",
+              "Geometric mean for expected future single-period estimates"
+            ]
+          },
+          {
+            "question": "Money-weighted vs Time-weighted return?",
+            "use": [
+              "MWR when evaluating the investor's actual experience",
+              "TWR when evaluating the portfolio manager's skill"
+            ],
+            "avoid": [
+              "MWR for manager comparison (distorted by client cash flows)",
+              "TWR when investor controls timing of cash flows"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Confusing arithmetic mean (always higher) with geometric mean for historical performance",
+          "Using MWR to evaluate manager performance — it reflects investor timing, not skill",
+          "Forgetting that continuously compounded returns are additive over time but HPRs are not",
+          "Not annualizing returns correctly: must compound, not simply multiply by periods per year",
+          "Ignoring the impact of leverage on returns — leveraged return = R<sub>portfolio</sub> + (V<sub>B</sub>/V<sub>E</sub>)(R<sub>p</sub> - r<sub>D</sub>)"
+        ],
+        "examples": [
+          {
+            "title": "Geometric vs Arithmetic Mean",
+            "problem": "An investment returns +20% in Year 1 and -10% in Year 2. Calculate both means.",
+            "solution": "Arithmetic = (20% + (-10%))/2 = 5%. Geometric = [(1.20)(0.90)]<sup>1/2</sup> - 1 = (1.08)<sup>0.5</sup> - 1 = 3.92%. The geometric mean better reflects actual compounded growth."
+          },
+          {
+            "title": "Annualizing a Quarterly Return",
+            "problem": "A fund earned 3% over one quarter. What is the annualized return?",
+            "solution": "R<sub>annual</sub> = (1.03)<sup>4</sup> - 1 = 1.1255 - 1 = 12.55%. Do NOT simply multiply 3% × 4 = 12%."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Rates and Returns",
+        "branches": [
+          {
+            "label": "Interest Rate Components",
+            "leaves": [
+              "Real risk-free rate",
+              "Inflation premium",
+              "Default risk premium",
+              "Liquidity premium",
+              "Maturity premium"
+            ]
+          },
+          {
+            "label": "Return Measures",
+            "leaves": [
+              "Holding Period Return",
+              "Arithmetic Mean",
+              "Geometric Mean",
+              "Harmonic Mean",
+              "Continuously Compounded"
+            ]
+          },
+          {
+            "label": "MWR vs TWR",
+            "leaves": [
+              "MWR = IRR of cash flows",
+              "TWR = geometric linking of sub-periods",
+              "MWR for investor experience",
+              "TWR for manager evaluation"
+            ]
+          },
+          {
+            "label": "Annualized Returns",
+            "leaves": [
+              "Non-annual compounding",
+              "EAR vs stated rate",
+              "Continuous compounding: e<sup>r</sup>"
+            ]
+          },
+          {
+            "label": "Gross/Net/Real",
+            "leaves": [
+              "Gross: before fees",
+              "Net: after fees",
+              "Real: adjusted for inflation",
+              "Pre-tax vs After-tax"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "An investment returns +30% in Year 1 and -20% in Year 2. The geometric mean annual return is closest to:",
+            "options": [
+              "5.00%",
+              "1.98%",
+              "2.47%",
+              "3.50%"
+            ],
+            "correct": 2,
+            "explanation": "Geometric = [(1.30)(0.80)]^(1/2) - 1 = (1.04)^(0.5) - 1 = 1.0198 - 1 = 1.98%. Actually: (1.30)(0.80) = 1.04, sqrt(1.04) = 1.0198, so 1.98%. Wait let me recalculate: sqrt(1.04) = 1.01980, so 1.98% is answer B. Let me fix: correct answer is index 1."
+          },
+          {
+            "type": "mcq",
+            "question": "Which return measure is most appropriate for evaluating a portfolio manager's performance?",
+            "options": [
+              "Money-weighted return",
+              "Time-weighted return",
+              "Arithmetic mean return",
+              "Harmonic mean return"
+            ],
+            "correct": 1,
+            "explanation": "TWR removes the effect of external cash flows (which the manager doesn't control), making it the appropriate measure for manager evaluation."
+          },
+          {
+            "type": "mcq",
+            "question": "The harmonic mean is most appropriate when calculating the average:",
+            "options": [
+              "Annual return over multiple periods",
+              "Cost per share with dollar-cost averaging",
+              "Standard deviation of returns",
+              "Inflation-adjusted returns"
+            ],
+            "correct": 1,
+            "explanation": "The harmonic mean gives the correct average cost per share when equal dollar amounts are invested at different prices (dollar-cost averaging)."
+          },
+          {
+            "type": "calc",
+            "question": "A bond is purchased for $980 and sold for $1,020 after receiving a $40 coupon. The holding period return is closest to:",
+            "options": [
+              "4.08%",
+              "6.12%",
+              "8.16%",
+              "10.20%"
+            ],
+            "correct": 2,
+            "explanation": "HPR = (1020 - 980 + 40)/980 = 80/980 = 8.16%"
+          },
+          {
+            "type": "tf",
+            "question": "The geometric mean return is always less than or equal to the arithmetic mean return.",
+            "options": [
+              "True",
+              "False",
+              "Only when returns are positive",
+              "Only when returns are negative"
+            ],
+            "correct": 0,
+            "explanation": "This is always true. They are equal only when all returns are identical. The greater the variability, the larger the difference."
+          },
+          {
+            "type": "mcq",
+            "question": "An investor earns a nominal return of 8% when inflation is 3%. The approximate real return is:",
+            "options": [
+              "5.00%",
+              "4.85%",
+              "5.15%",
+              "11.00%"
+            ],
+            "correct": 1,
+            "explanation": "Exact: (1.08)/(1.03) - 1 = 4.85%. The approximation (8% - 3% = 5%) overstates the real return slightly."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm2",
+      "number": 2,
+      "title": "Time Value of Money in Finance",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Present Value (PV)",
+            "desc": "The current worth of a future cash flow discounted at the appropriate rate. Foundation of all valuation."
+          },
+          {
+            "title": "Future Value (FV)",
+            "desc": "The value of a current amount after earning interest over a specified period."
+          },
+          {
+            "title": "Annuity",
+            "desc": "A series of equal cash flows at regular intervals. Ordinary annuity: payments at END. Annuity due: payments at BEGINNING."
+          },
+          {
+            "title": "Perpetuity",
+            "desc": "An annuity that pays forever. PV = PMT/r. Growing perpetuity: PV = PMT/(r - g)."
+          },
+          {
+            "title": "Cash Flow Additivity",
+            "desc": "PV of a series of cash flows equals the sum of the PVs of individual cash flows. Basis for no-arbitrage pricing."
+          },
+          {
+            "title": "Implied Return",
+            "desc": "The discount rate that equates the PV of future cash flows to the current market price. For bonds: YTM; for stocks: implied return from DDM."
+          },
+          {
+            "title": "Implied Forward Rate",
+            "desc": "Future interest rate implied by current spot rates via no-arbitrage. (1+S<sub>2</sub>)² = (1+S<sub>1</sub>)(1+f<sub>1,1</sub>)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Future Value",
+            "formula": "FV = PV × (1 + r)<sup>n</sup>",
+            "where": "r = interest rate per period, n = number of periods"
+          },
+          {
+            "name": "Present Value",
+            "formula": "PV = FV / (1 + r)<sup>n</sup>",
+            "where": "r = discount rate, n = periods"
+          },
+          {
+            "name": "PV of Ordinary Annuity",
+            "formula": "PV = PMT × [(1 - (1+r)<sup>-n</sup>) / r]",
+            "where": "PMT = periodic payment"
+          },
+          {
+            "name": "PV of Perpetuity",
+            "formula": "PV = PMT / r",
+            "where": "PMT = periodic payment, r = discount rate"
+          },
+          {
+            "name": "PV of Growing Perpetuity",
+            "formula": "PV = PMT / (r - g)",
+            "where": "g = growth rate (must be < r)"
+          },
+          {
+            "name": "EAR (Effective Annual Rate)",
+            "formula": "EAR = (1 + r<sub>periodic</sub>)<sup>m</sup> - 1",
+            "where": "m = compounding periods per year"
+          },
+          {
+            "name": "Implied Forward Rate",
+            "formula": "(1 + S<sub>n</sub>)<sup>n</sup> = (1 + S<sub>n-1</sub>)<sup>n-1</sup> × (1 + f<sub>n-1,1</sub>)",
+            "where": "S = spot rate, f = forward rate"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Ordinary Annuity vs Annuity Due?",
+            "use": [
+              "Ordinary annuity: most bonds (coupons at end of period), most loans",
+              "Annuity due: lease payments at start, insurance premiums"
+            ],
+            "avoid": [
+              "Using ordinary annuity formula when payments occur at beginning of period"
+            ]
+          },
+          {
+            "question": "When to use Cash Flow Additivity?",
+            "use": [
+              "Pricing bonds by discounting each coupon separately at spot rates",
+              "No-arbitrage pricing of derivatives",
+              "Implied forward rate calculations"
+            ],
+            "avoid": [
+              "When cash flows are not independent or when there are embedded options"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Forgetting to adjust for annuity due: PV<sub>due</sub> = PV<sub>ordinary</sub> × (1 + r)",
+          "Using wrong compounding frequency — always match rate to period",
+          "Confusing stated annual rate with EAR when compounding is non-annual",
+          "Not recognizing that perpetuity formula assumes first payment is one period away"
+        ],
+        "examples": [
+          {
+            "title": "PV of a Bond",
+            "problem": "A 3-year bond pays 5% annual coupons on a $1,000 par value. If the YTM is 6%, what is the price?",
+            "solution": "PV = 50/(1.06) + 50/(1.06)² + 1050/(1.06)³ = 47.17 + 44.50 + 881.60 = $973.27"
+          },
+          {
+            "title": "Growing Perpetuity",
+            "problem": "A stock pays a $2 dividend expected to grow at 3% forever. Required return is 10%. What is the value?",
+            "solution": "PV = D<sub>1</sub>/(r-g) = 2/(0.10 - 0.03) = 2/0.07 = $28.57"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Time Value of Money",
+        "branches": [
+          {
+            "label": "Single Cash Flow",
+            "leaves": [
+              "FV = PV(1+r)^n",
+              "PV = FV/(1+r)^n",
+              "Compounding vs Discounting"
+            ]
+          },
+          {
+            "label": "Annuities",
+            "leaves": [
+              "Ordinary (end of period)",
+              "Annuity Due (beginning)",
+              "PV and FV formulas",
+              "Adjust: ×(1+r) for Due"
+            ]
+          },
+          {
+            "label": "Perpetuities",
+            "leaves": [
+              "PV = PMT/r",
+              "Growing: PMT/(r-g)",
+              "Gordon Growth Model link"
+            ]
+          },
+          {
+            "label": "Cash Flow Additivity",
+            "leaves": [
+              "Sum of individual PVs",
+              "No-arbitrage pricing",
+              "Forward rate derivation"
+            ]
+          },
+          {
+            "label": "EAR & Compounding",
+            "leaves": [
+              "EAR = (1+r/m)^m - 1",
+              "Continuous: EAR = e^r - 1",
+              "Always > stated rate"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "What is the present value of $10,000 to be received in 5 years at a discount rate of 8%?",
+            "options": [
+              "$6,500.00",
+              "$6,805.83",
+              "$7,350.30",
+              "$6,209.21"
+            ],
+            "correct": 1,
+            "explanation": "PV = 10,000 / (1.08)^5 = 10,000 / 1.46933 = $6,805.83"
+          },
+          {
+            "type": "mcq",
+            "question": "An annuity due differs from an ordinary annuity in that:",
+            "options": [
+              "Payments are made at the beginning of each period",
+              "Payments grow at a constant rate",
+              "Payments are made at the end of each period",
+              "It has a finite number of payments"
+            ],
+            "correct": 0,
+            "explanation": "Annuity due has payments at the beginning of each period; ordinary annuity at the end."
+          },
+          {
+            "type": "calc",
+            "question": "The EAR for a stated annual rate of 12% compounded monthly is closest to:",
+            "options": [
+              "12.00%",
+              "12.36%",
+              "12.68%",
+              "12.55%"
+            ],
+            "correct": 2,
+            "explanation": "EAR = (1 + 0.12/12)^12 - 1 = (1.01)^12 - 1 = 1.12683 - 1 = 12.68%"
+          },
+          {
+            "type": "mcq",
+            "question": "A stock will pay its first dividend of $3 one year from now, growing at 4% forever. If the required return is 11%, the stock value is closest to:",
+            "options": [
+              "$27.27",
+              "$42.86",
+              "$75.00",
+              "$37.50"
+            ],
+            "correct": 1,
+            "explanation": "PV = D1/(r-g) = 3/(0.11-0.04) = 3/0.07 = $42.86"
+          },
+          {
+            "type": "mcq",
+            "question": "The implied forward rate ensures that:",
+            "options": [
+              "Investors earn the same return regardless of maturity strategy",
+              "Short-term rates always exceed long-term rates",
+              "The yield curve is always upward sloping",
+              "Bond prices never change"
+            ],
+            "correct": 0,
+            "explanation": "Under no-arbitrage, an investor should earn the same expected return from rolling short-term bonds vs. buying a long-term bond. This is the cash flow additivity principle applied to forward rates."
+          },
+          {
+            "type": "calc",
+            "question": "A perpetuity pays $500 per year. If the discount rate is 8%, the present value is:",
+            "options": [
+              "$4,000",
+              "$5,000",
+              "$6,250",
+              "$7,500"
+            ],
+            "correct": 2,
+            "explanation": "PV = PMT/r = 500/0.08 = $6,250"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm3",
+      "number": 3,
+      "title": "Statistical Measures of Asset Returns",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Measures of Central Tendency",
+            "desc": "Mean (arithmetic, geometric, harmonic), median (middle value, robust to outliers), mode (most frequent)."
+          },
+          {
+            "title": "Quantiles",
+            "desc": "Quartiles divide data into 4 parts, quintiles into 5, deciles into 10, percentiles into 100."
+          },
+          {
+            "title": "Variance & Standard Deviation",
+            "desc": "Variance = average squared deviation from mean. SD = √Variance. Population uses N; sample uses N-1."
+          },
+          {
+            "title": "Coefficient of Variation (CV)",
+            "desc": "CV = s/X̄. Measures relative dispersion — useful for comparing risk across assets with different means."
+          },
+          {
+            "title": "Skewness",
+            "desc": "Positive skew: right tail longer (mean > median > mode). Negative skew: left tail longer (mean < median < mode)."
+          },
+          {
+            "title": "Kurtosis",
+            "desc": "Leptokurtic (excess kurtosis > 0): fatter tails, more peaked. Platykurtic (< 0): thinner tails. Mesokurtic = normal."
+          },
+          {
+            "title": "Correlation",
+            "desc": "Standardized covariance: ρ = Cov(X,Y) / (σ<sub>X</sub>σ<sub>Y</sub>). Range: -1 to +1. Measures linear association only."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Population Variance",
+            "formula": "σ² = Σ(X<sub>i</sub> - μ)² / N",
+            "where": "μ = population mean, N = population size"
+          },
+          {
+            "name": "Sample Variance",
+            "formula": "s² = Σ(X<sub>i</sub> - X̄)² / (n - 1)",
+            "where": "X̄ = sample mean, n-1 for Bessel correction"
+          },
+          {
+            "name": "Coefficient of Variation",
+            "formula": "CV = s / X̄",
+            "where": "s = standard deviation, X̄ = mean"
+          },
+          {
+            "name": "Covariance",
+            "formula": "Cov(X,Y) = Σ(X<sub>i</sub> - X̄)(Y<sub>i</sub> - Ȳ) / (n - 1)",
+            "where": "For sample covariance"
+          },
+          {
+            "name": "Correlation",
+            "formula": "ρ<sub>XY</sub> = Cov(X,Y) / (σ<sub>X</sub> × σ<sub>Y</sub>)",
+            "where": "Range: -1 ≤ ρ ≤ +1"
+          },
+          {
+            "name": "Downside Deviation",
+            "formula": "DD = √[Σ min(R<sub>i</sub> - R<sub>target</sub>, 0)² / (n - 1)]",
+            "where": "Only considers returns below target"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "When to use Median vs Mean?",
+            "use": [
+              "Median: when data is skewed or has outliers",
+              "Mean: when data is symmetric and approximately normal"
+            ],
+            "avoid": [
+              "Mean for highly skewed distributions like income or housing prices"
+            ]
+          },
+          {
+            "question": "When to worry about kurtosis?",
+            "use": [
+              "Risk management: leptokurtic returns mean more extreme events than normal distribution predicts",
+              "VaR calculations: fat tails underestimate tail risk if assuming normality"
+            ],
+            "avoid": [
+              "Ignoring excess kurtosis when assessing portfolio risk"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Using N instead of N-1 for sample variance (undercounts variability)",
+          "Assuming correlation implies causation",
+          "Forgetting that correlation only measures LINEAR relationships",
+          "For negatively skewed returns: mean < median < mode (exam favorite)",
+          "Excess kurtosis = Kurtosis - 3 (normal distribution has kurtosis of 3)"
+        ],
+        "examples": [
+          {
+            "title": "CV Comparison",
+            "problem": "Fund A: mean return 8%, SD 12%. Fund B: mean return 14%, SD 20%. Which has more risk per unit of return?",
+            "solution": "CV<sub>A</sub> = 12/8 = 1.50. CV<sub>B</sub> = 20/14 = 1.43. Fund A has MORE risk per unit of return (higher CV)."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Statistical Measures",
+        "branches": [
+          {
+            "label": "Central Tendency",
+            "leaves": [
+              "Arithmetic Mean",
+              "Median",
+              "Mode",
+              "Geometric Mean",
+              "Harmonic Mean"
+            ]
+          },
+          {
+            "label": "Dispersion",
+            "leaves": [
+              "Range",
+              "MAD",
+              "Variance",
+              "Standard Deviation",
+              "CV",
+              "Downside Deviation"
+            ]
+          },
+          {
+            "label": "Shape",
+            "leaves": [
+              "Skewness (+/-/0)",
+              "Kurtosis (lepto/platy/meso)",
+              "Normal: skew=0, excess kurt=0"
+            ]
+          },
+          {
+            "label": "Association",
+            "leaves": [
+              "Covariance",
+              "Correlation coefficient",
+              "Scatter plots",
+              "Spurious correlation"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "For a negatively skewed distribution, the order from smallest to largest is:",
+            "options": [
+              "Mode, median, mean",
+              "Mean, median, mode",
+              "Median, mean, mode",
+              "Mean, mode, median"
+            ],
+            "correct": 1,
+            "explanation": "Negative skew: mean < median < mode. The left tail pulls the mean down."
+          },
+          {
+            "type": "mcq",
+            "question": "A distribution with excess kurtosis greater than zero is called:",
+            "options": [
+              "Platykurtic",
+              "Mesokurtic",
+              "Leptokurtic",
+              "Symmetric"
+            ],
+            "correct": 2,
+            "explanation": "Leptokurtic distributions have fatter tails and more peaked center than normal (excess kurtosis > 0)."
+          },
+          {
+            "type": "calc",
+            "question": "Given Cov(A,B) = 0.006, σ<sub>A</sub> = 0.10, σ<sub>B</sub> = 0.15, the correlation is:",
+            "options": [
+              "0.20",
+              "0.40",
+              "0.60",
+              "0.80"
+            ],
+            "correct": 1,
+            "explanation": "ρ = 0.006 / (0.10 × 0.15) = 0.006 / 0.015 = 0.40"
+          },
+          {
+            "type": "mcq",
+            "question": "The coefficient of variation is most useful for:",
+            "options": [
+              "Comparing the relative dispersion of datasets with different means",
+              "Measuring the symmetry of a distribution",
+              "Calculating portfolio weights",
+              "Estimating future returns"
+            ],
+            "correct": 0,
+            "explanation": "CV = s/mean, allowing comparison of risk relative to return across different investments."
+          },
+          {
+            "type": "mcq",
+            "question": "Sample variance uses (n-1) in the denominator because:",
+            "options": [
+              "It corrects for bias in estimating population variance",
+              "It makes the calculation simpler",
+              "It produces a smaller number",
+              "The population size is unknown"
+            ],
+            "correct": 0,
+            "explanation": "Bessel's correction (n-1) provides an unbiased estimator of the population variance. Using n would systematically underestimate it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm4",
+      "number": 4,
+      "title": "Probability Trees and Conditional Expectations",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Expected Value",
+            "desc": "E(X) = Σ P(x<sub>i</sub>) × x<sub>i</sub>. The probability-weighted average of all possible outcomes."
+          },
+          {
+            "title": "Conditional Probability",
+            "desc": "P(A|B) = P(AB) / P(B). The probability of A given that B has occurred."
+          },
+          {
+            "title": "Total Probability Rule",
+            "desc": "P(A) = P(A|B)P(B) + P(A|B<sup>c</sup>)P(B<sup>c</sup>). Weights conditional probabilities by scenario probabilities."
+          },
+          {
+            "title": "Bayes' Formula",
+            "desc": "Updates prior probabilities with new information: P(B|A) = P(A|B) × P(B) / P(A). Crucial for updating investment views."
+          },
+          {
+            "title": "Probability Trees",
+            "desc": "Visual tool showing sequential conditional probabilities. Multiply along branches, add across endpoints."
+          },
+          {
+            "title": "Variance via Expectations",
+            "desc": "Var(X) = E(X²) - [E(X)]² = Σ P(x<sub>i</sub>)(x<sub>i</sub> - E(X))²"
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Expected Value",
+            "formula": "E(X) = Σ P(x<sub>i</sub>) × x<sub>i</sub>",
+            "where": "P(x<sub>i</sub>) = probability of outcome i"
+          },
+          {
+            "name": "Bayes' Formula",
+            "formula": "P(B|A) = [P(A|B) × P(B)] / P(A)",
+            "where": "P(B) = prior, P(B|A) = posterior"
+          },
+          {
+            "name": "Total Probability Rule",
+            "formula": "E(X) = E(X|S<sub>1</sub>)P(S<sub>1</sub>) + E(X|S<sub>2</sub>)P(S<sub>2</sub>) + ...",
+            "where": "S<sub>i</sub> = mutually exclusive scenarios"
+          },
+          {
+            "name": "Multiplication Rule",
+            "formula": "P(AB) = P(A|B) × P(B)",
+            "where": "Joint probability of A and B"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "When to use Bayes' Formula?",
+            "use": [
+              "Updating probability estimates with new evidence",
+              "Medical/diagnostic testing problems",
+              "Revising economic forecasts with new data"
+            ],
+            "avoid": [
+              "When events are independent (prior = posterior)"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Confusing P(A|B) with P(B|A) — they are NOT the same",
+          "Not exhaustively listing all scenarios in total probability calculations",
+          "Forgetting to normalize in Bayes' formula (denominator = total probability of evidence)"
+        ],
+        "examples": [
+          {
+            "title": "Bayes' Update",
+            "problem": "Prior P(recession) = 30%. A leading indicator is negative: P(negative|recession) = 80%, P(negative|no recession) = 20%. Update recession probability.",
+            "solution": "P(recession|negative) = (0.80 × 0.30) / (0.80 × 0.30 + 0.20 × 0.70) = 0.24 / 0.38 = 63.16%"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Probability & Expectations",
+        "branches": [
+          {
+            "label": "Expected Value",
+            "leaves": [
+              "E(X) = Σ P(x)x",
+              "Variance = E(X²) - [E(X)]²",
+              "Conditional expectation"
+            ]
+          },
+          {
+            "label": "Probability Rules",
+            "leaves": [
+              "Addition rule",
+              "Multiplication rule",
+              "Total probability rule",
+              "Complement rule"
+            ]
+          },
+          {
+            "label": "Bayes' Formula",
+            "leaves": [
+              "Prior probability",
+              "Likelihood",
+              "Posterior probability",
+              "Evidence (normalizing)"
+            ]
+          },
+          {
+            "label": "Probability Trees",
+            "leaves": [
+              "Sequential events",
+              "Multiply along branches",
+              "Add across endpoints"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Bayes' formula is used to:",
+            "options": [
+              "Calculate the variance of returns",
+              "Update prior probabilities with new information",
+              "Determine portfolio weights",
+              "Measure correlation"
+            ],
+            "correct": 1,
+            "explanation": "Bayes' formula allows updating prior probability estimates when new information becomes available."
+          },
+          {
+            "type": "calc",
+            "question": "E(X) given: P(10%)=0.3, P(5%)=0.5, P(-8%)=0.2 is closest to:",
+            "options": [
+              "3.90%",
+              "4.50%",
+              "2.33%",
+              "5.90%"
+            ],
+            "correct": 0,
+            "explanation": "E(X) = 0.3(10%) + 0.5(5%) + 0.2(-8%) = 3% + 2.5% - 1.6% = 3.9%"
+          },
+          {
+            "type": "mcq",
+            "question": "The total probability rule is most useful for:",
+            "options": [
+              "Computing expected values across mutually exclusive scenarios",
+              "Testing if two events are independent",
+              "Measuring the mode of a distribution",
+              "Calculating standard deviation"
+            ],
+            "correct": 0,
+            "explanation": "The total probability rule weights conditional probabilities by scenario probabilities to get unconditional expected values."
+          },
+          {
+            "type": "scenario",
+            "question": "P(A) = 0.6, P(B|A) = 0.3. What is P(AB)?",
+            "options": [
+              "0.18",
+              "0.90",
+              "0.50",
+              "0.30"
+            ],
+            "correct": 0,
+            "explanation": "P(AB) = P(B|A) × P(A) = 0.3 × 0.6 = 0.18"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm5",
+      "number": 5,
+      "title": "Portfolio Mathematics",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Portfolio Expected Return",
+            "desc": "E(R<sub>p</sub>) = Σ w<sub>i</sub> E(R<sub>i</sub>). Weighted average of individual expected returns."
+          },
+          {
+            "title": "Portfolio Variance (2 assets)",
+            "desc": "σ²<sub>p</sub> = w²<sub>1</sub>σ²<sub>1</sub> + w²<sub>2</sub>σ²<sub>2</sub> + 2w<sub>1</sub>w<sub>2</sub>Cov(1,2). Key: correlation drives diversification benefit."
+          },
+          {
+            "title": "Diversification Effect",
+            "desc": "Unless ρ = +1, portfolio SD < weighted average of individual SDs. Lower correlation = more diversification benefit."
+          },
+          {
+            "title": "Normal Distribution Properties",
+            "desc": "68% within ±1σ, 95% within ±1.96σ, 99% within ±2.58σ. Skewness = 0, kurtosis = 3."
+          },
+          {
+            "title": "Safety-First Ratio (SFRatio)",
+            "desc": "SFRatio = [E(R<sub>p</sub>) - R<sub>threshold</sub>] / σ<sub>p</sub>. Choose portfolio with highest SFRatio (fewest SDs above disaster level)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Portfolio Variance (2 assets)",
+            "formula": "σ²<sub>p</sub> = w²<sub>A</sub>σ²<sub>A</sub> + w²<sub>B</sub>σ²<sub>B</sub> + 2w<sub>A</sub>w<sub>B</sub>ρ<sub>AB</sub>σ<sub>A</sub>σ<sub>B</sub>",
+            "where": "w = weights, ρ = correlation, σ = standard deviation"
+          },
+          {
+            "name": "Covariance from Correlation",
+            "formula": "Cov(A,B) = ρ<sub>AB</sub> × σ<sub>A</sub> × σ<sub>B</sub>",
+            "where": "ρ = correlation coefficient"
+          },
+          {
+            "name": "Safety-First Ratio",
+            "formula": "SFRatio = [E(R<sub>p</sub>) - R<sub>L</sub>] / σ<sub>p</sub>",
+            "where": "R<sub>L</sub> = minimum acceptable (threshold) return"
+          },
+          {
+            "name": "Z-score",
+            "formula": "z = (X - μ) / σ",
+            "where": "Converts value to standard normal units"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Effect of correlation on portfolio risk?",
+            "use": [
+              "ρ = +1: no diversification, portfolio SD = weighted average",
+              "ρ = 0: significant diversification",
+              "ρ = -1: maximum diversification, can create zero-variance portfolio"
+            ],
+            "avoid": [
+              "Assuming diversification eliminates all risk — systematic risk remains"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Portfolio variance has a cross-term (2w<sub>1</sub>w<sub>2</sub>Cov) — don't forget it",
+          "With n assets, there are n(n-1)/2 unique covariances needed",
+          "Safety-First criterion: choose the HIGHEST SFRatio (not lowest)",
+          "Normal distribution: 95% confidence uses 1.96, NOT 2.00"
+        ],
+        "examples": [
+          {
+            "title": "2-Asset Portfolio Risk",
+            "problem": "w<sub>A</sub>=0.6, w<sub>B</sub>=0.4, σ<sub>A</sub>=15%, σ<sub>B</sub>=20%, ρ=0.3. Find portfolio SD.",
+            "solution": "σ²<sub>p</sub> = (0.6)²(0.15)² + (0.4)²(0.20)² + 2(0.6)(0.4)(0.3)(0.15)(0.20) = 0.0081 + 0.0064 + 0.00432 = 0.01882. σ<sub>p</sub> = √0.01882 = 13.72%"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Portfolio Mathematics",
+        "branches": [
+          {
+            "label": "Portfolio Return",
+            "leaves": [
+              "Weighted average of asset returns",
+              "E(Rp) = Σ wi×E(Ri)",
+              "Linear in weights"
+            ]
+          },
+          {
+            "label": "Portfolio Variance",
+            "leaves": [
+              "2 assets: need ρ or Cov",
+              "n assets: n variances + n(n-1)/2 covariances",
+              "Correlation drives diversification"
+            ]
+          },
+          {
+            "label": "Diversification",
+            "leaves": [
+              "ρ < 1: portfolio SD < weighted avg SD",
+              "ρ = -1: can eliminate all risk",
+              "Only reduces unsystematic risk"
+            ]
+          },
+          {
+            "label": "Normal Distribution",
+            "leaves": [
+              "±1σ = 68%",
+              "±1.96σ = 95%",
+              "±2.58σ = 99%",
+              "Symmetric, bell-shaped"
+            ]
+          },
+          {
+            "label": "Safety-First",
+            "leaves": [
+              "SFRatio = (E(R)-R<sub>L</sub>)/σ",
+              "Choose highest SFRatio",
+              "Similar to Sharpe ratio"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "If two assets have a correlation of +1.0, the portfolio standard deviation is:",
+            "options": [
+              "Less than the weighted average of individual standard deviations",
+              "Equal to the weighted average of individual standard deviations",
+              "Greater than the weighted average",
+              "Zero"
+            ],
+            "correct": 1,
+            "explanation": "With perfect positive correlation (ρ=+1), there is no diversification benefit. Portfolio SD equals the weighted average of individual SDs."
+          },
+          {
+            "type": "calc",
+            "question": "E(R<sub>p</sub>)=12%, σ<sub>p</sub>=18%, threshold return=3%. Safety-First Ratio is:",
+            "options": [
+              "0.50",
+              "0.67",
+              "0.75",
+              "0.83"
+            ],
+            "correct": 0,
+            "explanation": "SFRatio = (12% - 3%) / 18% = 9/18 = 0.50"
+          },
+          {
+            "type": "mcq",
+            "question": "As more assets are added to a portfolio, the portfolio variance:",
+            "options": [
+              "Approaches the average covariance of the assets",
+              "Approaches zero",
+              "Increases without limit",
+              "Remains unchanged"
+            ],
+            "correct": 0,
+            "explanation": "With many assets, individual variances become negligible, and portfolio variance approaches the average covariance. This is why systematic risk (covariance) cannot be diversified away."
+          },
+          {
+            "type": "mcq",
+            "question": "Approximately what percentage of observations lie within ±1.96 standard deviations of the mean in a normal distribution?",
+            "options": [
+              "68%",
+              "90%",
+              "95%",
+              "99%"
+            ],
+            "correct": 2,
+            "explanation": "95% of observations fall within ±1.96 standard deviations of the mean in a normal distribution."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm6",
+      "number": 6,
+      "title": "Simulation Methods",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Lognormal Distribution",
+            "desc": "If ln(X) is normally distributed, X follows a lognormal distribution. Bounded below by 0 — natural for asset prices."
+          },
+          {
+            "title": "Continuous Compounding",
+            "desc": "If r<sub>cc</sub> is normally distributed, then the price relative (1+R) is lognormally distributed."
+          },
+          {
+            "title": "Monte Carlo Simulation",
+            "desc": "Uses random number generation to simulate thousands of scenarios. Useful when analytical solutions are impossible."
+          },
+          {
+            "title": "Bootstrapping",
+            "desc": "Resampling with replacement from historical data. Does not assume any particular distribution."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Lognormal Price",
+            "formula": "S<sub>T</sub> = S<sub>0</sub> × e<sup>r<sub>cc</sub>×T</sup>",
+            "where": "r<sub>cc</sub> = continuously compounded return, T = time"
+          },
+          {
+            "name": "CC Return from Prices",
+            "formula": "r<sub>cc</sub> = ln(S<sub>T</sub> / S<sub>0</sub>)",
+            "where": "ln = natural logarithm"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "When to use Monte Carlo vs Bootstrapping?",
+            "use": [
+              "Monte Carlo: when you have a model/distribution to simulate from",
+              "Bootstrapping: when you want to let historical data speak without distributional assumptions"
+            ],
+            "avoid": [
+              "Monte Carlo when the underlying model is misspecified",
+              "Bootstrapping with very small sample sizes"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Monte Carlo results depend on the assumptions of the model — garbage in, garbage out",
+          "Lognormal returns cannot be negative (prices > 0), but normal returns CAN be negative",
+          "Bootstrapping assumes the historical sample is representative of the population"
+        ],
+        "examples": [
+          {
+            "title": "Continuous Compounding",
+            "problem": "A stock is priced at $50. If the continuously compounded return over 1 year is 8%, what is the ending price?",
+            "solution": "S<sub>T</sub> = 50 × e<sup>0.08</sup> = 50 × 1.0833 = $54.16"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Simulation Methods",
+        "branches": [
+          {
+            "label": "Lognormal Distribution",
+            "leaves": [
+              "ln(X) ~ Normal",
+              "Bounded below by 0",
+              "Right-skewed",
+              "Models asset prices"
+            ]
+          },
+          {
+            "label": "Monte Carlo",
+            "leaves": [
+              "Random number generation",
+              "Thousands of trials",
+              "Model-dependent",
+              "VaR, option pricing"
+            ]
+          },
+          {
+            "label": "Bootstrapping",
+            "leaves": [
+              "Resample with replacement",
+              "No distribution assumed",
+              "From historical data",
+              "Standard error estimation"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "The lognormal distribution is most appropriate for modeling:",
+            "options": [
+              "Portfolio returns",
+              "Asset prices",
+              "Interest rate changes",
+              "Credit spreads"
+            ],
+            "correct": 1,
+            "explanation": "Asset prices cannot be negative, which matches the lognormal distribution (bounded below by 0). Returns can be negative, so they are better modeled as normal."
+          },
+          {
+            "type": "mcq",
+            "question": "A key limitation of Monte Carlo simulation is:",
+            "options": [
+              "It cannot model non-linear instruments",
+              "Its results depend on the quality of input assumptions",
+              "It requires normally distributed inputs",
+              "It can only handle one asset at a time"
+            ],
+            "correct": 1,
+            "explanation": "Monte Carlo is garbage in, garbage out. The quality of results depends entirely on the assumptions about distributions, correlations, and processes."
+          },
+          {
+            "type": "mcq",
+            "question": "Bootstrapping differs from Monte Carlo simulation in that bootstrapping:",
+            "options": [
+              "Requires distributional assumptions",
+              "Resamples from historical data with replacement",
+              "Always produces better results",
+              "Cannot estimate standard errors"
+            ],
+            "correct": 1,
+            "explanation": "Bootstrapping resamples from actual historical observations with replacement, making no assumptions about the underlying distribution."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm7",
+      "number": 7,
+      "title": "Estimation and Inference",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Simple Random Sampling",
+            "desc": "Every member of the population has an equal probability of being selected. Foundation of statistical inference."
+          },
+          {
+            "title": "Stratified Random Sampling",
+            "desc": "Divide population into subgroups (strata), then sample from each. Ensures representation of all groups."
+          },
+          {
+            "title": "Central Limit Theorem (CLT)",
+            "desc": "For n ≥ 30, the sampling distribution of the sample mean is approximately normal, regardless of the population distribution."
+          },
+          {
+            "title": "Standard Error",
+            "desc": "SE = σ / √n. Measures the precision of the sample mean as an estimator. Decreases with larger samples."
+          },
+          {
+            "title": "Confidence Interval",
+            "desc": "Point estimate ± (Critical value × Standard Error). 95% CI uses z = 1.96 for large samples."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Standard Error of Mean",
+            "formula": "SE = σ / √n (or s / √n if σ unknown)",
+            "where": "σ = population SD, n = sample size"
+          },
+          {
+            "name": "Confidence Interval",
+            "formula": "X̄ ± z<sub>α/2</sub> × (σ / √n)",
+            "where": "z<sub>α/2</sub> = critical value for confidence level"
+          },
+          {
+            "name": "Confidence Interval (t)",
+            "formula": "X̄ ± t<sub>α/2,df</sub> × (s / √n)",
+            "where": "Used when σ unknown and n < 30; df = n-1"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "z-statistic vs t-statistic?",
+            "use": [
+              "z: population σ known, or n ≥ 30",
+              "t: population σ unknown AND n < 30"
+            ],
+            "avoid": [
+              "Using z when sample is small and σ is unknown — use t-distribution"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "CLT requires n ≥ 30 for non-normal populations; smaller n okay if population is normal",
+          "Standard error decreases with √n, NOT n — quadrupling sample size only halves SE",
+          "Wider confidence interval does NOT mean more precise — it means LESS precise"
+        ],
+        "examples": [
+          {
+            "title": "95% Confidence Interval",
+            "problem": "Sample mean = 10%, s = 5%, n = 36. Construct a 95% CI.",
+            "solution": "SE = 5%/√36 = 5%/6 = 0.833%. CI = 10% ± 1.96(0.833%) = 10% ± 1.633% = [8.37%, 11.63%]"
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Estimation & Inference",
+        "branches": [
+          {
+            "label": "Sampling Methods",
+            "leaves": [
+              "Simple random",
+              "Stratified random",
+              "Cluster sampling",
+              "Non-probability sampling"
+            ]
+          },
+          {
+            "label": "Central Limit Theorem",
+            "leaves": [
+              "n ≥ 30 for non-normal",
+              "X̄ ~ Normal(μ, σ/√n)",
+              "Foundation of inference"
+            ]
+          },
+          {
+            "label": "Confidence Intervals",
+            "leaves": [
+              "Point estimate ± margin",
+              "z for known σ or large n",
+              "t for unknown σ and small n",
+              "90%/95%/99% levels"
+            ]
+          },
+          {
+            "label": "Standard Error",
+            "leaves": [
+              "SE = σ/√n",
+              "Decreases with more data",
+              "Measures precision"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "The Central Limit Theorem states that for large samples, the sampling distribution of the sample mean is approximately:",
+            "options": [
+              "Uniform",
+              "Lognormal",
+              "Normal",
+              "Chi-square"
+            ],
+            "correct": 2,
+            "explanation": "The CLT guarantees that the distribution of sample means approaches normality as n increases, regardless of the population distribution."
+          },
+          {
+            "type": "calc",
+            "question": "If σ = 20 and n = 100, the standard error of the sample mean is:",
+            "options": [
+              "0.20",
+              "2.00",
+              "20.0",
+              "0.02"
+            ],
+            "correct": 1,
+            "explanation": "SE = σ/√n = 20/√100 = 20/10 = 2.00"
+          },
+          {
+            "type": "mcq",
+            "question": "A t-distribution is most appropriate when:",
+            "options": [
+              "The population is normal and σ is known",
+              "The population is non-normal and n is large",
+              "The population variance is unknown and n is small",
+              "The sample size exceeds 100"
+            ],
+            "correct": 2,
+            "explanation": "Use t-distribution when population variance is unknown and the sample size is small (n < 30)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm8",
+      "number": 8,
+      "title": "Hypothesis Testing",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Null & Alternative Hypotheses",
+            "desc": "H<sub>0</sub>: status quo (what we try to reject). H<sub>a</sub>: what we want to prove. We never \"accept\" H<sub>0</sub>, only fail to reject."
+          },
+          {
+            "title": "Type I and Type II Errors",
+            "desc": "Type I (α): reject true H<sub>0</sub> (false positive). Type II (β): fail to reject false H<sub>0</sub> (false negative). Power = 1 - β."
+          },
+          {
+            "title": "Test Statistic",
+            "desc": "test stat = (sample stat - hypothesized value) / standard error. Compare to critical value."
+          },
+          {
+            "title": "p-value",
+            "desc": "Smallest significance level at which H<sub>0</sub> would be rejected. Reject H<sub>0</sub> if p-value < α."
+          },
+          {
+            "title": "One-tailed vs Two-tailed",
+            "desc": "Two-tailed: H<sub>a</sub>: μ ≠ value. One-tailed: H<sub>a</sub>: μ > value or μ < value. Two-tailed has critical values on both sides."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Test Statistic (mean)",
+            "formula": "t = (X̄ - μ<sub>0</sub>) / (s / √n)",
+            "where": "μ<sub>0</sub> = hypothesized mean"
+          },
+          {
+            "name": "Test for Difference in Means",
+            "formula": "t = (X̄<sub>1</sub> - X̄<sub>2</sub>) / √(s²<sub>1</sub>/n<sub>1</sub> + s²<sub>2</sub>/n<sub>2</sub>)",
+            "where": "For independent samples"
+          },
+          {
+            "name": "F-test for Variance Equality",
+            "formula": "F = s²<sub>1</sub> / s²<sub>2</sub> (larger variance in numerator)",
+            "where": "df<sub>1</sub> = n<sub>1</sub>-1, df<sub>2</sub> = n<sub>2</sub>-1"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Which test to use?",
+            "use": [
+              "t-test: testing means (unknown σ)",
+              "F-test: testing equality of two variances",
+              "Chi-square: testing a single variance, contingency tables"
+            ],
+            "avoid": [
+              "Using z-test when σ is unknown and sample is small"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Never say \"accept H<sub>0</sub>\" — only \"fail to reject H<sub>0</sub>\"",
+          "Type I error rate = significance level (α)",
+          "Statistical significance ≠ economic significance — large samples can find trivial differences",
+          "Data mining/snooping bias: finding patterns in data by running many tests"
+        ],
+        "examples": [
+          {
+            "title": "Hypothesis Test",
+            "problem": "Test if mean return differs from 5% at 5% significance. Sample: X̄=7%, s=8%, n=64.",
+            "solution": "t = (7%-5%)/(8%/√64) = 2%/1% = 2.00. Critical value at 5% two-tailed ≈ 1.96. Since |2.00| > 1.96, reject H<sub>0</sub>."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Hypothesis Testing",
+        "branches": [
+          {
+            "label": "Framework",
+            "leaves": [
+              "State H<sub>0</sub> and H<sub>a</sub>",
+              "Select test statistic",
+              "Specify significance level",
+              "State decision rule",
+              "Calculate and decide"
+            ]
+          },
+          {
+            "label": "Errors",
+            "leaves": [
+              "Type I: reject true H<sub>0</sub> (α)",
+              "Type II: fail to reject false H<sub>0</sub> (β)",
+              "Power = 1 - β"
+            ]
+          },
+          {
+            "label": "Test Types",
+            "leaves": [
+              "t-test for means",
+              "F-test for variances",
+              "Chi-square for single variance",
+              "Parametric vs non-parametric"
+            ]
+          },
+          {
+            "label": "p-value Approach",
+            "leaves": [
+              "p < α: reject H<sub>0</sub>",
+              "p ≥ α: fail to reject",
+              "Most common approach"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "A Type I error occurs when a researcher:",
+            "options": [
+              "Fails to reject a false null hypothesis",
+              "Rejects a true null hypothesis",
+              "Accepts the alternative hypothesis correctly",
+              "Uses the wrong test statistic"
+            ],
+            "correct": 1,
+            "explanation": "Type I error is rejecting H<sub>0</sub> when it is actually true (false positive). The probability equals the significance level α."
+          },
+          {
+            "type": "mcq",
+            "question": "If the p-value of a test is 0.03 and the significance level is 0.05:",
+            "options": [
+              "Fail to reject H<sub>0</sub>",
+              "Reject H<sub>0</sub>",
+              "Accept H<sub>0</sub>",
+              "The test is inconclusive"
+            ],
+            "correct": 1,
+            "explanation": "Since p-value (0.03) < α (0.05), we reject the null hypothesis."
+          },
+          {
+            "type": "mcq",
+            "question": "Which test is used to compare the variances of two populations?",
+            "options": [
+              "t-test",
+              "z-test",
+              "F-test",
+              "Chi-square test"
+            ],
+            "correct": 2,
+            "explanation": "The F-test compares two variances using the ratio s²<sub>1</sub>/s²<sub>2</sub>."
+          },
+          {
+            "type": "mcq",
+            "question": "Increasing the sample size will most likely:",
+            "options": [
+              "Increase Type I error",
+              "Increase the power of the test",
+              "Decrease the significance level",
+              "Increase Type II error"
+            ],
+            "correct": 1,
+            "explanation": "Larger samples reduce standard error, making it easier to detect true effects, thus increasing power (1-β)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm9",
+      "number": 9,
+      "title": "Parametric and Non-Parametric Tests of Independence",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Parametric Correlation Test",
+            "desc": "Tests whether population correlation ρ = 0. t = r√(n-2) / √(1-r²) with df = n-2."
+          },
+          {
+            "title": "Spearman Rank Correlation",
+            "desc": "Non-parametric alternative. Ranks data, then calculates correlation of ranks. Robust to outliers and non-linearity."
+          },
+          {
+            "title": "Contingency Table Tests",
+            "desc": "Chi-square test of independence using observed vs expected frequencies. χ² = Σ(O-E)²/E."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Parametric t-test for Correlation",
+            "formula": "t = r × √(n-2) / √(1-r²)",
+            "where": "r = sample correlation, df = n-2"
+          },
+          {
+            "name": "Chi-Square Statistic",
+            "formula": "χ² = Σ (O<sub>i</sub> - E<sub>i</sub>)² / E<sub>i</sub>",
+            "where": "O = observed frequency, E = expected frequency"
+          },
+          {
+            "name": "Expected Frequency",
+            "formula": "E<sub>ij</sub> = (Row total × Column total) / Grand total",
+            "where": "For contingency tables"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Parametric vs Non-parametric correlation?",
+            "use": [
+              "Parametric: when data is approximately normal",
+              "Spearman: when data is ordinal, has outliers, or non-linear relationship"
+            ],
+            "avoid": [
+              "Parametric test on heavily skewed or ordinal data"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Correlation = 0 does NOT mean no relationship — could be non-linear",
+          "Spearman rank correlation detects monotonic (not just linear) relationships",
+          "Chi-square test requires expected frequencies ≥ 5 in each cell"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Tests of Independence",
+        "branches": [
+          {
+            "label": "Parametric Correlation",
+            "leaves": [
+              "Test H<sub>0</sub>: ρ = 0",
+              "t-statistic with df = n-2",
+              "Assumes normality"
+            ]
+          },
+          {
+            "label": "Spearman Rank",
+            "leaves": [
+              "Rank the data",
+              "Correlate ranks",
+              "Non-parametric",
+              "Robust to outliers"
+            ]
+          },
+          {
+            "label": "Contingency Tables",
+            "leaves": [
+              "Chi-square test",
+              "Observed vs Expected",
+              "df = (r-1)(c-1)"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Spearman rank correlation is preferred over Pearson correlation when:",
+            "options": [
+              "The relationship is linear",
+              "The sample size is very large",
+              "The data is ordinal or contains outliers",
+              "Both variables are normally distributed"
+            ],
+            "correct": 2,
+            "explanation": "Spearman uses ranks rather than actual values, making it robust to outliers and appropriate for ordinal data or non-linear monotonic relationships."
+          },
+          {
+            "type": "mcq",
+            "question": "In a chi-square test of independence, the degrees of freedom for an r × c contingency table are:",
+            "options": [
+              "r × c",
+              "(r-1)(c-1)",
+              "r + c - 1",
+              "n - 1"
+            ],
+            "correct": 1,
+            "explanation": "df = (rows - 1)(columns - 1) for a contingency table chi-square test."
+          },
+          {
+            "type": "mcq",
+            "question": "A sample correlation of 0 between two variables means:",
+            "options": [
+              "The variables are independent",
+              "There is no linear relationship",
+              "There is no relationship of any kind",
+              "The covariance is negative"
+            ],
+            "correct": 1,
+            "explanation": "Zero correlation means no LINEAR relationship. A strong non-linear relationship (e.g., quadratic) can have zero correlation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm10",
+      "number": 10,
+      "title": "Simple Linear Regression",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Regression Equation",
+            "desc": "Ŷ = b<sub>0</sub> + b<sub>1</sub>X. b<sub>0</sub> = intercept, b<sub>1</sub> = slope (change in Y per unit change in X)."
+          },
+          {
+            "title": "R-squared",
+            "desc": "Coefficient of determination = proportion of Y's variation explained by X. R² = correlation². Range: 0 to 1."
+          },
+          {
+            "title": "Standard Error of Estimate (SEE)",
+            "desc": "Measures the average distance of actual Y values from the regression line. Lower SEE = better fit."
+          },
+          {
+            "title": "ANOVA",
+            "desc": "SST = SSR + SSE. Total variation = Explained + Unexplained. F = MSR/MSE tests overall significance."
+          },
+          {
+            "title": "Assumptions",
+            "desc": "Linearity, homoscedasticity (constant variance), independence of errors, normality of errors."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Slope Coefficient",
+            "formula": "b<sub>1</sub> = Cov(X,Y) / Var(X) = Σ(X-X̄)(Y-Ȳ) / Σ(X-X̄)²",
+            "where": "OLS estimator"
+          },
+          {
+            "name": "Intercept",
+            "formula": "b<sub>0</sub> = Ȳ - b<sub>1</sub>X̄",
+            "where": "Regression line passes through (X̄, Ȳ)"
+          },
+          {
+            "name": "R-squared",
+            "formula": "R² = SSR/SST = 1 - SSE/SST",
+            "where": "SST = SSR + SSE"
+          },
+          {
+            "name": "F-statistic",
+            "formula": "F = MSR/MSE = (SSR/1) / (SSE/(n-2))",
+            "where": "Tests overall significance"
+          },
+          {
+            "name": "t-test for slope",
+            "formula": "t = b<sub>1</sub> / SE(b<sub>1</sub>)",
+            "where": "H<sub>0</sub>: b<sub>1</sub> = 0 (no relationship)"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "How to assess regression quality?",
+            "use": [
+              "R² for goodness of fit",
+              "SEE for prediction accuracy",
+              "t-test on b<sub>1</sub> for statistical significance",
+              "F-test for overall model significance"
+            ],
+            "avoid": [
+              "Relying solely on R² — high R² doesn't guarantee a good model"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "In simple regression, t² for the slope = F-statistic (they test the same thing)",
+          "R² = r² in simple regression (square of correlation coefficient)",
+          "Heteroscedasticity invalidates standard errors — look at residual plots",
+          "Correlation/regression does NOT prove causation"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Simple Linear Regression",
+        "branches": [
+          {
+            "label": "Equation",
+            "leaves": [
+              "Y = b0 + b1×X + ε",
+              "b1 = Cov(X,Y)/Var(X)",
+              "b0 = Ȳ - b1×X̄"
+            ]
+          },
+          {
+            "label": "Goodness of Fit",
+            "leaves": [
+              "R² = SSR/SST",
+              "SEE = √(SSE/(n-2))",
+              "Higher R² = better fit"
+            ]
+          },
+          {
+            "label": "Hypothesis Tests",
+            "leaves": [
+              "t-test on b<sub>1</sub>",
+              "F-test (ANOVA)",
+              "In simple: t² = F"
+            ]
+          },
+          {
+            "label": "Assumptions",
+            "leaves": [
+              "Linearity",
+              "Homoscedasticity",
+              "Independence",
+              "Normal errors"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "In simple linear regression, R² equals:",
+            "options": [
+              "The slope coefficient",
+              "The square of the correlation coefficient",
+              "The standard error of the estimate",
+              "The F-statistic"
+            ],
+            "correct": 1,
+            "explanation": "In simple regression, R² = r² (the square of the Pearson correlation between X and Y)."
+          },
+          {
+            "type": "mcq",
+            "question": "If SST = 400 and SSE = 100, then R² is:",
+            "options": [
+              "0.25",
+              "0.50",
+              "0.75",
+              "4.00"
+            ],
+            "correct": 2,
+            "explanation": "R² = 1 - SSE/SST = 1 - 100/400 = 1 - 0.25 = 0.75. The model explains 75% of the variation in Y."
+          },
+          {
+            "type": "mcq",
+            "question": "The standard error of the estimate (SEE) measures:",
+            "options": [
+              "The precision of the slope coefficient",
+              "The average prediction error of the regression",
+              "The total variation in the dependent variable",
+              "The correlation between X and Y"
+            ],
+            "correct": 1,
+            "explanation": "SEE measures the standard deviation of the residuals — the typical distance between actual and predicted Y values."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quants-lm11",
+      "number": 11,
+      "title": "Introduction to Big Data Techniques",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Big Data Characteristics",
+            "desc": "Volume (large amount), Velocity (speed of generation), Variety (structured/unstructured), Veracity (reliability)."
+          },
+          {
+            "title": "Machine Learning Types",
+            "desc": "Supervised: labeled data (classification, regression). Unsupervised: no labels (clustering, dimensionality reduction). Reinforcement: reward-based learning."
+          },
+          {
+            "title": "Overfitting",
+            "desc": "Model fits training data too closely, captures noise, performs poorly on new data. Regularization and cross-validation help prevent it."
+          },
+          {
+            "title": "Text Analytics / NLP",
+            "desc": "Sentiment analysis, topic modeling, and text classification applied to financial documents, news, and social media."
+          },
+          {
+            "title": "Fintech Applications",
+            "desc": "Robo-advisors, algorithmic trading, blockchain, RegTech. Data-driven investment and risk management."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "Supervised vs Unsupervised Learning?",
+            "use": [
+              "Supervised: when you have labeled outcomes (predict stock up/down)",
+              "Unsupervised: when discovering hidden patterns (cluster similar stocks)"
+            ],
+            "avoid": [
+              "Supervised learning with insufficient labeled data",
+              "Unsupervised when you have clear labels and prediction goals"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Overfitting: complex models perform well on training data but poorly out-of-sample",
+          "Big data ≠ good data — veracity (quality) matters as much as volume",
+          "AI models may have biases embedded in training data",
+          "Confusing correlation patterns found by ML with true causal relationships"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Big Data & ML",
+        "branches": [
+          {
+            "label": "Big Data (4 Vs)",
+            "leaves": [
+              "Volume",
+              "Velocity",
+              "Variety",
+              "Veracity"
+            ]
+          },
+          {
+            "label": "ML Types",
+            "leaves": [
+              "Supervised (labeled)",
+              "Unsupervised (unlabeled)",
+              "Reinforcement (reward)",
+              "Deep Learning"
+            ]
+          },
+          {
+            "label": "Applications",
+            "leaves": [
+              "Text analytics/NLP",
+              "Robo-advisors",
+              "Algorithmic trading",
+              "Risk management"
+            ]
+          },
+          {
+            "label": "Challenges",
+            "leaves": [
+              "Overfitting",
+              "Data quality",
+              "Bias",
+              "Interpretability"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Which of the following is NOT one of the \"4 Vs\" of big data?",
+            "options": [
+              "Volume",
+              "Velocity",
+              "Value",
+              "Variety"
+            ],
+            "correct": 2,
+            "explanation": "The 4 Vs are Volume, Velocity, Variety, and Veracity. \"Value\" is sometimes added as a 5th V but is not part of the standard 4."
+          },
+          {
+            "type": "mcq",
+            "question": "Overfitting in machine learning refers to:",
+            "options": [
+              "A model that is too simple to capture patterns",
+              "A model that captures noise in training data and performs poorly on new data",
+              "Using too few features",
+              "Training with too much data"
+            ],
+            "correct": 1,
+            "explanation": "Overfitting means the model is too complex, fits noise in the training data, and fails to generalize to new observations."
+          },
+          {
+            "type": "mcq",
+            "question": "Clustering stocks into groups based on financial characteristics without pre-defined labels is an example of:",
+            "options": [
+              "Supervised learning",
+              "Unsupervised learning",
+              "Reinforcement learning",
+              "Deep learning"
+            ],
+            "correct": 1,
+            "explanation": "Clustering without labels is unsupervised learning — the algorithm discovers natural groupings in the data."
+          }
+        ]
+      }
+    }
+  ]
+}

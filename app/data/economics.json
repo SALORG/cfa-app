@@ -1,0 +1,1247 @@
+{
+  "id": "econ",
+  "name": "Economics",
+  "icon": "🌐",
+  "color": "#2ecc71",
+  "weight": "6-9%",
+  "modules": [
+    {
+      "id": "econ-lm1",
+      "number": 1,
+      "title": "The Firm and Market Structures",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Perfect Competition",
+            "desc": "Many firms, identical products, no barriers to entry. Price takers. P = MR = MC in long run. Zero economic profit in LR."
+          },
+          {
+            "title": "Monopolistic Competition",
+            "desc": "Many firms, differentiated products, low barriers. Downward-sloping demand. Zero economic profit in LR due to entry."
+          },
+          {
+            "title": "Oligopoly",
+            "desc": "Few large firms, high barriers, interdependent pricing. Game theory applies. Nash equilibrium: each firm optimizes given others' choices."
+          },
+          {
+            "title": "Monopoly",
+            "desc": "Single seller, unique product, very high barriers. Price maker. MR < P. Can earn economic profit in long run."
+          },
+          {
+            "title": "Profit Maximization",
+            "desc": "All firms maximize profit where MR = MC. If P > ATC: economic profit. If AVC < P < ATC: operate at a loss. If P < AVC: shut down."
+          },
+          {
+            "title": "Economies of Scale",
+            "desc": "LRAC decreases as output increases. Minimum efficient scale: output where LRAC is first minimized."
+          },
+          {
+            "title": "Concentration Measures",
+            "desc": "N-firm ratio and HHI measure market concentration. HHI = sum of squared market shares. HHI > 2,500 = highly concentrated."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Profit Maximization",
+            "formula": "MR = MC",
+            "where": "MR = marginal revenue, MC = marginal cost"
+          },
+          {
+            "name": "Total Revenue",
+            "formula": "TR = P × Q",
+            "where": "P = price, Q = quantity"
+          },
+          {
+            "name": "Economic Profit",
+            "formula": "π = TR - TC (including opportunity costs)",
+            "where": "TC = explicit + implicit costs"
+          },
+          {
+            "name": "HHI",
+            "formula": "HHI = Σ(market share<sub>i</sub>)²",
+            "where": "Sum of squared % market shares"
+          },
+          {
+            "name": "Breakeven",
+            "formula": "TR = TC or P = ATC",
+            "where": "Zero economic profit point"
+          },
+          {
+            "name": "Shutdown (Short Run)",
+            "formula": "P < AVC → shut down",
+            "where": "Cannot cover variable costs"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Operate or Shut Down in Short Run?",
+            "use": [
+              "Operate: P ≥ AVC (covers variable costs, contributes to fixed costs)",
+              "Shut down: P < AVC (better to produce nothing)"
+            ],
+            "avoid": [
+              "Shutting down just because P < ATC — firm should still operate if P > AVC"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Economic profit includes opportunity costs — zero economic profit doesn't mean accounting losses",
+          "In perfect competition: firms are price takers, demand curve is horizontal, P = MR",
+          "In monopoly: demand curve IS the firm's demand curve, MR < P (downward sloping)",
+          "Nash equilibrium: neither player can improve by unilaterally changing strategy"
+        ],
+        "examples": [
+          {
+            "title": "Shutdown Decision",
+            "problem": "A firm has AVC = $8, ATC = $12, and price = $9. Should it operate?",
+            "solution": "Yes. P ($9) > AVC ($8), so the firm covers all variable costs and contributes $1/unit toward fixed costs. Shutting down would mean losing ALL fixed costs."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Market Structures",
+        "branches": [
+          {
+            "label": "Perfect Competition",
+            "leaves": [
+              "Many firms, identical products",
+              "Price taker: P = MR",
+              "Zero LR economic profit",
+              "No barriers to entry"
+            ]
+          },
+          {
+            "label": "Monopolistic Competition",
+            "leaves": [
+              "Differentiated products",
+              "Downward-sloping demand",
+              "Zero LR economic profit",
+              "Low barriers"
+            ]
+          },
+          {
+            "label": "Oligopoly",
+            "leaves": [
+              "Few firms, interdependent",
+              "Game theory / Nash equilibrium",
+              "Kinked demand curve",
+              "High barriers"
+            ]
+          },
+          {
+            "label": "Monopoly",
+            "leaves": [
+              "Single seller",
+              "Price maker: MR < P",
+              "Can earn LR economic profit",
+              "Very high barriers"
+            ]
+          },
+          {
+            "label": "Key Relationships",
+            "leaves": [
+              "MR = MC for all",
+              "P > AVC to operate",
+              "Economies of scale",
+              "HHI concentration"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "In perfect competition, a firm's demand curve is:",
+            "options": [
+              "Downward sloping",
+              "Perfectly horizontal",
+              "Upward sloping",
+              "Vertical"
+            ],
+            "correct": 1,
+            "explanation": "Perfectly competitive firms are price takers. They can sell any quantity at the market price, so their demand curve is horizontal."
+          },
+          {
+            "type": "mcq",
+            "question": "A firm should shut down in the short run when:",
+            "options": [
+              "Price < ATC",
+              "Price < AVC",
+              "Price < MC",
+              "MR < MC"
+            ],
+            "correct": 1,
+            "explanation": "Shut down when P < AVC because the firm cannot even cover variable costs. If AVC < P < ATC, keep operating — the contribution covers some fixed costs."
+          },
+          {
+            "type": "mcq",
+            "question": "In a monopoly, marginal revenue is:",
+            "options": [
+              "Equal to price",
+              "Greater than price",
+              "Less than price",
+              "Equal to marginal cost"
+            ],
+            "correct": 2,
+            "explanation": "For a monopolist, the demand curve slopes downward. To sell more, the firm must lower price on ALL units, so MR < P."
+          },
+          {
+            "type": "mcq",
+            "question": "An HHI of 3,000 indicates a market that is:",
+            "options": [
+              "Perfectly competitive",
+              "Moderately concentrated",
+              "Highly concentrated",
+              "A monopoly"
+            ],
+            "correct": 2,
+            "explanation": "HHI > 2,500 indicates a highly concentrated market. (1,500-2,500 = moderately concentrated; < 1,500 = unconcentrated.)"
+          },
+          {
+            "type": "mcq",
+            "question": "In long-run equilibrium, which market structure(s) earn zero economic profit?",
+            "options": [
+              "Only perfect competition",
+              "Perfect competition and monopolistic competition",
+              "All market structures",
+              "None of them"
+            ],
+            "correct": 1,
+            "explanation": "Both perfect competition and monopolistic competition have free/low entry, so economic profits attract entrants until profits are zero. Monopolies and oligopolies can earn LR economic profits due to barriers."
+          }
+        ]
+      }
+    },
+    {
+      "id": "econ-lm2",
+      "number": 2,
+      "title": "Understanding Business Cycles",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Business Cycle Phases",
+            "desc": "Expansion (trough to peak), Peak, Contraction/Recession (peak to trough), Trough. GDP growth fluctuates around trend."
+          },
+          {
+            "title": "Credit Cycles",
+            "desc": "Expansion: easy credit, rising asset prices. Contraction: tightening, deleveraging. Credit cycles amplify business cycles."
+          },
+          {
+            "title": "Leading Indicators",
+            "desc": "Signal future economic activity: stock prices, building permits, ISM new orders, yield curve slope, consumer expectations."
+          },
+          {
+            "title": "Coincident Indicators",
+            "desc": "Move with the economy: industrial production, employment, personal income, manufacturing sales."
+          },
+          {
+            "title": "Lagging Indicators",
+            "desc": "Follow the economy: unemployment rate, CPI, prime rate, average duration of unemployment, inventory/sales ratio."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "How to identify the business cycle phase?",
+            "use": [
+              "Leading indicators to forecast turning points",
+              "Coincident indicators to confirm current phase",
+              "Lagging indicators to confirm phase changes already occurred"
+            ],
+            "avoid": [
+              "Relying on a single indicator — use composite measures"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Stock market is a LEADING indicator — it rises before the economy recovers",
+          "Unemployment is a LAGGING indicator — it stays high even after recovery begins",
+          "Yield curve inversion is one of the strongest recession predictors",
+          "Credit cycles and business cycles are related but not identical"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Business Cycles",
+        "branches": [
+          {
+            "label": "Phases",
+            "leaves": [
+              "Expansion",
+              "Peak",
+              "Contraction/Recession",
+              "Trough",
+              "Recovery"
+            ]
+          },
+          {
+            "label": "Leading Indicators",
+            "leaves": [
+              "Stock market",
+              "Building permits",
+              "Yield curve",
+              "Consumer expectations",
+              "ISM new orders"
+            ]
+          },
+          {
+            "label": "Coincident",
+            "leaves": [
+              "Industrial production",
+              "Employment",
+              "Personal income",
+              "Manufacturing sales"
+            ]
+          },
+          {
+            "label": "Lagging",
+            "leaves": [
+              "Unemployment rate",
+              "CPI",
+              "Prime rate",
+              "Avg duration unemployment"
+            ]
+          },
+          {
+            "label": "Credit Cycles",
+            "leaves": [
+              "Easy credit → expansion",
+              "Tight credit → contraction",
+              "Amplifies business cycle"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Which of the following is a leading economic indicator?",
+            "options": [
+              "Unemployment rate",
+              "Industrial production",
+              "Building permits",
+              "CPI"
+            ],
+            "correct": 2,
+            "explanation": "Building permits lead economic activity because construction starts before the broader economy expands."
+          },
+          {
+            "type": "mcq",
+            "question": "The unemployment rate is classified as a:",
+            "options": [
+              "Leading indicator",
+              "Coincident indicator",
+              "Lagging indicator",
+              "Counter-cyclical indicator"
+            ],
+            "correct": 2,
+            "explanation": "Unemployment peaks after the recession has ended — it's a lagging indicator that confirms past economic conditions."
+          },
+          {
+            "type": "tf",
+            "question": "An inverted yield curve (short-term rates > long-term rates) has historically been a reliable predictor of recessions.",
+            "options": [
+              "True",
+              "False",
+              "Only in the US",
+              "Only after 2008"
+            ],
+            "correct": 0,
+            "explanation": "Yield curve inversions have preceded most recessions in the US and many other countries, making it one of the strongest leading indicators."
+          }
+        ]
+      }
+    },
+    {
+      "id": "econ-lm3",
+      "number": 3,
+      "title": "Fiscal Policy",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Fiscal Policy Tools",
+            "desc": "Government spending and taxation. Expansionary: increase spending / cut taxes. Contractionary: cut spending / raise taxes."
+          },
+          {
+            "title": "Fiscal Multiplier",
+            "desc": "The amplified impact of government spending on GDP. Multiplier = 1 / (1 - MPC × (1-t)). Higher MPC = larger multiplier."
+          },
+          {
+            "title": "Balanced Budget Multiplier",
+            "desc": "Equal increase in G and T increases output by 1. Spending multiplier > tax multiplier because MPC < 1."
+          },
+          {
+            "title": "Automatic Stabilizers",
+            "desc": "Tax revenues and transfer payments that automatically adjust with the cycle. Reduce the amplitude of fluctuations without legislation."
+          },
+          {
+            "title": "Fiscal Stance",
+            "desc": "Structural (cyclically adjusted) deficit measures true fiscal stance. Actual deficit includes cyclical components."
+          },
+          {
+            "title": "Ricardian Equivalence",
+            "desc": "Theory: rational consumers save tax cuts to pay future taxes, neutralizing fiscal stimulus. Largely theoretical."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Fiscal Multiplier",
+            "formula": "Multiplier = 1 / (1 - MPC(1-t))",
+            "where": "MPC = marginal propensity to consume, t = tax rate"
+          },
+          {
+            "name": "Tax Multiplier",
+            "formula": "Tax Multiplier = -MPC / (1 - MPC(1-t))",
+            "where": "Smaller in absolute value than spending multiplier"
+          },
+          {
+            "name": "Balanced Budget Multiplier",
+            "formula": "BBM = 1",
+            "where": "Equal increase in G and T increases Y by exactly the amount of the increase"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Expansionary vs Contractionary fiscal policy?",
+            "use": [
+              "Expansionary (increase G, cut T) during recessions to boost demand",
+              "Contractionary (cut G, raise T) during overheating to cool demand"
+            ],
+            "avoid": [
+              "Pro-cyclical fiscal policy (expanding during booms, contracting during busts)"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Implementation lag: fiscal policy takes time to legislate and implement",
+          "Crowding out: government borrowing may raise interest rates, reducing private investment",
+          "Spending multiplier > tax multiplier (because some of a tax cut is saved)",
+          "Structural deficit ≠ actual deficit (remove cyclical component)"
+        ],
+        "examples": [
+          {
+            "title": "Fiscal Multiplier",
+            "problem": "MPC = 0.8, tax rate = 25%. What is the fiscal multiplier?",
+            "solution": "Multiplier = 1/(1 - 0.8(1-0.25)) = 1/(1 - 0.6) = 1/0.4 = 2.5. A $1B increase in G raises GDP by $2.5B."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Fiscal Policy",
+        "branches": [
+          {
+            "label": "Tools",
+            "leaves": [
+              "Government spending (G)",
+              "Taxation (T)",
+              "Transfer payments"
+            ]
+          },
+          {
+            "label": "Multipliers",
+            "leaves": [
+              "Spending: 1/(1-MPC(1-t))",
+              "Tax: -MPC/(1-MPC(1-t))",
+              "Balanced budget = 1"
+            ]
+          },
+          {
+            "label": "Challenges",
+            "leaves": [
+              "Implementation lag",
+              "Crowding out",
+              "Political constraints",
+              "Ricardian equivalence"
+            ]
+          },
+          {
+            "label": "Automatic Stabilizers",
+            "leaves": [
+              "Progressive taxes",
+              "Unemployment benefits",
+              "Reduce cycle amplitude"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "calc",
+            "question": "If the MPC is 0.75 and the tax rate is 20%, the fiscal multiplier is closest to:",
+            "options": [
+              "2.00",
+              "2.50",
+              "3.33",
+              "4.00"
+            ],
+            "correct": 1,
+            "explanation": "Multiplier = 1/(1-0.75×(1-0.20)) = 1/(1-0.60) = 1/0.40 = 2.50"
+          },
+          {
+            "type": "mcq",
+            "question": "Crowding out occurs when:",
+            "options": [
+              "Government spending replaces private consumption",
+              "Government borrowing raises interest rates and reduces private investment",
+              "Tax cuts are saved rather than spent",
+              "Inflation erodes real wages"
+            ],
+            "correct": 1,
+            "explanation": "Government borrowing competes with private borrowers for funds, pushing up interest rates and reducing private investment."
+          },
+          {
+            "type": "mcq",
+            "question": "The balanced budget multiplier equals:",
+            "options": [
+              "Zero",
+              "One",
+              "MPC",
+              "1/(1-MPC)"
+            ],
+            "correct": 1,
+            "explanation": "An equal increase in G and T still raises GDP by the amount of the increase because the spending multiplier > tax multiplier."
+          },
+          {
+            "type": "mcq",
+            "question": "Automatic stabilizers work by:",
+            "options": [
+              "Requiring legislative action each cycle",
+              "Automatically adjusting tax revenues and transfers over the business cycle",
+              "Setting interest rates",
+              "Controlling the money supply"
+            ],
+            "correct": 1,
+            "explanation": "Progressive taxes and transfer payments automatically expand/contract with the economy, smoothing the cycle without new legislation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "econ-lm4",
+      "number": 4,
+      "title": "Monetary Policy",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Central Bank Roles",
+            "desc": "Lender of last resort, banker to government, monetary policy implementation, financial system regulation, payments system oversight."
+          },
+          {
+            "title": "Policy Rate",
+            "desc": "The short-term interest rate set by the central bank (e.g., Fed Funds rate). Primary tool of conventional monetary policy."
+          },
+          {
+            "title": "Transmission Mechanism",
+            "desc": "Policy rate → market rates → asset prices → exchange rates → expectations → aggregate demand → inflation/output."
+          },
+          {
+            "title": "Inflation Targeting",
+            "desc": "Most central banks target 2% inflation. Provides anchor for expectations. Transparency and credibility are key."
+          },
+          {
+            "title": "Quantitative Easing (QE)",
+            "desc": "Unconventional policy: central bank buys long-term assets to lower long-term rates when short-term rates are at zero (zero lower bound)."
+          },
+          {
+            "title": "Central Bank Independence",
+            "desc": "Operational independence reduces political pressure and inflation bias. Goal independence varies by country."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Fisher Equation",
+            "formula": "Nominal Rate ≈ Real Rate + Expected Inflation",
+            "where": "Approximate relationship"
+          },
+          {
+            "name": "Quantity Theory of Money",
+            "formula": "MV = PY",
+            "where": "M = money supply, V = velocity, P = price level, Y = real output"
+          },
+          {
+            "name": "Money Neutrality",
+            "formula": "ΔM → ΔP (long run)",
+            "where": "In long run, money supply changes only affect prices, not real output"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Expansionary vs Contractionary Monetary Policy?",
+            "use": [
+              "Expansionary (lower rates, QE): recession, deflation risk, output below potential",
+              "Contractionary (raise rates): inflation above target, overheating economy"
+            ],
+            "avoid": [
+              "Contractionary during recession (Japan's policy mistake)",
+              "Keeping rates too low for too long (asset bubbles)"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Monetary policy has shorter implementation lag than fiscal policy but longer impact lag",
+          "Liquidity trap: when rates are near zero, conventional policy becomes ineffective",
+          "Exchange rate channel: lower rates → currency depreciation → higher exports",
+          "Central bank credibility is crucial for inflation expectations anchoring"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Monetary Policy",
+        "branches": [
+          {
+            "label": "Tools",
+            "leaves": [
+              "Policy rate",
+              "Open market operations",
+              "Reserve requirements",
+              "Quantitative easing"
+            ]
+          },
+          {
+            "label": "Transmission",
+            "leaves": [
+              "Market rates",
+              "Asset prices",
+              "Exchange rates",
+              "Expectations",
+              "Aggregate demand"
+            ]
+          },
+          {
+            "label": "Objectives",
+            "leaves": [
+              "Price stability (2% target)",
+              "Full employment",
+              "Financial stability",
+              "Exchange rate stability"
+            ]
+          },
+          {
+            "label": "Limitations",
+            "leaves": [
+              "Zero lower bound",
+              "Liquidity trap",
+              "Long & variable lags",
+              "Asset price bubbles"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "The primary tool of conventional monetary policy is:",
+            "options": [
+              "Reserve requirements",
+              "The policy interest rate",
+              "Quantitative easing",
+              "Fiscal transfers"
+            ],
+            "correct": 1,
+            "explanation": "The policy rate (e.g., Federal Funds rate) is the primary tool. Reserve requirements and QE are supplementary tools."
+          },
+          {
+            "type": "mcq",
+            "question": "Quantitative easing is typically used when:",
+            "options": [
+              "Inflation is too high",
+              "The policy rate is already at or near zero",
+              "GDP growth is above trend",
+              "The government has a budget surplus"
+            ],
+            "correct": 1,
+            "explanation": "QE is an unconventional tool used when the policy rate has hit the zero lower bound and conventional policy is exhausted."
+          },
+          {
+            "type": "mcq",
+            "question": "According to the quantity theory of money (MV=PY), if velocity (V) and real output (Y) are constant, an increase in money supply (M) leads to:",
+            "options": [
+              "A proportional increase in real output",
+              "A proportional increase in the price level",
+              "A decrease in interest rates",
+              "No change in the economy"
+            ],
+            "correct": 1,
+            "explanation": "With V and Y constant, ΔM = ΔP. Money is neutral in the long run: changes in money supply only affect prices."
+          },
+          {
+            "type": "mcq",
+            "question": "Central bank independence is important because it:",
+            "options": [
+              "Eliminates the need for fiscal policy",
+              "Reduces political pressure to pursue short-term inflationary policies",
+              "Guarantees price stability",
+              "Allows the central bank to set fiscal policy"
+            ],
+            "correct": 1,
+            "explanation": "Independence insulates the central bank from political pressure to finance government spending through money creation, which would cause inflation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "econ-lm5",
+      "number": 5,
+      "title": "Introduction to Geopolitics",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Geopolitical Risk",
+            "desc": "Risk from political events, conflicts, sanctions, and policy changes that affect investment returns and economic activity."
+          },
+          {
+            "title": "Globalization Forces",
+            "desc": "Trade liberalization, capital flows, technology diffusion, labor mobility. Benefits: efficiency, growth. Costs: inequality, dependency."
+          },
+          {
+            "title": "State Actors",
+            "desc": "National governments with sovereignty. Non-state actors: international organizations (IMF, WTO, World Bank), NGOs, multinational corporations."
+          },
+          {
+            "title": "Tools of Geopolitics",
+            "desc": "Military force, economic sanctions, trade agreements, soft power (culture, diplomacy), cyber capabilities."
+          },
+          {
+            "title": "Assessing Geopolitical Risk",
+            "desc": "Identify threats, assess probability and impact, monitor signposts/escalation indicators, consider tail risks."
+          }
+        ],
+        "formulas": [],
+        "decisions": [
+          {
+            "question": "How to incorporate geopolitical risk?",
+            "use": [
+              "Scenario analysis for different geopolitical outcomes",
+              "Country risk premiums in discount rates",
+              "Diversification across regions and geopolitical risk profiles"
+            ],
+            "avoid": [
+              "Ignoring geopolitical risk as \"unpredictable\"",
+              "Overreacting to short-term geopolitical news"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Geopolitical risks are often fat-tailed — impact can be much larger than expected",
+          "Markets may be slow to price in gradual geopolitical deterioration",
+          "Globalization benefits are not evenly distributed, leading to backlash"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Geopolitics",
+        "branches": [
+          {
+            "label": "Actors",
+            "leaves": [
+              "Nation states",
+              "International orgs (IMF, WTO)",
+              "Non-state actors",
+              "Multinational corps"
+            ]
+          },
+          {
+            "label": "Tools",
+            "leaves": [
+              "Military force",
+              "Economic sanctions",
+              "Trade agreements",
+              "Soft power",
+              "Cyber"
+            ]
+          },
+          {
+            "label": "Globalization",
+            "leaves": [
+              "Trade liberalization",
+              "Capital flows",
+              "Technology diffusion",
+              "Benefits vs costs"
+            ]
+          },
+          {
+            "label": "Risk Assessment",
+            "leaves": [
+              "Identify threats",
+              "Probability & impact",
+              "Signposts & escalation",
+              "Tail risk"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Which international organization primarily focuses on maintaining exchange rate stability and providing financial assistance to member countries?",
+            "options": [
+              "World Trade Organization",
+              "World Bank",
+              "International Monetary Fund",
+              "Bank for International Settlements"
+            ],
+            "correct": 2,
+            "explanation": "The IMF focuses on exchange rate stability, balance of payments assistance, and international monetary cooperation."
+          },
+          {
+            "type": "mcq",
+            "question": "Economic sanctions are best classified as a tool of:",
+            "options": [
+              "Military power",
+              "Soft power",
+              "Economic coercion",
+              "Diplomacy"
+            ],
+            "correct": 2,
+            "explanation": "Sanctions use economic pressure (trade restrictions, asset freezes) to achieve political objectives."
+          }
+        ]
+      }
+    },
+    {
+      "id": "econ-lm6",
+      "number": 6,
+      "title": "International Trade",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Comparative Advantage",
+            "desc": "A country should produce goods where its opportunity cost is lowest. Even if one country is better at everything, both benefit from trade."
+          },
+          {
+            "title": "Absolute Advantage",
+            "desc": "Ability to produce a good using fewer resources. Less important than comparative advantage for determining trade patterns."
+          },
+          {
+            "title": "Trade Restrictions",
+            "desc": "Tariffs (taxes on imports), quotas (quantity limits), export subsidies, voluntary restraints. All reduce efficiency."
+          },
+          {
+            "title": "Effects of Tariffs",
+            "desc": "Higher domestic price, lower imports, domestic producers gain, consumers lose, government gains revenue, net deadweight loss."
+          },
+          {
+            "title": "Trade Agreements",
+            "desc": "Free trade areas, customs unions, common markets, economic unions. Progressive levels of economic integration."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Terms of Trade",
+            "formula": "ToT = Export Price Index / Import Price Index × 100",
+            "where": "Improvement if ToT rises (exports become more valuable relative to imports)"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Free trade vs Protectionism?",
+            "use": [
+              "Free trade: maximizes global efficiency and consumer welfare",
+              "Protection: infant industries, national security, anti-dumping"
+            ],
+            "avoid": [
+              "Perpetual protection of uncompetitive industries",
+              "Retaliatory trade wars"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Comparative advantage is about OPPORTUNITY COST, not absolute productivity",
+          "Tariffs help domestic producers but hurt consumers — net effect is negative (deadweight loss)",
+          "Quotas are generally more harmful than tariffs because they eliminate price signals"
+        ],
+        "examples": [
+          {
+            "title": "Comparative Advantage",
+            "problem": "Country A can produce 10 units of wine or 5 units of cloth. Country B can produce 6 units of wine or 4 units of cloth. Who has comparative advantage in wine?",
+            "solution": "A: opportunity cost of 1 wine = 0.5 cloth. B: opportunity cost of 1 wine = 0.67 cloth. Country A has comparative advantage in wine (lower opportunity cost)."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "International Trade",
+        "branches": [
+          {
+            "label": "Theory",
+            "leaves": [
+              "Absolute advantage",
+              "Comparative advantage",
+              "Ricardian model",
+              "Heckscher-Ohlin"
+            ]
+          },
+          {
+            "label": "Restrictions",
+            "leaves": [
+              "Tariffs",
+              "Quotas",
+              "Export subsidies",
+              "Voluntary export restraints"
+            ]
+          },
+          {
+            "label": "Integration Levels",
+            "leaves": [
+              "Free trade area",
+              "Customs union",
+              "Common market",
+              "Economic union"
+            ]
+          },
+          {
+            "label": "Trade Effects",
+            "leaves": [
+              "Consumer surplus",
+              "Producer surplus",
+              "Government revenue",
+              "Deadweight loss"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "Comparative advantage is determined by:",
+            "options": [
+              "Absolute productivity",
+              "Opportunity cost of production",
+              "Total GDP",
+              "Exchange rates"
+            ],
+            "correct": 1,
+            "explanation": "Comparative advantage is based on opportunity cost — a country should specialize in goods where its opportunity cost is lowest, even if it's not the most efficient producer in absolute terms."
+          },
+          {
+            "type": "mcq",
+            "question": "A tariff on imports will most likely result in:",
+            "options": [
+              "Lower domestic prices",
+              "Higher consumer surplus",
+              "Deadweight loss to the economy",
+              "Increased total welfare"
+            ],
+            "correct": 2,
+            "explanation": "Tariffs raise domestic prices, reducing consumer surplus. While producers and government gain, the net effect is a deadweight loss to society."
+          },
+          {
+            "type": "mcq",
+            "question": "A customs union differs from a free trade area in that it:",
+            "options": [
+              "Eliminates all trade barriers between members",
+              "Has common external trade policies toward non-members",
+              "Allows free movement of labor",
+              "Has a common currency"
+            ],
+            "correct": 1,
+            "explanation": "A customs union adds a common external tariff policy on top of the free trade area's elimination of internal barriers."
+          }
+        ]
+      }
+    },
+    {
+      "id": "econ-lm7",
+      "number": 7,
+      "title": "Capital Flows and the FX Market",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Balance of Payments",
+            "desc": "Current account (trade, income, transfers) + Capital account + Financial account = 0. CA deficit = net capital inflow."
+          },
+          {
+            "title": "Current Account",
+            "desc": "Goods trade balance + services + primary income (investment) + secondary income (transfers). Deficit = spending > income."
+          },
+          {
+            "title": "Financial Account",
+            "desc": "Direct investment, portfolio investment, other investment, reserve assets. Surplus = net capital inflow."
+          },
+          {
+            "title": "FX Market Structure",
+            "desc": "Largest financial market ($7.5T/day). OTC, 24-hour, major participants: banks, central banks, corporates, speculators."
+          },
+          {
+            "title": "Exchange Rate Regimes",
+            "desc": "Float (market-determined), Managed float (intervention), Fixed/Peg (tied to anchor), Currency board (strict peg with full reserves)."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Balance of Payments Identity",
+            "formula": "Current Account + Capital Account + Financial Account = 0",
+            "where": "When one account is in deficit, another must be in surplus"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "Impact of current account deficit?",
+            "use": [
+              "Currency depreciation pressure (more demand for foreign currency)",
+              "Must be financed by capital inflows (foreign investment)"
+            ],
+            "avoid": [
+              "Assuming all CA deficits are bad — may reflect strong investment opportunities attracting capital"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Current account deficit = financial account surplus (net capital inflow)",
+          "Capital flows can be volatile and lead to sudden stops/reversals",
+          "Reserve accumulation by central banks affects exchange rates"
+        ],
+        "examples": []
+      },
+      "mindMap": {
+        "root": "Capital Flows & FX",
+        "branches": [
+          {
+            "label": "Balance of Payments",
+            "leaves": [
+              "Current account",
+              "Capital account",
+              "Financial account",
+              "Must sum to zero"
+            ]
+          },
+          {
+            "label": "Current Account",
+            "leaves": [
+              "Trade balance",
+              "Services",
+              "Primary income",
+              "Secondary income"
+            ]
+          },
+          {
+            "label": "FX Market",
+            "leaves": [
+              "OTC market",
+              "$7.5T daily volume",
+              "Major pairs: EUR/USD, USD/JPY",
+              "24-hour trading"
+            ]
+          },
+          {
+            "label": "Exchange Rate Regimes",
+            "leaves": [
+              "Free float",
+              "Managed float",
+              "Fixed peg",
+              "Currency board"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "If a country has a current account deficit, its financial account must show:",
+            "options": [
+              "A deficit",
+              "A surplus",
+              "Zero balance",
+              "Cannot be determined"
+            ],
+            "correct": 1,
+            "explanation": "By the BOP identity, a current account deficit must be offset by a financial account surplus (net capital inflows)."
+          },
+          {
+            "type": "mcq",
+            "question": "A currency board differs from a conventional fixed exchange rate in that it:",
+            "options": [
+              "Allows the exchange rate to float within bands",
+              "Requires full foreign reserve backing of the domestic money supply",
+              "Is managed by the IMF",
+              "Targets inflation instead of the exchange rate"
+            ],
+            "correct": 1,
+            "explanation": "A currency board maintains a strict peg by holding foreign reserves equal to the entire domestic monetary base."
+          }
+        ]
+      }
+    },
+    {
+      "id": "econ-lm8",
+      "number": 8,
+      "title": "Exchange Rate Calculations",
+      "cheatSheet": {
+        "concepts": [
+          {
+            "title": "Exchange Rate Quotation",
+            "desc": "Direct: domestic per foreign (e.g., 1.25 USD/EUR). Indirect: foreign per domestic. Price/Base convention: P/B."
+          },
+          {
+            "title": "Bid-Ask Spread",
+            "desc": "Dealer buys at bid, sells at ask. Spread = ask - bid. Always buy high (ask) and sell low (bid) from YOUR perspective."
+          },
+          {
+            "title": "Cross Rates",
+            "desc": "Exchange rate between two currencies derived through a third. A/C = (A/B) × (B/C)."
+          },
+          {
+            "title": "Forward Exchange Rate",
+            "desc": "Rate agreed today for exchange in the future. Forward premium: forward > spot. Forward discount: forward < spot."
+          },
+          {
+            "title": "Covered Interest Rate Parity",
+            "desc": "Forward premium/discount reflects interest rate differential. Eliminates arbitrage between money markets and FX forwards."
+          },
+          {
+            "title": "Triangular Arbitrage",
+            "desc": "Exploiting mispricing among three currency pairs. If cross rate differs from market rate, profit is possible."
+          }
+        ],
+        "formulas": [
+          {
+            "name": "Cross Rate",
+            "formula": "A/C = (A/B) × (B/C)",
+            "where": "Multiply rates to find the cross rate"
+          },
+          {
+            "name": "Forward Rate (CIP)",
+            "formula": "F/S = (1 + r<sub>price</sub>) / (1 + r<sub>base</sub>)",
+            "where": "F = forward, S = spot, r = interest rate for the period"
+          },
+          {
+            "name": "Forward Premium/Discount",
+            "formula": "Forward Premium = (F - S) / S × (360/days)",
+            "where": "Annualized forward premium"
+          },
+          {
+            "name": "Bid-Ask with Cross Rates",
+            "formula": "(A/C)<sub>bid</sub> = (A/B)<sub>bid</sub> × (B/C)<sub>bid</sub>",
+            "where": "Take bid of bid, ask of ask for cross"
+          }
+        ],
+        "decisions": [
+          {
+            "question": "How to determine if arbitrage exists?",
+            "use": [
+              "Compare calculated cross rate to market cross rate",
+              "If different, buy low and sell high through the triangle",
+              "Forward rate vs spot × interest rate differential for covered interest arbitrage"
+            ],
+            "avoid": [
+              "Ignoring transaction costs which may eliminate the arbitrage profit"
+            ]
+          }
+        ],
+        "pitfalls": [
+          "Always check: are you buying or selling? You buy at ASK, sell at BID",
+          "Cross rates: cancel the common currency (e.g., USD cancels in EUR/USD × USD/JPY)",
+          "Forward points are usually quoted as pips/points, not full rates",
+          "Higher interest rate currency trades at a forward DISCOUNT (CIP)"
+        ],
+        "examples": [
+          {
+            "title": "Cross Rate Calculation",
+            "problem": "USD/EUR = 1.10, USD/GBP = 1.30. What is GBP/EUR?",
+            "solution": "GBP/EUR = (GBP/USD) × (USD/EUR) = (1/1.30) × 1.10 = 0.7692 × 1.10 = 0.8462 GBP per EUR."
+          },
+          {
+            "title": "Forward Rate",
+            "problem": "Spot EUR/USD = 1.1000. US rate = 3%, Euro rate = 1%, 1-year forward?",
+            "solution": "F = 1.1000 × (1.03)/(1.01) = 1.1000 × 1.0198 = 1.1218. USD trades at forward discount (higher rate currency depreciates forward)."
+          }
+        ]
+      },
+      "mindMap": {
+        "root": "Exchange Rate Calculations",
+        "branches": [
+          {
+            "label": "Quotations",
+            "leaves": [
+              "Direct vs Indirect",
+              "Price/Base convention",
+              "Bid-Ask spread"
+            ]
+          },
+          {
+            "label": "Cross Rates",
+            "leaves": [
+              "A/C = (A/B)×(B/C)",
+              "Cancel common currency",
+              "Triangular arbitrage"
+            ]
+          },
+          {
+            "label": "Forward Rates",
+            "leaves": [
+              "F/S = (1+r_p)/(1+r_b)",
+              "Premium vs discount",
+              "Covered interest parity"
+            ]
+          },
+          {
+            "label": "Arbitrage",
+            "leaves": [
+              "Triangular: 3 currencies",
+              "Covered interest: spot+forward",
+              "Profit if mispriced"
+            ]
+          }
+        ]
+      },
+      "quiz": {
+        "questions": [
+          {
+            "type": "mcq",
+            "question": "If the USD/EUR spot rate is 1.10 and the 1-year US interest rate exceeds the EUR rate, the forward USD/EUR rate will be:",
+            "options": [
+              "Equal to 1.10",
+              "Greater than 1.10",
+              "Less than 1.10",
+              "Cannot be determined"
+            ],
+            "correct": 1,
+            "explanation": "Higher USD rate means USD trades at forward discount. F/S = (1+r_USD)/(1+r_EUR) > 1, so F > S. More USD per EUR forward."
+          },
+          {
+            "type": "calc",
+            "question": "Given USD/EUR = 1.12 and USD/GBP = 1.31, the GBP/EUR cross rate is closest to:",
+            "options": [
+              "0.8550",
+              "1.1696",
+              "0.8244",
+              "1.4672"
+            ],
+            "correct": 0,
+            "explanation": "GBP/EUR = (GBP/USD) × (USD/EUR) = (1/1.31) × 1.12 = 0.7634 × 1.12 = 0.8550"
+          },
+          {
+            "type": "mcq",
+            "question": "A dealer's bid price for EUR/USD is 1.1050 and the ask is 1.1055. A client wanting to buy EUR would pay:",
+            "options": [
+              "1.1050",
+              "1.1055",
+              "1.1053",
+              "The average"
+            ],
+            "correct": 1,
+            "explanation": "The client buys EUR at the dealer's ask price (1.1055). The dealer buys at bid and sells at ask."
+          },
+          {
+            "type": "mcq",
+            "question": "Covered interest rate parity ensures that:",
+            "options": [
+              "Real interest rates are equal across countries",
+              "The forward premium equals the interest rate differential",
+              "Purchasing power parity holds",
+              "Nominal rates converge globally"
+            ],
+            "correct": 1,
+            "explanation": "CIP states that the forward premium (or discount) exactly offsets the interest rate differential, preventing riskless arbitrage."
+          }
+        ]
+      }
+    }
+  ]
+}
