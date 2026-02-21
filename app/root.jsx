@@ -11,6 +11,8 @@ import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import "./app.css";
 
 export const links = () => [
+  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg", media: "(prefers-color-scheme: dark)" },
+  { rel: "icon", type: "image/svg+xml", href: "/favicon-light.svg", media: "(prefers-color-scheme: light)" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",

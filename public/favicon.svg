@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0f172a"/>
+  <g transform="translate(4, 5)" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 2.5C1 2.5 4 1 12 1s11 1.5 11 1.5v18s-3-1.5-11-1.5S1 20.5 1 20.5z"/>
+    <line x1="12" y1="1" x2="12" y2="18"/>
+    <text x="5" y="13" font-family="Inter,sans-serif" font-weight="700" font-size="7" fill="#60a5fa" stroke="none">C</text>
+    <text x="14" y="13" font-family="Inter,sans-serif" font-weight="700" font-size="7" fill="#60a5fa" stroke="none">F</text>
+  </g>
+</svg>
