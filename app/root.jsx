@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import "./app.css";
 
@@ -44,9 +45,11 @@ function InnerLayout({ children }) {
 
 export function Layout({ children }) {
   return (
-    <ThemeProvider>
-      <InnerLayout>{children}</InnerLayout>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <InnerLayout>{children}</InnerLayout>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

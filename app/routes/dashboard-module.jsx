@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useParams, Link } from "react-router";
+import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore";
+import { db } from "~/lib/firebase";
+import { useAuth } from "~/context/AuthContext";
 import { getSubject, getModule, getAdjacentModules } from "~/data";
 import { useDashboardContext } from "./dashboard";
 import CheatSheet from "~/components/CheatSheet";
@@ -15,6 +18,7 @@ const TABS = [
 ];
 
 export default function DashboardModule() {
+  const { user } = useAuth();
   const { subjectId, moduleId } = useParams();
   const { progress, setProgress } = useDashboardContext();
   const [activeTab, setActiveTab] = useState("cheatsheet");
@@ -36,6 +40,21 @@ export default function DashboardModule() {
 
   const progressKey = `${subjectId}__${moduleId}`;
   const isCompleted = !!progress[progressKey];
+
+  const handleQuizScore = useCallback(
+    ({ score, total }) => {
+      if (!user) return;
+      updateDoc(doc(db, "users", user.uid), {
+        quizScores: arrayUnion({
+          moduleKey: progressKey,
+          score,
+          total,
+          date: Timestamp.now(),
+        }),
+      });
+    },
+    [user, progressKey]
+  );
 
   const toggleComplete = () => {
     setProgress((prev) => ({
@@ -111,7 +130,7 @@ export default function DashboardModule() {
         )}
         {activeTab === "flashcards" && <FlashCards module={mod} />}
         {activeTab === "quiz" && mod.quiz?.questions && (
-          <Quiz questions={mod.quiz.questions} />
+          <Quiz questions={mod.quiz.questions} onScoreSubmit={handleQuizScore} />
         )}
       </div>
 

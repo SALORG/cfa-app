@@ -44,6 +44,22 @@ export default function Sidebar({
     <nav className="flex flex-col h-full">
       {/* Subject List */}
       <div className="flex-1 overflow-y-auto py-2">
+        <div className="flex items-center justify-between px-3 py-1.5">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+            Modules
+          </span>
+          <button
+            onClick={() => {
+              const allExpanded = expandedSubjects.size === subjects.length;
+              setExpandedSubjects(
+                allExpanded ? new Set() : new Set(subjects.map((s) => s.id))
+              );
+            }}
+            className="text-[11px] text-text-muted hover:text-text-primary transition-colors"
+          >
+            {expandedSubjects.size === subjects.length ? "Collapse all" : "Expand all"}
+          </button>
+        </div>
         {subjects.map((subject) => {
           const isExpanded = expandedSubjects.has(subject.id);
           const completedCount = getSubjectProgress(subject);
@@ -59,7 +75,7 @@ export default function Sidebar({
                 <span className="text-base" role="img" aria-hidden="true">
                   {subject.icon}
                 </span>
-                <span className="flex-1 text-sm font-medium text-text-primary truncate">
+                <span className="flex-1 text-sm font-medium text-text-primary truncate" title={subject.name}>
                   {subject.name}
                 </span>
                 <span className="text-xs text-text-secondary tabular-nums">
@@ -92,7 +108,7 @@ export default function Sidebar({
                         <span className="text-xs text-text-secondary w-5 shrink-0 tabular-nums">
                           {mod.number}.
                         </span>
-                        <span className="truncate">{mod.title}</span>
+                        <span className="truncate" title={mod.title}>{mod.title}</span>
                       </Link>
                     );
                   })}

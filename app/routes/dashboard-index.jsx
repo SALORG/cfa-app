@@ -35,6 +35,66 @@ export default function DashboardIndex() {
         <StatCard label="Progress" value={`${overallPercent}%`} color="text-accent" />
       </div>
 
+      {/* Progress Round Chart */}
+      <div className="bg-surface-secondary rounded-xl border border-border p-6 mb-8 flex flex-col items-center">
+        <h2 className="text-xl font-semibold text-text-primary mb-6">
+          Overall Progress
+        </h2>
+        <svg viewBox="0 0 200 200" className="w-48 h-48 mb-4">
+          {/* Background circle */}
+          <circle
+            cx="100"
+            cy="100"
+            r="85"
+            fill="none"
+            stroke="var(--color-surface-tertiary)"
+            strokeWidth="14"
+          />
+          {/* Progress arc */}
+          <circle
+            cx="100"
+            cy="100"
+            r="85"
+            fill="none"
+            stroke="var(--color-accent)"
+            strokeWidth="14"
+            strokeLinecap="round"
+            strokeDasharray={`${(overallPercent / 100) * 2 * Math.PI * 85} ${2 * Math.PI * 85}`}
+            transform="rotate(-90 100 100)"
+            className="transition-all duration-700"
+          />
+          {/* Center text */}
+          <text x="100" y="90" textAnchor="middle" className="fill-text-primary text-4xl font-bold" style={{ fontSize: '40px' }}>
+            {overallPercent}%
+          </text>
+          <text x="100" y="115" textAnchor="middle" className="fill-text-muted" style={{ fontSize: '13px' }}>
+            {completedCount} of {totalModules}
+          </text>
+        </svg>
+
+        {/* Per-subject mini bars */}
+        <div className="w-full max-w-lg grid grid-cols-2 gap-x-6 gap-y-2 mt-2">
+          {subjects.map((subject) => {
+            const done = subject.modules.filter(
+              (m) => progress[`${subject.id}__${m.id}`]
+            ).length;
+            const pct = subject.modules.length > 0 ? Math.round((done / subject.modules.length) * 100) : 0;
+            return (
+              <div key={subject.id} className="flex items-center gap-2">
+                <span className="text-xs shrink-0">{subject.icon}</span>
+                <div className="flex-1 bg-surface-tertiary rounded-full h-1.5">
+                  <div
+                    className="h-1.5 rounded-full transition-all duration-500"
+                    style={{ width: `${pct}%`, backgroundColor: subject.color }}
+                  />
+                </div>
+                <span className="text-[11px] text-text-muted tabular-nums w-8 text-right">{pct}%</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Subject Cards */}
       <h2 className="text-xl font-semibold text-text-primary mb-4">
         Subjects

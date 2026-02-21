@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 
 const OPTION_LABELS = ["A", "B", "C", "D"];
 
-export default function Quiz({ questions }) {
+export default function Quiz({ questions, onScoreSubmit }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,20 @@ export default function Quiz({ questions }) {
   const handleSubmit = useCallback(() => {
     setSubmitted(true);
     setCurrentQuestion(0);
-  }, []);
+
+    const finalScore = questions.reduce((acc, q, i) => {
+      const selected = answers[i];
+      const correctIndex =
+        typeof q.correct === "number"
+          ? q.correct
+          : OPTION_LABELS.indexOf(String(q.correct).toUpperCase());
+      return acc + (selected === correctIndex ? 1 : 0);
+    }, 0);
+
+    if (onScoreSubmit) {
+      onScoreSubmit({ score: finalScore, total: questions.length });
+    }
+  }, [answers, questions, onScoreSubmit]);
 
   const handleReset = useCallback(() => {
     setAnswers({});

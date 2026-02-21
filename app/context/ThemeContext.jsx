@@ -1,8 +1,13 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "~/lib/firebase";
+import { useAuth } from "~/context/AuthContext";
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
+  const { user } = useAuth();
+
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("cfa_theme");
@@ -12,11 +17,30 @@ export function ThemeProvider({ children }) {
     return true;
   });
 
+  // Load theme from Firestore when user logs in
+  useEffect(() => {
+    if (!user) return;
+    getDoc(doc(db, "users", user.uid)).then((snap) => {
+      if (snap.exists() && snap.data().theme) {
+        setIsDark(snap.data().theme === "dark");
+      }
+    });
+  }, [user]);
+
+  // Persist to localStorage
   useEffect(() => {
     localStorage.setItem("cfa_theme", isDark ? "dark" : "light");
   }, [isDark]);
 
-  const toggleTheme = () => setIsDark((prev) => !prev);
+  const toggleTheme = () => {
+    setIsDark((prev) => {
+      const next = !prev;
+      if (user) {
+        updateDoc(doc(db, "users", user.uid), { theme: next ? "dark" : "light" });
+      }
+      return next;
+    });
+  };
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>

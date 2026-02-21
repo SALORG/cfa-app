@@ -83,3 +83,31 @@ export function searchModules(query) {
 
   return results.sort((a, b) => b.score - a.score).slice(0, 10);
 }
+
+export function searchFormulas(query) {
+  if (!query || query.length < 2) return [];
+  const q = query.toLowerCase();
+  const results = [];
+
+  for (const section of consolidated.masterFormulas.sections) {
+    for (const f of section.formulas) {
+      let score = 0;
+      if (f.name.toLowerCase().includes(q)) score += 10;
+      if (f.formula.toLowerCase().includes(q)) score += 5;
+      if (f.note && f.note.toLowerCase().includes(q)) score += 3;
+
+      if (score > 0) {
+        results.push({
+          type: "formula",
+          name: f.name,
+          formula: f.formula,
+          note: f.note,
+          subject: section.subject,
+          score,
+        });
+      }
+    }
+  }
+
+  return results.sort((a, b) => b.score - a.score).slice(0, 8);
+}
