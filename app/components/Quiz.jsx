@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 
 const OPTION_LABELS = ["A", "B", "C", "D"];
 
-export default function Quiz({ questions, onScoreSubmit }) {
+export default function Quiz({ questions, onScoreSubmit, previousScores = [] }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -75,23 +75,64 @@ export default function Quiz({ questions, onScoreSubmit }) {
       ? q.correct
       : OPTION_LABELS.indexOf(String(q.correct).toUpperCase());
 
+  const bestScore = previousScores.length > 0
+    ? Math.max(...previousScores.map((s) => s.score))
+    : null;
+
   return (
     <div className="max-w-2xl mx-auto">
+      {/* Previous attempts */}
+      {previousScores.length > 0 && !submitted && (
+        <div className="bg-surface-secondary border border-border rounded-xl p-4 mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-sm font-medium text-text-primary">
+              Previous Attempts ({previousScores.length})
+            </p>
+            <p className="text-sm text-text-primary">
+              Best: <span className="font-bold text-success">{bestScore}/{total} ({Math.round((bestScore / total) * 100)}%)</span>
+            </p>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {previousScores.map((s, i) => (
+              <span
+                key={i}
+                className={`text-xs px-2 py-1 rounded-md ${
+                  s.score === bestScore
+                    ? "bg-success/15 text-success"
+                    : "bg-surface-tertiary text-text-muted"
+                }`}
+              >
+                #{i + 1}: {s.score}/{s.total}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Score summary (after submit) */}
       {submitted && (
         <div className="bg-surface-secondary border border-border rounded-xl p-5 mb-6 text-center">
           <p className="text-2xl font-bold text-text-primary mb-1">
             You scored {score}/{total} ({total > 0 ? Math.round((score / total) * 100) : 0}%)
           </p>
-          <p className="text-text-muted text-sm">
-            Review your answers below, then reset when ready.
+          {bestScore !== null && (
+            <p className="text-sm text-text-muted mt-1">
+              {score > bestScore
+                ? "New personal best!"
+                : score === bestScore
+                ? "Matched your best score."
+                : `Best: ${bestScore}/${total} (${Math.round((bestScore / total) * 100)}%)`}
+            </p>
+          )}
+          <p className="text-text-muted text-sm mt-1">
+            Review your answers below, then retake to improve.
           </p>
           <button
             type="button"
             onClick={handleReset}
             className="mt-4 px-5 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            Reset Quiz
+            Retake Quiz
           </button>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useParams, Link } from "react-router";
 import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore";
 import { db } from "~/lib/firebase";
@@ -20,7 +20,7 @@ const TABS = [
 export default function DashboardModule() {
   const { user } = useAuth();
   const { subjectId, moduleId } = useParams();
-  const { progress, setProgress } = useDashboardContext();
+  const { progress, setProgress, quizScores, setQuizScores } = useDashboardContext();
   const [activeTab, setActiveTab] = useState("cheatsheet");
 
   const subject = getSubject(subjectId);
@@ -41,19 +41,26 @@ export default function DashboardModule() {
   const progressKey = `${subjectId}__${moduleId}`;
   const isCompleted = !!progress[progressKey];
 
+  const moduleScores = useMemo(
+    () => quizScores.filter((s) => s.moduleKey === progressKey),
+    [quizScores, progressKey]
+  );
+
   const handleQuizScore = useCallback(
     ({ score, total }) => {
       if (!user) return;
+      const entry = {
+        moduleKey: progressKey,
+        score,
+        total,
+        date: Timestamp.now(),
+      };
       updateDoc(doc(db, "users", user.uid), {
-        quizScores: arrayUnion({
-          moduleKey: progressKey,
-          score,
-          total,
-          date: Timestamp.now(),
-        }),
+        quizScores: arrayUnion(entry),
       });
+      setQuizScores((prev) => [...prev, entry]);
     },
-    [user, progressKey]
+    [user, progressKey, setQuizScores]
   );
 
   const toggleComplete = () => {
@@ -130,7 +137,7 @@ export default function DashboardModule() {
         )}
         {activeTab === "flashcards" && <FlashCards module={mod} />}
         {activeTab === "quiz" && mod.quiz?.questions && (
-          <Quiz questions={mod.quiz.questions} onScoreSubmit={handleQuizScore} />
+          <Quiz questions={mod.quiz.questions} onScoreSubmit={handleQuizScore} previousScores={moduleScores} />
         )}
       </div>
 
