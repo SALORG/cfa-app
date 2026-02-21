@@ -52,7 +52,7 @@ function buildCards(module) {
     });
   }
 
-  const quiz = module?.quizQuestions || module?.quiz;
+  const quiz = module?.quizQuestions || module?.quiz?.questions;
   if (quiz) {
     quiz.forEach((q) => {
       cards.push({
