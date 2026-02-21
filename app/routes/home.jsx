@@ -12,39 +12,58 @@ import {
   ClipboardList,
   ArrowRight,
   BookOpen,
+  CheckCircle,
+  GraduationCap,
+  Target,
+  Zap,
+  BarChart3,
+  Trophy,
+  RefreshCw,
+  Cloud,
+  Search,
+  AlertTriangle,
+  Lightbulb,
+  Monitor,
 } from "lucide-react";
 
 const features = [
   {
     icon: FileText,
     title: "Cheat Sheets",
-    desc: "Concise summaries of key concepts and definitions for every module.",
+    desc: "Key concepts and definitions distilled into scannable summaries for all 59 modules.",
   },
   {
     icon: Network,
     title: "Mind Maps",
-    desc: "Visual connections between topics to see the big picture at a glance.",
+    desc: "Visual connections between topics so you see how the entire curriculum fits together.",
   },
   {
     icon: Layers,
-    title: "Flash Cards",
-    desc: "Interactive flip cards for active recall and spaced repetition.",
+    title: "635+ Flash Cards",
+    desc: "Flip through formulas, concepts, and decision frameworks built for active recall.",
   },
   {
     icon: CircleCheckBig,
-    title: "Quizzes",
-    desc: "Test your understanding with targeted questions after each module.",
+    title: "165 Quiz Questions",
+    desc: "Test yourself after each module with targeted questions and detailed explanations.",
   },
   {
     icon: FunctionSquare,
-    title: "Master Formulas",
-    desc: "Every key formula across all subjects collected in one place.",
+    title: "246 Formulas",
+    desc: "Every key formula across all 10 subjects — searchable and organized in one place.",
   },
   {
     icon: ClipboardList,
-    title: "Practice Exam",
-    desc: "Full 180-question mock exam simulating the real CFA Level I test.",
+    title: "180-Question Mock Exam",
+    desc: "A full-length practice exam that simulates the real CFA Level I test experience.",
   },
+];
+
+const proofPoints = [
+  { icon: BookOpen, label: "Complete 2026 Curriculum" },
+  { icon: Target, label: "59 Modules Covered" },
+  { icon: GraduationCap, label: "Exam-Day Ready" },
+  { icon: Zap, label: "100% Free" },
 ];
 
 export default function Home() {
@@ -58,7 +77,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <BookOpen className="w-6 h-6 text-accent" />
             <span className="text-xl font-bold text-text-primary tracking-tight">
-              CFA Study Dashboard
+              CFA Master
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -73,7 +92,7 @@ export default function Home() {
               to="/dashboard"
               className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg font-medium hover:bg-accent-hover transition-colors text-sm"
             >
-              Go to Dashboard
+              Start Free
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -81,38 +100,86 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-text-primary mb-6 leading-tight">
-            Master{" "}
-            <span className="text-accent">CFA Level I</span>
-          </h1>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-4">
-            Your complete study companion for the 2026 CFA Level I curriculum.
-            {" "}{subjects.length} subjects, {allModules.length} modules — everything you
-            need in one place.
-          </p>
-          <p className="text-text-muted mb-10">
-            Cheat sheets, mind maps, flash cards, quizzes, and a full practice exam.
-          </p>
-          <Link
-            to="/dashboard"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
-          >
-            Start Studying
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+      <section className="py-20 lg:py-28 px-6">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-accent font-semibold text-sm mb-4 tracking-wide uppercase">
+              Built for 2026 CFA Level I Candidates
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary mb-6 leading-tight">
+              Pass CFA Level I{" "}
+              <span className="text-accent">with Free Study Tools</span>
+            </h1>
+            <p className="text-lg text-text-secondary max-w-xl mb-4">
+              {subjects.length} subjects, {allModules.length} modules, 246 formulas,
+              and a full 180-question mock exam — everything you need in one dashboard.
+            </p>
+            <p className="text-text-muted text-sm mb-8">
+              No credit card. No paywall. Just study.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/dashboard"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
+              >
+                Start Studying Free
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <img
+              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80&auto=format&fit=crop"
+              alt="Study desk with notes and books"
+              className="rounded-2xl shadow-2xl object-cover w-full h-[420px] border border-border"
+            />
+            <p className="text-xs text-text-muted mt-2 text-right">
+              Photo by{" "}
+              <a
+                href="https://unsplash.com/@craftedbygc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-text-secondary"
+              >
+                Green Chameleon
+              </a>
+              {" "}on{" "}
+              <a
+                href="https://unsplash.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-text-secondary"
+              >
+                Unsplash
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Strip */}
+      <section className="border-y border-border bg-surface-secondary py-6 px-6">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-4">
+          {proofPoints.map((p) => {
+            const Icon = p.icon;
+            return (
+              <div key={p.label} className="flex items-center gap-2 text-text-secondary">
+                <Icon className="w-5 h-5 text-accent" />
+                <span className="text-sm font-medium">{p.label}</span>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-20 px-6 bg-surface-secondary">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-text-primary text-center mb-4">
             Everything You Need to Pass
           </h2>
           <p className="text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-            Built-in study tools designed for efficient CFA exam preparation.
+            Six built-in study tools designed for efficient CFA exam preparation.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => {
@@ -120,7 +187,7 @@ export default function Home() {
               return (
                 <div
                   key={f.title}
-                  className="bg-surface rounded-xl p-6 border border-border hover:border-accent/40 transition-all hover:shadow-md"
+                  className="bg-surface-secondary rounded-xl p-6 border border-border hover:border-accent/40 transition-all hover:shadow-md"
                 >
                   <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-accent" />
@@ -139,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* Subjects */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-surface-secondary">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-text-primary text-center mb-4">
             10 Subjects Covered
@@ -151,7 +218,7 @@ export default function Home() {
             {subjects.map((s) => (
               <div
                 key={s.id}
-                className="bg-surface-secondary rounded-xl p-4 border border-border text-center hover:border-accent/40 transition-all"
+                className="bg-surface rounded-xl p-4 border border-border text-center hover:border-accent/40 transition-all"
               >
                 <span
                   className="text-3xl w-12 h-12 flex items-center justify-center rounded-lg mx-auto mb-3"
@@ -171,22 +238,140 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Track Your Progress */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-text-primary mb-4">
+              Track Every Step of Your Progress
+            </h2>
+            <p className="text-text-secondary mb-8">
+              See exactly where you stand across the entire curriculum. Mark modules complete,
+              track quiz scores over time, and watch your progress ring fill up as you master each subject.
+            </p>
+            <div className="space-y-4">
+              {[
+                { icon: BarChart3, title: "Visual Progress Dashboard", desc: "Progress bars for each subject and an overall completion ring at a glance." },
+                { icon: Trophy, title: "Score History & Personal Bests", desc: "Every quiz attempt is recorded. Beat your personal best and see your improvement over time." },
+                { icon: Cloud, title: "Cloud Sync Across Devices", desc: "Sign in once and your progress follows you — laptop, tablet, or phone." },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="flex gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-text-primary text-sm">{item.title}</h3>
+                      <p className="text-text-secondary text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop"
+              alt="Analytics dashboard on screen"
+              className="rounded-2xl shadow-2xl object-cover w-full h-[400px] border border-border"
+            />
+            <p className="text-xs text-text-muted mt-2 text-right">
+              Photo by{" "}
+              <a href="https://unsplash.com/@carlheyerdahl" target="_blank" rel="noopener noreferrer" className="underline hover:text-text-secondary">
+                Carl Heyerdahl
+              </a>
+              {" "}on{" "}
+              <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-text-secondary">
+                Unsplash
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Smart Study Features */}
+      <section className="py-20 px-6 bg-surface-secondary">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-text-primary text-center mb-4">
+            Study Smarter, Not Harder
+          </h2>
+          <p className="text-text-secondary text-center mb-12 max-w-2xl mx-auto">
+            Built-in tools that help you focus on what matters most for exam day.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Search, title: "Instant Search", desc: "Find any module or formula in seconds with full-text search." },
+              { icon: AlertTriangle, title: "Common Pitfalls", desc: "Each module highlights mistakes candidates frequently make on exam day." },
+              { icon: Lightbulb, title: "Worked Examples", desc: "Step-by-step solutions that show you exactly how to approach problems." },
+              { icon: RefreshCw, title: "Shuffle Mode", desc: "Randomize flashcards to prevent memorizing card order instead of content." },
+              { icon: Network, title: "Cross-Subject Links", desc: "See how concepts connect across subjects — the way the exam tests them." },
+              { icon: CheckCircle, title: "Decision Frameworks", desc: "Know when to use (and when not to use) each formula and concept." },
+              { icon: Monitor, title: "Dark & Light Mode", desc: "Study comfortably day or night with a theme that syncs to your preference." },
+              { icon: GraduationCap, title: "2026 Curriculum Aligned", desc: "Content mapped to the official CFA Institute learning modules." },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="bg-surface rounded-xl p-5 border border-border"
+                >
+                  <Icon className="w-6 h-6 text-accent mb-3" />
+                  <h3 className="font-semibold text-text-primary text-sm mb-1">{item.title}</h3>
+                  <p className="text-text-muted text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-text-primary text-center mb-4">
+            How It Works
+          </h2>
+          <p className="text-text-secondary text-center mb-12 max-w-2xl mx-auto">
+            Three steps to start preparing for CFA Level I.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-8">
+            {[
+              { step: "1", title: "Pick a Module", desc: "Choose from 59 modules across 10 subjects. Start wherever you want." },
+              { step: "2", title: "Study & Practice", desc: "Read the cheat sheet, flip through flashcards, then test yourself with a quiz." },
+              { step: "3", title: "Track & Repeat", desc: "Mark modules complete, review your scores, and tackle the full mock exam when you're ready." },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="font-semibold text-text-primary mb-2">{item.title}</h3>
+                <p className="text-text-secondary text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer CTA */}
       <section className="py-20 px-6 bg-surface-secondary border-t border-border">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-text-primary mb-4">
-            Ready to Start?
+            Start Passing — It's Free
           </h2>
           <p className="text-text-secondary mb-8">
-            Jump into the dashboard and begin working through the curriculum.
+            Jump into the dashboard and begin working through the 2026 curriculum today.
           </p>
           <Link
             to="/dashboard"
             className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
           >
-            Open Dashboard
+            Start Studying Free
             <ArrowRight className="w-5 h-5" />
           </Link>
+          <p className="text-text-muted text-sm mt-4">
+            No signup required to browse. Sign in to save progress.
+          </p>
         </div>
       </section>
     </div>
