@@ -3,14 +3,14 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore/lite";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+  apiKey: "AIzaSyDoO88HqET0VDE0iEod6qUuxy74ZYPkAWo",
+  authDomain: "cfa-loginflow.firebaseapp.com",
+  databaseURL: "https://cfa-loginflow-default-rtdb.firebaseio.com",
+  projectId: "cfa-loginflow",
+  storageBucket: "cfa-loginflow.firebasestorage.app",
+  messagingSenderId: "1091159042087",
+  appId: "1:1091159042087:web:0832d19285ef79d7518602",
+  measurementId: "G-VR7Z1VFH3K",
 };
 
 const app = initializeApp(firebaseConfig);
