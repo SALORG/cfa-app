@@ -67,7 +67,7 @@ const proofPoints = [
 ];
 
 export default function Home() {
-  const { isDark, toggle } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <div className="min-h-screen bg-surface">
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4">
             <button
-              onClick={toggle}
+              onClick={toggleTheme}
               className="p-2 rounded-lg hover:bg-surface-secondary transition-colors text-text-secondary"
               aria-label="Toggle theme"
             >
