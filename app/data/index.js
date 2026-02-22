@@ -10,6 +10,13 @@ import portfolio from "./portfolio.json";
 import ethics from "./ethics.json";
 import consolidated from "./consolidated.json";
 
+// The only subject available to free users
+export const FREE_SUBJECT_ID = "quants";
+
+export function isContentLocked(subjectId) {
+  return subjectId !== FREE_SUBJECT_ID;
+}
+
 export const subjects = [
   quants,
   economics,

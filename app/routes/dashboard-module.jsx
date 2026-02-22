@@ -3,12 +3,13 @@ import { useParams, Link } from "react-router";
 import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore/lite";
 import { db } from "~/lib/firebase";
 import { useAuth } from "~/context/AuthContext";
-import { getSubject, getModule, getAdjacentModules } from "~/data";
+import { getSubject, getModule, getAdjacentModules, isContentLocked } from "~/data";
 import { useDashboardContext } from "./dashboard";
 import CheatSheet from "~/components/CheatSheet";
 import MindMap from "~/components/MindMap";
 import FlashCards from "~/components/FlashCards";
 import Quiz from "~/components/Quiz";
+import LockedOverlay from "~/components/LockedOverlay";
 
 const TABS = [
   { id: "cheatsheet", label: "Cheat Sheet", icon: "📋" },
@@ -26,6 +27,10 @@ export default function DashboardModule() {
   const subject = getSubject(subjectId);
   const mod = getModule(subjectId, moduleId);
   const { prev, next } = getAdjacentModules(subjectId, moduleId);
+
+  if (isContentLocked(subjectId)) {
+    return <LockedOverlay title="Premium Module" />;
+  }
 
   if (!subject || !mod) {
     return (
