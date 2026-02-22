@@ -53,13 +53,15 @@ export function getModule(subjectId, moduleId) {
 }
 
 export function getAdjacentModules(subjectId, moduleId) {
-  const idx = allModules.findIndex(
-    (m) => m.subjectId === subjectId && m.id === moduleId
-  );
-  return {
-    prev: idx > 0 ? allModules[idx - 1] : null,
-    next: idx < allModules.length - 1 ? allModules[idx + 1] : null,
-  };
+  const subject = getSubject(subjectId);
+  if (!subject) return { prev: null, next: null };
+  const mods = subject.modules;
+  const idx = mods.findIndex((m) => m.id === moduleId);
+  if (idx === -1) return { prev: null, next: null };
+
+  const prev = idx > 0 ? { ...mods[idx - 1], subjectId } : null;
+  const next = idx < mods.length - 1 ? { ...mods[idx + 1], subjectId } : null;
+  return { prev, next };
 }
 
 export function searchModules(query) {
