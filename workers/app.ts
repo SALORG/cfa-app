@@ -4,6 +4,8 @@ interface Env {
   DODO_API_KEY: string;
   DODO_WEBHOOK_SECRET: string;
   RAZORPAY_WEBHOOK_SECRET: string;
+  RZPY_KEY: string;
+  RZPY_SECRET: string;
 }
 
 declare module "react-router" {

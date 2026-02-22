@@ -35,6 +35,7 @@ function InnerLayout({ children }) {
         <title>CFA Level I Study Dashboard</title>
         <Meta />
         <Links />
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
       </head>
       <body className="bg-surface text-text-primary min-h-screen">
         {children}

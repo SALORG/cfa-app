@@ -7,9 +7,7 @@
     "dev": "react-router dev",
     "preview": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
-    "typecheck": "react-router typegen && tsc",
-    "reel:preview": "remotion studio remotion/Root.jsx",
-    "reel:render": "remotion render remotion/Root.jsx CfaReel out/cfa-reel.mp4"
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
     "firebase": "^12.9.0",
@@ -21,14 +19,12 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.25.2",
+    "@playwright/test": "^1.58.2",
     "@react-router/dev": "7.12.0",
-    "@remotion/cli": "^4.0.427",
-    "@remotion/player": "^4.0.427",
     "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^22",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "remotion": "^4.0.427",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
