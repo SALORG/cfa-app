@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { consolidated } from "~/data";
+import { useAuth } from "~/context/AuthContext";
 import Quiz from "~/components/Quiz";
 import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardPracticeExam() {
+  const { isPremium } = useAuth();
   const examData = consolidated.practiceExam;
   const [started, setStarted] = useState(false);
 
-  return <LockedOverlay title="Practice Exam" />;
+  if (!isPremium) return <LockedOverlay title="Practice Exam" />;
 
   if (!examData?.questions) {
     return (

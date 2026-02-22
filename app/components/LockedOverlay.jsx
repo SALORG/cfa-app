@@ -10,12 +10,20 @@ export default function LockedOverlay({ title = "Premium Content" }) {
           This content is available with a premium subscription. Upgrade to
           unlock all modules, formulas, connections, and practice exams.
         </p>
-        <Link
-          to="/dashboard"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-semibold hover:bg-accent-hover transition-colors"
-        >
-          Back to Dashboard
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            to="/pricing"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-semibold hover:bg-accent-hover transition-colors"
+          >
+            Upgrade to Premium
+          </Link>
+          <Link
+            to="/dashboard"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-surface-tertiary text-text-secondary rounded-xl font-medium hover:bg-surface transition-colors border border-border"
+          >
+            Back to Dashboard
+          </Link>
+        </div>
       </div>
     </div>
   );

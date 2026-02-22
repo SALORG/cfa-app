@@ -19,7 +19,7 @@ const TABS = [
 ];
 
 export default function DashboardModule() {
-  const { user } = useAuth();
+  const { user, isPremium } = useAuth();
   const { subjectId, moduleId } = useParams();
   const { progress, setProgress, quizScores, setQuizScores } = useDashboardContext();
   const [activeTab, setActiveTab] = useState("cheatsheet");
@@ -28,7 +28,7 @@ export default function DashboardModule() {
   const mod = getModule(subjectId, moduleId);
   const { prev, next } = getAdjacentModules(subjectId, moduleId);
 
-  if (isContentLocked(subjectId)) {
+  if (isContentLocked(subjectId, isPremium)) {
     return <LockedOverlay title="Premium Module" />;
   }
 

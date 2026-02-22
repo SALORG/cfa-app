@@ -13,7 +13,8 @@ import consolidated from "./consolidated.json";
 // The only subject available to free users
 export const FREE_SUBJECT_ID = "quants";
 
-export function isContentLocked(subjectId) {
+export function isContentLocked(subjectId, isPremium = false) {
+  if (isPremium) return false;
   return subjectId !== FREE_SUBJECT_ID;
 }
 

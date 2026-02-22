@@ -16,7 +16,7 @@ export default function Sidebar({
   currentModuleId,
   progress = {},
 }) {
-  const { signOut } = useAuth();
+  const { signOut, isPremium } = useAuth();
   const [expandedSubjects, setExpandedSubjects] = useState(() => {
     if (currentSubjectId) return new Set([currentSubjectId]);
     return new Set();
@@ -77,7 +77,7 @@ export default function Sidebar({
         {subjects.map((subject) => {
           const isExpanded = expandedSubjects.has(subject.id);
           const completedCount = getSubjectProgress(subject);
-          const locked = isContentLocked(subject.id);
+          const locked = isContentLocked(subject.id, isPremium);
 
           return (
             <div key={subject.id}>
@@ -148,11 +148,11 @@ export default function Sidebar({
             key={link.to}
             to={link.to}
             onClick={onClose}
-            className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors opacity-60"
+            className={`flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors ${isPremium ? "" : "opacity-60"}`}
           >
             <span className="w-5 text-center text-xs">{link.icon}</span>
             <span>{link.label}</span>
-            <span className="text-xs ml-auto">🔒</span>
+            {!isPremium && <span className="text-xs ml-auto">🔒</span>}
           </Link>
         ))}
       </div>

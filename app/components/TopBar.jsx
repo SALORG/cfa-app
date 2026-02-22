@@ -7,7 +7,7 @@ import { searchModules, searchFormulas } from "~/data";
 
 export default function TopBar({ progress = 0, onToggleSidebar }) {
   const { isDark, toggleTheme } = useTheme();
-  const { user } = useAuth();
+  const { user, isPremium } = useAuth();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -181,9 +181,23 @@ export default function TopBar({ progress = 0, onToggleSidebar }) {
         </button>
 
         {user && (
-          <span className="text-xs text-text-muted hidden sm:inline truncate max-w-[120px]">
-            {user.displayName || user.email}
-          </span>
+          <div className="hidden sm:flex items-center gap-2">
+            <span className="text-xs text-text-muted truncate max-w-[120px]">
+              {user.displayName || user.email}
+            </span>
+            {isPremium ? (
+              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-accent/20 text-accent font-medium">
+                Premium
+              </span>
+            ) : (
+              <Link
+                to="/pricing"
+                className="text-[10px] px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-500 font-medium hover:bg-amber-500/30 transition-colors"
+              >
+                Upgrade
+              </Link>
+            )}
+          </div>
         )}
 
       </div>

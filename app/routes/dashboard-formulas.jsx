@@ -1,9 +1,11 @@
 import { Link } from "react-router";
 import { consolidated } from "~/data";
+import { useAuth } from "~/context/AuthContext";
 import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardFormulas() {
-  return <LockedOverlay title="Master Formulas" />;
+  const { isPremium } = useAuth();
+  if (!isPremium) return <LockedOverlay title="Master Formulas" />;
   const { masterFormulas } = consolidated;
 
   if (!masterFormulas?.sections) {

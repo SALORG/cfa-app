@@ -1,5 +1,11 @@
 import { createRequestHandler } from "react-router";
 
+interface Env {
+  DODO_API_KEY: string;
+  DODO_WEBHOOK_SECRET: string;
+  RAZORPAY_WEBHOOK_SECRET: string;
+}
+
 declare module "react-router" {
   interface AppLoadContext {
     cloudflare: {

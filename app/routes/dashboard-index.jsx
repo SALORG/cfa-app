@@ -1,9 +1,36 @@
-import { Link } from "react-router";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router";
 import { subjects, allModules, isContentLocked } from "~/data";
+import { useAuth } from "~/context/AuthContext";
 import { useDashboardContext } from "./dashboard";
 
 export default function DashboardIndex() {
+  const { isPremium, refreshSubscription } = useAuth();
   const { progress } = useDashboardContext();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [checkoutSuccess, setCheckoutSuccess] = useState(false);
+
+  // Handle return from checkout
+  useEffect(() => {
+    if (searchParams.get("checkout") !== "success") return;
+
+    setCheckoutSuccess(true);
+    setSearchParams({}, { replace: true });
+
+    // Poll for subscription update (webhook may arrive after redirect)
+    let attempts = 0;
+    const interval = setInterval(async () => {
+      attempts++;
+      await refreshSubscription();
+      if (attempts >= 5) clearInterval(interval);
+    }, 2000);
+
+    const timeout = setTimeout(() => setCheckoutSuccess(false), 8000);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const completedCount = Object.values(progress).filter(Boolean).length;
   const totalModules = allModules.length;
@@ -12,6 +39,25 @@ export default function DashboardIndex() {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
+      {/* Checkout Success Banner */}
+      {checkoutSuccess && (
+        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl flex items-center gap-3">
+          <span className="text-2xl">🎉</span>
+          <div>
+            <p className="font-semibold text-green-500">Welcome to Premium!</p>
+            <p className="text-sm text-text-secondary">
+              Your subscription is being activated. All content will unlock shortly.
+            </p>
+          </div>
+          <button
+            onClick={() => setCheckoutSuccess(false)}
+            className="ml-auto text-text-muted hover:text-text-primary text-sm"
+          >
+            &times;
+          </button>
+        </div>
+      )}
+
       {/* Hero */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-text-primary mb-2">
@@ -102,7 +148,7 @@ export default function DashboardIndex() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {subjects.map((subject) => {
           const subjectModules = subject.modules;
-          const locked = isContentLocked(subject.id);
+          const locked = isContentLocked(subject.id, isPremium);
           const subjectCompleted = subjectModules.filter(
             (m) => progress[`${subject.id}__${m.id}`]
           ).length;
@@ -165,21 +211,21 @@ export default function DashboardIndex() {
           icon="📐"
           title="Master Formulas"
           desc="All key formulas in one place"
-          locked
+          locked={!isPremium}
         />
         <QuickLink
           to="/dashboard/connections"
           icon="🔗"
           title="Inter-Subject Connections"
           desc="See how topics relate"
-          locked
+          locked={!isPremium}
         />
         <QuickLink
           to="/dashboard/practice-exam"
           icon="📝"
           title="Practice Exam"
           desc="Full 180-question mock exam"
-          locked
+          locked={!isPremium}
         />
       </div>
     </div>
