@@ -39,17 +39,17 @@ const features = [
   },
   {
     icon: Layers,
-    title: "635+ Flash Cards",
+    title: "725+ Flash Cards",
     desc: "Flip through formulas, concepts, and decision frameworks built for active recall.",
   },
   {
     icon: CircleCheckBig,
-    title: "165 Quiz Questions",
+    title: "248 Quiz Questions",
     desc: "Test yourself after each module with targeted questions and detailed explanations.",
   },
   {
     icon: FunctionSquare,
-    title: "246 Formulas",
+    title: "80+ Formulas",
     desc: "Every key formula across all 10 subjects — searchable and organized in one place.",
   },
   {
@@ -108,12 +108,9 @@ export default function Home() {
               Pass CFA Level I{" "}
               <span className="text-accent">with Smart Study Tools</span>
             </h1>
-            <p className="text-lg text-text-secondary max-w-xl mb-4">
-              {subjects.length} subjects, {allModules.length} modules, 246 formulas,
+            <p className="text-lg text-text-secondary max-w-xl mb-8">
+              {subjects.length} subjects, {allModules.length} modules, 80+ formulas,
               and a full 180-question mock exam — everything you need in one dashboard.
-            </p>
-            <p className="text-text-muted text-sm mb-8">
-              Start studying now. Sign in to save your progress.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -368,7 +365,7 @@ export default function Home() {
             <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="text-text-muted text-sm mt-4">
-            No signup required to browse. Sign in to save progress.
+            Sign in to save your progress across devices.
           </p>
         </div>
       </section>
