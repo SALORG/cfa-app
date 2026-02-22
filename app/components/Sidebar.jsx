@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { subjects } from "~/data";
+import { useAuth } from "~/context/AuthContext";
 
 const quickLinks = [
   { to: "/dashboard/formulas", label: "Master Formulas", icon: "fx" },
@@ -15,6 +16,7 @@ export default function Sidebar({
   currentModuleId,
   progress = {},
 }) {
+  const { signOut } = useAuth();
   const [expandedSubjects, setExpandedSubjects] = useState(() => {
     if (currentSubjectId) return new Set([currentSubjectId]);
     return new Set();
@@ -144,6 +146,33 @@ export default function Sidebar({
             <span>{link.label}</span>
           </Link>
         ))}
+      </div>
+
+      {/* Legal & Logout */}
+      <div className="border-t border-border px-3 py-3 space-y-1">
+        <Link
+          to="/terms"
+          onClick={onClose}
+          className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors"
+        >
+          <span className="w-5 text-center text-xs">{"\u2696"}</span>
+          <span>Terms & Conditions</span>
+        </Link>
+        <Link
+          to="/privacy"
+          onClick={onClose}
+          className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors"
+        >
+          <span className="w-5 text-center text-xs">{"\uD83D\uDD12"}</span>
+          <span>Privacy Policy</span>
+        </Link>
+        <button
+          onClick={() => { onClose(); signOut(); }}
+          className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-danger hover:text-red-400 hover:bg-surface rounded-md transition-colors"
+        >
+          <span className="w-5 text-center text-xs">{"\u21B6"}</span>
+          <span>Logout</span>
+        </button>
       </div>
     </nav>
   );
