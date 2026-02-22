@@ -192,13 +192,6 @@ export default function TopBar({ progress = 0, onToggleSidebar }) {
           </>
         )}
 
-        <button
-          onClick={onToggleSidebar}
-          className="lg:hidden text-text-secondary hover:text-text-primary text-xl p-1"
-          aria-label="Toggle sidebar"
-        >
-          &#9776;
-        </button>
       </div>
     </header>
   );
