@@ -7,7 +7,7 @@ import { searchModules, searchFormulas } from "~/data";
 
 export default function TopBar({ progress = 0, onToggleSidebar }) {
   const { isDark, toggleTheme } = useTheme();
-  const { user, signOut } = useAuth();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -179,17 +179,9 @@ export default function TopBar({ progress = 0, onToggleSidebar }) {
         </button>
 
         {user && (
-          <>
-            <span className="text-xs text-text-muted hidden sm:inline truncate max-w-[120px]">
-              {user.displayName || user.email}
-            </span>
-            <button
-              onClick={signOut}
-              className="text-xs text-text-secondary hover:text-danger transition-colors font-medium"
-            >
-              Sign Out
-            </button>
-          </>
+          <span className="text-xs text-text-muted hidden sm:inline truncate max-w-[120px]">
+            {user.displayName || user.email}
+          </span>
         )}
 
       </div>

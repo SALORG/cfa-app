@@ -55,9 +55,9 @@ export default function Sidebar({
   }, [isOpen]);
 
   const sidebarContent = (
-    <nav className="flex flex-col h-full">
+    <nav className="h-full overflow-y-auto">
       {/* Subject List */}
-      <div className="flex-1 overflow-y-auto py-2">
+      <div className="py-2">
         <div className="flex items-center justify-between px-3 py-1.5">
           <span className="text-[11px] font-semibold uppercase tracking-wider text-text-muted">
             Modules
