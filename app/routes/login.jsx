@@ -48,7 +48,8 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-surface px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <img src="/logo.png" alt="CFA Master" className="h-16 w-auto mx-auto mb-3" />
+          <img src="/logo.png" alt="CFA Master" className="h-16 w-auto mx-auto mb-3 dark:hidden" />
+          <img src="/logo-dark.png" alt="CFA Master" className="h-16 w-auto mx-auto mb-3 hidden dark:block" />
           <h1 className="text-2xl font-bold text-text-primary">
             CFA Study Dashboard
           </h1>
