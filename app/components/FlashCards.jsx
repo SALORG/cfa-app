@@ -155,7 +155,7 @@ export default function FlashCards({ module }) {
       {/* Flip card */}
       {currentCard ? (
         <div
-          className="flip-card w-full max-w-lg min-h-[300px] cursor-pointer mb-6"
+          className="flip-card w-full max-w-lg cursor-pointer mb-6"
           onClick={handleFlip}
         >
           <div className={`flip-card-inner ${flipped ? "flipped" : ""}`}>
