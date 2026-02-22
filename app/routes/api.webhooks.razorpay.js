@@ -1,4 +1,4 @@
-import { doc, getDoc, updateDoc } from "firebase/firestore/lite";
+import { collection, doc, getDoc, updateDoc, setDoc, addDoc } from "firebase/firestore/lite";
 import { db } from "~/lib/firebase";
 
 function emailToKey(email) {
@@ -45,6 +45,18 @@ export async function action({ request, context }) {
 
   console.log(`Razorpay webhook: event=${eventType}, payment_id=${payment?.id}, email=${payment?.email}, amount=${payment?.amount}, status=${payment?.status}`);
 
+  // Log every webhook event to webhookLogs collection
+  await addDoc(collection(db, "webhookLogs"), {
+    source: "razorpay",
+    event: eventType,
+    paymentId: payment?.id || null,
+    email: payment?.email || null,
+    amount: payment?.amount || null,
+    status: payment?.status || null,
+    rawPayload: body,
+    receivedAt: new Date().toISOString(),
+  });
+
   // Only process successful payments
   if (eventType !== "payment.captured") {
     console.log(`Razorpay webhook: skipping event ${eventType}`);
@@ -75,6 +87,19 @@ export async function action({ request, context }) {
     "subscription.status": "active",
     "subscription.razorpayPaymentId": payment.id || null,
     "subscription.updatedAt": new Date().toISOString(),
+  });
+
+  // Store successful payment in payments collection
+  await setDoc(doc(db, "payments", payment.id), {
+    uid,
+    email: customerEmail,
+    amount: payment.amount || null,
+    currency: payment.currency || null,
+    method: payment.method || null,
+    contact: payment.contact || null,
+    razorpayPaymentId: payment.id,
+    razorpayOrderId: payment.order_id || null,
+    paidAt: new Date().toISOString(),
   });
 
   console.log(`Razorpay webhook: activated premium for ${customerEmail} (uid: ${uid})`);
