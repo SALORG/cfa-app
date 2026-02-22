@@ -27,21 +27,7 @@ export default function DashboardModule() {
   const subject = getSubject(subjectId);
   const mod = getModule(subjectId, moduleId);
   const { prev, next } = getAdjacentModules(subjectId, moduleId);
-
-  if (isContentLocked(subjectId, isPremium)) {
-    return <LockedOverlay title="Premium Module" />;
-  }
-
-  if (!subject || !mod) {
-    return (
-      <div className="p-6">
-        <h1 className="text-2xl font-bold text-danger">Module not found</h1>
-        <Link to="/dashboard" className="text-accent mt-4 inline-block">
-          Back to Dashboard
-        </Link>
-      </div>
-    );
-  }
+  const locked = isContentLocked(subjectId, isPremium);
 
   const progressKey = `${subjectId}__${moduleId}`;
   const isCompleted = !!progress[progressKey];
@@ -74,6 +60,21 @@ export default function DashboardModule() {
       [progressKey]: !prev[progressKey],
     }));
   };
+
+  if (locked) {
+    return <LockedOverlay title="Premium Module" />;
+  }
+
+  if (!subject || !mod) {
+    return (
+      <div className="p-6">
+        <h1 className="text-2xl font-bold text-danger">Module not found</h1>
+        <Link to="/dashboard" className="text-accent mt-4 inline-block">
+          Back to Dashboard
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
