@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#ffffff"/>
   <rect width="32" height="32" rx="6" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-  <g transform="translate(4, 5)" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M1 2.5C1 2.5 4 1 12 1s11 1.5 11 1.5v18s-3-1.5-11-1.5S1 20.5 1 20.5z"/>
-    <line x1="12" y1="1" x2="12" y2="18"/>
-    <text x="5" y="13" font-family="Inter,sans-serif" font-weight="700" font-size="7" fill="#2563eb" stroke="none">C</text>
-    <text x="14" y="13" font-family="Inter,sans-serif" font-weight="700" font-size="7" fill="#2563eb" stroke="none">F</text>
-  </g>
+  <!-- Shield shape -->
+  <path d="M16 3 L27 7 V17 C27 22 22 26 16 29 C10 26 5 22 5 17 V7 Z" fill="#1B3A5C" stroke="#C5A55A" stroke-width="1.5"/>
+  <!-- Graduation cap -->
+  <polygon points="16,8 10,11 16,14 22,11" fill="#C5A55A"/>
+  <line x1="16" y1="14" x2="16" y2="16" stroke="#C5A55A" stroke-width="0.8"/>
+  <!-- Book -->
+  <path d="M11,18 L16,20 L21,18 M11,18 V22 L16,24 V20 M21,18 V22 L16,24" fill="none" stroke="#C5A55A" stroke-width="1" stroke-linejoin="round"/>
 </svg>

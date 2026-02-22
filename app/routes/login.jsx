@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router";
 import { useAuth } from "~/context/AuthContext";
-import { BookOpen } from "lucide-react";
+
 
 export default function Login() {
   const { user, loading, signInWithGoogle, signInWithEmail, signUpWithEmail } =
@@ -48,7 +48,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-surface px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <BookOpen className="w-10 h-10 text-accent mx-auto mb-3" />
+          <img src="/logo.png" alt="CFA Master" className="h-16 w-auto mx-auto mb-3" />
           <h1 className="text-2xl font-bold text-text-primary">
             CFA Study Dashboard
           </h1>
