@@ -19,7 +19,7 @@ const TABS = [
 ];
 
 export default function DashboardModule() {
-  const { user, isPremium } = useAuth();
+  const { user, isPremium, loading } = useAuth();
   const { subjectId, moduleId } = useParams();
   const { progress, setProgress, quizScores, setQuizScores } = useDashboardContext();
   const [activeTab, setActiveTab] = useState("cheatsheet");
@@ -60,6 +60,10 @@ export default function DashboardModule() {
       [progressKey]: !prev[progressKey],
     }));
   };
+
+  if (loading) {
+    return null;
+  }
 
   if (locked) {
     return <LockedOverlay title="Premium Module" />;

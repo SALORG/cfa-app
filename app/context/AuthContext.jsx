@@ -28,7 +28,6 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       setUser(firebaseUser);
-      setLoading(false);
 
       if (firebaseUser) {
         const userRef = doc(db, "users", firebaseUser.uid);
@@ -54,10 +53,21 @@ export function AuthProvider({ children }) {
           if (data.role) {
             setRole(data.role);
           }
+          // Backfill email-to-uid lookup for existing users
+          if (firebaseUser.email) {
+            const emailKey = emailToKey(firebaseUser.email);
+            const emailRef = doc(db, "usersByEmail", emailKey);
+            const emailSnap = await getDoc(emailRef);
+            if (!emailSnap.exists()) {
+              await setDoc(emailRef, { uid: firebaseUser.uid });
+            }
+          }
         }
+        setLoading(false);
       } else {
         setSubscription({ plan: "free", status: null });
         setRole(null);
+        setLoading(false);
       }
     });
     return unsubscribe;
