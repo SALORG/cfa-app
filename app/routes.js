@@ -9,6 +9,8 @@ export default [
   route("payment-success", "routes/payment-success.jsx"),
   route("api/webhooks/dodo", "routes/api.webhooks.dodo.js"),
   route("api/webhooks/razorpay", "routes/api.webhooks.razorpay.js"),
+  route("api/razorpay-order", "routes/api.razorpay-order.js"),
+  route("api/razorpay-verify", "routes/api.razorpay-verify.js"),
   layout("components/ProtectedLayout.jsx", [
 layout("routes/dashboard.jsx", [
       route("dashboard", "routes/dashboard-index.jsx"),

@@ -1,7 +1,8 @@
-import { Link } from "react-router";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { useTheme } from "~/context/ThemeContext";
 import { useAuth } from "~/context/AuthContext";
-import { Sun, Moon, Check, ArrowLeft } from "lucide-react";
+import { Sun, Moon, Check, ArrowLeft, Loader2 } from "lucide-react";
 
 const freeFeatures = [
   "1 subject (Quantitative Methods)",
@@ -25,6 +26,74 @@ export default function Pricing() {
   const auth = useAuth();
   const user = auth?.user;
   const isPremium = auth?.isPremium;
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  async function handlePayment() {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const orderRes = await fetch("/api/razorpay-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ uid: user.uid, email: user.email }),
+      });
+      const orderData = await orderRes.json();
+
+      if (!orderRes.ok) {
+        throw new Error(orderData.error || "Failed to create order");
+      }
+
+      const options = {
+        key: orderData.key,
+        amount: orderData.amount,
+        currency: orderData.currency,
+        order_id: orderData.orderId,
+        name: "CFA Master",
+        description: "Premium — Lifetime Access",
+        prefill: {
+          email: user.email,
+          name: user.displayName || "",
+        },
+        theme: { color: "#6366f1" },
+        handler: async function (response) {
+          // Verify payment on server
+          const verifyRes = await fetch("/api/razorpay-verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+              email: user.email,
+            }),
+          });
+
+          if (verifyRes.ok) {
+            await auth.refreshSubscription();
+            navigate("/payment-success");
+          } else {
+            // Webhook will handle activation as fallback
+            navigate("/payment-success");
+          }
+        },
+        modal: {
+          ondismiss: () => setLoading(false),
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.on("payment.failed", () => setLoading(false));
+      rzp.open();
+    } catch (err) {
+      console.error("Payment error:", err);
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-surface">
@@ -109,14 +178,20 @@ export default function Pricing() {
                 Your Current Plan
               </div>
             ) : (
-              <a
-                href="https://rzp.io/rzp/cfa-pro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center px-6 py-3 rounded-xl font-semibold text-sm bg-accent text-white hover:bg-accent-hover transition-colors mb-8"
+              <button
+                onClick={handlePayment}
+                disabled={loading}
+                className="block w-full text-center px-6 py-3 rounded-xl font-semibold text-sm bg-accent text-white hover:bg-accent-hover transition-colors mb-8 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Get Premium
-              </a>
+                {loading ? (
+                  <span className="inline-flex items-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Processing...
+                  </span>
+                ) : (
+                  "Get Premium"
+                )}
+              </button>
             )}
 
             <ul className="space-y-3">
