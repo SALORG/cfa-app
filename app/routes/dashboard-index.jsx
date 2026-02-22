@@ -3,10 +3,13 @@ import { Link, useSearchParams } from "react-router";
 import { subjects, allModules, isContentLocked } from "~/data";
 import { useAuth } from "~/context/AuthContext";
 import { useDashboardContext } from "./dashboard";
+import StudyLogInput from "~/components/StudyLogInput";
+import WeeklyBarChart from "~/components/WeeklyBarChart";
+import StudyHeatmap from "~/components/StudyHeatmap";
 
 export default function DashboardIndex() {
   const { isPremium, refreshSubscription } = useAuth();
-  const { progress } = useDashboardContext();
+  const { progress, studyLogs, setStudyLogs } = useDashboardContext();
   const [searchParams, setSearchParams] = useSearchParams();
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
 
@@ -79,6 +82,21 @@ export default function DashboardIndex() {
           color="text-warning"
         />
         <StatCard label="Progress" value={`${overallPercent}%`} color="text-accent" />
+      </div>
+
+      {/* Study Progress */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
+        <div className="bg-surface-secondary rounded-xl border border-border p-6">
+          <StudyLogInput studyLogs={studyLogs} setStudyLogs={setStudyLogs} />
+        </div>
+        <div className="bg-surface-secondary rounded-xl border border-border p-6">
+          <h3 className="text-sm font-semibold text-text-primary mb-4">This Week</h3>
+          <WeeklyBarChart studyLogs={studyLogs} />
+        </div>
+        <div className="bg-surface-secondary rounded-xl border border-border p-6">
+          <h3 className="text-sm font-semibold text-text-primary mb-4">Study Activity</h3>
+          <StudyHeatmap studyLogs={studyLogs} />
+        </div>
       </div>
 
       {/* Progress Round Chart */}
