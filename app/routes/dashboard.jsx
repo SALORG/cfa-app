@@ -71,8 +71,13 @@ export default function DashboardLayout() {
         progress={progress}
       />
 
-      <main className="pt-16 lg:ml-72 min-h-screen">
-        <Outlet context={{ progress, setProgress: setProgressAndSync, quizScores, setQuizScores }} />
+      <main className="pt-16 lg:ml-72 min-h-screen flex flex-col">
+        <div className="flex-1">
+          <Outlet context={{ progress, setProgress: setProgressAndSync, quizScores, setQuizScores }} />
+        </div>
+        <footer className="px-6 py-4 text-center text-[11px] text-text-muted border-t border-border">
+          CFA® is a registered trademark owned by CFA Institute. CFA-Master is not affiliated with or endorsed by CFA Institute.
+        </footer>
       </main>
     </div>
   );
