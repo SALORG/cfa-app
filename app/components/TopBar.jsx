@@ -79,8 +79,8 @@ export default function TopBar({ progress = 0, onToggleSidebar }) {
         >
           &#9776;
         </button>
-        <Link to="/dashboard" className="text-lg font-bold text-accent tracking-tight hover:opacity-80 transition-opacity">
-          CFA Level I
+        <Link to="/dashboard" className="hover:opacity-80 transition-opacity">
+          <img src="/logo.png" alt="CFA Master" className="h-8 w-auto" />
         </Link>
       </div>
 

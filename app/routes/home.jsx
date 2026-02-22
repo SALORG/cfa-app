@@ -75,10 +75,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-accent" />
-            <span className="text-xl font-bold text-text-primary tracking-tight">
-              CFA Master
-            </span>
+            <img src="/logo.png" alt="CFA Master" className="h-8 w-auto" />
           </div>
           <div className="flex items-center gap-4">
             <button
