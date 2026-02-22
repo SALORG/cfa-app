@@ -8,5 +8,11 @@
   "routes": [
     { "pattern": "cfa-master.com", "custom_domain": true },
     { "pattern": "www.cfa-master.com", "custom_domain": true }
-  ]
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
 }
