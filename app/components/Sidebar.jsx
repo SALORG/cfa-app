@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { subjects } from "~/data";
+import { subjects, isContentLocked } from "~/data";
 import { useAuth } from "~/context/AuthContext";
 
 const quickLinks = [
@@ -77,13 +77,14 @@ export default function Sidebar({
         {subjects.map((subject) => {
           const isExpanded = expandedSubjects.has(subject.id);
           const completedCount = getSubjectProgress(subject);
+          const locked = isContentLocked(subject.id);
 
           return (
             <div key={subject.id}>
               {/* Subject Header */}
               <button
                 onClick={() => toggleSubject(subject.id)}
-                className="w-full flex items-center gap-2 px-3 py-2.5 text-left hover:bg-surface transition-colors"
+                className={`w-full flex items-center gap-2 px-3 py-2.5 text-left hover:bg-surface transition-colors ${locked ? "opacity-60" : ""}`}
                 style={{ borderLeft: `3px solid ${subject.color}` }}
               >
                 <span className="text-base" role="img" aria-hidden="true">
@@ -92,9 +93,13 @@ export default function Sidebar({
                 <span className="flex-1 text-sm font-medium text-text-primary truncate" title={subject.name}>
                   {subject.name}
                 </span>
-                <span className="text-xs text-text-secondary tabular-nums">
-                  {completedCount}/{subject.modules.length}
-                </span>
+                {locked ? (
+                  <span className="text-xs text-text-muted">🔒</span>
+                ) : (
+                  <span className="text-xs text-text-secondary tabular-nums">
+                    {completedCount}/{subject.modules.length}
+                  </span>
+                )}
                 <span className="text-xs text-text-secondary transition-transform duration-200">
                   {isExpanded ? "\u25B2" : "\u25BC"}
                 </span>
@@ -114,15 +119,18 @@ export default function Sidebar({
                         to={`/dashboard/${subject.id}/${mod.id}`}
                         onClick={onClose}
                         className={`flex items-center gap-2 pl-8 pr-3 py-1.5 text-sm transition-colors ${
-                          isActive
-                            ? "text-accent bg-accent/10 font-medium"
-                            : "text-text-secondary hover:text-text-primary hover:bg-surface"
+                          locked
+                            ? "text-text-muted opacity-50"
+                            : isActive
+                              ? "text-accent bg-accent/10 font-medium"
+                              : "text-text-secondary hover:text-text-primary hover:bg-surface"
                         }`}
                       >
                         <span className="text-xs text-text-secondary w-5 shrink-0 tabular-nums">
                           {mod.number}.
                         </span>
                         <span className="truncate" title={mod.title}>{mod.title}</span>
+                        {locked && <span className="text-xs ml-auto shrink-0">🔒</span>}
                       </Link>
                     );
                   })}
@@ -140,10 +148,11 @@ export default function Sidebar({
             key={link.to}
             to={link.to}
             onClick={onClose}
-            className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors"
+            className="flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors opacity-60"
           >
             <span className="w-5 text-center text-xs">{link.icon}</span>
             <span>{link.label}</span>
+            <span className="text-xs ml-auto">🔒</span>
           </Link>
         ))}
       </div>

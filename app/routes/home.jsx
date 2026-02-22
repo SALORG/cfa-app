@@ -63,7 +63,7 @@ const proofPoints = [
   { icon: BookOpen, label: "Complete 2026 Curriculum" },
   { icon: Target, label: "59 Modules Covered" },
   { icon: GraduationCap, label: "Exam-Day Ready" },
-  { icon: Zap, label: "100% Free" },
+  { icon: Zap, label: "Start Instantly" },
 ];
 
 export default function Home() {
@@ -92,7 +92,7 @@ export default function Home() {
               to="/dashboard"
               className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg font-medium hover:bg-accent-hover transition-colors text-sm"
             >
-              Start Free
+              Get Started
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -108,21 +108,21 @@ export default function Home() {
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary mb-6 leading-tight">
               Pass CFA Level I{" "}
-              <span className="text-accent">with Free Study Tools</span>
+              <span className="text-accent">with Smart Study Tools</span>
             </h1>
             <p className="text-lg text-text-secondary max-w-xl mb-4">
               {subjects.length} subjects, {allModules.length} modules, 246 formulas,
               and a full 180-question mock exam — everything you need in one dashboard.
             </p>
             <p className="text-text-muted text-sm mb-8">
-              No credit card. No paywall. Just study.
+              Start studying now. Sign in to save your progress.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/dashboard"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
               >
-                Start Studying Free
+                Start Studying Now
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -357,7 +357,7 @@ export default function Home() {
       <section className="py-20 px-6 bg-surface-secondary border-t border-border">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-text-primary mb-4">
-            Start Passing — It's Free
+            Start Passing — Today
           </h2>
           <p className="text-text-secondary mb-8">
             Jump into the dashboard and begin working through the 2026 curriculum today.
@@ -366,7 +366,7 @@ export default function Home() {
             to="/dashboard"
             className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
           >
-            Start Studying Free
+            Start Studying Now
             <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="text-text-muted text-sm mt-4">

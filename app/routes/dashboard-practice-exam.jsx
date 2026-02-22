@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { consolidated } from "~/data";
 import Quiz from "~/components/Quiz";
+import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardPracticeExam() {
   const examData = consolidated.practiceExam;
   const [started, setStarted] = useState(false);
+
+  return <LockedOverlay title="Practice Exam" />;
 
   if (!examData?.questions) {
     return (

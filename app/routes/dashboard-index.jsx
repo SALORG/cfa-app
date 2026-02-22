@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { subjects, allModules } from "~/data";
+import { subjects, allModules, isContentLocked } from "~/data";
 import { useDashboardContext } from "./dashboard";
 
 export default function DashboardIndex() {
@@ -102,6 +102,7 @@ export default function DashboardIndex() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {subjects.map((subject) => {
           const subjectModules = subject.modules;
+          const locked = isContentLocked(subject.id);
           const subjectCompleted = subjectModules.filter(
             (m) => progress[`${subject.id}__${m.id}`]
           ).length;
@@ -114,7 +115,7 @@ export default function DashboardIndex() {
             <Link
               key={subject.id}
               to={`/dashboard/${subject.id}/${subject.modules[0]?.id}`}
-              className="group block bg-surface-secondary rounded-xl p-5 border border-border hover:border-accent/50 transition-all hover:shadow-lg"
+              className={`group block bg-surface-secondary rounded-xl p-5 border border-border transition-all ${locked ? "opacity-60" : "hover:border-accent/50 hover:shadow-lg"}`}
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -133,6 +134,7 @@ export default function DashboardIndex() {
                     </p>
                   </div>
                 </div>
+                {locked && <span className="text-lg">🔒</span>}
               </div>
 
               {/* Progress bar */}
@@ -163,18 +165,21 @@ export default function DashboardIndex() {
           icon="📐"
           title="Master Formulas"
           desc="All key formulas in one place"
+          locked
         />
         <QuickLink
           to="/dashboard/connections"
           icon="🔗"
           title="Inter-Subject Connections"
           desc="See how topics relate"
+          locked
         />
         <QuickLink
           to="/dashboard/practice-exam"
           icon="📝"
           title="Practice Exam"
           desc="Full 180-question mock exam"
+          locked
         />
       </div>
     </div>
@@ -190,19 +195,20 @@ function StatCard({ label, value, color = "text-text-primary" }) {
   );
 }
 
-function QuickLink({ to, icon, title, desc }) {
+function QuickLink({ to, icon, title, desc, locked }) {
   return (
     <Link
       to={to}
-      className="flex items-center gap-4 bg-surface-secondary rounded-xl p-4 border border-border hover:border-accent/50 transition-all hover:shadow-lg group"
+      className={`flex items-center gap-4 bg-surface-secondary rounded-xl p-4 border border-border transition-all group ${locked ? "opacity-60" : "hover:border-accent/50 hover:shadow-lg"}`}
     >
       <span className="text-3xl">{icon}</span>
-      <div>
+      <div className="flex-1">
         <h3 className="font-semibold text-text-primary group-hover:text-accent transition-colors">
           {title}
         </h3>
         <p className="text-sm text-text-muted">{desc}</p>
       </div>
+      {locked && <span className="text-lg">🔒</span>}
     </Link>
   );
 }
