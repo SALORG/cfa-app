@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* CFA Subject Colors */
 @theme {
   --color-quants: #3498db;
