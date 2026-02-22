@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { subjects } from "~/data";
 
@@ -39,6 +39,18 @@ export default function Sidebar({
     }
     return completed;
   }
+
+  // Lock body scroll when sidebar is open on mobile
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   const sidebarContent = (
     <nav className="flex flex-col h-full">
@@ -148,21 +160,10 @@ export default function Sidebar({
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-16 bottom-0 left-0 z-40 w-72 bg-surface-secondary border-r border-border transition-transform duration-200 ${
+        className={`fixed top-16 bottom-0 left-0 z-40 w-72 bg-surface-secondary border-r border-border transition-transform duration-200 overflow-y-auto ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0`}
       >
-        {/* Mobile Close Button */}
-        <div className="flex items-center justify-end px-3 py-2 lg:hidden">
-          <button
-            onClick={onClose}
-            className="text-text-secondary hover:text-text-primary text-lg p-1"
-            aria-label="Close sidebar"
-          >
-            &#10005;
-          </button>
-        </div>
-
         {sidebarContent}
       </aside>
     </>
