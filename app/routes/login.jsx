@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router";
 import { useAuth } from "~/context/AuthContext";
+import { trackEvent, trackCustomEvent } from "~/lib/analytics";
 
 
 export default function Login() {
@@ -27,8 +28,11 @@ export default function Login() {
     try {
       if (isSignUp) {
         await signUpWithEmail(email, password);
+        trackEvent("CompleteRegistration", { content_name: "Email Sign Up", status: true });
+        trackCustomEvent("SignUp", { method: "email" });
       } else {
         await signInWithEmail(email, password);
+        trackCustomEvent("Login", { method: "email" });
       }
     } catch (err) {
       setError(err.message.replace("Firebase: ", ""));
@@ -39,6 +43,8 @@ export default function Login() {
     setError("");
     try {
       await signInWithGoogle();
+      trackEvent("CompleteRegistration", { content_name: "Google Sign In", status: true });
+      trackCustomEvent("Login", { method: "google" });
     } catch (err) {
       setError(err.message.replace("Firebase: ", ""));
     }

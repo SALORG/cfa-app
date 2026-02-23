@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { trackCustomEvent } from "~/lib/analytics";
 
 const OPTION_LABELS = ["A", "B", "C", "D"];
 
@@ -41,6 +42,14 @@ export default function Quiz({ questions, onScoreSubmit, previousScores = [] }) 
     if (onScoreSubmit) {
       onScoreSubmit({ score: finalScore, total: questions.length });
     }
+
+    const isPracticeExam = questions.length >= 100;
+    const pct = Math.round((finalScore / questions.length) * 100);
+    trackCustomEvent(isPracticeExam ? "PracticeExamCompleted" : "QuizSubmitted", {
+      score: finalScore,
+      total: questions.length,
+      percentage: pct,
+    });
   }, [answers, questions, onScoreSubmit]);
 
   const handleReset = useCallback(() => {

@@ -10,6 +10,7 @@ import MindMap from "~/components/MindMap";
 import FlashCards from "~/components/FlashCards";
 import Quiz from "~/components/Quiz";
 import LockedOverlay from "~/components/LockedOverlay";
+import { trackCustomEvent } from "~/lib/analytics";
 
 const TABS = [
   { id: "cheatsheet", label: "Cheat Sheet", icon: "📋" },
@@ -55,10 +56,19 @@ export default function DashboardModule() {
   );
 
   const toggleComplete = () => {
+    const wasCompleted = progress[progressKey];
     setProgress((prev) => ({
       ...prev,
       [progressKey]: !prev[progressKey],
     }));
+    if (!wasCompleted) {
+      trackCustomEvent("ModuleCompleted", {
+        module_id: moduleId,
+        subject_id: subjectId,
+        module_name: mod?.title,
+        subject_name: subject?.name,
+      });
+    }
   };
 
   if (loading) {

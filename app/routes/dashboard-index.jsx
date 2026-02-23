@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router";
 import { subjects, allModules, isContentLocked } from "~/data";
 import { useAuth } from "~/context/AuthContext";
+import { trackCustomEvent } from "~/lib/analytics";
 import { useDashboardContext } from "./dashboard";
 import StudyLogInput from "~/components/StudyLogInput";
 import WeeklyBarChart from "~/components/WeeklyBarChart";
@@ -179,6 +180,11 @@ export default function DashboardIndex() {
             <Link
               key={subject.id}
               to={`/dashboard/${subject.id}/${subject.modules[0]?.id}`}
+              onClick={() => {
+                if (locked) {
+                  trackCustomEvent("PremiumContentBlocked", { content_name: subject.name, content_type: "subject" });
+                }
+              }}
               className={`group block bg-surface-secondary rounded-xl p-5 border border-border transition-all ${locked ? "opacity-60" : "hover:border-accent/50 hover:shadow-lg"}`}
             >
               <div className="flex items-start justify-between mb-3">
@@ -263,6 +269,11 @@ function QuickLink({ to, icon, title, desc, locked }) {
   return (
     <Link
       to={to}
+      onClick={() => {
+        if (locked) {
+          trackCustomEvent("PremiumContentBlocked", { content_name: title });
+        }
+      }}
       className={`flex items-center gap-4 bg-surface-secondary rounded-xl p-4 border border-border transition-all group ${locked ? "opacity-60" : "hover:border-accent/50 hover:shadow-lg"}`}
     >
       <span className="text-3xl">{icon}</span>

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import { useTheme } from "~/context/ThemeContext";
 import { useAuth } from "~/context/AuthContext";
+import { trackEvent } from "~/lib/analytics";
 import { Sun, Moon, Check, ArrowLeft, Loader2 } from "lucide-react";
 
 const freeFeatures = [
@@ -29,6 +30,16 @@ export default function Pricing() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    trackEvent("ViewContent", {
+      content_name: "Pricing Page",
+      content_type: "product",
+      content_ids: ["cfa-premium"],
+      currency: "INR",
+      value: 2999,
+    });
+  }, []);
+
   async function handlePayment() {
     if (!user) {
       navigate("/login");
@@ -36,6 +47,13 @@ export default function Pricing() {
     }
 
     setLoading(true);
+    trackEvent("InitiateCheckout", {
+      content_ids: ["cfa-premium"],
+      content_type: "product",
+      currency: "INR",
+      value: 2999,
+      num_items: 1,
+    });
     try {
       const orderRes = await fetch("/api/razorpay-order", {
         method: "POST",
@@ -74,6 +92,14 @@ export default function Pricing() {
           });
 
           if (verifyRes.ok) {
+            trackEvent("Purchase", {
+              content_ids: ["cfa-premium"],
+              content_name: "CFA Master Premium",
+              content_type: "product",
+              currency: "INR",
+              value: 2999,
+              num_items: 1,
+            });
             await auth.refreshSubscription();
             navigate("/payment-success");
           } else {
