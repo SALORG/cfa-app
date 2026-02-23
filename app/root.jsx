@@ -32,6 +32,7 @@ function InnerLayout({ children }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="facebook-domain-verification" content="j6fbfe5pribprydq04p3bds9aasm67" />
         <title>CFA Level I Study Dashboard</title>
         <Meta />
         <Links />
