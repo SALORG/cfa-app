@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { subjects, allModules } from "~/data";
 import { useTheme } from "~/context/ThemeContext";
+import { trackEvent } from "~/lib/analytics";
 import {
   Sun,
   Moon,
@@ -115,6 +116,9 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/dashboard"
+                onClick={() => {
+                  trackEvent("Lead", { content_name: "Hero CTA" });
+                }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
               >
                 Start Studying Now
@@ -359,6 +363,9 @@ export default function Home() {
           </p>
           <Link
             to="/dashboard"
+            onClick={() => {
+              trackEvent("Lead", { content_name: "Footer CTA" });
+            }}
             className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
           >
             Start Studying Now

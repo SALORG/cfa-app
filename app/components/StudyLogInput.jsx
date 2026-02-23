@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Flame } from "lucide-react";
+import { trackCustomEvent } from "~/lib/analytics";
 
 function getToday() {
   return new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD in local time
@@ -55,6 +56,8 @@ export default function StudyLogInput({ studyLogs, setStudyLogs }) {
     updated.push({ date: inputDate, hours });
     setStudyLogs(updated);
     setInputHours("");
+
+    trackCustomEvent("StudyHoursLogged", { hours, date: inputDate });
   }
 
   return (
