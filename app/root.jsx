@@ -6,8 +6,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { useEffect } from "react";
-import Clarity from "@microsoft/clarity";
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import "./app.css";
@@ -29,11 +27,6 @@ export const links = () => [
 
 function InnerLayout({ children }) {
   const { isDark } = useTheme();
-
-  useEffect(() => {
-    Clarity.init("vmfpx2w9es");
-  }, []);
-
   return (
     <html lang="en" className={isDark ? "dark" : ""}>
       <head>
