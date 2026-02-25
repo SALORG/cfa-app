@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router";
 import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore/lite";
 import { db } from "~/lib/firebase";
 import { useAuth } from "~/context/AuthContext";
+import { useGuest } from "~/context/GuestContext";
 import { getSubject, getModule, getAdjacentModules, isContentLocked } from "~/data";
 import { useDashboardContext } from "./dashboard";
 import CheatSheet from "~/components/CheatSheet";
@@ -21,6 +22,7 @@ const TABS = [
 
 export default function DashboardModule() {
   const { user, isPremium, loading } = useAuth();
+  const { isGuest, requireAuth } = useGuest();
   const { subjectId, moduleId } = useParams();
   const { progress, setProgress, quizScores, setQuizScores } = useDashboardContext();
   const [activeTab, setActiveTab] = useState("cheatsheet");
@@ -40,7 +42,7 @@ export default function DashboardModule() {
 
   const handleQuizScore = useCallback(
     ({ score, total }) => {
-      if (!user) return;
+      if (!user) { requireAuth("quiz_submit"); return; }
       const entry = {
         moduleKey: progressKey,
         score,
@@ -52,10 +54,11 @@ export default function DashboardModule() {
       });
       setQuizScores((prev) => [...prev, entry]);
     },
-    [user, progressKey, setQuizScores]
+    [user, progressKey, setQuizScores, requireAuth]
   );
 
   const toggleComplete = () => {
+    if (isGuest) { requireAuth("mark_complete"); return; }
     const wasCompleted = progress[progressKey];
     setProgress((prev) => ({
       ...prev,
@@ -76,7 +79,7 @@ export default function DashboardModule() {
   }
 
   if (locked) {
-    return <LockedOverlay title="Premium Module" />;
+    return <LockedOverlay title="Premium Module" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
   }
 
   if (!subject || !mod) {

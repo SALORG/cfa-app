@@ -1,8 +1,9 @@
-import { Navigate, Outlet } from "react-router";
+import { Outlet } from "react-router";
 import { useAuth } from "~/context/AuthContext";
+import { GuestProvider } from "~/context/GuestContext";
 
 export default function ProtectedLayout() {
-  const { user, loading } = useAuth();
+  const { loading } = useAuth();
 
   if (loading) {
     return (
@@ -12,7 +13,9 @@ export default function ProtectedLayout() {
     );
   }
 
-  if (!user) return <Navigate to="/login" replace />;
-
-  return <Outlet />;
+  return (
+    <GuestProvider>
+      <Outlet />
+    </GuestProvider>
+  );
 }

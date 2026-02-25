@@ -2,15 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { consolidated } from "~/data";
 import { useAuth } from "~/context/AuthContext";
+import { useGuest } from "~/context/GuestContext";
 import Quiz from "~/components/Quiz";
 import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardPracticeExam() {
   const { isPremium } = useAuth();
+  const { isGuest, requireAuth } = useGuest();
   const examData = consolidated.practiceExam;
   const [started, setStarted] = useState(false);
 
-  if (!isPremium) return <LockedOverlay title="Practice Exam" />;
+  if (!isPremium) return <LockedOverlay title="Practice Exam" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
 
   if (!examData?.questions) {
     return (

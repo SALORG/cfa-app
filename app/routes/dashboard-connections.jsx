@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 import { consolidated } from "~/data";
 import { useAuth } from "~/context/AuthContext";
+import { useGuest } from "~/context/GuestContext";
 import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardConnections() {
   const { isPremium } = useAuth();
-  if (!isPremium) return <LockedOverlay title="Inter-Subject Connections" />;
+  const { isGuest, requireAuth } = useGuest();
+  if (!isPremium) return <LockedOverlay title="Inter-Subject Connections" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
   const connections = consolidated.interSubjectConnections?.connections || [];
 
   return (

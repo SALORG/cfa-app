@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { subjects, isContentLocked } from "~/data";
+import { subjects, isContentLocked, FREE_SUBJECT_IDS } from "~/data";
 import { useAuth } from "~/context/AuthContext";
+import { useGuest } from "~/context/GuestContext";
 
 const quickLinks = [
   { to: "/dashboard/formulas", label: "Master Formulas", icon: "fx" },
@@ -16,7 +17,8 @@ export default function Sidebar({
   currentModuleId,
   progress = {},
 }) {
-  const { signOut, isPremium } = useAuth();
+  const { signOut, isPremium, user } = useAuth();
+  const { isGuest, requireAuth } = useGuest();
   const [expandedSubjects, setExpandedSubjects] = useState(() => {
     if (currentSubjectId) return new Set([currentSubjectId]);
     return new Set();
@@ -78,13 +80,14 @@ export default function Sidebar({
           const isExpanded = expandedSubjects.has(subject.id);
           const completedCount = getSubjectProgress(subject);
           const locked = isContentLocked(subject.id, isPremium);
+          const guestLocked = isGuest && !FREE_SUBJECT_IDS.includes(subject.id);
 
           return (
             <div key={subject.id}>
               {/* Subject Header */}
               <button
                 onClick={() => toggleSubject(subject.id)}
-                className={`w-full flex items-center gap-2 px-3 py-2.5 text-left hover:bg-surface transition-colors ${locked ? "opacity-60" : ""}`}
+                className={`w-full flex items-center gap-2 px-3 py-2.5 text-left hover:bg-surface transition-colors ${locked || guestLocked ? "opacity-60" : ""}`}
                 style={{ borderLeft: `3px solid ${subject.color}` }}
               >
                 <span className="text-base" role="img" aria-hidden="true">
@@ -93,7 +96,7 @@ export default function Sidebar({
                 <span className="flex-1 text-sm font-medium text-text-primary truncate" title={subject.name}>
                   {subject.name}
                 </span>
-                {locked ? (
+                {locked || guestLocked ? (
                   <span className="text-xs text-text-muted">🔒</span>
                 ) : (
                   <span className="text-xs text-text-secondary tabular-nums">
@@ -117,9 +120,15 @@ export default function Sidebar({
                       <Link
                         key={mod.id}
                         to={`/dashboard/${subject.id}/${mod.id}`}
-                        onClick={onClose}
+                        onClick={(e) => {
+                          if (guestLocked) {
+                            e.preventDefault();
+                            requireAuth("sidebar_module");
+                          }
+                          onClose();
+                        }}
                         className={`flex items-center gap-2 pl-8 pr-3 py-1.5 text-sm transition-colors ${
-                          locked
+                          locked || guestLocked
                             ? "text-text-muted opacity-50"
                             : isActive
                               ? "text-accent bg-accent/10 font-medium"
@@ -130,7 +139,7 @@ export default function Sidebar({
                           {mod.number}.
                         </span>
                         <span className="truncate" title={mod.title}>{mod.title}</span>
-                        {locked && <span className="text-xs ml-auto shrink-0">🔒</span>}
+                        {(locked || guestLocked) && <span className="text-xs ml-auto shrink-0">🔒</span>}
                       </Link>
                     );
                   })}
@@ -147,12 +156,18 @@ export default function Sidebar({
           <Link
             key={link.to}
             to={link.to}
-            onClick={onClose}
-            className={`flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors ${isPremium ? "" : "opacity-60"}`}
+            onClick={(e) => {
+              if (isGuest) {
+                e.preventDefault();
+                requireAuth("sidebar_quick_link");
+              }
+              onClose();
+            }}
+            className={`flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors ${isPremium && !isGuest ? "" : "opacity-60"}`}
           >
             <span className="w-5 text-center text-xs">{link.icon}</span>
             <span>{link.label}</span>
-            {!isPremium && <span className="text-xs ml-auto">🔒</span>}
+            {(!isPremium || isGuest) && <span className="text-xs ml-auto">🔒</span>}
           </Link>
         ))}
       </div>
@@ -175,13 +190,23 @@ export default function Sidebar({
           <span className="w-5 text-center text-xs">{"\uD83D\uDD12"}</span>
           <span>Privacy Policy</span>
         </Link>
-        <button
-          onClick={() => { onClose(); signOut(); }}
-          className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-danger hover:text-red-400 hover:bg-surface rounded-md transition-colors"
-        >
-          <span className="w-5 text-center text-xs">{"\u21B6"}</span>
-          <span>Logout</span>
-        </button>
+        {user ? (
+          <button
+            onClick={() => { onClose(); signOut(); }}
+            className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-danger hover:text-red-400 hover:bg-surface rounded-md transition-colors"
+          >
+            <span className="w-5 text-center text-xs">{"\u21B6"}</span>
+            <span>Logout</span>
+          </button>
+        ) : (
+          <button
+            onClick={() => { onClose(); requireAuth("sidebar_signup"); }}
+            className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-accent hover:text-accent/80 hover:bg-surface rounded-md transition-colors"
+          >
+            <span className="w-5 text-center text-xs">👤</span>
+            <span>Sign Up / Log In</span>
+          </button>
+        )}
       </div>
     </nav>
   );

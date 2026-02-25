@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 import { consolidated } from "~/data";
 import { useAuth } from "~/context/AuthContext";
+import { useGuest } from "~/context/GuestContext";
 import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardFormulas() {
   const { isPremium } = useAuth();
-  if (!isPremium) return <LockedOverlay title="Master Formulas" />;
+  const { isGuest, requireAuth } = useGuest();
+  if (!isPremium) return <LockedOverlay title="Master Formulas" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
   const { masterFormulas } = consolidated;
 
   if (!masterFormulas?.sections) {

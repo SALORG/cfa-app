@@ -121,10 +121,11 @@ export default function Home() {
                 }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
               >
-                Start Studying Now
+                Explore the Dashboard
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
+            <p className="text-sm text-text-muted mt-2">No signup required. Create an account anytime to save progress.</p>
           </div>
           <div className="hidden lg:block">
             <img
@@ -368,11 +369,11 @@ export default function Home() {
             }}
             className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent-hover transition-colors shadow-lg shadow-accent/25"
           >
-            Start Studying Now
+            Start Exploring
             <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="text-text-muted text-sm mt-4">
-            Sign in to save your progress across devices.
+            No signup required. Create an account anytime to save progress.
           </p>
         </div>
       </section>

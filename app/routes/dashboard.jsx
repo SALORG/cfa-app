@@ -18,7 +18,7 @@ export default function DashboardLayout() {
 
   // Load progress from Firestore on mount
   useEffect(() => {
-    if (!user) return;
+    if (!user) { setLoaded(true); return; }
     getDoc(doc(db, "users", user.uid)).then((snap) => {
       if (snap.exists()) {
         const data = snap.data();
