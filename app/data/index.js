@@ -10,12 +10,12 @@ import portfolio from "./portfolio.json";
 import ethics from "./ethics.json";
 import consolidated from "./consolidated.json";
 
-// The only subject available to free users
-export const FREE_SUBJECT_ID = "quants";
+// Subjects available to free (signed-up) users
+export const FREE_SUBJECT_IDS = ["quants", "economics"];
 
 export function isContentLocked(subjectId, isPremium = false) {
   if (isPremium) return false;
-  return subjectId !== FREE_SUBJECT_ID;
+  return !FREE_SUBJECT_IDS.includes(subjectId);
 }
 
 export const subjects = [

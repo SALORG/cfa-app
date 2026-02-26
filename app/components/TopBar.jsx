@@ -2,12 +2,14 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import { useNavigate, Link } from "react-router";
 import { useTheme } from "~/context/ThemeContext";
 import { useAuth } from "~/context/AuthContext";
+import { useGuest } from "~/context/GuestContext";
 import ProgressRing from "~/components/ProgressRing";
 import { searchModules, searchFormulas } from "~/data";
 
 export default function TopBar({ progress = 0, onToggleSidebar }) {
   const { isDark, toggleTheme } = useTheme();
   const { user, isPremium } = useAuth();
+  const { requireAuth } = useGuest();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -180,7 +182,7 @@ export default function TopBar({ progress = 0, onToggleSidebar }) {
           {isDark ? "\u2600\uFE0F" : "\uD83C\uDF19"}
         </button>
 
-        {user && (
+        {user ? (
           <div className="hidden sm:flex items-center gap-2">
             <span className="text-xs text-text-muted truncate max-w-[120px]">
               {user.displayName || user.email}
@@ -198,6 +200,13 @@ export default function TopBar({ progress = 0, onToggleSidebar }) {
               </Link>
             )}
           </div>
+        ) : (
+          <button
+            onClick={() => requireAuth("topbar_signup")}
+            className="hidden sm:block px-4 py-1.5 bg-accent text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+          >
+            Sign Up
+          </button>
         )}
 
       </div>
