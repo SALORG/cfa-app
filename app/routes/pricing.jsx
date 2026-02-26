@@ -6,8 +6,8 @@ import { trackEvent } from "~/lib/analytics";
 import { Sun, Moon, Check, ArrowLeft, Loader2 } from "lucide-react";
 
 const freeFeatures = [
-  "1 subject (Quantitative Methods)",
-  "6 modules with full content",
+  "2 subjects (Quants & Economics)",
+  "10 modules with full content",
   "Cheat sheets & mind maps",
   "Flash cards & quizzes",
   "Progress tracking",
@@ -189,14 +189,21 @@ export default function Pricing() {
 
           {/* Premium Plan */}
           <div className="bg-surface-secondary rounded-2xl border-2 border-accent p-8 relative">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent text-white text-xs font-semibold rounded-full">
-              Recommended
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent text-white text-xs font-semibold rounded-full">
+              Launch Price
             </div>
             <h3 className="text-lg font-semibold text-text-primary mb-1">Premium</h3>
-            <p className="text-sm text-text-muted mb-6">Full exam preparation</p>
-            <div className="mb-6">
+            <p className="text-sm text-text-muted mb-4">Full exam preparation</p>
+            <div className="mb-1">
+              <span className="text-lg text-text-muted line-through mr-2">&#8377;4,999</span>
               <span className="text-4xl font-bold text-text-primary">&#8377;2,999</span>
               <span className="text-text-muted ml-1">one-time</span>
+            </div>
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-green-500/15 text-green-500">
+                Save &#8377;2,000
+              </span>
+              <span className="text-xs text-text-muted">Lock in before price goes up</span>
             </div>
 
             {isPremium ? (
