@@ -8,11 +8,13 @@ import { useDashboardContext } from "./dashboard";
 import StudyLogInput from "~/components/StudyLogInput";
 import WeeklyBarChart from "~/components/WeeklyBarChart";
 import StudyHeatmap from "~/components/StudyHeatmap";
+import { useGuestProgressToast } from "~/components/GuestProgressToast";
 
 export default function DashboardIndex() {
   const { isPremium, user, refreshSubscription } = useAuth();
   const { isGuest, requireAuth, isTrialActive, trialDaysLeft } = useGuest();
   const { progress, studyLogs, setStudyLogs } = useDashboardContext();
+  const { showToast, toast } = useGuestProgressToast();
   const [searchParams, setSearchParams] = useSearchParams();
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
 
@@ -162,7 +164,7 @@ export default function DashboardIndex() {
       {/* Study Progress */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
         <div className="bg-surface-secondary rounded-xl border border-border p-6">
-          <StudyLogInput studyLogs={studyLogs} setStudyLogs={setStudyLogs} onGuestAction={isGuest ? () => requireAuth("study_log") : undefined} />
+          <StudyLogInput studyLogs={studyLogs} setStudyLogs={setStudyLogs} onGuestAction={isGuest && !isTrialActive ? () => requireAuth("study_log") : undefined} onAfterLog={isGuest ? showToast : undefined} />
         </div>
         <div className="bg-surface-secondary rounded-xl border border-border p-6">
           <h3 className="text-sm font-semibold text-text-primary mb-4">This Week</h3>
@@ -337,6 +339,8 @@ export default function DashboardIndex() {
           requireAuth={requireAuth}
         />
       </div>
+
+      {toast}
     </div>
   );
 }
