@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router";
-import { subjects, allModules, isContentLocked, FREE_SUBJECT_IDS } from "~/data";
+import { subjects, allModules, isContentLocked, FREE_MODULE } from "~/data";
 import { useAuth } from "~/context/AuthContext";
 import { useGuest } from "~/context/GuestContext";
 import { trackCustomEvent } from "~/lib/analytics";
@@ -11,7 +11,7 @@ import StudyHeatmap from "~/components/StudyHeatmap";
 
 export default function DashboardIndex() {
   const { isPremium, user, refreshSubscription } = useAuth();
-  const { isGuest, requireAuth } = useGuest();
+  const { isGuest, requireAuth, isTrialActive, trialDaysLeft } = useGuest();
   const { progress, studyLogs, setStudyLogs } = useDashboardContext();
   const [searchParams, setSearchParams] = useSearchParams();
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
@@ -64,13 +64,15 @@ export default function DashboardIndex() {
         </div>
       )}
 
-      {/* Guest Banner */}
-      {isGuest && (
+      {/* Trial / Guest Banner */}
+      {isGuest && isTrialActive && (
         <div className="mb-6 p-4 bg-accent/10 border border-accent/30 rounded-xl flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <div className="flex-1">
-            <p className="font-semibold text-accent">You're exploring as a guest</p>
+            <p className="font-semibold text-accent">
+              Free trial: {trialDaysLeft} day{trialDaysLeft !== 1 ? "s" : ""} left
+            </p>
             <p className="text-sm text-text-secondary">
-              Sign up free to save your progress and unlock 2 subjects with 10 modules.
+              Explore all 59 modules free! Sign up to save your progress.
             </p>
           </div>
           <button
@@ -81,12 +83,46 @@ export default function DashboardIndex() {
           </button>
         </div>
       )}
-
-      {/* Upgrade Banner for free users */}
-      {user && !isPremium && (
+      {isGuest && !isTrialActive && (
         <div className="mb-6 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <div className="flex-1">
-            <p className="font-semibold text-amber-500">You've unlocked Quantitative Methods & Economics!</p>
+            <p className="font-semibold text-amber-500">Your free trial has ended</p>
+            <p className="text-sm text-text-secondary">
+              Sign up to continue learning and unlock more modules.
+            </p>
+          </div>
+          <button
+            onClick={() => requireAuth("guest_banner")}
+            className="px-5 py-2 bg-amber-500 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity shrink-0"
+          >
+            Sign Up Free
+          </button>
+        </div>
+      )}
+
+      {/* Upgrade Banner for free users */}
+      {user && !isPremium && isTrialActive && (
+        <div className="mb-6 p-4 bg-accent/10 border border-accent/30 rounded-xl flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="flex-1">
+            <p className="font-semibold text-accent">
+              Free trial: {trialDaysLeft} day{trialDaysLeft !== 1 ? "s" : ""} left
+            </p>
+            <p className="text-sm text-text-secondary">
+              All 59 modules are unlocked! Upgrade to keep access after trial ends.
+            </p>
+          </div>
+          <Link
+            to="/pricing"
+            className="px-5 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity shrink-0"
+          >
+            Upgrade to Premium
+          </Link>
+        </div>
+      )}
+      {user && !isPremium && !isTrialActive && (
+        <div className="mb-6 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="flex-1">
+            <p className="font-semibold text-amber-500">Your free trial has ended</p>
             <p className="text-sm text-text-secondary">
               Upgrade to Premium to access all 10 subjects, 59 modules, practice exams, and more.
             </p>
@@ -205,7 +241,7 @@ export default function DashboardIndex() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {subjects.map((subject) => {
           const subjectModules = subject.modules;
-          const locked = isContentLocked(subject.id, isPremium);
+          const locked = isContentLocked(subject.id, isPremium, isTrialActive);
           const subjectCompleted = subjectModules.filter(
             (m) => progress[`${subject.id}__${m.id}`]
           ).length;
@@ -214,21 +250,21 @@ export default function DashboardIndex() {
               ? Math.round((subjectCompleted / subjectModules.length) * 100)
               : 0;
 
-          const guestLocked = isGuest && !FREE_SUBJECT_IDS.includes(subject.id);
+          const guestLocked = isGuest && locked;
 
           return (
             <Link
               key={subject.id}
               to={`/dashboard/${subject.id}/${subject.modules[0]?.id}`}
               onClick={(e) => {
-                if (isGuest && !FREE_SUBJECT_IDS.includes(subject.id)) {
+                if (guestLocked) {
                   e.preventDefault();
                   requireAuth("subject_card");
                 } else if (locked) {
                   trackCustomEvent("PremiumContentBlocked", { content_name: subject.name, content_type: "subject" });
                 }
               }}
-              className={`group block bg-surface-secondary rounded-xl p-5 border border-border transition-all ${locked || guestLocked ? "opacity-60" : "hover:border-accent/50 hover:shadow-lg"}`}
+              className={`group block bg-surface-secondary rounded-xl p-5 border border-border transition-all ${locked ? "opacity-40" : "hover:border-accent/50 hover:shadow-lg"}`}
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -247,7 +283,7 @@ export default function DashboardIndex() {
                     </p>
                   </div>
                 </div>
-                {(locked || guestLocked) && <span className="text-lg">🔒</span>}
+                {locked && <span className="text-lg">🔒</span>}
               </div>
 
               {/* Progress bar */}
@@ -278,7 +314,7 @@ export default function DashboardIndex() {
           icon="📐"
           title="Master Formulas"
           desc="All key formulas in one place"
-          locked={!isPremium}
+          locked={!isPremium && !isTrialActive}
           isGuest={isGuest}
           requireAuth={requireAuth}
         />
@@ -287,7 +323,7 @@ export default function DashboardIndex() {
           icon="🔗"
           title="Inter-Subject Connections"
           desc="See how topics relate"
-          locked={!isPremium}
+          locked={!isPremium && !isTrialActive}
           isGuest={isGuest}
           requireAuth={requireAuth}
         />
@@ -296,7 +332,7 @@ export default function DashboardIndex() {
           icon="📝"
           title="Practice Exam"
           desc="Full 180-question mock exam"
-          locked={!isPremium}
+          locked={!isPremium && !isTrialActive}
           isGuest={isGuest}
           requireAuth={requireAuth}
         />
@@ -319,14 +355,14 @@ function QuickLink({ to, icon, title, desc, locked, isGuest, requireAuth }) {
     <Link
       to={to}
       onClick={(e) => {
-        if (isGuest) {
+        if (locked && isGuest) {
           e.preventDefault();
           requireAuth("quick_link");
         } else if (locked) {
           trackCustomEvent("PremiumContentBlocked", { content_name: title });
         }
       }}
-      className={`flex items-center gap-4 bg-surface-secondary rounded-xl p-4 border border-border transition-all group ${locked || isGuest ? "opacity-60" : "hover:border-accent/50 hover:shadow-lg"}`}
+      className={`flex items-center gap-4 bg-surface-secondary rounded-xl p-4 border border-border transition-all group ${locked ? "opacity-40" : "hover:border-accent/50 hover:shadow-lg"}`}
     >
       <span className="text-3xl">{icon}</span>
       <div className="flex-1">
@@ -335,7 +371,7 @@ function QuickLink({ to, icon, title, desc, locked, isGuest, requireAuth }) {
         </h3>
         <p className="text-sm text-text-muted">{desc}</p>
       </div>
-      {(locked || isGuest) && <span className="text-lg">🔒</span>}
+      {locked && <span className="text-lg">🔒</span>}
     </Link>
   );
 }

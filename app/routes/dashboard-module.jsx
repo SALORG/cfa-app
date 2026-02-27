@@ -4,7 +4,7 @@ import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore/lite";
 import { db } from "~/lib/firebase";
 import { useAuth } from "~/context/AuthContext";
 import { useGuest } from "~/context/GuestContext";
-import { getSubject, getModule, getAdjacentModules, isContentLocked } from "~/data";
+import { getSubject, getModule, getAdjacentModules, isModuleLocked } from "~/data";
 import { useDashboardContext } from "./dashboard";
 import CheatSheet from "~/components/CheatSheet";
 import MindMap from "~/components/MindMap";
@@ -22,7 +22,7 @@ const TABS = [
 
 export default function DashboardModule() {
   const { user, isPremium, loading } = useAuth();
-  const { isGuest, requireAuth } = useGuest();
+  const { isGuest, requireAuth, isTrialActive } = useGuest();
   const { subjectId, moduleId } = useParams();
   const { progress, setProgress, quizScores, setQuizScores } = useDashboardContext();
   const [activeTab, setActiveTab] = useState("cheatsheet");
@@ -30,7 +30,7 @@ export default function DashboardModule() {
   const subject = getSubject(subjectId);
   const mod = getModule(subjectId, moduleId);
   const { prev, next } = getAdjacentModules(subjectId, moduleId);
-  const locked = isContentLocked(subjectId, isPremium);
+  const locked = isModuleLocked(subjectId, moduleId, isPremium, isTrialActive);
 
   const progressKey = `${subjectId}__${moduleId}`;
   const isCompleted = !!progress[progressKey];

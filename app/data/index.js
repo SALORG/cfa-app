@@ -10,12 +10,24 @@ import portfolio from "./portfolio.json";
 import ethics from "./ethics.json";
 import consolidated from "./consolidated.json";
 
-// Subjects available to free (signed-up) users
-export const FREE_SUBJECT_IDS = ["quants", "economics"];
+// The only module available after trial expires (for free/guest users)
+export const FREE_MODULE = { subjectId: "quants", moduleId: "quants-lm1" };
 
-export function isContentLocked(subjectId, isPremium = false) {
-  if (isPremium) return false;
-  return !FREE_SUBJECT_IDS.includes(subjectId);
+// Subject-level lock: is an entire subject locked?
+export function isContentLocked(subjectId, isPremium = false, isTrialActive = false) {
+  if (isPremium || isTrialActive) return false;
+  return subjectId !== FREE_MODULE.subjectId;
+}
+
+// Module-level lock: is a specific module locked?
+export function isModuleLocked(subjectId, moduleId, isPremium = false, isTrialActive = false) {
+  if (isPremium || isTrialActive) return false;
+  return !(subjectId === FREE_MODULE.subjectId && moduleId === FREE_MODULE.moduleId);
+}
+
+// Is the free module within this subject? (used for partial subject unlock after trial)
+export function hasFreeModuleInSubject(subjectId) {
+  return subjectId === FREE_MODULE.subjectId;
 }
 
 export const subjects = [
