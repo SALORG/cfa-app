@@ -6,8 +6,8 @@ import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardFormulas() {
   const { isPremium } = useAuth();
-  const { isGuest, requireAuth } = useGuest();
-  if (!isPremium) return <LockedOverlay title="Master Formulas" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
+  const { isGuest, requireAuth, isTrialActive } = useGuest();
+  if (!isPremium && !isTrialActive) return <LockedOverlay title="Master Formulas" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
   const { masterFormulas } = consolidated;
 
   if (!masterFormulas?.sections) {

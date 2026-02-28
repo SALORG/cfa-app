@@ -35,7 +35,7 @@ function calculateStreak(studyLogs) {
   return streak;
 }
 
-export default function StudyLogInput({ studyLogs, setStudyLogs, onGuestAction }) {
+export default function StudyLogInput({ studyLogs, setStudyLogs, onGuestAction, onAfterLog }) {
   const today = getToday();
   const [inputHours, setInputHours] = useState("");
   const [inputDate, setInputDate] = useState(today);
@@ -59,6 +59,7 @@ export default function StudyLogInput({ studyLogs, setStudyLogs, onGuestAction }
     setInputHours("");
 
     trackCustomEvent("StudyHoursLogged", { hours, date: inputDate });
+    if (onAfterLog) onAfterLog();
   }
 
   return (

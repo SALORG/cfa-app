@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { subjects, isContentLocked, FREE_SUBJECT_IDS } from "~/data";
+import { subjects, isContentLocked, isModuleLocked } from "~/data";
 import { useAuth } from "~/context/AuthContext";
 import { useGuest } from "~/context/GuestContext";
 
@@ -18,7 +18,7 @@ export default function Sidebar({
   progress = {},
 }) {
   const { signOut, isPremium, user } = useAuth();
-  const { isGuest, requireAuth } = useGuest();
+  const { isGuest, requireAuth, isTrialActive } = useGuest();
   const [expandedSubjects, setExpandedSubjects] = useState(() => {
     if (currentSubjectId) return new Set([currentSubjectId]);
     return new Set();
@@ -79,8 +79,8 @@ export default function Sidebar({
         {subjects.map((subject) => {
           const isExpanded = expandedSubjects.has(subject.id);
           const completedCount = getSubjectProgress(subject);
-          const locked = isContentLocked(subject.id, isPremium);
-          const guestLocked = isGuest && !FREE_SUBJECT_IDS.includes(subject.id);
+          const locked = isContentLocked(subject.id, isPremium, isTrialActive);
+          const guestLocked = isGuest && locked;
 
           return (
             <div key={subject.id}>
@@ -115,20 +115,22 @@ export default function Sidebar({
                     const isActive =
                       currentSubjectId === subject.id &&
                       currentModuleId === mod.id;
+                    const modLocked = isModuleLocked(subject.id, mod.id, isPremium, isTrialActive);
+                    const modGuestLocked = isGuest && modLocked;
 
                     return (
                       <Link
                         key={mod.id}
                         to={`/dashboard/${subject.id}/${mod.id}`}
                         onClick={(e) => {
-                          if (guestLocked) {
+                          if (modGuestLocked) {
                             e.preventDefault();
                             requireAuth("sidebar_module");
                           }
                           onClose();
                         }}
                         className={`flex items-center gap-2 pl-8 pr-3 py-1.5 text-sm transition-colors ${
-                          locked || guestLocked
+                          modLocked
                             ? "text-text-muted opacity-50"
                             : isActive
                               ? "text-accent bg-accent/10 font-medium"
@@ -139,7 +141,7 @@ export default function Sidebar({
                           {mod.number}.
                         </span>
                         <span className="truncate" title={mod.title}>{mod.title}</span>
-                        {(locked || guestLocked) && <span className="text-xs ml-auto shrink-0">🔒</span>}
+                        {modLocked && <span className="text-xs ml-auto shrink-0">🔒</span>}
                       </Link>
                     );
                   })}
@@ -152,24 +154,27 @@ export default function Sidebar({
 
       {/* Quick Links */}
       <div className="border-t border-border px-3 py-3 space-y-1">
-        {quickLinks.map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            onClick={(e) => {
-              if (isGuest) {
-                e.preventDefault();
-                requireAuth("sidebar_quick_link");
-              }
-              onClose();
-            }}
-            className={`flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors ${isPremium && !isGuest ? "" : "opacity-60"}`}
-          >
-            <span className="w-5 text-center text-xs">{link.icon}</span>
-            <span>{link.label}</span>
-            {(!isPremium || isGuest) && <span className="text-xs ml-auto">🔒</span>}
-          </Link>
-        ))}
+        {quickLinks.map((link) => {
+          const qlUnlocked = isPremium || isTrialActive;
+          return (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={(e) => {
+                if (isGuest && !isTrialActive) {
+                  e.preventDefault();
+                  requireAuth("sidebar_quick_link");
+                }
+                onClose();
+              }}
+              className={`flex items-center gap-2 px-2 py-1.5 text-sm text-text-secondary hover:text-text-primary hover:bg-surface rounded-md transition-colors ${qlUnlocked ? "" : "opacity-60"}`}
+            >
+              <span className="w-5 text-center text-xs">{link.icon}</span>
+              <span>{link.label}</span>
+              {!qlUnlocked && <span className="text-xs ml-auto">🔒</span>}
+            </Link>
+          );
+        })}
       </div>
 
       {/* Legal & Logout */}

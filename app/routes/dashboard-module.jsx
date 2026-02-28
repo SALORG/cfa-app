@@ -4,13 +4,14 @@ import { doc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore/lite";
 import { db } from "~/lib/firebase";
 import { useAuth } from "~/context/AuthContext";
 import { useGuest } from "~/context/GuestContext";
-import { getSubject, getModule, getAdjacentModules, isContentLocked } from "~/data";
+import { getSubject, getModule, getAdjacentModules, isModuleLocked } from "~/data";
 import { useDashboardContext } from "./dashboard";
 import CheatSheet from "~/components/CheatSheet";
 import MindMap from "~/components/MindMap";
 import FlashCards from "~/components/FlashCards";
 import Quiz from "~/components/Quiz";
 import LockedOverlay from "~/components/LockedOverlay";
+import { useGuestProgressToast } from "~/components/GuestProgressToast";
 import { trackCustomEvent } from "~/lib/analytics";
 
 const TABS = [
@@ -22,15 +23,16 @@ const TABS = [
 
 export default function DashboardModule() {
   const { user, isPremium, loading } = useAuth();
-  const { isGuest, requireAuth } = useGuest();
+  const { isGuest, requireAuth, isTrialActive } = useGuest();
   const { subjectId, moduleId } = useParams();
   const { progress, setProgress, quizScores, setQuizScores } = useDashboardContext();
   const [activeTab, setActiveTab] = useState("cheatsheet");
+  const { showToast, toast } = useGuestProgressToast();
 
   const subject = getSubject(subjectId);
   const mod = getModule(subjectId, moduleId);
   const { prev, next } = getAdjacentModules(subjectId, moduleId);
-  const locked = isContentLocked(subjectId, isPremium);
+  const locked = isModuleLocked(subjectId, moduleId, isPremium, isTrialActive);
 
   const progressKey = `${subjectId}__${moduleId}`;
   const isCompleted = !!progress[progressKey];
@@ -42,23 +44,26 @@ export default function DashboardModule() {
 
   const handleQuizScore = useCallback(
     ({ score, total }) => {
-      if (!user) { requireAuth("quiz_submit"); return; }
+      if (!user && !isTrialActive) { requireAuth("quiz_submit"); return; }
       const entry = {
         moduleKey: progressKey,
         score,
         total,
         date: Timestamp.now(),
       };
-      updateDoc(doc(db, "users", user.uid), {
-        quizScores: arrayUnion(entry),
-      });
+      if (user) {
+        updateDoc(doc(db, "users", user.uid), {
+          quizScores: arrayUnion(entry),
+        });
+      }
       setQuizScores((prev) => [...prev, entry]);
+      if (!user) showToast();
     },
-    [user, progressKey, setQuizScores, requireAuth]
+    [user, isTrialActive, progressKey, setQuizScores, requireAuth, showToast]
   );
 
   const toggleComplete = () => {
-    if (isGuest) { requireAuth("mark_complete"); return; }
+    if (isGuest && !isTrialActive) { requireAuth("mark_complete"); return; }
     const wasCompleted = progress[progressKey];
     setProgress((prev) => ({
       ...prev,
@@ -72,6 +77,7 @@ export default function DashboardModule() {
         subject_name: subject?.name,
       });
     }
+    if (isGuest) showToast();
   };
 
   if (loading) {
@@ -202,6 +208,8 @@ export default function DashboardModule() {
           <div />
         )}
       </div>
+
+      {toast}
     </div>
   );
 }

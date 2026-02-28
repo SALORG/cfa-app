@@ -6,8 +6,8 @@ import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardConnections() {
   const { isPremium } = useAuth();
-  const { isGuest, requireAuth } = useGuest();
-  if (!isPremium) return <LockedOverlay title="Inter-Subject Connections" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
+  const { isGuest, requireAuth, isTrialActive } = useGuest();
+  if (!isPremium && !isTrialActive) return <LockedOverlay title="Inter-Subject Connections" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
   const connections = consolidated.interSubjectConnections?.connections || [];
 
   return (

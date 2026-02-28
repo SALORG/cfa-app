@@ -8,11 +8,11 @@ import LockedOverlay from "~/components/LockedOverlay";
 
 export default function DashboardPracticeExam() {
   const { isPremium } = useAuth();
-  const { isGuest, requireAuth } = useGuest();
+  const { isGuest, requireAuth, isTrialActive } = useGuest();
   const examData = consolidated.practiceExam;
   const [started, setStarted] = useState(false);
 
-  if (!isPremium) return <LockedOverlay title="Practice Exam" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
+  if (!isPremium && !isTrialActive) return <LockedOverlay title="Practice Exam" isGuest={isGuest} onSignup={() => requireAuth("locked_module")} />;
 
   if (!examData?.questions) {
     return (
