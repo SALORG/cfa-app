@@ -12,6 +12,7 @@ import FlashCards from "~/components/FlashCards";
 import Quiz from "~/components/Quiz";
 import LockedOverlay from "~/components/LockedOverlay";
 import { useGuestProgressToast } from "~/components/GuestProgressToast";
+import { useUserNotes } from "~/hooks/useUserNotes";
 import { trackCustomEvent } from "~/lib/analytics";
 
 const TABS = [
@@ -33,6 +34,11 @@ export default function DashboardModule() {
   const mod = getModule(subjectId, moduleId);
   const { prev, next } = getAdjacentModules(subjectId, moduleId);
   const locked = isModuleLocked(subjectId, moduleId, isPremium, isTrialActive);
+
+  const noteKeyCS = `${subjectId}__${moduleId}__cheatsheet`;
+  const noteKeyMM = `${subjectId}__${moduleId}__mindmap`;
+  const csNotes = useUserNotes(noteKeyCS, mod?.cheatSheet);
+  const mmNotes = useUserNotes(noteKeyMM, mod?.mindMap);
 
   const progressKey = `${subjectId}__${moduleId}`;
   const isCompleted = !!progress[progressKey];
@@ -159,10 +165,22 @@ export default function DashboardModule() {
       {/* Tab Content */}
       <div className="min-h-[400px]">
         {activeTab === "cheatsheet" && mod.cheatSheet && (
-          <CheatSheet cheatSheet={mod.cheatSheet} />
+          <CheatSheet
+            cheatSheet={csNotes.data}
+            editable
+            onSave={(d) => { csNotes.save(d); if (isGuest) showToast(); }}
+            onReset={csNotes.reset}
+            isCustom={csNotes.isCustom}
+          />
         )}
         {activeTab === "mindmap" && mod.mindMap && (
-          <MindMap mindMap={mod.mindMap} />
+          <MindMap
+            mindMap={mmNotes.data}
+            editable
+            onSave={(d) => { mmNotes.save(d); if (isGuest) showToast(); }}
+            onReset={mmNotes.reset}
+            isCustom={mmNotes.isCustom}
+          />
         )}
         {activeTab === "flashcards" && <FlashCards module={mod} />}
         {activeTab === "quiz" && mod.quiz?.questions && (
